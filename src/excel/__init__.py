@@ -1,0 +1,1 @@
+"""Generare și integritate Excel."""

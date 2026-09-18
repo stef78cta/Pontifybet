@@ -1,0 +1,1 @@
+"""Pontifybet — pachet aplicație."""

@@ -1,0 +1,12 @@
+{
+  "default": {
+    "id": 0,
+    "status": "incomplete"
+  },
+  "90001": {
+    "id": 90001,
+    "status": "incomplete",
+    "homeGoals": -1,
+    "awayGoals": -1
+  }
+}

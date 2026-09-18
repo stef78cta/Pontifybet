@@ -1,0 +1,14 @@
+[
+  {
+    "name": "England Premier League",
+    "league_name": "Premier League",
+    "country": "England",
+    "season": [{"id": 2012, "year": "2025/2026"}]
+  },
+  {
+    "name": "Spain La Liga",
+    "league_name": "La Liga",
+    "country": "Spain",
+    "season": [{"id": 2013, "year": "2025/2026"}]
+  }
+]

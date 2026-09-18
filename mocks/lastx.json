@@ -1,0 +1,79 @@
+{
+  "default": {
+    "stats": {
+      "played": 5,
+      "seasonGoals_overall": 8,
+      "seasonConceded_overall": 5,
+      "xg_for_avg": 1.5,
+      "xg_against_avg": 1.0,
+      "cornersAVG_overall": 5.2,
+      "cornersAgainstAVG_overall": 4.4
+    }
+  },
+  "101_5": {
+    "stats": {
+      "played": 5,
+      "seasonGoals_overall": 9,
+      "seasonConceded_overall": 4,
+      "xg_for_avg": 1.8,
+      "xg_against_avg": 0.9,
+      "cornersAVG_overall": 6.0,
+      "cornersAgainstAVG_overall": 3.8
+    }
+  },
+  "102_5": {
+    "stats": {
+      "played": 5,
+      "seasonGoals_overall": 7,
+      "seasonConceded_overall": 6,
+      "xg_for_avg": 1.4,
+      "xg_against_avg": 1.2,
+      "cornersAVG_overall": 5.4,
+      "cornersAgainstAVG_overall": 4.6
+    }
+  },
+  "103_5": {
+    "stats": {
+      "played": 5,
+      "seasonGoals_overall": 10,
+      "seasonConceded_overall": 5,
+      "xg_for_avg": 2.0,
+      "xg_against_avg": 1.0,
+      "cornersAVG_overall": 6.2,
+      "cornersAgainstAVG_overall": 3.9
+    }
+  },
+  "104_5": {
+    "stats": {
+      "played": 5,
+      "seasonGoals_overall": 4,
+      "seasonConceded_overall": 7,
+      "xg_for_avg": 0.9,
+      "xg_against_avg": 1.5,
+      "cornersAVG_overall": 4.1,
+      "cornersAgainstAVG_overall": 5.3
+    }
+  },
+  "201_5": {
+    "stats": {
+      "played": 5,
+      "seasonGoals_overall": 11,
+      "seasonConceded_overall": 3,
+      "xg_for_avg": 2.2,
+      "xg_against_avg": 0.7,
+      "cornersAVG_overall": 6.5,
+      "cornersAgainstAVG_overall": 3.5
+    }
+  },
+  "202_5": {
+    "stats": {
+      "played": 5,
+      "seasonGoals_overall": 3,
+      "seasonConceded_overall": 8,
+      "xg_for_avg": 0.8,
+      "xg_against_avg": 1.6,
+      "cornersAVG_overall": -1,
+      "cornersAgainstAVG_overall": -1
+    }
+  }
+}

@@ -1,0 +1,820 @@
+# Registru modele pilot Pontifybet MVP
+# Mapare: FootyStats field -> indicator -> sheet -> cell -> tip -> unitate -> G-level
+
+version: "1.0"
+models:
+  over05:
+    id: over05
+    name: "Over 0.5"
+    template: "1_model_analiza_over0.5_optimizat_V4.xlsx"
+    layout: multi_row
+    input_sheet: "Analize meciuri"
+    data_start_row: 4
+    header_row: 3
+    write_columns: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL", "AM", "AN", "AO", "AP", "AQ", "AR", "AS", "AT", "AU", "AV", "AW", "AX", "AY", "AZ", "BA", "BB", "BC", "BD", "BE", "BF", "BG", "BH", "BI"]
+    forbidden_sheets:
+      - "Setari model"
+      - "Dashboard"
+      - "Risk_Classification"
+      - "ZeroMass_Gate_v4"
+      - "ZeroMass_Gate_v5"
+    fields:
+      - indicator: match_id
+        footystats_field: id
+        column: A
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: record_type
+        footystats_field: null
+        column: B
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: "LIVE"
+        availability: optional
+      - indicator: match_date
+        footystats_field: date_unix
+        column: C
+        type: date
+        unit: excel_serial
+        g_level: G0
+        critical: true
+        derive_method: unix_to_excel_date
+        availability: critical
+      - indicator: competition
+        footystats_field: competition_name
+        column: D
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: competition_type
+        footystats_field: null
+        column: E
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: "Campionat intern"
+        availability: optional
+      - indicator: stage_context
+        footystats_field: round
+        column: F
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: home_team
+        footystats_field: home_name
+        column: G
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_team
+        footystats_field: away_name
+        column: H
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_matches_played_home
+        footystats_field: home.stats.seasonMatchesPlayed_home
+        column: I
+        type: number
+        unit: count
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_gf_home
+        footystats_field: home.stats.seasonGoals_home
+        column: J
+        type: number
+        unit: goals
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_ga_home
+        footystats_field: home.stats.seasonConceded_home
+        column: K
+        type: number
+        unit: goals
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_xgf_home
+        footystats_field: home.stats.xg_for_home
+        column: L
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: home_xga_home
+        footystats_field: home.stats.xg_against_home
+        column: M
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: home_over05_home
+        footystats_field: home.stats.seasonOver05Percentage_home
+        column: N
+        type: number
+        unit: percent
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_fts_home
+        footystats_field: home.stats.seasonFTSPercentage_home
+        column: O
+        type: number
+        unit: percent
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_matches_played_away
+        footystats_field: away.stats.seasonMatchesPlayed_away
+        column: P
+        type: number
+        unit: count
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_gf_away
+        footystats_field: away.stats.seasonGoals_away
+        column: Q
+        type: number
+        unit: goals
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_ga_away
+        footystats_field: away.stats.seasonConceded_away
+        column: R
+        type: number
+        unit: goals
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_xgf_away
+        footystats_field: away.stats.xg_for_away
+        column: S
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: away_xga_away
+        footystats_field: away.stats.xg_against_away
+        column: T
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: away_over05_away
+        footystats_field: away.stats.seasonOver05Percentage_away
+        column: U
+        type: number
+        unit: percent
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_fts_away
+        footystats_field: away.stats.seasonFTSPercentage_away
+        column: V
+        type: number
+        unit: percent
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_last5_n
+        footystats_field: home.last5.n
+        column: W
+        type: number
+        unit: count
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: home_last5_gf
+        footystats_field: home.last5.gf
+        column: X
+        type: number
+        unit: goals
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: home_last5_ga
+        footystats_field: home.last5.ga
+        column: Y
+        type: number
+        unit: goals
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: home_last5_xgf
+        footystats_field: home.last5.xgf
+        column: Z
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: home_last5_xga
+        footystats_field: home.last5.xga
+        column: AA
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: away_last5_n
+        footystats_field: away.last5.n
+        column: AB
+        type: number
+        unit: count
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: away_last5_gf
+        footystats_field: away.last5.gf
+        column: AC
+        type: number
+        unit: goals
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: away_last5_ga
+        footystats_field: away.last5.ga
+        column: AD
+        type: number
+        unit: goals
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: away_last5_xgf
+        footystats_field: away.last5.xgf
+        column: AE
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: away_last5_xga
+        footystats_field: away.last5.xga
+        column: AF
+        type: number
+        unit: xg
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: h2h_n
+        footystats_field: h2h.n
+        column: AG
+        type: number
+        unit: count
+        g_level: G1
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: odds_1
+        footystats_field: odds_ft_1
+        column: AO
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: odds_x
+        footystats_field: odds_ft_x
+        column: AP
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: odds_2
+        footystats_field: odds_ft_2
+        column: AQ
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: odds_over05
+        footystats_field: odds_ft_over05
+        column: AR
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: odds_under05
+        footystats_field: odds_ft_under05
+        column: AS
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: false
+        derive_method: direct
+        availability: optional
+      - indicator: source_quality
+        footystats_field: null
+        column: AT
+        type: number
+        unit: score_1_5
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: 3
+        availability: optional
+      - indicator: sources_url
+        footystats_field: null
+        column: BI
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: "https://footystats.org/"
+        availability: optional
+      # Zero-mass / clean sheet / 0-0 for G0 validation (not all written to early columns)
+      - indicator: home_clean_sheet_home
+        footystats_field: home.stats.seasonCSPercentage_home
+        column: null
+        type: number
+        unit: percent
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_clean_sheet_away
+        footystats_field: away.stats.seasonCSPercentage_away
+        column: null
+        type: number
+        unit: percent
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_fts_overall
+        footystats_field: home.stats.seasonFTSPercentage_overall
+        column: null
+        type: number
+        unit: percent
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+
+  double_chance:
+    id: double_chance
+    name: "Șansă Dublă"
+    template: "11_model_analiza_pariu_sansadubla_optimizat_V2.xlsx"
+    layout: single_match
+    input_sheet: "Input_Meci"
+    sources_sheet: "Surse_Date"
+    model_sheet: "Model_1X2"
+    forbidden_sheets:
+      - "Parametri"
+      - "Double_Chance"
+      - "Draw_Risk"
+      - "Loss_Risk"
+      - "P0_Gates_v2"
+      - "Dashboard"
+    fields:
+      - indicator: home_team
+        footystats_field: home_name
+        sheet: Input_Meci
+        cell: B4
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_team
+        footystats_field: away_name
+        sheet: Input_Meci
+        cell: C4
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: league
+        footystats_field: competition_name
+        sheet: Input_Meci
+        cell: B5
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: match_date
+        footystats_field: date_unix
+        sheet: Input_Meci
+        cell: B6
+        type: date
+        unit: excel_serial
+        g_level: G0
+        critical: true
+        derive_method: unix_to_excel_date
+        availability: critical
+      - indicator: neutral_venue
+        footystats_field: null
+        sheet: Input_Meci
+        cell: B7
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: "NU"
+        availability: optional
+      - indicator: home_sample_ha
+        footystats_field: home.stats.seasonMatchesPlayed_home
+        sheet: Input_Meci
+        cell: B36
+        type: number
+        unit: count
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_sample_ha
+        footystats_field: away.stats.seasonMatchesPlayed_away
+        sheet: Input_Meci
+        cell: C36
+        type: number
+        unit: count
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: odds_1
+        footystats_field: odds_ft_1
+        sheet: Input_Meci
+        cell: B31
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: odds_x
+        footystats_field: odds_ft_x
+        sheet: Input_Meci
+        cell: B32
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: odds_2
+        footystats_field: odds_ft_2
+        sheet: Input_Meci
+        cell: B33
+        type: number
+        unit: decimal_odds
+        g_level: G3
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: confidence_date
+        footystats_field: null
+        sheet: Input_Meci
+        cell: B34
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: "B"
+        availability: optional
+      - indicator: market_source
+        footystats_field: null
+        sheet: Input_Meci
+        cell: B42
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: constant
+        constant_value: "FootyStats 1X2"
+        availability: critical
+      - indicator: fixture_status
+        footystats_field: null
+        sheet: Surse_Date
+        cell: C5
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: status_from_fixture
+        availability: critical
+      - indicator: market_status
+        footystats_field: odds_ft_1
+        sheet: Surse_Date
+        cell: C8
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: status_from_odds
+        availability: critical
+      - indicator: sample_status
+        footystats_field: home.stats.seasonMatchesPlayed_home
+        sheet: Surse_Date
+        cell: C9
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: status_from_sample
+        availability: critical
+
+  corners:
+    id: corners
+    name: "Cornere Multi-Line V14"
+    template: "6_model_analiza_cornere_multiline_optimizat_V14.xlsx"
+    layout: multi_row
+    input_sheet: "Input_Meci"
+    data_start_row: 6
+    header_row: 5
+    write_columns: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG"]
+    forbidden_sheets:
+      - "Config_v6"
+      - "Analiza_Linii"
+      - "Motor_Meciuri"
+      - "Core_Nativ"
+      - "Distributie"
+      - "Dashboard"
+    fields:
+      - indicator: match_id
+        footystats_field: id
+        column: A
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: league
+        footystats_field: competition_name
+        column: B
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: season
+        footystats_field: season
+        column: C
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_team
+        footystats_field: home_name
+        column: D
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_team
+        footystats_field: away_name
+        column: E
+        type: text
+        unit: null
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: kickoff_utc
+        footystats_field: date_unix
+        column: F
+        type: datetime
+        unit: excel_serial
+        g_level: G0
+        critical: true
+        derive_method: unix_to_excel_datetime
+        availability: critical
+      - indicator: cutoff_utc
+        footystats_field: date_unix
+        column: G
+        type: datetime
+        unit: excel_serial
+        g_level: G0
+        critical: true
+        derive_method: unix_minus_hours
+        availability: critical
+      - indicator: mode
+        footystats_field: null
+        column: H
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: "LIVE"
+        availability: optional
+      - indicator: sourcing_decision
+        footystats_field: null
+        column: I
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: constant
+        constant_value: "AUTO"
+        availability: optional
+      # 12 native corner values (G0) — stored on MatchData; written when columns available via notes/pipeline
+      - indicator: home_corners_for_season
+        footystats_field: home.stats.cornersAVG_overall
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_corners_against_season
+        footystats_field: home.stats.cornersAgainstAVG_overall
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_corners_for_home
+        footystats_field: home.stats.cornersAVG_home
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_corners_against_home
+        footystats_field: home.stats.cornersAgainstAVG_home
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_corners_for_recent
+        footystats_field: home.last5.corners_for
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_corners_against_recent
+        footystats_field: home.last5.corners_against
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_corners_for_season
+        footystats_field: away.stats.cornersAVG_overall
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_corners_against_season
+        footystats_field: away.stats.cornersAgainstAVG_overall
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_corners_for_away
+        footystats_field: away.stats.cornersAVG_away
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_corners_against_away
+        footystats_field: away.stats.cornersAgainstAVG_away
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_corners_for_recent
+        footystats_field: away.last5.corners_for
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_corners_against_recent
+        footystats_field: away.last5.corners_against
+        column: null
+        type: number
+        unit: corners
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: home_sample
+        footystats_field: home.stats.seasonMatchesPlayed_overall
+        column: null
+        type: number
+        unit: count
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: away_sample
+        footystats_field: away.stats.seasonMatchesPlayed_overall
+        column: null
+        type: number
+        unit: count
+        g_level: G0
+        critical: true
+        derive_method: direct
+        availability: critical
+      - indicator: notes
+        footystats_field: null
+        column: M
+        type: text
+        unit: null
+        g_level: G1
+        critical: false
+        derive_method: corners_notes_bundle
+        availability: optional

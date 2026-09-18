@@ -1,0 +1,1 @@
+"""Recalculare opțională (stub)."""

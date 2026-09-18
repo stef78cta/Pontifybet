@@ -95,17 +95,22 @@ def write_validation_report(run_dir: Path, report: dict[str, Any]) -> Path:
 
 
 def write_over05_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -> Path | None:
-    """Scrie verdicturile Over 0.5 calculate în Python, vizibile în ZIP."""
+    """Scrie verdicturile Over 0.5 calculate în Python, vizibile în ZIP.
+
+    Coloanele `ora` și `liga` stau înaintea `echipe`, ca în tabelele din UI.
+    """
     official = [r for r in rows if r.get("model_id") == "over05"]
     if not official:
         return None
     path = run_dir / "over05_rezultate.csv"
     lines = [
-        "match_id,echipe,recomandare_HK,nivel_HH,g0_HG,p_over_GP,p0_GL,confidence_GT,risk_score_HE"
+        "ora,liga,match_id,echipe,recomandare_HK,nivel_HH,g0_HG,p_over_GP,p0_GL,confidence_GT,risk_score_HE"
     ]
     for row in official:
         rec = str(row.get("recommendation") or "").replace('"', "'")
+        liga = str(row.get("liga") or "").replace('"', "'")
         lines.append(
+            f"\"{row.get('ora_bucuresti') or ''}\",\"{liga}\","
             f"{row.get('match_id')},\"{row.get('echipe','')}\",\"{rec}\","
             f"{row.get('risk_level') or ''},{row.get('model_g0') or ''},"
             f"{row.get('p_over') or ''},{row.get('p0_recalibrated') or ''},"

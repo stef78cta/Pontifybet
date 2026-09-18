@@ -7,7 +7,7 @@ from typing import Any
 from zoneinfo import ZoneInfo
 
 from src.api.mock import MockFootyStatsClient
-from src.pipeline import list_matches_for_filters, sort_listed_matches
+from src.pipeline import attach_league_names, list_matches_for_filters, sort_listed_matches
 
 
 def _ora_bucuresti(date_unix: int) -> str:
@@ -115,6 +115,19 @@ class _LiveShapedClient:
                 "season": [{"id": 16544, "year": "2026"}],
             }
         ]
+
+
+def test_attach_league_names_fills_from_season_map_when_todays_matches_omit_name():
+    """LIVE todays-matches are doar competition_id; numele trebuie luat din league-list."""
+    matches = [
+        {"id": 1, "competition_id": 16544, "home_name": "Remo"},
+        {"id": 2, "competition_id": 2012, "league_name": "Already Named"},
+    ]
+    names = {16544: "Brazil Serie A", 2012: "England Premier League"}
+    out = attach_league_names(matches, names)
+    assert out[0]["league_name"] == "Brazil Serie A"
+    assert out[1]["league_name"] == "Already Named"
+    assert matches[0].get("league_name") is None
 
 
 def test_live_match_without_league_name_uses_league_list():

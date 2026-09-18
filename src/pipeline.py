@@ -73,6 +73,43 @@ def _league_names_by_season(client: Any) -> dict[int, str]:
     return out
 
 
+def _resolved_league_name(
+    match: dict[str, Any],
+    names_by_season: dict[int, str] | None = None,
+) -> str:
+    liga = _direct_league_name(match)
+    if liga:
+        return liga
+    if not names_by_season:
+        return ""
+    cid = match.get("competition_id")
+    try:
+        return names_by_season.get(int(cid), "")
+    except (TypeError, ValueError):
+        return ""
+
+
+def attach_league_names(
+    matches: list[dict[str, Any]],
+    names_by_season: dict[int, str] | None,
+) -> list[dict[str, Any]]:
+    """Completează league_name din league-list când todays-matches nu îl trimite.
+
+    Nu mută originalul: copiază rândul doar dacă trebuie umplut numele.
+    """
+    names = names_by_season or {}
+    out: list[dict[str, Any]] = []
+    for match in matches:
+        liga = _resolved_league_name(match, names)
+        if liga and not _direct_league_name(match):
+            copy = dict(match)
+            copy["league_name"] = liga
+            out.append(copy)
+        else:
+            out.append(match)
+    return out
+
+
 def _row_from_match(
     match: dict[str, Any],
     timezone_name: str,
@@ -81,16 +118,9 @@ def _row_from_match(
     ora, ora_sort = _unix_to_local_hhmm(match.get("date_unix"), timezone_name)
     home = match.get("home_name") or ""
     away = match.get("away_name") or ""
-    liga = _direct_league_name(match)
-    if not liga and names_by_season:
-        cid = match.get("competition_id")
-        try:
-            liga = names_by_season.get(int(cid), "")
-        except (TypeError, ValueError):
-            liga = ""
     return {
         "match_id": str(match.get("id")),
-        "liga": liga,
+        "liga": _resolved_league_name(match, names_by_season),
         "ora": ora,
         "ora_sort": ora_sort,
         "echipe": f"{home} vs {away}",
@@ -196,6 +226,8 @@ def run_analysis(
                 for m in selected
                 if int(m.get("competition_id") or 0) in {int(x) for x in league_ids}
             ]
+        names = _league_names_by_season(client)
+        selected = attach_league_names(selected, names)
 
         match_data_list: list[MatchData] = []
         for i, raw in enumerate(selected):

@@ -64,6 +64,7 @@ def _reload_analysis_modules() -> None:
     import src.engines.over05.inputs as over05_inputs
     import src.excel.generator as excel_generator
     import src.models.match_data as match_data
+    import src.ui_tables as ui_tables
 
     importlib.reload(match_data)
     importlib.reload(fs_client)
@@ -75,6 +76,7 @@ def _reload_analysis_modules() -> None:
     importlib.reload(over05_pkg)
     importlib.reload(over05_adapter)
     importlib.reload(pipeline)
+    importlib.reload(ui_tables)
 
 
 def _editor_key() -> str:
@@ -347,6 +349,9 @@ if listed_ok and st.session_state.listed_matches:
 
 if "last_result" in st.session_state:
     result = st.session_state["last_result"]
+    import src.ui_tables as ui_tables
+
+    importlib.reload(ui_tables)
     st.subheader("Rezumat validare")
 
     def color_status(val: str) -> str:
@@ -356,7 +361,11 @@ if "last_result" in st.session_state:
             return "pending (galben)"
         return "blocat (roșu)"
 
-    over05_rows = [r for r in result["rows"] if r.get("model_id") == "over05"]
+    result_rows = ui_tables.fill_missing_liga(
+        result["rows"],
+        st.session_state.get("listed_matches"),
+    )
+    over05_rows = [r for r in result_rows if r.get("model_id") == "over05"]
     if over05_rows and not any(r.get("recommendation") for r in over05_rows):
         st.warning(
             "Recomandarea Over 0.5 lipsește din acest rezumat. "
@@ -364,44 +373,22 @@ if "last_result" in st.session_state:
         )
     if over05_rows:
         st.subheader("Recomandare finală Over 0.5")
+        over05_display = ui_tables.over05_summary_rows(
+            over05_rows, fmt_prob=_fmt_prob, fmt_score=_fmt_score
+        )
         st.dataframe(
-            [
-                {
-                    "Echipe": r["echipe"],
-                    "Recomandare": r.get("recommendation") or "—",
-                    "Nivel": r.get("risk_level") if r.get("risk_level") is not None else "—",
-                    "G0 model": r.get("model_g0") or "—",
-                    "Over 0.5": _fmt_prob(r.get("p_over")) or "—",
-                    "P0": _fmt_prob(r.get("p0_recalibrated")) or "—",
-                    "Confidence": _fmt_score(r.get("confidence")) or "—",
-                    "Risk Score": _fmt_score(r.get("risk_score")) or "—",
-                }
-                for r in over05_rows
-            ],
+            over05_display,
             use_container_width=True,
             hide_index=True,
+            column_order=list(over05_display[0].keys()) if over05_display else None,
         )
 
-    validation_rows = []
-    for r in result["rows"]:
-        validation_rows.append(
-            {
-                "Echipe": r["echipe"],
-                "Model": r["model"],
-                "Recomandare (HK)": r.get("recommendation") or "",
-                "Nivel (HH)": r.get("risk_level") if r.get("risk_level") is not None else "",
-                "G0 model (HG)": r.get("model_g0") or "",
-                "Over 0.5 (GP)": _fmt_prob(r.get("p_over")),
-                "P0 (GL)": _fmt_prob(r.get("p0_recalibrated")),
-                "Confidence (GT)": _fmt_score(r.get("confidence")),
-                "Risk Score (HE)": _fmt_score(r.get("risk_score")),
-                "Ligă": r["liga"],
-                "Oră București": r["ora_bucuresti"],
-                "Data Status": color_status(r["data_status"]),
-                "G0 validare": r["g0"],
-                "Motiv blocare": r["motiv"],
-            }
-        )
+    validation_rows = ui_tables.validation_summary_rows(
+        result_rows,
+        fmt_prob=_fmt_prob,
+        fmt_score=_fmt_score,
+        color_status=color_status,
+    )
     st.dataframe(validation_rows, use_container_width=True, hide_index=True)
 
     if result.get("errors"):

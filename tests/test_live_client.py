@@ -164,7 +164,7 @@ def test_as_number_counts_goal_minute_lists():
     assert _as_number(["25", "72", "90+1"]) == 3
     assert _as_number(32) == 32
     assert _first_number(10, ["25", "72"]) == 10
-    aj, ak, al = league_goal_averages(
+    aj, ak, al, n_home, n_away = league_goal_averages(
         [
             {
                 "stats": {
@@ -188,3 +188,5 @@ def test_as_number_counts_goal_minute_lists():
     assert aj == pytest.approx((2.5 + 2.0) / 2)
     assert ak == pytest.approx((1.5 + 1.0) / 2)
     assert al == pytest.approx(aj + ak)
+    assert n_home == 8
+    assert n_away == 6

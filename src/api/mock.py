@@ -107,7 +107,7 @@ class MockFootyStatsClient(FootyStatsClient):
         a5 = self.last_x(int(away_id), 5) if away_id else {}
         season_id = match.get("competition_id") or match.get("season_id")
         teams = self.league_teams(int(season_id)) if not _unavailable(season_id) else []
-        avg_home, avg_away, avg_total = league_goal_averages(teams)
+        avg_home, avg_away, avg_total, n_home, n_away = league_goal_averages(teams)
         md = self.build_match_data(
             match,
             home,
@@ -118,6 +118,8 @@ class MockFootyStatsClient(FootyStatsClient):
             league_avg_gf_home=avg_home,
             league_avg_gf_away=avg_away,
             league_avg_gf_total=avg_total,
+            league_sample_n_home=n_home,
+            league_sample_n_away=n_away,
         )
         md.source_mode = "mock"
         return md

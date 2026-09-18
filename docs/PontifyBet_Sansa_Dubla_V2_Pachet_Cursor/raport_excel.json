@@ -1,0 +1,11 @@
+﻿{
+    "passed":  true,
+    "excel_version":  "16.0",
+    "source_sha256":  "321546054b7199ba1f4f7f96599cb7f6c43a88c526da25e24fa2a31d3235821b",
+    "cases":  37,
+    "comparisons":  3552,
+    "failures":  [
+
+                 ],
+    "fatal_error":  null
+}

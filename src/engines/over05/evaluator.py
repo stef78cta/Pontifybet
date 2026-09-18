@@ -6,6 +6,7 @@ Nu este un motor Excel general.
 
 from __future__ import annotations
 
+import math
 from decimal import Decimal, ROUND_HALF_UP
 from functools import lru_cache
 from typing import Any
@@ -119,6 +120,25 @@ def excel_text(value: Any) -> str:
     return str(value)
 
 
+def criteria_match(value: Any, criteria: Any) -> bool:
+    """Potrivire COUNTIF/COUNTIFS/SUMIFS, fără sensibilitate la majuscule."""
+    if isinstance(criteria, str):
+        for op in (">=", "<=", "<>", ">", "<", "="):
+            if criteria.startswith(op):
+                rest = criteria[len(op) :]
+                try:
+                    right: Any = float(rest)
+                except ValueError:
+                    right = rest
+                if is_number(right) and not is_number(value):
+                    return False
+                return excel_compare(value, right, op)
+        return excel_compare(value, criteria, "=")
+    if is_number(criteria):
+        return is_number(value) and float(value) == float(criteria)
+    return excel_compare(value, criteria, "=")
+
+
 def excel_compare(left: Any, right: Any, op: str) -> bool:
     if left is None:
         left = "" if isinstance(right, str) else 0
@@ -219,6 +239,41 @@ class WorkbookEngine:
         numbers = [item for item in flatten(values) if is_number(item)]
         if name == "COUNT":
             return len(numbers)
+        if name == "COUNTBLANK":
+            return sum(1 for item in flatten(values) if item is None or item == "")
+        if name == "COUNTIF":
+            return sum(1 for item in flatten(values[0]) if criteria_match(item, values[1]))
+        if name == "COUNTIFS":
+            ranges = [list(flatten(values[i])) for i in range(0, len(values), 2)]
+            crits = [values[i] for i in range(1, len(values), 2)]
+            return sum(
+                1
+                for idx in range(len(ranges[0]))
+                if all(criteria_match(ranges[j][idx], crits[j]) for j in range(len(ranges)))
+            )
+        if name == "SUMIFS":
+            summed = list(flatten(values[0]))
+            ranges = [list(flatten(values[i])) for i in range(1, len(values), 2)]
+            crits = [values[i] for i in range(2, len(values), 2)]
+            total = 0.0
+            for idx, item in enumerate(summed):
+                if all(criteria_match(ranges[j][idx], crits[j]) for j in range(len(ranges))):
+                    if is_number(item):
+                        total += float(item)
+            return total
+        if name == "ISNUMBER":
+            return is_number(values[0])
+        if name == "NOT":
+            flag = values[0]
+            if isinstance(flag, bool):
+                return not flag
+            if is_number(flag):
+                return float(flag) == 0.0
+            raise XLException("VALUE")
+        if name == "MOD":
+            numerator = excel_number(values[0])
+            denominator = excel_number(values[1])
+            return numerator - denominator * math.floor(numerator / denominator)
         if name == "SUM":
             return sum(numbers)
         if name == "AVERAGE":
@@ -234,16 +289,10 @@ class WorkbookEngine:
         if name == "ABS":
             return abs(excel_number(values[0]))
         if name == "SQRT":
-            import math
-
             return math.sqrt(excel_number(values[0]))
         if name == "EXP":
-            import math
-
             return math.exp(excel_number(values[0]))
         if name == "LN":
-            import math
-
             return math.log(excel_number(values[0]))
         if name == "POWER":
             return excel_number(values[0]) ** excel_number(values[1])

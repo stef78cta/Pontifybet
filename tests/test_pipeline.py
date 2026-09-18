@@ -66,3 +66,16 @@ def test_pipeline_mock_zip(tmp_path: Path, monkeypatch):
     assert all(r.get("recommendation") for r in over05_rows)
     assert all(r.get("model_g0") for r in over05_rows)
     assert all("ZERO-MASS INCOMPLETE" not in str(r.get("model_g0")) for r in over05_rows)
+    dc_rows = [r for r in result["rows"] if r["model_id"] == "double_chance"]
+    assert dc_rows
+    assert all(r.get("dc_selections") for r in dc_rows)
+    assert all(r.get("recommendation") for r in dc_rows)
+    assert all(r.get("model_g0") != "CRITICAL MISSING" for r in dc_rows)
+    assert all(
+        sel.get("p_adj") is not None
+        for r in dc_rows
+        for sel in r.get("dc_selections") or []
+        if sel.get("selection") == "1X"
+    )
+    csv_dc = Path(result["run_dir"]) / "double_chance_rezultate.csv"
+    assert csv_dc.exists()

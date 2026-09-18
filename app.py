@@ -57,7 +57,11 @@ def _reload_analysis_modules() -> None:
     """Reîncarcă MatchData + client înainte de generate, ca Streamlit să nu țină clase vechi."""
     import src.api.client as fs_client
     import src.api.factory as fs_factory
+    import src.adapters.double_chance as dc_adapter
     import src.adapters.over05 as over05_adapter
+    import src.engines.double_chance as dc_pkg
+    import src.engines.double_chance.engine as dc_engine
+    import src.engines.double_chance.inputs as dc_inputs
     import src.engines.over05 as over05_pkg
     import src.engines.over05.engine as over05_engine
     import src.engines.over05.evaluator as over05_eval
@@ -75,6 +79,10 @@ def _reload_analysis_modules() -> None:
     importlib.reload(over05_engine)
     importlib.reload(over05_pkg)
     importlib.reload(over05_adapter)
+    importlib.reload(dc_inputs)
+    importlib.reload(dc_engine)
+    importlib.reload(dc_pkg)
+    importlib.reload(dc_adapter)
     importlib.reload(pipeline)
     importlib.reload(ui_tables)
 
@@ -172,9 +180,10 @@ st.write(
     "Aplicația completează copii ale șabloanelor Excel — fără a modifica originalele."
 )
 st.info(
-    "Over 0.5 este calculat în Python (V4 / selector v9): P0, Over 0.5, "
-    "Confidence, Risk Score, G0 model, nivel și recomandare. "
-    "Șansă Dublă și Cornere rămân calculate în Microsoft Excel, la deschiderea fișierului."
+    "Over 0.5 și Șansă Dublă sunt calculate în Python: verdict, nivel, scor și "
+    "probabilități oficiale apar în tabelele de mai jos. "
+    "Șansă Dublă LIVE derivează 1X2 din goluri/xG (Poisson independent, etichetă "
+    "DERIVED), nu din Dixon–Coles/Elo Excel. Cornere rămân calculate în Microsoft Excel."
 )
 st.caption("Mod date: **LIVE (FootyStats)**")
 
@@ -381,6 +390,35 @@ if "last_result" in st.session_state:
             use_container_width=True,
             hide_index=True,
             column_order=list(over05_display[0].keys()) if over05_display else None,
+        )
+
+    dc_rows = [r for r in result_rows if r.get("model_id") == "double_chance"]
+    if dc_rows:
+        st.subheader("Recomandare finală Șansă Dublă")
+        st.caption(
+            "1X2 LIVE este DERIVED din goluri/xG (Poisson independent). "
+            "Nu este Dixon–Coles sau Elo din workbook; piața rămâne ancora de 25%. "
+            "Market Direction / Protected Strength / Draw Gate / P0 final sunt controale "
+            "de input, nu verdictul: verdictul final este în coloana Verdict."
+        )
+        show_all_dc = st.toggle(
+            "Afișează toate selecțiile (inclusiv WATCH și NO BET)",
+            value=False,
+            key="dc_show_all",
+            help=(
+                "Implicit apar doar selecțiile eligibile pentru clasament (AA=YES) "
+                "sau cu P0 final PASS/PRUDENT. Toate cele trei selecții rămân calculate "
+                "și exportate în CSV."
+            ),
+        )
+        dc_display = ui_tables.double_chance_summary_rows(
+            dc_rows, fmt_prob=_fmt_prob, fmt_score=_fmt_score, show_all=show_all_dc
+        )
+        st.dataframe(
+            dc_display,
+            use_container_width=True,
+            hide_index=True,
+            column_order=list(dc_display[0].keys()) if dc_display else None,
         )
 
     validation_rows = ui_tables.validation_summary_rows(

@@ -1,0 +1,407 @@
+[
+  {
+    "cell": "B4",
+    "name": "Min_P_DC_Strong",
+    "value": 0.82,
+    "unit": "prob.",
+    "role": "Prag P ajustată pentru DEFENSIV",
+    "note": "Configurabil prin backtest",
+    "usage": "activ"
+  },
+  {
+    "cell": "B5",
+    "name": "Min_P_DC_Prudent",
+    "value": 0.76,
+    "unit": "prob.",
+    "role": "Prag PRUDENT 1X/X2",
+    "note": "Prag de probabilitate pentru PRUDENT; nivelul de risc are precedență.",
+    "usage": "activ"
+  },
+  {
+    "cell": "B6",
+    "name": "Max_Loss_Risk_Strong",
+    "value": 0.18,
+    "unit": "prob.",
+    "role": "ISTORIC – fără hard gate activ",
+    "note": "Control înlocuit de Market Direction, riscul conservator și selector.",
+    "usage": "istoric"
+  },
+  {
+    "cell": "B7",
+    "name": "Max_Loss_Risk_Prudent",
+    "value": 0.24,
+    "unit": "prob.",
+    "role": "ISTORIC – fără hard gate activ",
+    "note": "Control înlocuit de Market Direction, riscul conservator și selector.",
+    "usage": "istoric"
+  },
+  {
+    "cell": "B8",
+    "name": "Max_Draw_Risk_12_Strong",
+    "value": 0.2,
+    "unit": "prob.",
+    "role": "Prag PASS pentru Draw Gate",
+    "note": "max(P egal model + haircut unic, P egal piață); DEFENSIV cere și nivel 1.",
+    "usage": "activ"
+  },
+  {
+    "cell": "B9",
+    "name": "Max_Draw_Risk_12_Prudent",
+    "value": 0.23,
+    "unit": "prob.",
+    "role": "Max. P_draw_adj pentru 12 PRUDENT",
+    "note": "23–26% = WATCH; >26% = NO BET",
+    "usage": "activ"
+  },
+  {
+    "cell": "B10",
+    "name": "Max_DC_Market_Gap",
+    "value": 0.07,
+    "unit": "prob.",
+    "role": "Diagnostic model–piață",
+    "note": "Nu impune singur WATCH/NO BET.",
+    "usage": "diagnostic"
+  },
+  {
+    "cell": "B11",
+    "name": "Min_Edge",
+    "value": 0.025,
+    "unit": "prob.",
+    "role": "ISTORIC – Edge informativ",
+    "note": "Nu participă la verdictul tehnic.",
+    "usage": "istoric neutilizat"
+  },
+  {
+    "cell": "B12",
+    "name": "Min_EV_DEPRECATED",
+    "value": 0,
+    "unit": null,
+    "role": "EV neutilizat",
+    "note": "Nu participă la verdictul tehnic.",
+    "usage": "istoric neutilizat"
+  },
+  {
+    "cell": "B13",
+    "name": "Uncertainty_Haircut_A",
+    "value": 0.01,
+    "unit": "prob.",
+    "role": "Haircut confidence A",
+    "note": "Date foarte bune",
+    "usage": "activ"
+  },
+  {
+    "cell": "B14",
+    "name": "Uncertainty_Haircut_B",
+    "value": 0.025,
+    "unit": "prob.",
+    "role": "Haircut confidence B",
+    "note": "Date bune",
+    "usage": "activ"
+  },
+  {
+    "cell": "B15",
+    "name": "Uncertainty_Haircut_C",
+    "value": 0.05,
+    "unit": "prob.",
+    "role": "Haircut confidence C",
+    "note": "Date mediocre",
+    "usage": "activ"
+  },
+  {
+    "cell": "B16",
+    "name": "Draw_00_11_Concentration_Strong",
+    "value": 0.65,
+    "unit": "share draw",
+    "role": "Diagnostic concentrație egal",
+    "note": "Nu constituie un hard gate suplimentar.",
+    "usage": "diagnostic"
+  },
+  {
+    "cell": "B17",
+    "name": "Small_Sample_N",
+    "value": 8,
+    "unit": "meciuri",
+    "role": "Prag eșantion mic",
+    "note": "Prior/shrinkage documentat în modelele externe când N < 8.",
+    "usage": "activ"
+  },
+  {
+    "cell": "B18",
+    "name": "Recent_Window",
+    "value": 5,
+    "unit": "meciuri",
+    "role": "Formă recentă",
+    "note": "Nu înlocuiește sezonul",
+    "usage": "informativ neutilizat"
+  },
+  {
+    "cell": "B20",
+    "name": "MarketDir_PASS_Max",
+    "value": 0.3,
+    "unit": "prob.",
+    "role": "Market Direction PASS 1X/X2",
+    "note": "Pmarket(outcome exclus) ≤30%",
+    "usage": "activ"
+  },
+  {
+    "cell": "B21",
+    "name": "MarketDir_PRUDENT_Max",
+    "value": 0.35,
+    "unit": "prob.",
+    "role": "Market Direction PRUDENT",
+    "note": "30–35%; >35% = hard FAIL",
+    "usage": "activ"
+  },
+  {
+    "cell": "B22",
+    "name": "Protected_Strength_Tolerance",
+    "value": 0.05,
+    "unit": "prob.",
+    "role": "Toleranță protected-side",
+    "note": "Protected side poate fi max. 5pp sub outcome exclus înainte de FAIL",
+    "usage": "activ"
+  },
+  {
+    "cell": "B23",
+    "name": "Quant_Override_Min_ModelAdv",
+    "value": 0.07,
+    "unit": "prob.",
+    "role": "Override Protected Strength",
+    "note": "Necesită motiv cantitativ + avantaj model ≥7pp; nu poate suprascrie Market Direction FAIL",
+    "usage": "activ"
+  },
+  {
+    "cell": "B24",
+    "name": "Draw_WATCH_Max",
+    "value": 0.26,
+    "unit": "prob.",
+    "role": "Limită WATCH pentru 12",
+    "note": "23–26% WATCH; >26% NO BET",
+    "usage": "activ"
+  },
+  {
+    "cell": "B25",
+    "name": "EarlySeason_Extra_Haircut",
+    "value": 0.02,
+    "unit": "prob.",
+    "role": "Haircut suplimentar early season",
+    "note": "Se adaugă dacă min sample H/A < Small_Sample_N",
+    "usage": "activ"
+  },
+  {
+    "cell": "B26",
+    "name": "AwayFav_Strong_Threshold",
+    "value": 0.55,
+    "unit": "prob.",
+    "role": "Favorit puternic în deplasare",
+    "note": "Pmarket(2) ≥55%",
+    "usage": "activ"
+  },
+  {
+    "cell": "B27",
+    "name": "AwayFav_Risk_Context1",
+    "value": 5,
+    "unit": "puncte",
+    "role": "Surcharge risc context negativ=1",
+    "note": "+5 Risk Score",
+    "usage": "activ"
+  },
+  {
+    "cell": "B28",
+    "name": "AwayFav_Risk_Context2",
+    "value": 10,
+    "unit": "puncte",
+    "role": "Surcharge risc context negativ=2",
+    "note": "+10 Risk Score",
+    "usage": "activ"
+  },
+  {
+    "cell": "B29",
+    "name": "WalkForward_MinN_Family",
+    "value": 30,
+    "unit": "pariuri",
+    "role": "Minim promovare prag",
+    "note": "Separat 1X / X2 / 12",
+    "usage": "monitorizare"
+  },
+  {
+    "cell": "B30",
+    "name": "Calibration_Gap_Warn",
+    "value": 0.03,
+    "unit": "prob.",
+    "role": "Avertizare calibrare",
+    "note": "|HitRate - Avg P_adj| >3pp => recalibrare",
+    "usage": "monitorizare"
+  },
+  {
+    "cell": "B31",
+    "name": "Probability_Sum_Tolerance",
+    "value": 0.02,
+    "unit": "prob.",
+    "role": "Toleranță sumă 1X2",
+    "note": "Toleranța existentă; valorile individuale rămân între 0 și 1.",
+    "usage": "activ"
+  },
+  {
+    "cell": "B32",
+    "name": "Weight_Scoreline",
+    "value": 0.5,
+    "unit": "pondere",
+    "role": "Model de scor",
+    "note": "Pondere existentă",
+    "usage": "activ"
+  },
+  {
+    "cell": "B33",
+    "name": "Weight_Strength",
+    "value": 0.25,
+    "unit": "pondere",
+    "role": "Model de forță",
+    "note": "Pondere existentă",
+    "usage": "activ"
+  },
+  {
+    "cell": "B34",
+    "name": "Weight_Market",
+    "value": 0.25,
+    "unit": "pondere",
+    "role": "Piață 1X2 de-vig",
+    "note": "Pondere existentă",
+    "usage": "activ"
+  },
+  {
+    "cell": "B35",
+    "name": "Risk_Failure_1X_X2",
+    "value": 180,
+    "unit": "coef.",
+    "role": "Risk Score 1X/X2",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B36",
+    "name": "Risk_Haircut_1X_X2",
+    "value": 200,
+    "unit": "coef.",
+    "role": "Risk Score 1X/X2",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B37",
+    "name": "Risk_Failure_12",
+    "value": 200,
+    "unit": "coef.",
+    "role": "Risk Score 12",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B38",
+    "name": "Risk_Haircut_12",
+    "value": 120,
+    "unit": "coef.",
+    "role": "Risk Score 12",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B39",
+    "name": "Risk_Level1_Max",
+    "value": 20,
+    "unit": "puncte",
+    "role": "Nivel 1",
+    "note": "După rotunjirea scorului",
+    "usage": "activ"
+  },
+  {
+    "cell": "B40",
+    "name": "Risk_Level2_Max",
+    "value": 40,
+    "unit": "puncte",
+    "role": "Nivel 2",
+    "note": "După rotunjirea scorului",
+    "usage": "activ"
+  },
+  {
+    "cell": "B41",
+    "name": "Risk_Level3_Max",
+    "value": 60,
+    "unit": "puncte",
+    "role": "Nivel 3",
+    "note": "După rotunjirea scorului",
+    "usage": "activ"
+  },
+  {
+    "cell": "B42",
+    "name": "Risk_Level4_Max",
+    "value": 80,
+    "unit": "puncte",
+    "role": "Nivel 4",
+    "note": "Peste 80: nivel 5",
+    "usage": "activ"
+  },
+  {
+    "cell": "B43",
+    "name": "Risk_Score_Max",
+    "value": 100,
+    "unit": "puncte",
+    "role": "Plafon scor",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B44",
+    "name": "Prudent_Gate_Surcharge",
+    "value": 10,
+    "unit": "puncte",
+    "role": "Penalizare gate PRUDENT",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B45",
+    "name": "Draw_Watch_Surcharge",
+    "value": 35,
+    "unit": "puncte",
+    "role": "Penalizare Draw WATCH",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B46",
+    "name": "Gate_Fail_Surcharge",
+    "value": 60,
+    "unit": "puncte",
+    "role": "Penalizare FAIL",
+    "note": "Coeficient existent",
+    "usage": "activ"
+  },
+  {
+    "cell": "B47",
+    "name": "Risk_Level_Max",
+    "value": 5,
+    "unit": "nivel",
+    "role": "Plafon nivel",
+    "note": "Nivel 5: WATCH / NO BET",
+    "usage": "neutilizat direct; formulele folosesc literalul 5"
+  },
+  {
+    "cell": "B48",
+    "name": "Fragility_Material_Count",
+    "value": 2,
+    "unit": "semnale",
+    "role": "Prag MATERIAL",
+    "note": "Numărul existent de semnale DA",
+    "usage": "activ"
+  },
+  {
+    "cell": "B49",
+    "name": "Fragility_Level_Surcharge",
+    "value": 1,
+    "unit": "nivel",
+    "role": "Majorare MATERIAL",
+    "note": "Majorarea existentă",
+    "usage": "activ"
+  }
+]

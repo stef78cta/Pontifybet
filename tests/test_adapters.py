@@ -53,6 +53,32 @@ def test_double_chance_single_match(tmp_path: Path):
     wb = load_workbook(dest)
     assert wb["Input_Meci"]["B4"].value == "Arsenal"
     assert wb["Input_Meci"]["C4"].value == "Chelsea"
+    assert wb["Model_1X2"]["B6"].value is not None
+    assert wb["Surse_Date"]["C6"].value == "DERIVED"
+    assert wb["Surse_Date"]["G9"].value is None or str(wb["Surse_Date"]["G9"].value).startswith("=")
+    assert wb["Input_Meci"]["G61"].value not in {None, "VERIFICARE NECESARĂ – NO RANK"}
+    assert wb["Input_Meci"]["A60"].value == "Selecție"
+    wb.close()
+
+
+def test_double_chance_small_sample_writes_real_prior_row(tmp_path: Path):
+    client = MockFootyStatsClient()
+    md = client.enrich_match(client.matches_by_date("2026-03-15")[0])
+    md.home.matches_played_home.value = 6
+    md.away.matches_played_away.value = 5
+    adapter = DoubleChanceAdapter()
+    dest = tmp_path / "dc_small.xlsx"
+    adapter.write_matches([md], dest)
+    wb = load_workbook(dest)
+    assert wb["Surse_Date"]["C9"].value == "SMALL SAMPLE"
+    assert wb["Surse_Date"]["C10"].value == "PRIOR / SHRINKAGE"
+    assert wb["Surse_Date"]["K10"].value == "INTEGRAT IN MODELE"
+    assert wb["Surse_Date"]["G10"].value == md.league_avg_gf_home.n
+    assert wb["Surse_Date"]["H10"].value == md.league_avg_gf_away.n
+    assert wb["Surse_Date"]["G10"].value != 30
+    assert wb["Input_Meci"]["B36"].value == 6
+    assert wb["Input_Meci"]["C36"].value == 5
+    assert wb["Input_Meci"]["G61"].value not in {None, "VERIFICARE NECESARĂ – NO RANK"}
     wb.close()
 
 

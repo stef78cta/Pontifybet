@@ -120,6 +120,119 @@ def write_over05_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -> Path 
     return path
 
 
+def write_double_chance_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -> Path | None:
+    """Scrie verdicturile Șansă Dublă calculate în Python, câte un rând pe selecție."""
+    official = [r for r in rows if r.get("model_id") == "double_chance"]
+    if not official:
+        return None
+    path = run_dir / "double_chance_rezultate.csv"
+    numeric_fields = (
+        "level",
+        "score",
+        "risk_score_before_cap",
+        "p_model",
+        "p_adj",
+        "p_market",
+        "pfail_model",
+        "pfail_market",
+        "pfail_dc",
+        "haircut_base",
+        "haircut_early",
+        "haircut_total",
+        "risk_failure_component",
+        "risk_haircut_component",
+        "prudent_gate_surcharge",
+        "draw_gate_surcharge",
+        "away_favorite_surcharge",
+        "gate_fail_surcharge",
+    )
+    text_fields = (
+        "market_direction",
+        "protected_strength",
+        "protected_strength_override",
+        "draw_gate",
+        "p0_final",
+        "confidence",
+        "release",
+        "ranking_eligible",
+        "defensive_eligible",
+    )
+    header = [
+        "ora",
+        "liga",
+        "match_id",
+        "echipe",
+        "selectie",
+        "verdict_N",
+        "nivel_M",
+        "scor_L",
+        "scor_brut",
+        "p_model_B",
+        "p_adj_F",
+        "p_market_H",
+        "pfail_model_D",
+        "pfail_market_X",
+        "pfail_dc_Y",
+        "haircut_baza",
+        "haircut_early",
+        "haircut_total_E",
+        "risk_failure",
+        "risk_haircut",
+        "surcharge_prudent",
+        "surcharge_draw",
+        "surcharge_away_fav",
+        "surcharge_fail",
+        "market_direction_O",
+        "protected_strength_P",
+        "ps_override_B37_B38",
+        "draw_gate_Q",
+        "p0_final_U",
+        "confidence_S",
+        "release_AD",
+        "eligibil_AA",
+        "defensiv_AE",
+        "esantion_C9",
+        "prior_C10",
+        "prior_metoda_I10",
+    ]
+    lines = [",".join(header)]
+
+    def number(value: object) -> str:
+        return "" if value is None or value == "" else str(value)
+
+    def quoted(value: object) -> str:
+        return '"' + str(value or "").replace('"', "'") + '"'
+
+    for row in official:
+        prefix = [
+            quoted(row.get("ora_bucuresti")),
+            quoted(row.get("liga")),
+            str(row.get("match_id") or ""),
+            quoted(row.get("echipe")),
+        ]
+        context = [
+            quoted(row.get("dc_sample_status")),
+            quoted(row.get("dc_prior_status")),
+            quoted(row.get("dc_prior_method")),
+        ]
+        selections = row.get("dc_selections") or []
+        if not selections:
+            middle = [quoted(""), quoted(row.get("recommendation")), number(row.get("risk_level"))]
+            padding = [""] * (len(header) - len(prefix) - len(middle) - len(context))
+            lines.append(",".join([*prefix, *middle, *padding, *context]))
+            continue
+        for sel in selections:
+            values = [
+                str(sel.get("selection") or ""),
+                quoted(sel.get("verdict")),
+                *[number(sel.get(name)) for name in numeric_fields],
+                *[quoted(sel.get(name)) for name in text_fields],
+            ]
+            lines.append(",".join([*prefix, *values, *context]))
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
 def zip_outputs(run_dir: Path, zip_name: str = "pontifybet_export.zip") -> Path:
     zip_path = run_dir / zip_name
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:

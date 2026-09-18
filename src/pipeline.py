@@ -13,6 +13,7 @@ from src.adapters.over05 import Over05Adapter
 from src.api.client import current_season_id
 from src.api.factory import get_client
 from src.api.mock import MockFootyStatsClient
+from src.engines.double_chance import compute_double_chance, match_to_double_chance_inputs
 from src.engines.over05 import compute_over05, match_to_over05_inputs
 from src.excel.generator import cleanup_run_dir, make_run_dir, write_validation_report, zip_outputs
 from src.excel import generator as excel_generator
@@ -280,6 +281,25 @@ def run_analysis(
                         row["motiv"] = row["motiv"] or f"Motor Over 0.5: {exc}"
                     if not row["recommendation"]:
                         row["recommendation"] = "WATCH / NO BET"
+                if model_id == "double_chance":
+                    try:
+                        mapping = match_to_double_chance_inputs(md)
+                        official = compute_double_chance(mapping)
+                        row["dc_selections"] = official.payload()
+                        row["recommendation"] = official.summary_recommendation()
+                        row["model_g0"] = official.by_code("1X").release
+                        row["risk_level"] = official.by_code("1X").level
+                        row["dc_sample_status"] = mapping.get("Surse_Date!C9")
+                        row["dc_prior_status"] = mapping.get("Surse_Date!C10")
+                        row["dc_prior_method"] = mapping.get("Surse_Date!I10")
+                        row["dc_prior_n_home"] = mapping.get("Surse_Date!G10")
+                        row["dc_prior_n_away"] = mapping.get("Surse_Date!H10")
+                        row["dc_sample_n_home"] = mapping.get("Input_Meci!B36")
+                        row["dc_sample_n_away"] = mapping.get("Input_Meci!C36")
+                    except Exception as exc:
+                        row["recommendation"] = "EROARE MOTOR"
+                        row["model_g0"] = "FAIL"
+                        row["motiv"] = row["motiv"] or f"Motor Șansă Dublă: {exc}"
                 rows.append(row)
                 if not blocked:
                     allowed_by_model[model_id].append(md)
@@ -314,6 +334,8 @@ def run_analysis(
         write_validation_report(run_dir, merged.to_dict())
         if hasattr(excel_generator, "write_over05_results_csv"):
             excel_generator.write_over05_results_csv(run_dir, rows)
+        if hasattr(excel_generator, "write_double_chance_results_csv"):
+            excel_generator.write_double_chance_results_csv(run_dir, rows)
         prog("Creez arhiva ZIP…", 0.9)
         zip_path = zip_outputs(run_dir)
         prog("Gata.", 1.0)

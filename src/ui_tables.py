@@ -56,6 +56,81 @@ def over05_summary_rows(
     return out
 
 
+def is_double_chance_shortlist(selection: dict[str, Any]) -> bool:
+    """Selecțiile care intră în view-ul principal.
+
+    Conform Excel: AA=YES (eligibil clasament) sau P0 final încă permisiv.
+    Restul rămân calculate și vizibile în audit view, nu sunt șterse.
+    """
+    if str(selection.get("ranking_eligible") or "").upper() == "YES":
+        return True
+    return str(selection.get("p0_final") or "").upper() in {"PASS", "PRUDENT"}
+
+
+def double_chance_summary_rows(
+    rows: list[dict[str, Any]],
+    *,
+    fmt_prob: Callable[[Any], str],
+    fmt_score: Callable[[Any], str],
+    show_all: bool = True,
+) -> list[dict[str, Any]]:
+    """Un rând pe selecție 1X / X2 / 12, cu lanțul complet Excel.
+
+    Controalele (Market Direction, Protected Strength, Draw Gate, P0 final) sunt
+    coloane distincte de `Nivel` și `Verdict`: un control PRUDENT nu înseamnă
+    verdict PRUDENT. `show_all=False` păstrează doar shortlist-ul.
+    """
+    out: list[dict[str, Any]] = []
+    for r in rows:
+        if r.get("model_id") != "double_chance":
+            continue
+        selections = r.get("dc_selections") or [
+            {
+                "selection": "",
+                "verdict": r.get("recommendation"),
+                "level": r.get("risk_level"),
+                "release": r.get("model_g0"),
+            }
+        ]
+        for sel in selections:
+            if not show_all and not is_double_chance_shortlist(sel):
+                continue
+            out.append(
+                {
+                    "Oră de începere": r.get("ora_bucuresti") or "—",
+                    "Ligă": r.get("liga") or "—",
+                    "Echipe": r["echipe"],
+                    "Selecție": sel.get("selection") or "—",
+                    "Verdict": sel.get("verdict") or "—",
+                    "Nivel": sel.get("level") if sel.get("level") is not None else "—",
+                    "Scor": fmt_score(sel.get("score")) or "—",
+                    "Scor brut": fmt_score(sel.get("risk_score_before_cap")) or "—",
+                    "P_model": fmt_prob(sel.get("p_model")) or "—",
+                    "P_adj": fmt_prob(sel.get("p_adj")) or "—",
+                    "P_market": fmt_prob(sel.get("p_market")) or "—",
+                    "Pfail model": fmt_prob(sel.get("pfail_model")) or "—",
+                    "Pfail piață": fmt_prob(sel.get("pfail_market")) or "—",
+                    "Pfail DC": fmt_prob(sel.get("pfail_dc")) or "—",
+                    "Haircut bază": fmt_prob(sel.get("haircut_base")) or "—",
+                    "Haircut early": fmt_prob(sel.get("haircut_early")) or "—",
+                    "Haircut total": fmt_prob(sel.get("haircut_total")) or "—",
+                    "Market Direction": sel.get("market_direction") or "—",
+                    "Protected Strength": sel.get("protected_strength") or "—",
+                    "PS override": sel.get("protected_strength_override") or "—",
+                    "Draw Gate": sel.get("draw_gate") or "—",
+                    "P0 final": sel.get("p0_final") or "—",
+                    "Confidence": sel.get("confidence") or "—",
+                    "Stare date": sel.get("release") or r.get("model_g0") or "—",
+                    "Eșantion": r.get("dc_sample_status") or "—",
+                    "Prior": r.get("dc_prior_status") or "—",
+                    "Eligibil AA": sel.get("ranking_eligible") or "—",
+                    "DEFENSIV AE": sel.get("defensive_eligible") or "—",
+                    "Motivație": sel.get("motivation") or "—",
+                }
+            )
+    return out
+
+
 def validation_summary_rows(
     rows: list[dict[str, Any]],
     *,

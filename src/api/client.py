@@ -94,37 +94,56 @@ def _under05_count(stats: dict[str, Any], n_int: int | None) -> Any:
     return None
 
 
-def league_goal_averages(teams: list[dict[str, Any]]) -> tuple[float | None, float | None, float | None]:
+def league_goal_averages(
+    teams: list[dict[str, Any]],
+) -> tuple[float | None, float | None, float | None, float | None, float | None]:
     """Medii AJ/AK/AL din league-teams: goluri pe meci gazde, oaspeți și total.
 
     Agregare din payload-ul oficial, nu valori inventate. AL = AJ + AK când ambele există.
+    N prior H/A = suma seasonMatchesPlayed; dacă meciurile lipsesc, numărul de echipe cu rată.
     """
     home_rates: list[float] = []
     away_rates: list[float] = []
+    home_matches: list[float] = []
+    away_matches: list[float] = []
     for team in teams:
         stats = team.get("stats") if isinstance(team, dict) else None
         if not isinstance(stats, dict):
             continue
+        matches_home = _as_number(stats.get("seasonMatchesPlayed_home"))
+        matches_away = _as_number(stats.get("seasonMatchesPlayed_away"))
         home_avg = _first_number(stats.get("seasonScoredAVG_home"))
         if home_avg is None:
             goals_home = _first_number(stats.get("seasonScoredNum_home"), stats.get("seasonGoals_home"))
-            matches_home = _as_number(stats.get("seasonMatchesPlayed_home"))
             if goals_home is not None and matches_home is not None and matches_home > 0:
                 home_avg = goals_home / matches_home
         away_avg = _first_number(stats.get("seasonScoredAVG_away"))
         if away_avg is None:
             goals_away = _first_number(stats.get("seasonScoredNum_away"), stats.get("seasonGoals_away"))
-            matches_away = _as_number(stats.get("seasonMatchesPlayed_away"))
             if goals_away is not None and matches_away is not None and matches_away > 0:
                 away_avg = goals_away / matches_away
         if home_avg is not None:
             home_rates.append(home_avg)
+            if matches_home is not None and matches_home > 0:
+                home_matches.append(matches_home)
         if away_avg is not None:
             away_rates.append(away_avg)
+            if matches_away is not None and matches_away > 0:
+                away_matches.append(matches_away)
     avg_home = sum(home_rates) / len(home_rates) if home_rates else None
     avg_away = sum(away_rates) / len(away_rates) if away_rates else None
     avg_total = (avg_home + avg_away) if avg_home is not None and avg_away is not None else None
-    return avg_home, avg_away, avg_total
+    n_home = sum(home_matches) if home_matches else (float(len(home_rates)) if home_rates else None)
+    n_away = sum(away_matches) if away_matches else (float(len(away_rates)) if away_rates else None)
+    return avg_home, avg_away, avg_total, n_home, n_away
+
+
+def _league_n(raw: Any) -> int | None:
+    """N prior din league-teams: doar număr pozitiv real, nu un 30 inventat."""
+    number = _as_number(raw)
+    if number is None or number <= 0:
+        return None
+    return int(number)
 
 
 def _user_message_for_failure(payload: dict[str, Any], status_code: int, endpoint: str) -> str:
@@ -399,7 +418,7 @@ class FootyStatsClient:
         a5 = self.last_x(int(away_id), 5) if not _unavailable(away_id) else {}
         h10 = self.last_x(int(home_id), 10) if not _unavailable(home_id) else {}
         a10 = self.last_x(int(away_id), 10) if not _unavailable(away_id) else {}
-        avg_home, avg_away, avg_total = league_goal_averages(list(teams.values()))
+        avg_home, avg_away, avg_total, n_home, n_away = league_goal_averages(list(teams.values()))
         md = self.build_match_data(
             match,
             home,
@@ -412,6 +431,8 @@ class FootyStatsClient:
             league_avg_gf_home=avg_home,
             league_avg_gf_away=avg_away,
             league_avg_gf_total=avg_total,
+            league_sample_n_home=n_home,
+            league_sample_n_away=n_away,
         )
         md.source_mode = "live"
         return md
@@ -429,6 +450,8 @@ class FootyStatsClient:
         league_avg_gf_home: Any = None,
         league_avg_gf_away: Any = None,
         league_avg_gf_total: Any = None,
+        league_sample_n_home: Any = None,
+        league_sample_n_away: Any = None,
     ) -> MatchData:
         """Construiește MatchData din payload-uri FootyStats."""
         now = datetime.now(timezone.utc)
@@ -585,13 +608,32 @@ class FootyStatsClient:
             odds_ft_over05=indicator_from_raw(match.get("odds_ft_over05"), unit="decimal_odds", endpoint="todays-matches", extracted_at=now),
             odds_ft_under05=indicator_from_raw(match.get("odds_ft_under05"), unit="decimal_odds", endpoint="todays-matches", extracted_at=now),
             league_avg_gf_home=indicator_from_raw(
-                league_avg_gf_home, unit="goals", endpoint="league-teams", method="derived", extracted_at=now
+                league_avg_gf_home,
+                unit="goals",
+                endpoint="league-teams",
+                method="derived",
+                n=_league_n(league_sample_n_home),
+                extracted_at=now,
             ),
             league_avg_gf_away=indicator_from_raw(
-                league_avg_gf_away, unit="goals", endpoint="league-teams", method="derived", extracted_at=now
+                league_avg_gf_away,
+                unit="goals",
+                endpoint="league-teams",
+                method="derived",
+                n=_league_n(league_sample_n_away),
+                extracted_at=now,
             ),
             league_avg_gf_total=indicator_from_raw(
-                league_avg_gf_total, unit="goals", endpoint="league-teams", method="derived", extracted_at=now
+                league_avg_gf_total,
+                unit="goals",
+                endpoint="league-teams",
+                method="derived",
+                n=_league_n(
+                    None
+                    if league_sample_n_home is None and league_sample_n_away is None
+                    else (league_sample_n_home or 0) + (league_sample_n_away or 0)
+                ),
+                extracted_at=now,
             ),
             round=str(match.get("round") or match.get("game_week") or "") or None,
             source_mode="live",

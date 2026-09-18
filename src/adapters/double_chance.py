@@ -2,13 +2,20 @@
 
 from __future__ import annotations
 
-from datetime import timezone
 from pathlib import Path
 
 from src.adapters.base import BaseAdapter
-from src.excel.generator import unix_to_excel_serial
+from src.engines.double_chance import (
+    compute_double_chance,
+    match_to_double_chance_inputs,
+    python_result_writes,
+)
 from src.excel.integrity import IntegrityError
 from src.models.match_data import MatchData
+
+_PYTHON_RESULT_COORDS = tuple(
+    f"{col}{row}" for row in range(60, 64) for col in ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J")
+)
 
 
 class DoubleChanceAdapter(BaseAdapter):
@@ -17,74 +24,123 @@ class DoubleChanceAdapter(BaseAdapter):
     def build_whitelist(self) -> set[str]:
         wl = super().build_whitelist()
         for cell in (
-            "C5", "B5", "B6", "B7", "B28", "B29", "B30", "B31", "B32", "B33",
-            "B34", "B36", "C36", "B42", "B4", "C4",
+            "B4",
+            "C4",
+            "B5",
+            "C5",
+            "B6",
+            "B7",
+            "B12",
+            "C12",
+            "B13",
+            "C13",
+            "B14",
+            "C14",
+            "B15",
+            "C15",
+            "B16",
+            "C16",
+            "B17",
+            "C17",
+            "B21",
+            "C21",
+            "B22",
+            "C22",
+            "B28",
+            "B29",
+            "B30",
+            "B31",
+            "B32",
+            "B33",
+            "B34",
+            "B36",
+            "C36",
+            "B37",
+            "B38",
+            "B43",
+            "C41",
+            "B42",
+            *_PYTHON_RESULT_COORDS,
         ):
             wl.add(f"Input_Meci!{cell}")
-        # Surse_Date: doar status + sursă pe rânduri fără formulă pe D/G/H
-        for cell in ("C5", "C8", "C9", "D5"):
+        for cell in (
+            "B6",
+            "C6",
+            "D6",
+            "B7",
+            "C7",
+            "D7",
+        ):
+            wl.add(f"Model_1X2!{cell}")
+        for cell in (
+            "C5",
+            "D5",
+            "E5",
+            "F5",
+            "I5",
+            "J5",
+            "C6",
+            "D6",
+            "E6",
+            "F6",
+            "I6",
+            "J6",
+            "C7",
+            "D7",
+            "E7",
+            "F7",
+            "I7",
+            "J7",
+            "C8",
+            "E8",
+            "F8",
+            "I8",
+            "J8",
+            "C9",
+            "D9",
+            "E9",
+            "F9",
+            "I9",
+            "J9",
+            "C10",
+            "D10",
+            "E10",
+            "F10",
+            "G10",
+            "H10",
+            "I10",
+            "J10",
+            "K10",
+            "C11",
+            "D11",
+            "E11",
+            "F11",
+            "I11",
+            "J11",
+            "K11",
+        ):
             wl.add(f"Surse_Date!{cell}")
         return wl
 
     def write_matches(self, matches: list[MatchData], dest: Path) -> Path:
         """Pentru un singur meci — dest este calea fișierului final."""
         if len(matches) != 1:
-            raise IntegrityError("EXPORT BLOCAT. Motiv: adaptorul Șansă Dublă acceptă un singur meci per fișier.")
+            raise IntegrityError(
+                "EXPORT BLOCAT. Motiv: adaptorul Șansă Dublă acceptă un singur meci per fișier."
+            )
         match = matches[0]
         self.prepare_copy(dest)
         writer = self.open_writer(dest)
-
-        def n(ind):
-            return ind.numeric_or_none()
-
-        date_serial = None
-        if match.kickoff_utc is not None:
-            date_serial = unix_to_excel_serial(
-                match.kickoff_utc.replace(tzinfo=timezone.utc).timestamp()
-            )
-
-        o1, ox, o2 = n(match.odds_ft_1), n(match.odds_ft_x), n(match.odds_ft_2)
-        p1 = px = p2 = None
-        odds_1x = odds_x2 = odds_12 = None
-        if o1 and ox and o2 and o1 > 1 and ox > 1 and o2 > 1:
-            inv = (1 / o1) + (1 / ox) + (1 / o2)
-            p1, px, p2 = (1 / o1) / inv, (1 / ox) / inv, (1 / o2) / inv
-            # cote double chance aproximative din prob de-vig
-            odds_1x = 1 / (p1 + px) if (p1 + px) > 0 else None
-            odds_x2 = 1 / (px + p2) if (px + p2) > 0 else None
-            odds_12 = 1 / (p1 + p2) if (p1 + p2) > 0 else None
-
-        writes = {
-            ("Input_Meci", "B4"): match.home.name,
-            ("Input_Meci", "C4"): match.away.name,
-            ("Input_Meci", "B5"): match.competition_name,
-            ("Input_Meci", "C5"): match.competition_name,
-            ("Input_Meci", "B6"): date_serial,
-            ("Input_Meci", "B7"): "NU",
-            ("Input_Meci", "B28"): p1,
-            ("Input_Meci", "B29"): px,
-            ("Input_Meci", "B30"): p2,
-            ("Input_Meci", "B31"): odds_1x,
-            ("Input_Meci", "B32"): odds_x2,
-            ("Input_Meci", "B33"): odds_12,
-            ("Input_Meci", "B36"): n(match.home.matches_played_home),
-            ("Input_Meci", "C36"): n(match.away.matches_played_away),
-            ("Input_Meci", "B34"): "B",
-            ("Input_Meci", "B42"): "FootyStats 1X2",
-            ("Surse_Date", "C5"): "VERIFIED / DERIVED",
-            ("Surse_Date", "D5"): "FootyStats",
-            ("Surse_Date", "C8"): (
-                "VERIFIED / DERIVED"
-                if not match.odds_ft_1.is_unavailable()
-                else "NOT AVAILABLE"
-            ),
-            ("Surse_Date", "C9"): (
-                "AVAILABLE - NOT CHECKED"
-                if (n(match.home.matches_played_home) or 99) < 8
-                else "VERIFIED / DERIVED"
-            ),
-        }
-        for (sheet, cell), value in writes.items():
+        mapping = match_to_double_chance_inputs(match)
+        official = compute_double_chance(mapping)
+        mapping.update(
+            {f"Input_Meci!{coord}": value for coord, value in python_result_writes(official).items()}
+        )
+        if match.competition_name:
+            mapping.setdefault("Input_Meci!C5", match.competition_name)
+        for addr, value in mapping.items():
+            if value is None:
+                continue
+            sheet, cell = addr.split("!", 1)
             writer.write(sheet, cell, value)
-
         return writer.save()

@@ -1,0 +1,117 @@
+{
+  "model": "Sansa Dubla optimizat_V2",
+  "source_filename": "11_model_analiza_pariu_sansadubla_optimizat_V2(1).xlsx",
+  "sha256": "321546054b7199ba1f4f7f96599cb7f6c43a88c526da25e24fa2a31d3235821b",
+  "sheet_count": 15,
+  "formula_count": 3068,
+  "excel_epoch": "1899-12-30",
+  "names": [],
+  "sheets": [
+    {
+      "name": "Parametri",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 230,
+      "formulas": 0
+    },
+    {
+      "name": "Input_Meci",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 101,
+      "formulas": 0
+    },
+    {
+      "name": "Model_1X2",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 65,
+      "formulas": 31
+    },
+    {
+      "name": "Draw_Risk",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 51,
+      "formulas": 14
+    },
+    {
+      "name": "Loss_Risk",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 59,
+      "formulas": 22
+    },
+    {
+      "name": "Double_Chance",
+      "state": "visible",
+      "formatted_dimensions": "A1:AF220",
+      "populated_cells": 129,
+      "formulas": 80
+    },
+    {
+      "name": "Backtest",
+      "state": "visible",
+      "formatted_dimensions": "A1:AH220",
+      "populated_cells": 2835,
+      "formulas": 2800
+    },
+    {
+      "name": "Dashboard",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 58,
+      "formulas": 24
+    },
+    {
+      "name": "P0_Gates_v2",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 36,
+      "formulas": 20
+    },
+    {
+      "name": "Uncertainty_v2",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 50,
+      "formulas": 17
+    },
+    {
+      "name": "WalkForward_Calibration",
+      "state": "visible",
+      "formatted_dimensions": "A1:X220",
+      "populated_cells": 60,
+      "formulas": 39
+    },
+    {
+      "name": "Favorite_Fragility_v4",
+      "state": "visible",
+      "formatted_dimensions": "A1:N20",
+      "populated_cells": 56,
+      "formulas": 9
+    },
+    {
+      "name": "CHANGELOG_VERSIUNI",
+      "state": "visible",
+      "formatted_dimensions": "A1:H33",
+      "populated_cells": 43,
+      "formulas": 0
+    },
+    {
+      "name": "DOCUMENTATIE_MODEL",
+      "state": "visible",
+      "formatted_dimensions": "A1:H131",
+      "populated_cells": 163,
+      "formulas": 0
+    },
+    {
+      "name": "Surse_Date",
+      "state": "visible",
+      "formatted_dimensions": "A1:L25",
+      "populated_cells": 67,
+      "formulas": 12
+    }
+  ],
+  "validation_status": "Formula extraction and independent arithmetic verified; Microsoft Excel recalculation still required on Windows."
+}

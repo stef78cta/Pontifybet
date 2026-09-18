@@ -1,0 +1,6821 @@
+{
+  "scope": "Independent formula evaluation; saved cache is not a fresh Microsoft Excel run. TEXT emulation uses dot decimal.",
+  "tolerance": 1e-12,
+  "comparisons": [
+    {
+      "cell": "BJ4",
+      "ok": true,
+      "cache": 2.7087635820327414,
+      "calculated": 2.7087635820327414,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BK4",
+      "ok": true,
+      "cache": 2.695318373689451,
+      "calculated": 2.695318373689451,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BL4",
+      "ok": true,
+      "cache": 2.6489578808281795,
+      "calculated": 2.6489578808281795,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BM4",
+      "ok": true,
+      "cache": 2.6487763675966214,
+      "calculated": 2.6487763675966214,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BN4",
+      "ok": true,
+      "cache": 2.4444444444444446,
+      "calculated": 2.4444444444444446,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BO4",
+      "ok": true,
+      "cache": 0.8653846153846154,
+      "calculated": 0.8653846153846154,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BP4",
+      "ok": true,
+      "cache": 2.0053335695261145,
+      "calculated": 2.0053335695261145,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BQ4",
+      "ok": true,
+      "cache": 2.568702883845408,
+      "calculated": 2.568702883845408,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BR4",
+      "ok": true,
+      "cache": 1.07,
+      "calculated": 1.07,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BS4",
+      "ok": true,
+      "cache": 2.748512085714587,
+      "calculated": 2.748512085714587,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BT4",
+      "ok": true,
+      "cache": 0.06402305118433504,
+      "calculated": 0.06402305118433504,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BU4",
+      "ok": true,
+      "cache": 1.0385495214000677,
+      "calculated": 1.0385495214000677,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BV4",
+      "ok": true,
+      "cache": 0.07486833187454739,
+      "calculated": 0.07486833187454739,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BW4",
+      "ok": true,
+      "cache": 0.9251316681254527,
+      "calculated": 0.9251316681254527,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BX4",
+      "ok": true,
+      "cache": 1.0809272176643236,
+      "calculated": 1.0809272176643236,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BY4",
+      "ok": true,
+      "cache": 0.8653846153846154,
+      "calculated": 0.8653846153846154,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BZ4",
+      "ok": true,
+      "cache": 0.05974705274083725,
+      "calculated": 0.05974705274083725,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CA4",
+      "ok": true,
+      "cache": 0.03614746830050719,
+      "calculated": 0.03614746830050719,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CB4",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CC4",
+      "ok": true,
+      "cache": 0.9800000000000001,
+      "calculated": 0.9800000000000001,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CD4",
+      "ok": true,
+      "cache": 0.5357386144452715,
+      "calculated": 0.5357386144452715,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CE4",
+      "ok": true,
+      "cache": 72.31477228890543,
+      "calculated": 72.31477228890543,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CF4",
+      "ok": true,
+      "cache": "MEDIU",
+      "calculated": "MEDIU",
+      "abs_difference": null
+    },
+    {
+      "cell": "CG4",
+      "ok": true,
+      "cache": "RECOMANDAT CU PRUDENȚĂ",
+      "calculated": "RECOMANDAT CU PRUDENȚĂ",
+      "abs_difference": null
+    },
+    {
+      "cell": "CH4",
+      "ok": true,
+      "cache": "P(O0,5)=92.5%; λ ajustat=2.75; Confidence=72/100; Edge=6.0%; risc=MEDIU. Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+      "calculated": "P(O0,5)=92.5%; λ ajustat=2.75; Confidence=72/100; Edge=6.0%; risc=MEDIU. Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+      "abs_difference": null
+    },
+    {
+      "cell": "CI4",
+      "ok": true,
+      "cache": "https://footystats.org/ ; https://understat.com/",
+      "calculated": "https://footystats.org/ ; https://understat.com/",
+      "abs_difference": null
+    },
+    {
+      "cell": "DW4",
+      "ok": true,
+      "cache": 1.0357878787878787,
+      "calculated": 1.0357878787878787,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DX4",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DY4",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DZ4",
+      "ok": true,
+      "cache": 0.0721123897129207,
+      "calculated": 0.0721123897129207,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EA4",
+      "ok": true,
+      "cache": 0.9278876102870793,
+      "calculated": 0.9278876102870793,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EB4",
+      "ok": true,
+      "cache": 1.0777167287432685,
+      "calculated": 1.0777167287432685,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EC4",
+      "ok": true,
+      "cache": 0.8653846153846154,
+      "calculated": 0.8653846153846154,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "ED4",
+      "ok": true,
+      "cache": 0.06250299490246392,
+      "calculated": 0.06250299490246392,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EE4",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EF4",
+      "ok": true,
+      "cache": 59.194772288905426,
+      "calculated": 59.194772288905426,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EG4",
+      "ok": true,
+      "cache": 0.0456,
+      "calculated": 0.0456,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EH4",
+      "ok": true,
+      "cache": "93% – standard",
+      "calculated": "93% – standard",
+      "abs_difference": null
+    },
+    {
+      "cell": "EI4",
+      "ok": true,
+      "cache": "WAIT XI – HIGH P",
+      "calculated": "WAIT XI – HIGH P",
+      "abs_difference": null
+    },
+    {
+      "cell": "EJ4",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EK4",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EL4",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "EM4",
+      "ok": true,
+      "cache": "WAIT XI – HIGH P",
+      "calculated": "WAIT XI – HIGH P",
+      "abs_difference": null
+    },
+    {
+      "cell": "EN4",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EO4",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EP4",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "EQ4",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "ER4",
+      "ok": true,
+      "cache": "P v2=92.8% ±4.6%; P0 ZIP=7.2%; Confidence=59/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+      "calculated": "P v2=92.8% ±4.6%; P0 ZIP=7.2%; Confidence=59/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+      "abs_difference": null
+    },
+    {
+      "cell": "ES4",
+      "ok": true,
+      "cache": 20,
+      "calculated": 20,
+      "abs_difference": 0
+    },
+    {
+      "cell": "ET4",
+      "ok": true,
+      "cache": 1.5,
+      "calculated": 1.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EU4",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "FC4",
+      "ok": true,
+      "cache": 1.0588235294117647,
+      "calculated": 1.0588235294117647,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FD4",
+      "ok": true,
+      "cache": 0.96,
+      "calculated": 0.96,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FE4",
+      "ok": true,
+      "cache": 0.6324555320336758,
+      "calculated": 0.6324555320336758,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FF4",
+      "ok": true,
+      "cache": 0.845378028229756,
+      "calculated": 0.845378028229756,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FG4",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FH4",
+      "ok": true,
+      "cache": 0.6964285714285714,
+      "calculated": 0.6964285714285714,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FI4",
+      "ok": true,
+      "cache": 0.7826357823647438,
+      "calculated": 0.7826357823647438,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FJ4",
+      "ok": true,
+      "cache": 0.05643773654116299,
+      "calculated": 0.05643773654116299,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FK4",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FL4",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FM4",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FN4",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "FO4",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FP4",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FQ4",
+      "ok": true,
+      "cache": 1.0869565217391304,
+      "calculated": 1.0869565217391304,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FR4",
+      "ok": true,
+      "cache": 0.05461538461538462,
+      "calculated": 0.05461538461538462,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FS4",
+      "ok": true,
+      "cache": 0.030400000000000205,
+      "calculated": 0.030400000000000205,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FT4",
+      "ok": true,
+      "cache": 59.194772288905426,
+      "calculated": 59.194772288905426,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FU4",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FV4",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "FW4",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FX4",
+      "ok": true,
+      "cache": "P v3=92.0%; P0 v3=5.6%; factor zero=0.78x (SCĂZUT); cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "calculated": "P v3=92.0%; P0 v3=5.6%; factor zero=0.78x (SCĂZUT); cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GC4",
+      "ok": true,
+      "cache": 1.032258064516129,
+      "calculated": 1.032258064516129,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GD4",
+      "ok": true,
+      "cache": 0.923076923076923,
+      "calculated": 0.923076923076923,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GE4",
+      "ok": true,
+      "cache": 1.425,
+      "calculated": 1.425,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GF4",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GG4",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GH4",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GI4",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GJ4",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GK4",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GL4",
+      "ok": true,
+      "cache": 0.05643773654116299,
+      "calculated": 0.05643773654116299,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GM4",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GN4",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GO4",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GP4",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GQ4",
+      "ok": true,
+      "cache": 1.0869565217391304,
+      "calculated": 1.0869565217391304,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GR4",
+      "ok": true,
+      "cache": 0.05461538461538462,
+      "calculated": 0.05461538461538462,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GS4",
+      "ok": true,
+      "cache": 0.030400000000000205,
+      "calculated": 0.030400000000000205,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GT4",
+      "ok": true,
+      "cache": 59.194772288905426,
+      "calculated": 59.194772288905426,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GU4",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GV4",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "GW4",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GX4",
+      "ok": true,
+      "cache": "P v5=92.0%; P0 v5=5.6%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "calculated": "P v5=92.0%; P0 v5=5.6%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GY4",
+      "ok": true,
+      "cache": "VERIFIED / PRIOR / SHRINKAGE",
+      "calculated": "VERIFIED / PRIOR / SHRINKAGE",
+      "abs_difference": null
+    },
+    {
+      "cell": "GZ4",
+      "ok": true,
+      "cache": 9.999999999999998,
+      "calculated": 9.999999999999998,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HA4",
+      "ok": true,
+      "cache": 3.839503807616923,
+      "calculated": 3.839503807616923,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HB4",
+      "ok": true,
+      "cache": 14.000000000000012,
+      "calculated": 14.000000000000012,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HC4",
+      "ok": true,
+      "cache": 9.377513343075528,
+      "calculated": 9.377513343075528,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HD4",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HE4",
+      "ok": true,
+      "cache": 7.870120560697213,
+      "calculated": 7.870120560697213,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HF4",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HG4",
+      "ok": true,
+      "cache": "PASS",
+      "calculated": "PASS",
+      "abs_difference": null
+    },
+    {
+      "cell": "HH4",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HI4",
+      "ok": true,
+      "cache": "DEFENSIV",
+      "calculated": "DEFENSIV",
+      "abs_difference": null
+    },
+    {
+      "cell": "HJ4",
+      "ok": true,
+      "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=3.8; Context=14.0; Uncertainty=9.4; Compound=0.0; Risk Score=7.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "calculated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=3.8; Context=14.0; Uncertainty=9.4; Compound=0.0; Risk Score=7.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "abs_difference": null
+    },
+    {
+      "cell": "HK4",
+      "ok": true,
+      "cache": "DEFENSIV",
+      "calculated": "DEFENSIV",
+      "abs_difference": null
+    },
+    {
+      "cell": "BJ5",
+      "ok": true,
+      "cache": 2.6994982655469304,
+      "calculated": 2.6994982655469304,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BK5",
+      "ok": true,
+      "cache": 2.6745008736010325,
+      "calculated": 2.6745008736010325,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BL5",
+      "ok": true,
+      "cache": 2.599206149143116,
+      "calculated": 2.599206149143116,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BM5",
+      "ok": true,
+      "cache": 2.6112291495737217,
+      "calculated": 2.6112291495737217,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BN5",
+      "ok": true,
+      "cache": 2.5,
+      "calculated": 2.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BO5",
+      "ok": true,
+      "cache": 0.9075194468452895,
+      "calculated": 0.9075194468452895,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BP5",
+      "ok": true,
+      "cache": 2.38075689273177,
+      "calculated": 2.38075689273177,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BQ5",
+      "ok": true,
+      "cache": 2.5606172771793028,
+      "calculated": 2.5606172771793028,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BR5",
+      "ok": true,
+      "cache": 1.092,
+      "calculated": 1.092,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BS5",
+      "ok": true,
+      "cache": 2.796194066679799,
+      "calculated": 2.796194066679799,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BT5",
+      "ok": true,
+      "cache": 0.06104194264881993,
+      "calculated": 0.06104194264881993,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BU5",
+      "ok": true,
+      "cache": 1.038569782585325,
+      "calculated": 1.038569782585325,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BV5",
+      "ok": true,
+      "cache": 0.050717053684296645,
+      "calculated": 0.050717053684296645,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BW5",
+      "ok": true,
+      "cache": 0.9492829463157033,
+      "calculated": 0.9492829463157033,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BX5",
+      "ok": true,
+      "cache": 1.0534266984160376,
+      "calculated": 1.0534266984160376,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BY5",
+      "ok": true,
+      "cache": 0.9075194468452895,
+      "calculated": 0.9075194468452895,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BZ5",
+      "ok": true,
+      "cache": 0.0417634994704138,
+      "calculated": 0.0417634994704138,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CA5",
+      "ok": true,
+      "cache": 0.0157327525578026,
+      "calculated": 0.0157327525578026,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CB5",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CC5",
+      "ok": true,
+      "cache": 0.8200000000000001,
+      "calculated": 0.8200000000000001,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CD5",
+      "ok": true,
+      "cache": 0.7938975561300963,
+      "calculated": 0.7938975561300963,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CE5",
+      "ok": true,
+      "cache": 56.15015601034173,
+      "calculated": 56.15015601034173,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CF5",
+      "ok": true,
+      "cache": "MEDIU",
+      "calculated": "MEDIU",
+      "abs_difference": null
+    },
+    {
+      "cell": "CG5",
+      "ok": true,
+      "cache": "ANALIZĂ NECONCLUDENTĂ",
+      "calculated": "ANALIZĂ NECONCLUDENTĂ",
+      "abs_difference": null
+    },
+    {
+      "cell": "CH5",
+      "ok": true,
+      "cache": "P(O0,5)=94.9%; λ ajustat=2.80; Confidence=56/100; Edge=4.2%; risc=MEDIU. Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea.",
+      "calculated": "P(O0,5)=94.9%; λ ajustat=2.80; Confidence=56/100; Edge=4.2%; risc=MEDIU. Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea.",
+      "abs_difference": null
+    },
+    {
+      "cell": "CI5",
+      "ok": true,
+      "cache": "https://www.transfermarkt.com/ ; https://www.sofascore.com/",
+      "calculated": "https://www.transfermarkt.com/ ; https://www.sofascore.com/",
+      "abs_difference": null
+    },
+    {
+      "cell": "DW5",
+      "ok": true,
+      "cache": 0.995240404040404,
+      "calculated": 0.995240404040404,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DX5",
+      "ok": true,
+      "cache": 1.25,
+      "calculated": 1.25,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DY5",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DZ5",
+      "ok": true,
+      "cache": 0.0696065307877074,
+      "calculated": 0.0696065307877074,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EA5",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EB5",
+      "ok": true,
+      "cache": 1.0869565217391304,
+      "calculated": 1.0869565217391304,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EC5",
+      "ok": true,
+      "cache": 0.9075194468452895,
+      "calculated": 0.9075194468452895,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "ED5",
+      "ok": true,
+      "cache": 0.012480553154710528,
+      "calculated": 0.012480553154710528,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EE5",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EF5",
+      "ok": true,
+      "cache": 32.070156010341734,
+      "calculated": 32.070156010341734,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EG5",
+      "ok": true,
+      "cache": 0.0804,
+      "calculated": 0.0804,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EH5",
+      "ok": true,
+      "cache": "92% – early/regim",
+      "calculated": "92% – early/regim",
+      "abs_difference": null
+    },
+    {
+      "cell": "EI5",
+      "ok": true,
+      "cache": "WAIT XI – HIGH P",
+      "calculated": "WAIT XI – HIGH P",
+      "abs_difference": null
+    },
+    {
+      "cell": "EJ5",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EK5",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EL5",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "EM5",
+      "ok": true,
+      "cache": "WAIT XI – HIGH P",
+      "calculated": "WAIT XI – HIGH P",
+      "abs_difference": null
+    },
+    {
+      "cell": "EN5",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EO5",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EP5",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "EQ5",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "ER5",
+      "ok": true,
+      "cache": "P v2=92.0% ±8.0%; P0 ZIP=7.0%; Confidence=32/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+      "calculated": "P v2=92.0% ±8.0%; P0 ZIP=7.0%; Confidence=32/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+      "abs_difference": null
+    },
+    {
+      "cell": "ES5",
+      "ok": true,
+      "cache": 20,
+      "calculated": 20,
+      "abs_difference": 0
+    },
+    {
+      "cell": "ET5",
+      "ok": true,
+      "cache": 1.5,
+      "calculated": 1.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EU5",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "FC5",
+      "ok": true,
+      "cache": 1.05,
+      "calculated": 1.05,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FD5",
+      "ok": true,
+      "cache": 0.9411764705882354,
+      "calculated": 0.9411764705882354,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FE5",
+      "ok": true,
+      "cache": 1.1832159566199232,
+      "calculated": 1.1832159566199232,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FF5",
+      "ok": true,
+      "cache": 0.5,
+      "calculated": 0.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FG5",
+      "ok": true,
+      "cache": 0.004411764705882337,
+      "calculated": 0.004411764705882337,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FH5",
+      "ok": true,
+      "cache": 1.0178571428571428,
+      "calculated": 1.0178571428571428,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FI5",
+      "ok": true,
+      "cache": 0.9094185684985818,
+      "calculated": 0.9094185684985818,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FJ5",
+      "ok": true,
+      "cache": 0.06330147158710933,
+      "calculated": 0.06330147158710933,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FK5",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FL5",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FM5",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FN5",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "FO5",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FP5",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FQ5",
+      "ok": true,
+      "cache": 1.0869565217391304,
+      "calculated": 1.0869565217391304,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FR5",
+      "ok": true,
+      "cache": 0.012480553154710528,
+      "calculated": 0.012480553154710528,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FS5",
+      "ok": true,
+      "cache": -0.015599999999999947,
+      "calculated": -0.015599999999999947,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FT5",
+      "ok": true,
+      "cache": 32.070156010341734,
+      "calculated": 32.070156010341734,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FU5",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FV5",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "FW5",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FX5",
+      "ok": true,
+      "cache": "P v3=92.0%; P0 v3=6.3%; factor zero=0.91x (SCĂZUT); cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "calculated": "P v3=92.0%; P0 v3=6.3%; factor zero=0.91x (SCĂZUT); cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GC5",
+      "ok": true,
+      "cache": 1.0256410256410258,
+      "calculated": 1.0256410256410258,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GD5",
+      "ok": true,
+      "cache": 0.888888888888889,
+      "calculated": 0.888888888888889,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GE5",
+      "ok": true,
+      "cache": 1.425,
+      "calculated": 1.425,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GF5",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GG5",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GH5",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GI5",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GJ5",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GK5",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GL5",
+      "ok": true,
+      "cache": 0.06330147158710933,
+      "calculated": 0.06330147158710933,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GM5",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GN5",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GO5",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GP5",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GQ5",
+      "ok": true,
+      "cache": 1.0869565217391304,
+      "calculated": 1.0869565217391304,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GR5",
+      "ok": true,
+      "cache": 0.012480553154710528,
+      "calculated": 0.012480553154710528,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GS5",
+      "ok": true,
+      "cache": -0.015599999999999947,
+      "calculated": -0.015599999999999947,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GT5",
+      "ok": true,
+      "cache": 32.070156010341734,
+      "calculated": 32.070156010341734,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GU5",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GV5",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "GW5",
+      "ok": true,
+      "cache": "NU – LINEUP NECONFIRMAT",
+      "calculated": "NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GX5",
+      "ok": true,
+      "cache": "P v5=92.0%; P0 v5=6.3%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "calculated": "P v5=92.0%; P0 v5=6.3%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GY5",
+      "ok": true,
+      "cache": "VERIFIED / PRIOR / SHRINKAGE",
+      "calculated": "VERIFIED / PRIOR / SHRINKAGE",
+      "abs_difference": null
+    },
+    {
+      "cell": "GZ5",
+      "ok": true,
+      "cache": 19.999999999999996,
+      "calculated": 19.999999999999996,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HA5",
+      "ok": true,
+      "cache": 18.755125705715507,
+      "calculated": 18.755125705715507,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HB5",
+      "ok": true,
+      "cache": 43.40000000000002,
+      "calculated": 43.40000000000002,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HC5",
+      "ok": true,
+      "cache": 15.352913280735248,
+      "calculated": 15.352913280735248,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HD5",
+      "ok": true,
+      "cache": 50,
+      "calculated": 50.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HE5",
+      "ok": true,
+      "cache": 24.908034164456684,
+      "calculated": 24.908034164456684,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HF5",
+      "ok": true,
+      "cache": 2,
+      "calculated": 2.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HG5",
+      "ok": true,
+      "cache": "PASS",
+      "calculated": "PASS",
+      "abs_difference": null
+    },
+    {
+      "cell": "HH5",
+      "ok": true,
+      "cache": 2,
+      "calculated": 2.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HI5",
+      "ok": true,
+      "cache": "PRUDENT",
+      "calculated": "PRUDENT",
+      "abs_difference": null
+    },
+    {
+      "cell": "HJ5",
+      "ok": true,
+      "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=20.0; ZM=18.8; Context=43.4; Uncertainty=15.4; Compound=50.0; Risk Score=24.9; Base=2; G0=PASS; Final=2. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "calculated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=20.0; ZM=18.8; Context=43.4; Uncertainty=15.4; Compound=50.0; Risk Score=24.9; Base=2; G0=PASS; Final=2. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "abs_difference": null
+    },
+    {
+      "cell": "HK5",
+      "ok": true,
+      "cache": "PRUDENT",
+      "calculated": "PRUDENT",
+      "abs_difference": null
+    },
+    {
+      "cell": "BJ6",
+      "ok": true,
+      "cache": 2.5067326663693565,
+      "calculated": 2.5067326663693565,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BK6",
+      "ok": true,
+      "cache": 2.5620300895932235,
+      "calculated": 2.5620300895932235,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BL6",
+      "ok": true,
+      "cache": 2.4956439237389603,
+      "calculated": 2.4956439237389603,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BM6",
+      "ok": true,
+      "cache": 2.5441428889413125,
+      "calculated": 2.5441428889413125,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BN6",
+      "ok": true,
+      "cache": 2.6,
+      "calculated": 2.6,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BO6",
+      "ok": true,
+      "cache": 0.8754208754208754,
+      "calculated": 0.8754208754208754,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BP6",
+      "ok": true,
+      "cache": 2.0828142261584754,
+      "calculated": 2.0828142261584754,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BQ6",
+      "ok": true,
+      "cache": 2.4147157964471364,
+      "calculated": 2.4147157964471364,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BR6",
+      "ok": true,
+      "cache": 1.0055,
+      "calculated": 1.0055,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BS6",
+      "ok": true,
+      "cache": 2.427996733327596,
+      "calculated": 2.427996733327596,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BT6",
+      "ok": true,
+      "cache": 0.08821337060235639,
+      "calculated": 0.08821337060235639,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BU6",
+      "ok": true,
+      "cache": 1.0385495214000677,
+      "calculated": 1.0385495214000677,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BV6",
+      "ok": true,
+      "cache": 0.09371046536512302,
+      "calculated": 0.09371046536512302,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BW6",
+      "ok": true,
+      "cache": 0.9062895346348769,
+      "calculated": 0.9062895346348769,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BX6",
+      "ok": true,
+      "cache": 1.1034001406657277,
+      "calculated": 1.1034001406657277,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BY6",
+      "ok": true,
+      "cache": 0.8754208754208754,
+      "calculated": 0.8754208754208754,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BZ6",
+      "ok": true,
+      "cache": 0.030868659214001504,
+      "calculated": 0.030868659214001504,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CA6",
+      "ok": true,
+      "cache": 0.0059813834447135505,
+      "calculated": 0.0059813834447135505,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CB6",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CC6",
+      "ok": true,
+      "cache": 0.9,
+      "calculated": 0.9,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CD6",
+      "ok": true,
+      "cache": 0.6503461201979913,
+      "calculated": 0.6503461201979913,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CE6",
+      "ok": true,
+      "cache": 83.72636861164305,
+      "calculated": 83.72636861164305,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CF6",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "CG6",
+      "ok": true,
+      "cache": "RECOMANDAT CU PRUDENȚĂ",
+      "calculated": "RECOMANDAT CU PRUDENȚĂ",
+      "abs_difference": null
+    },
+    {
+      "cell": "CH6",
+      "ok": true,
+      "cache": "P(O0,5)=90.6%; λ ajustat=2.43; Confidence=84/100; Edge=3.1%; risc=SCĂZUT. Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol.",
+      "calculated": "P(O0,5)=90.6%; λ ajustat=2.43; Confidence=84/100; Edge=3.1%; risc=SCĂZUT. Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol.",
+      "abs_difference": null
+    },
+    {
+      "cell": "CI6",
+      "ok": true,
+      "cache": "https://www.uefa.com/ ; https://theanalyst.com/",
+      "calculated": "https://www.uefa.com/ ; https://theanalyst.com/",
+      "abs_difference": null
+    },
+    {
+      "cell": "DW6",
+      "ok": true,
+      "cache": 1.0137939393939392,
+      "calculated": 1.0137939393939392,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DX6",
+      "ok": true,
+      "cache": 1.25,
+      "calculated": 1.25,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DY6",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DZ6",
+      "ok": true,
+      "cache": 0.10827153348679072,
+      "calculated": 0.10827153348679072,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EA6",
+      "ok": true,
+      "cache": 0.8917284665132093,
+      "calculated": 0.8917284665132093,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EB6",
+      "ok": true,
+      "cache": 1.121417603623386,
+      "calculated": 1.121417603623386,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EC6",
+      "ok": true,
+      "cache": 0.8754208754208754,
+      "calculated": 0.8754208754208754,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "ED6",
+      "ok": true,
+      "cache": 0.016307591092333817,
+      "calculated": 0.016307591092333817,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EE6",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EF6",
+      "ok": true,
+      "cache": 71.32636861164305,
+      "calculated": 71.32636861164305,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EG6",
+      "ok": true,
+      "cache": 0.092,
+      "calculated": 0.092,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EH6",
+      "ok": true,
+      "cache": "92% – early/regim",
+      "calculated": "92% – early/regim",
+      "abs_difference": null
+    },
+    {
+      "cell": "EI6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "EJ6",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EK6",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EL6",
+      "ok": true,
+      "cache": "WATCH – APROAPE DE PRAG",
+      "calculated": "WATCH – APROAPE DE PRAG",
+      "abs_difference": null
+    },
+    {
+      "cell": "EM6",
+      "ok": true,
+      "cache": "Confidence sub 75.",
+      "calculated": "Confidence sub 75.",
+      "abs_difference": null
+    },
+    {
+      "cell": "EN6",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EO6",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EP6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "EQ6",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "ER6",
+      "ok": true,
+      "cache": "P v2=89.2% ±9.2%; P0 ZIP=10.8%; Confidence=71/100; piață reală=DA; EV=n/a; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence sub 75.",
+      "calculated": "P v2=89.2% ±9.2%; P0 ZIP=10.8%; Confidence=71/100; piață reală=DA; EV=n/a; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence sub 75.",
+      "abs_difference": null
+    },
+    {
+      "cell": "ES6",
+      "ok": true,
+      "cache": 20,
+      "calculated": 20,
+      "abs_difference": 0
+    },
+    {
+      "cell": "ET6",
+      "ok": true,
+      "cache": 1.5,
+      "calculated": 1.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EU6",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "FC6",
+      "ok": true,
+      "cache": 0.9375,
+      "calculated": 0.9375,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FD6",
+      "ok": true,
+      "cache": 0.9629629629629629,
+      "calculated": 0.9629629629629629,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FE6",
+      "ok": true,
+      "cache": 0.7999999999999999,
+      "calculated": 0.7999999999999999,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FF6",
+      "ok": true,
+      "cache": 0.7741657386773941,
+      "calculated": 0.7741657386773941,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FG6",
+      "ok": true,
+      "cache": 0.0497685185185186,
+      "calculated": 0.0497685185185186,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FH6",
+      "ok": true,
+      "cache": 0.6642857142857143,
+      "calculated": 0.6642857142857143,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FI6",
+      "ok": true,
+      "cache": 0.8150605681640648,
+      "calculated": 0.8150605681640648,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FJ6",
+      "ok": true,
+      "cache": 0.08824785759973822,
+      "calculated": 0.08824785759973822,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FK6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FL6",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FM6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FN6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FO6",
+      "ok": true,
+      "cache": 0.94,
+      "calculated": 0.94,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FP6",
+      "ok": true,
+      "cache": 0.9117521424002618,
+      "calculated": 0.9117521424002618,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FQ6",
+      "ok": true,
+      "cache": 1.0967893065405019,
+      "calculated": 1.0967893065405019,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FR6",
+      "ok": true,
+      "cache": 0.03633126697938638,
+      "calculated": 0.03633126697938638,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FS6",
+      "ok": true,
+      "cache": 0.012044878064290776,
+      "calculated": 0.012044878064290776,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FT6",
+      "ok": true,
+      "cache": 71.32636861164305,
+      "calculated": 71.32636861164305,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FU6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FV6",
+      "ok": true,
+      "cache": "WATCH – APROAPE DE PRAG",
+      "calculated": "WATCH – APROAPE DE PRAG",
+      "abs_difference": null
+    },
+    {
+      "cell": "FW6",
+      "ok": true,
+      "cache": "Confidence v3 sub 75.",
+      "calculated": "Confidence v3 sub 75.",
+      "abs_difference": null
+    },
+    {
+      "cell": "FX6",
+      "ok": true,
+      "cache": "P v3=91.2%; P0 v3=8.8%; factor zero=0.82x (SCĂZUT); cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v3 sub 75.",
+      "calculated": "P v3=91.2%; P0 v3=8.8%; factor zero=0.82x (SCĂZUT); cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v3 sub 75.",
+      "abs_difference": null
+    },
+    {
+      "cell": "GC6",
+      "ok": true,
+      "cache": 0.9333333333333332,
+      "calculated": 0.9333333333333332,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GD6",
+      "ok": true,
+      "cache": 0.923076923076923,
+      "calculated": 0.923076923076923,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GE6",
+      "ok": true,
+      "cache": 1.4,
+      "calculated": 1.4,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GF6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GG6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GH6",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GI6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GJ6",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GK6",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GL6",
+      "ok": true,
+      "cache": 0.08824785759973822,
+      "calculated": 0.08824785759973822,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GM6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GN6",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GO6",
+      "ok": true,
+      "cache": 0.94,
+      "calculated": 0.94,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GP6",
+      "ok": true,
+      "cache": 0.9117521424002618,
+      "calculated": 0.9117521424002618,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GQ6",
+      "ok": true,
+      "cache": 1.0967893065405019,
+      "calculated": 1.0967893065405019,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GR6",
+      "ok": true,
+      "cache": 0.03633126697938638,
+      "calculated": 0.03633126697938638,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GS6",
+      "ok": true,
+      "cache": 0.012044878064290776,
+      "calculated": 0.012044878064290776,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GT6",
+      "ok": true,
+      "cache": 71.32636861164305,
+      "calculated": 71.32636861164305,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GU6",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GV6",
+      "ok": true,
+      "cache": "WATCH – APROAPE DE PRAG",
+      "calculated": "WATCH – APROAPE DE PRAG",
+      "abs_difference": null
+    },
+    {
+      "cell": "GW6",
+      "ok": true,
+      "cache": "Confidence v5 sub 75.",
+      "calculated": "Confidence v5 sub 75.",
+      "abs_difference": null
+    },
+    {
+      "cell": "GX6",
+      "ok": true,
+      "cache": "P v5=91.2%; P0 v5=8.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v5 sub 75.",
+      "calculated": "P v5=91.2%; P0 v5=8.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v5 sub 75.",
+      "abs_difference": null
+    },
+    {
+      "cell": "GY6",
+      "ok": true,
+      "cache": "VERIFIED / PRIOR / SHRINKAGE",
+      "calculated": "VERIFIED / PRIOR / SHRINKAGE",
+      "abs_difference": null
+    },
+    {
+      "cell": "GZ6",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HA6",
+      "ok": true,
+      "cache": 7.654184489889976,
+      "calculated": 7.654184489889976,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HB6",
+      "ok": true,
+      "cache": 1.100000000000012,
+      "calculated": 1.100000000000012,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HC6",
+      "ok": true,
+      "cache": 8.42145248025683,
+      "calculated": 8.42145248025683,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HD6",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HE6",
+      "ok": true,
+      "cache": 3.886353641167856,
+      "calculated": 3.886353641167856,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HF6",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HG6",
+      "ok": true,
+      "cache": "PASS",
+      "calculated": "PASS",
+      "abs_difference": null
+    },
+    {
+      "cell": "HH6",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HI6",
+      "ok": true,
+      "cache": "DEFENSIV",
+      "calculated": "DEFENSIV",
+      "abs_difference": null
+    },
+    {
+      "cell": "HJ6",
+      "ok": true,
+      "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=0.0; ZM=7.7; Context=1.1; Uncertainty=8.4; Compound=0.0; Risk Score=3.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "calculated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=0.0; ZM=7.7; Context=1.1; Uncertainty=8.4; Compound=0.0; Risk Score=3.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "abs_difference": null
+    },
+    {
+      "cell": "HK6",
+      "ok": true,
+      "cache": "DEFENSIV",
+      "calculated": "DEFENSIV",
+      "abs_difference": null
+    },
+    {
+      "cell": "BJ7",
+      "ok": true,
+      "cache": 2.6545487838134596,
+      "calculated": 2.6545487838134596,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BK7",
+      "ok": true,
+      "cache": 2.680731636599641,
+      "calculated": 2.680731636599641,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BL7",
+      "ok": true,
+      "cache": 2.6455054949771233,
+      "calculated": 2.6455054949771233,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BM7",
+      "ok": true,
+      "cache": 2.6706022224399826,
+      "calculated": 2.6706022224399826,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BN7",
+      "ok": true,
+      "cache": 2.5,
+      "calculated": 2.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BO7",
+      "ok": true,
+      "cache": 0.8817204301075269,
+      "calculated": 0.8817204301075269,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BP7",
+      "ok": true,
+      "cache": 2.134704220354885,
+      "calculated": 2.134704220354885,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BQ7",
+      "ok": true,
+      "cache": 2.487523524208675,
+      "calculated": 2.487523524208675,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BR7",
+      "ok": true,
+      "cache": 1.2015,
+      "calculated": 1.2015,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BS7",
+      "ok": true,
+      "cache": 2.988759514336723,
+      "calculated": 2.988759514336723,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BT7",
+      "ok": true,
+      "cache": 0.05034985627516557,
+      "calculated": 0.05034985627516557,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BU7",
+      "ok": true,
+      "cache": 1.0385495214000677,
+      "calculated": 1.0385495214000677,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BV7",
+      "ok": true,
+      "cache": 0.06421811435285155,
+      "calculated": 0.06421811435285155,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BW7",
+      "ok": true,
+      "cache": 0.9357818856471485,
+      "calculated": 0.9357818856471485,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BX7",
+      "ok": true,
+      "cache": 1.0686250881084762,
+      "calculated": 1.0686250881084762,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BY7",
+      "ok": true,
+      "cache": 0.8817204301075269,
+      "calculated": 0.8817204301075269,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BZ7",
+      "ok": true,
+      "cache": 0.054061455539621606,
+      "calculated": 0.054061455539621606,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CA7",
+      "ok": true,
+      "cache": 0.029360074211863374,
+      "calculated": 0.029360074211863374,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CB7",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CC7",
+      "ok": true,
+      "cache": 0.92,
+      "calculated": 0.92,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CD7",
+      "ok": true,
+      "cache": 0.642794637471636,
+      "calculated": 0.642794637471636,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CE7",
+      "ok": true,
+      "cache": 79.43030347448945,
+      "calculated": 79.43030347448945,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CF7",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "CG7",
+      "ok": true,
+      "cache": "PARIU RECOMANDAT",
+      "calculated": "PARIU RECOMANDAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "CH7",
+      "ok": true,
+      "cache": "P(O0,5)=93.6%; λ ajustat=2.99; Confidence=79/100; Edge=5.4%; risc=SCĂZUT. Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur.",
+      "calculated": "P(O0,5)=93.6%; λ ajustat=2.99; Confidence=79/100; Edge=5.4%; risc=SCĂZUT. Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur.",
+      "abs_difference": null
+    },
+    {
+      "cell": "CI7",
+      "ok": true,
+      "cache": "https://www.uefa.com/ ; https://www.fotmob.com/",
+      "calculated": "https://www.uefa.com/ ; https://www.fotmob.com/",
+      "abs_difference": null
+    },
+    {
+      "cell": "DW7",
+      "ok": true,
+      "cache": 1.0250343434343436,
+      "calculated": 1.0250343434343436,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DX7",
+      "ok": true,
+      "cache": 1.1,
+      "calculated": 1.1,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DY7",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DZ7",
+      "ok": true,
+      "cache": 0.07290198857975591,
+      "calculated": 0.07290198857975591,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EA7",
+      "ok": true,
+      "cache": 0.9270980114202441,
+      "calculated": 0.9270980114202441,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EB7",
+      "ok": true,
+      "cache": 1.078634607864249,
+      "calculated": 1.078634607864249,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EC7",
+      "ok": true,
+      "cache": 0.8817204301075269,
+      "calculated": 0.8817204301075269,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "ED7",
+      "ok": true,
+      "cache": 0.045377581312717186,
+      "calculated": 0.045377581312717186,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EE7",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EF7",
+      "ok": true,
+      "cache": 77.03030347448944,
+      "calculated": 77.03030347448944,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EG7",
+      "ok": true,
+      "cache": 0.041999999999999996,
+      "calculated": 0.041999999999999996,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EH7",
+      "ok": true,
+      "cache": "94% – confirmat",
+      "calculated": "94% – confirmat",
+      "abs_difference": null
+    },
+    {
+      "cell": "EI7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "EJ7",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EK7",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EL7",
+      "ok": true,
+      "cache": "PARIU RECOMANDAT",
+      "calculated": "PARIU RECOMANDAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "EM7",
+      "ok": true,
+      "cache": "G0/Zero-Mass + confidence trecute; EV ignorat.",
+      "calculated": "G0/Zero-Mass + confidence trecute; EV ignorat.",
+      "abs_difference": null
+    },
+    {
+      "cell": "EN7",
+      "ok": true,
+      "cache": 0.01,
+      "calculated": 0.01,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EO7",
+      "ok": true,
+      "cache": 10,
+      "calculated": 10.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EP7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "EQ7",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "ER7",
+      "ok": true,
+      "cache": "P v2=92.7% ±4.2%; P0 ZIP=7.3%; Confidence=77/100; piață reală=DA; EV=n/a; gate=DA; verdict=PARIU RECOMANDAT. G0/Zero-Mass + confidence trecute; EV ignorat.",
+      "calculated": "P v2=92.7% ±4.2%; P0 ZIP=7.3%; Confidence=77/100; piață reală=DA; EV=n/a; gate=DA; verdict=PARIU RECOMANDAT. G0/Zero-Mass + confidence trecute; EV ignorat.",
+      "abs_difference": null
+    },
+    {
+      "cell": "ES7",
+      "ok": true,
+      "cache": 20,
+      "calculated": 20,
+      "abs_difference": 0
+    },
+    {
+      "cell": "ET7",
+      "ok": true,
+      "cache": 1.5,
+      "calculated": 1.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EU7",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "FC7",
+      "ok": true,
+      "cache": 0.9714285714285714,
+      "calculated": 0.9714285714285714,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FD7",
+      "ok": true,
+      "cache": 0.9166666666666667,
+      "calculated": 0.9166666666666667,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FE7",
+      "ok": true,
+      "cache": 0.6480740698407861,
+      "calculated": 0.6480740698407861,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FF7",
+      "ok": true,
+      "cache": 0.8755604237266935,
+      "calculated": 0.8755604237266935,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FG7",
+      "ok": true,
+      "cache": 0.055952380952380976,
+      "calculated": 0.055952380952380976,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FH7",
+      "ok": true,
+      "cache": 0.6214285714285716,
+      "calculated": 0.6214285714285716,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FI7",
+      "ok": true,
+      "cache": 0.7925665385464343,
+      "calculated": 0.7925665385464343,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FJ7",
+      "ok": true,
+      "cache": 0.05777967674180883,
+      "calculated": 0.05777967674180883,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FK7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FL7",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FM7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FN7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FO7",
+      "ok": true,
+      "cache": 0.94,
+      "calculated": 0.94,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FP7",
+      "ok": true,
+      "cache": 0.94,
+      "calculated": 0.94,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FQ7",
+      "ok": true,
+      "cache": 1.0638297872340425,
+      "calculated": 1.0638297872340425,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FR7",
+      "ok": true,
+      "cache": 0.05827956989247307,
+      "calculated": 0.05827956989247307,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FS7",
+      "ok": true,
+      "cache": 0.03400000000000003,
+      "calculated": 0.03400000000000003,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FT7",
+      "ok": true,
+      "cache": 77.03030347448944,
+      "calculated": 77.03030347448944,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FU7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FV7",
+      "ok": true,
+      "cache": "PARIU RECOMANDAT",
+      "calculated": "PARIU RECOMANDAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FW7",
+      "ok": true,
+      "cache": "P0 v3, lineup și piață confirmate.",
+      "calculated": "P0 v3, lineup și piață confirmate.",
+      "abs_difference": null
+    },
+    {
+      "cell": "FX7",
+      "ok": true,
+      "cache": "P v3=94.0%; P0 v3=5.8%; factor zero=0.79x (SCĂZUT); cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. P0 v3, lineup și piață confirmate.",
+      "calculated": "P v3=94.0%; P0 v3=5.8%; factor zero=0.79x (SCĂZUT); cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. P0 v3, lineup și piață confirmate.",
+      "abs_difference": null
+    },
+    {
+      "cell": "GC7",
+      "ok": true,
+      "cache": 0.9729729729729729,
+      "calculated": 0.9729729729729729,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GD7",
+      "ok": true,
+      "cache": 0.9090909090909091,
+      "calculated": 0.9090909090909091,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GE7",
+      "ok": true,
+      "cache": 1.475,
+      "calculated": 1.475,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GF7",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GG7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GH7",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GI7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GJ7",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GK7",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GL7",
+      "ok": true,
+      "cache": 0.05777967674180883,
+      "calculated": 0.05777967674180883,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GM7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GN7",
+      "ok": true,
+      "cache": "SCĂZUT",
+      "calculated": "SCĂZUT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GO7",
+      "ok": true,
+      "cache": 0.94,
+      "calculated": 0.94,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GP7",
+      "ok": true,
+      "cache": 0.94,
+      "calculated": 0.94,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GQ7",
+      "ok": true,
+      "cache": 1.0638297872340425,
+      "calculated": 1.0638297872340425,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GR7",
+      "ok": true,
+      "cache": 0.05827956989247307,
+      "calculated": 0.05827956989247307,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GS7",
+      "ok": true,
+      "cache": 0.03400000000000003,
+      "calculated": 0.03400000000000003,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GT7",
+      "ok": true,
+      "cache": 77.03030347448944,
+      "calculated": 77.03030347448944,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GU7",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GV7",
+      "ok": true,
+      "cache": "PARIU RECOMANDAT",
+      "calculated": "PARIU RECOMANDAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GW7",
+      "ok": true,
+      "cache": "Toate porțile v5 sunt trecute.",
+      "calculated": "Toate porțile v5 sunt trecute.",
+      "abs_difference": null
+    },
+    {
+      "cell": "GX7",
+      "ok": true,
+      "cache": "P v5=94.0%; P0 v5=5.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. Toate porțile v5 sunt trecute.",
+      "calculated": "P v5=94.0%; P0 v5=5.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. Toate porțile v5 sunt trecute.",
+      "abs_difference": null
+    },
+    {
+      "cell": "GY7",
+      "ok": true,
+      "cache": "VERIFIED / PRIOR / SHRINKAGE",
+      "calculated": "VERIFIED / PRIOR / SHRINKAGE",
+      "abs_difference": null
+    },
+    {
+      "cell": "GZ7",
+      "ok": true,
+      "cache": 9.999999999999998,
+      "calculated": 9.999999999999998,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HA7",
+      "ok": true,
+      "cache": 5.007828064286391,
+      "calculated": 5.007828064286391,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HB7",
+      "ok": true,
+      "cache": 40.300000000000004,
+      "calculated": 40.300000000000004,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HC7",
+      "ok": true,
+      "cache": 9.726000008057555,
+      "calculated": 9.726000008057555,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HD7",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HE7",
+      "ok": true,
+      "cache": 12.964645200107853,
+      "calculated": 12.964645200107853,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HF7",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HG7",
+      "ok": true,
+      "cache": "PASS",
+      "calculated": "PASS",
+      "abs_difference": null
+    },
+    {
+      "cell": "HH7",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HI7",
+      "ok": true,
+      "cache": "DEFENSIV",
+      "calculated": "DEFENSIV",
+      "abs_difference": null
+    },
+    {
+      "cell": "HJ7",
+      "ok": true,
+      "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=5.0; Context=40.3; Uncertainty=9.7; Compound=0.0; Risk Score=13.0; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "calculated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=5.0; Context=40.3; Uncertainty=9.7; Compound=0.0; Risk Score=13.0; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "abs_difference": null
+    },
+    {
+      "cell": "HK7",
+      "ok": true,
+      "cache": "DEFENSIV",
+      "calculated": "DEFENSIV",
+      "abs_difference": null
+    },
+    {
+      "cell": "BJ8",
+      "ok": true,
+      "cache": 2.197847219883868,
+      "calculated": 2.197847219883868,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BK8",
+      "ok": true,
+      "cache": 2.232470528514365,
+      "calculated": 2.232470528514365,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BL8",
+      "ok": true,
+      "cache": 2.073643691627419,
+      "calculated": 2.073643691627419,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BM8",
+      "ok": true,
+      "cache": 2.1117509176137617,
+      "calculated": 2.1117509176137617,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BN8",
+      "ok": true,
+      "cache": 2.0833333333333335,
+      "calculated": 2.0833333333333335,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BO8",
+      "ok": true,
+      "cache": 0.8125000000000001,
+      "calculated": 0.8125000000000001,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BP8",
+      "ok": true,
+      "cache": 1.673976433571672,
+      "calculated": 1.673976433571672,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BQ8",
+      "ok": true,
+      "cache": 1.9762050956498416,
+      "calculated": 1.9762050956498416,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BR8",
+      "ok": true,
+      "cache": 0.9875,
+      "calculated": 0.9875,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BS8",
+      "ok": true,
+      "cache": 1.9515025319542187,
+      "calculated": 1.9515025319542187,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BT8",
+      "ok": true,
+      "cache": 0.14206046076642687,
+      "calculated": 0.14206046076642687,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BU8",
+      "ok": true,
+      "cache": 1.029535284186665,
+      "calculated": 1.029535284186665,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BV8",
+      "ok": true,
+      "cache": 0.15663063116216666,
+      "calculated": 0.15663063116216666,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BW8",
+      "ok": true,
+      "cache": 0.8433693688378333,
+      "calculated": 0.8433693688378333,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BX8",
+      "ok": true,
+      "cache": 1.185720085350034,
+      "calculated": 1.185720085350034,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BY8",
+      "ok": true,
+      "cache": 0.8125000000000001,
+      "calculated": 0.8125000000000001,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "BZ8",
+      "ok": true,
+      "cache": 0.0308693688378332,
+      "calculated": 0.0308693688378332,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CA8",
+      "ok": true,
+      "cache": 0.012043242605400017,
+      "calculated": 0.012043242605400017,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CB8",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CC8",
+      "ok": true,
+      "cache": 0.43000000000000005,
+      "calculated": 0.43000000000000005,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CD8",
+      "ok": true,
+      "cache": 0.5486194970630452,
+      "calculated": 0.5486194970630452,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CE8",
+      "ok": true,
+      "cache": 22.90067295888263,
+      "calculated": 22.90067295888263,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "CF8",
+      "ok": true,
+      "cache": "RIDICAT",
+      "calculated": "RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "CG8",
+      "ok": true,
+      "cache": "PARIU EVITAT",
+      "calculated": "PARIU EVITAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "CH8",
+      "ok": true,
+      "cache": "P(O0,5)=84.3%; λ ajustat=1.95; Confidence=23/100; Edge=3.1%; risc=RIDICAT. Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția.",
+      "calculated": "P(O0,5)=84.3%; λ ajustat=1.95; Confidence=23/100; Edge=3.1%; risc=RIDICAT. Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția.",
+      "abs_difference": null
+    },
+    {
+      "cell": "CI8",
+      "ok": true,
+      "cache": "https://www.livescore.com/en/ ; https://www.goal.com/",
+      "calculated": "https://www.livescore.com/en/ ; https://www.goal.com/",
+      "abs_difference": null
+    },
+    {
+      "cell": "DW8",
+      "ok": true,
+      "cache": 0.8624969696969697,
+      "calculated": 0.8624969696969697,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DX8",
+      "ok": true,
+      "cache": 1.25,
+      "calculated": 1.25,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DY8",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "DZ8",
+      "ok": true,
+      "cache": 0.21867199988744385,
+      "calculated": 0.21867199988744385,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EA8",
+      "ok": true,
+      "cache": 0.7813280001125562,
+      "calculated": 0.7813280001125562,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EB8",
+      "ok": true,
+      "cache": 1.2798722173734238,
+      "calculated": 1.2798722173734238,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EC8",
+      "ok": true,
+      "cache": 0.8125000000000001,
+      "calculated": 0.8125000000000001,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "ED8",
+      "ok": true,
+      "cache": -0.031171999887443902,
+      "calculated": -0.031171999887443902,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EE8",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EF8",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EG8",
+      "ok": true,
+      "cache": 0.1164,
+      "calculated": 0.1164,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EH8",
+      "ok": true,
+      "cache": "92% – early/regim",
+      "calculated": "92% – early/regim",
+      "abs_difference": null
+    },
+    {
+      "cell": "EI8",
+      "ok": true,
+      "cache": "NU – PORTOFOLIU",
+      "calculated": "NU – PORTOFOLIU",
+      "abs_difference": null
+    },
+    {
+      "cell": "EJ8",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EK8",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EL8",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "EM8",
+      "ok": true,
+      "cache": "NU – PORTOFOLIU",
+      "calculated": "NU – PORTOFOLIU",
+      "abs_difference": null
+    },
+    {
+      "cell": "EN8",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EO8",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "EP8",
+      "ok": true,
+      "cache": "NU – 1–5 selecții",
+      "calculated": "NU – 1–5 selecții",
+      "abs_difference": null
+    },
+    {
+      "cell": "EQ8",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "ER8",
+      "ok": true,
+      "cache": "P v2=78.1% ±11.6%; P0 ZIP=21.9%; Confidence=0/100; piață reală=DA; EV=n/a; gate=NU – PORTOFOLIU; verdict=WATCH / NO BET. NU – PORTOFOLIU",
+      "calculated": "P v2=78.1% ±11.6%; P0 ZIP=21.9%; Confidence=0/100; piață reală=DA; EV=n/a; gate=NU – PORTOFOLIU; verdict=WATCH / NO BET. NU – PORTOFOLIU",
+      "abs_difference": null
+    },
+    {
+      "cell": "ES8",
+      "ok": true,
+      "cache": 20,
+      "calculated": 20,
+      "abs_difference": 0
+    },
+    {
+      "cell": "ET8",
+      "ok": true,
+      "cache": 1.5,
+      "calculated": 1.5,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "EU8",
+      "ok": true,
+      "cache": null,
+      "calculated": "",
+      "abs_difference": null
+    },
+    {
+      "cell": "FC8",
+      "ok": true,
+      "cache": 0.9090909090909091,
+      "calculated": 0.9090909090909091,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FD8",
+      "ok": true,
+      "cache": 0.888888888888889,
+      "calculated": 0.888888888888889,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FE8",
+      "ok": true,
+      "cache": 1.8973665961010273,
+      "calculated": 1.8973665961010273,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FF8",
+      "ok": true,
+      "cache": 0.9472135954999579,
+      "calculated": 0.9472135954999579,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FG8",
+      "ok": true,
+      "cache": 0.101010101010101,
+      "calculated": 0.101010101010101,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FH8",
+      "ok": true,
+      "cache": 1.2321428571428572,
+      "calculated": 1.2321428571428572,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FI8",
+      "ok": true,
+      "cache": 1.3200046491108872,
+      "calculated": 1.3200046491108872,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FJ8",
+      "ok": true,
+      "cache": 0.2886480564818013,
+      "calculated": 0.2886480564818013,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FK8",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "FL8",
+      "ok": true,
+      "cache": "RIDICAT",
+      "calculated": "RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FM8",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "FN8",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "FO8",
+      "ok": true,
+      "cache": 0.9,
+      "calculated": 0.9,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FP8",
+      "ok": true,
+      "cache": 0.7113519435181987,
+      "calculated": 0.7113519435181987,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FQ8",
+      "ok": true,
+      "cache": 1.4057739057465817,
+      "calculated": 1.4057739057465817,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FR8",
+      "ok": true,
+      "cache": -0.10114805648180136,
+      "calculated": -0.10114805648180136,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FS8",
+      "ok": true,
+      "cache": -0.14637766777816152,
+      "calculated": -0.14637766777816152,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FT8",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "FU8",
+      "ok": true,
+      "cache": "NU – RISC 0-0 RIDICAT",
+      "calculated": "NU – RISC 0-0 RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FV8",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "FW8",
+      "ok": true,
+      "cache": "NU – RISC 0-0 RIDICAT",
+      "calculated": "NU – RISC 0-0 RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "FX8",
+      "ok": true,
+      "cache": "P v3=71.1%; P0 v3=28.9%; factor zero=1.32x (RIDICAT); cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+      "calculated": "P v3=71.1%; P0 v3=28.9%; factor zero=1.32x (RIDICAT); cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GC8",
+      "ok": true,
+      "cache": 0.8749999999999999,
+      "calculated": 0.8749999999999999,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GD8",
+      "ok": true,
+      "cache": 0.9411764705882354,
+      "calculated": 0.9411764705882354,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GE8",
+      "ok": true,
+      "cache": 0.825,
+      "calculated": 0.825,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GF8",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GG8",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GH8",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GI8",
+      "ok": true,
+      "cache": "NU",
+      "calculated": "NU",
+      "abs_difference": null
+    },
+    {
+      "cell": "GJ8",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GK8",
+      "ok": true,
+      "cache": 1,
+      "calculated": 1.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GL8",
+      "ok": true,
+      "cache": 0.2886480564818013,
+      "calculated": 0.2886480564818013,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GM8",
+      "ok": true,
+      "cache": "DA",
+      "calculated": "DA",
+      "abs_difference": null
+    },
+    {
+      "cell": "GN8",
+      "ok": true,
+      "cache": "RIDICAT",
+      "calculated": "RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GO8",
+      "ok": true,
+      "cache": 0.9,
+      "calculated": 0.9,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GP8",
+      "ok": true,
+      "cache": 0.7113519435181987,
+      "calculated": 0.7113519435181987,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GQ8",
+      "ok": true,
+      "cache": 1.4057739057465817,
+      "calculated": 1.4057739057465817,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GR8",
+      "ok": true,
+      "cache": -0.10114805648180136,
+      "calculated": -0.10114805648180136,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GS8",
+      "ok": true,
+      "cache": -0.14637766777816152,
+      "calculated": -0.14637766777816152,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GT8",
+      "ok": true,
+      "cache": 0,
+      "calculated": 0.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "GU8",
+      "ok": true,
+      "cache": "NU – RISC 0-0 RIDICAT",
+      "calculated": "NU – RISC 0-0 RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GV8",
+      "ok": true,
+      "cache": "WATCH / NO BET",
+      "calculated": "WATCH / NO BET",
+      "abs_difference": null
+    },
+    {
+      "cell": "GW8",
+      "ok": true,
+      "cache": "NU – RISC 0-0 RIDICAT",
+      "calculated": "NU – RISC 0-0 RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GX8",
+      "ok": true,
+      "cache": "P v5=71.1%; P0 v5=28.9%; low-conv=0%; mult.P0=1.00; clasă=RIDICAT; cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+      "calculated": "P v5=71.1%; P0 v5=28.9%; low-conv=0%; mult.P0=1.00; clasă=RIDICAT; cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "GY8",
+      "ok": true,
+      "cache": "SMALL SAMPLE + PRIOR / SHRINKAGE",
+      "calculated": "SMALL SAMPLE + PRIOR / SHRINKAGE",
+      "abs_difference": null
+    },
+    {
+      "cell": "GZ8",
+      "ok": true,
+      "cache": 30.000000000000004,
+      "calculated": 30.000000000000004,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HA8",
+      "ok": true,
+      "cache": 67.05937048363378,
+      "calculated": 67.05937048363378,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HB8",
+      "ok": true,
+      "cache": 52.49999999999999,
+      "calculated": 52.49999999999999,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HC8",
+      "ok": true,
+      "cache": 34.685397334897935,
+      "calculated": 34.685397334897935,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HD8",
+      "ok": true,
+      "cache": 100,
+      "calculated": 100.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HE8",
+      "ok": true,
+      "cache": 51.7192363277411,
+      "calculated": 51.7192363277411,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HF8",
+      "ok": true,
+      "cache": 3,
+      "calculated": 3.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HG8",
+      "ok": true,
+      "cache": "PASS",
+      "calculated": "PASS",
+      "abs_difference": null
+    },
+    {
+      "cell": "HH8",
+      "ok": true,
+      "cache": 3,
+      "calculated": 3.0,
+      "abs_difference": 0.0
+    },
+    {
+      "cell": "HI8",
+      "ok": true,
+      "cache": "MODERAT",
+      "calculated": "MODERAT",
+      "abs_difference": null
+    },
+    {
+      "cell": "HJ8",
+      "ok": true,
+      "cache": "Data=SMALL SAMPLE + PRIOR / SHRINKAGE; DQ=30.0; ZM=67.1; Context=52.5; Uncertainty=34.7; Compound=100.0; Risk Score=51.7; Base=3; G0=PASS; Final=3. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "calculated": "Data=SMALL SAMPLE + PRIOR / SHRINKAGE; DQ=30.0; ZM=67.1; Context=52.5; Uncertainty=34.7; Compound=100.0; Risk Score=51.7; Base=3; G0=PASS; Final=3. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "abs_difference": null
+    },
+    {
+      "cell": "HK8",
+      "ok": true,
+      "cache": "MODERAT",
+      "calculated": "MODERAT",
+      "abs_difference": null
+    }
+  ],
+  "fixtures": [
+    {
+      "match_id": "DEMO-LIGA-001",
+      "excel_row": 4,
+      "inputs": {
+        "A": "DEMO-LIGA-001",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-01 00:00:00",
+        "D": "Liga demonstrativă",
+        "E": "Campionat intern",
+        "F": "Etapa 7",
+        "G": "Gazde Demo A",
+        "H": "Oaspeți Demo B",
+        "I": 10,
+        "J": 1.8,
+        "K": 1,
+        "L": 1.7,
+        "M": 1.05,
+        "N": 0.9,
+        "O": 0.1,
+        "P": 10,
+        "Q": 1.2,
+        "R": 1.6,
+        "S": 1.25,
+        "T": 1.55,
+        "U": 0.9,
+        "V": 0.2,
+        "W": 5,
+        "X": 1.6,
+        "Y": 1,
+        "Z": 1.55,
+        "AA": 1.1,
+        "AB": 5,
+        "AC": 1.2,
+        "AD": 1.6,
+        "AE": 1.3,
+        "AF": 1.45,
+        "AG": 4,
+        "AH": 2.25,
+        "AI": 1,
+        "AJ": 1.45,
+        "AK": 1.15,
+        "AL": 2.6,
+        "AM": 0.08,
+        "AN": 120,
+        "AO": 1.72,
+        "AP": 3.85,
+        "AQ": 4.8,
+        "AR": 1.12,
+        "AS": 7.2,
+        "AT": 4,
+        "AU": 0,
+        "AV": 1,
+        "AW": 1,
+        "AX": 0,
+        "AY": 1,
+        "AZ": 0,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 0,
+        "BF": 1,
+        "BG": 0,
+        "BH": "Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+        "BI": "https://footystats.org/ ; https://understat.com/",
+        "CJ": 7,
+        "CK": 0,
+        "CL": 0,
+        "CM": 5.2,
+        "CN": 4.4,
+        "CO": 2,
+        "CP": 1.6,
+        "CQ": 0.12,
+        "CR": 0.11,
+        "CS": 27,
+        "CT": 23,
+        "CU": 0.28,
+        "CV": 0.22,
+        "CW": 0,
+        "CX": 0,
+        "CY": 1,
+        "CZ": 1,
+        "DA": 1,
+        "DB": 1,
+        "DC": 1.13,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 1,
+        "DS": 0,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.05,
+        "EW": 0.08,
+        "EX": 0.35,
+        "EY": 0.25,
+        "EZ": 0.3,
+        "FA": 0.35,
+        "FB": null,
+        "FY": 0.2,
+        "FZ": 0.2,
+        "GA": 1,
+        "GB": 1
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.7087635820327414,
+          "simulated": 2.7087635820327414
+        },
+        "BK": {
+          "cache": 2.695318373689451,
+          "simulated": 2.695318373689451
+        },
+        "BL": {
+          "cache": 2.6489578808281795,
+          "simulated": 2.6489578808281795
+        },
+        "BM": {
+          "cache": 2.6487763675966214,
+          "simulated": 2.6487763675966214
+        },
+        "BN": {
+          "cache": 2.4444444444444446,
+          "simulated": 2.4444444444444446
+        },
+        "BO": {
+          "cache": 0.8653846153846154,
+          "simulated": 0.8653846153846154
+        },
+        "BP": {
+          "cache": 2.0053335695261145,
+          "simulated": 2.0053335695261145
+        },
+        "BQ": {
+          "cache": 2.568702883845408,
+          "simulated": 2.568702883845408
+        },
+        "BR": {
+          "cache": 1.07,
+          "simulated": 1.07
+        },
+        "BS": {
+          "cache": 2.748512085714587,
+          "simulated": 2.748512085714587
+        },
+        "BT": {
+          "cache": 0.06402305118433504,
+          "simulated": 0.06402305118433504
+        },
+        "BU": {
+          "cache": 1.0385495214000677,
+          "simulated": 1.0385495214000677
+        },
+        "BV": {
+          "cache": 0.07486833187454739,
+          "simulated": 0.07486833187454739
+        },
+        "BW": {
+          "cache": 0.9251316681254527,
+          "simulated": 0.9251316681254527
+        },
+        "BX": {
+          "cache": 1.0809272176643236,
+          "simulated": 1.0809272176643236
+        },
+        "BY": {
+          "cache": 0.8653846153846154,
+          "simulated": 0.8653846153846154
+        },
+        "BZ": {
+          "cache": 0.05974705274083725,
+          "simulated": 0.05974705274083725
+        },
+        "CA": {
+          "cache": 0.03614746830050719,
+          "simulated": 0.03614746830050719
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.9800000000000001,
+          "simulated": 0.9800000000000001
+        },
+        "CD": {
+          "cache": 0.5357386144452715,
+          "simulated": 0.5357386144452715
+        },
+        "CE": {
+          "cache": 72.31477228890543,
+          "simulated": 72.31477228890543
+        },
+        "CF": {
+          "cache": "MEDIU",
+          "simulated": "MEDIU"
+        },
+        "CG": {
+          "cache": "RECOMANDAT CU PRUDENȚĂ",
+          "simulated": "RECOMANDAT CU PRUDENȚĂ"
+        },
+        "CH": {
+          "cache": "P(O0,5)=92.5%; λ ajustat=2.75; Confidence=72/100; Edge=6.0%; risc=MEDIU. Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+          "simulated": "P(O0,5)=92.5%; λ ajustat=2.75; Confidence=72/100; Edge=6.0%; risc=MEDIU. Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare."
+        },
+        "CI": {
+          "cache": "https://footystats.org/ ; https://understat.com/",
+          "simulated": "https://footystats.org/ ; https://understat.com/"
+        },
+        "DW": {
+          "cache": 1.0357878787878787,
+          "simulated": 1.0357878787878787
+        },
+        "DX": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.0721123897129207,
+          "simulated": 0.0721123897129207
+        },
+        "EA": {
+          "cache": 0.9278876102870793,
+          "simulated": 0.9278876102870793
+        },
+        "EB": {
+          "cache": 1.0777167287432685,
+          "simulated": 1.0777167287432685
+        },
+        "EC": {
+          "cache": 0.8653846153846154,
+          "simulated": 0.8653846153846154
+        },
+        "ED": {
+          "cache": 0.06250299490246392,
+          "simulated": 0.06250299490246392
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 59.194772288905426,
+          "simulated": 59.194772288905426
+        },
+        "EG": {
+          "cache": 0.0456,
+          "simulated": 0.0456
+        },
+        "EH": {
+          "cache": "93% – standard",
+          "simulated": "93% – standard"
+        },
+        "EI": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "EM": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=92.8% ±4.6%; P0 ZIP=7.2%; Confidence=59/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+          "simulated": "P v2=92.8% ±4.6%; P0 ZIP=7.2%; Confidence=59/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P"
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 1.0588235294117647,
+          "simulated": 1.0588235294117647
+        },
+        "FD": {
+          "cache": 0.96,
+          "simulated": 0.96
+        },
+        "FE": {
+          "cache": 0.6324555320336758,
+          "simulated": 0.6324555320336758
+        },
+        "FF": {
+          "cache": 0.845378028229756,
+          "simulated": 0.845378028229756
+        },
+        "FG": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "FH": {
+          "cache": 0.6964285714285714,
+          "simulated": 0.6964285714285714
+        },
+        "FI": {
+          "cache": 0.7826357823647438,
+          "simulated": 0.7826357823647438
+        },
+        "FJ": {
+          "cache": 0.05643773654116299,
+          "simulated": 0.05643773654116299
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "FR": {
+          "cache": 0.05461538461538462,
+          "simulated": 0.05461538461538462
+        },
+        "FS": {
+          "cache": 0.030400000000000205,
+          "simulated": 0.030400000000000205
+        },
+        "FT": {
+          "cache": 59.194772288905426,
+          "simulated": 59.194772288905426
+        },
+        "FU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "FW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FX": {
+          "cache": "P v3=92.0%; P0 v3=5.6%; factor zero=0.78x (SCĂZUT); cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v3=92.0%; P0 v3=5.6%; factor zero=0.78x (SCĂZUT); cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GC": {
+          "cache": 1.032258064516129,
+          "simulated": 1.032258064516129
+        },
+        "GD": {
+          "cache": 0.923076923076923,
+          "simulated": 0.923076923076923
+        },
+        "GE": {
+          "cache": 1.425,
+          "simulated": 1.425
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.05643773654116299,
+          "simulated": 0.05643773654116299
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "GR": {
+          "cache": 0.05461538461538462,
+          "simulated": 0.05461538461538462
+        },
+        "GS": {
+          "cache": 0.030400000000000205,
+          "simulated": 0.030400000000000205
+        },
+        "GT": {
+          "cache": 59.194772288905426,
+          "simulated": 59.194772288905426
+        },
+        "GU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "GW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GX": {
+          "cache": "P v5=92.0%; P0 v5=5.6%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v5=92.0%; P0 v5=5.6%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 9.999999999999998,
+          "simulated": 9.999999999999998
+        },
+        "HA": {
+          "cache": 3.839503807616923,
+          "simulated": 3.839503807616923
+        },
+        "HB": {
+          "cache": 14.000000000000012,
+          "simulated": 14.000000000000012
+        },
+        "HC": {
+          "cache": 9.377513343075528,
+          "simulated": 9.377513343075528
+        },
+        "HD": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HE": {
+          "cache": 7.870120560697213,
+          "simulated": 7.870120560697213
+        },
+        "HF": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HI": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=3.8; Context=14.0; Uncertainty=9.4; Compound=0.0; Risk Score=7.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=3.8; Context=14.0; Uncertainty=9.4; Compound=0.0; Risk Score=7.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-CUPA-002",
+      "excel_row": 5,
+      "inputs": {
+        "A": "DEMO-CUPA-002",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-02 00:00:00",
+        "D": "Cupă demonstrativă",
+        "E": "Cupa interna",
+        "F": "Tur eliminatoriu",
+        "G": "Favorită Demo",
+        "H": "Outsider Demo",
+        "I": 8,
+        "J": 2.1,
+        "K": 0.9,
+        "L": 2,
+        "M": 0.95,
+        "N": 1,
+        "O": 0,
+        "P": 8,
+        "Q": 0.8,
+        "R": 2,
+        "S": 0.85,
+        "T": 1.9,
+        "U": 0.88,
+        "V": 0.25,
+        "W": 5,
+        "X": 2,
+        "Y": 0.8,
+        "Z": 1.95,
+        "AA": 0.9,
+        "AB": 5,
+        "AC": 0.8,
+        "AD": 1.8,
+        "AE": 0.9,
+        "AF": 1.7,
+        "AG": 2,
+        "AH": 2.5,
+        "AI": 1,
+        "AJ": 1.4,
+        "AK": 1.1,
+        "AL": 2.5,
+        "AM": 0.09,
+        "AN": 80,
+        "AO": 1.3,
+        "AP": 5.3,
+        "AQ": 10,
+        "AR": 1.07,
+        "AS": 10.5,
+        "AT": 3,
+        "AU": 0,
+        "AV": 2,
+        "AW": 1,
+        "AX": 0,
+        "AY": 1,
+        "AZ": -1,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 0,
+        "BF": 2,
+        "BG": 1,
+        "BH": "Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea.",
+        "BI": "https://www.transfermarkt.com/ ; https://www.sofascore.com/",
+        "CJ": 1,
+        "CK": 0,
+        "CL": 0,
+        "CM": 5.6,
+        "CN": 3.2,
+        "CO": 2.4,
+        "CP": 0.9,
+        "CQ": 0.13,
+        "CR": 0.08,
+        "CS": 30,
+        "CT": 16,
+        "CU": 0.31,
+        "CV": 0.18,
+        "CW": 0,
+        "CX": 1,
+        "CY": null,
+        "CZ": null,
+        "DA": null,
+        "DB": null,
+        "DC": 1.09,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 1,
+        "DS": 0.15,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.1,
+        "EW": 0.14,
+        "EX": 0.25,
+        "EY": 0.35,
+        "EZ": 0.45,
+        "FA": 0.5,
+        "FB": null,
+        "FY": 0.2,
+        "FZ": 0.4,
+        "GA": 1,
+        "GB": 2
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.6994982655469304,
+          "simulated": 2.6994982655469304
+        },
+        "BK": {
+          "cache": 2.6745008736010325,
+          "simulated": 2.6745008736010325
+        },
+        "BL": {
+          "cache": 2.599206149143116,
+          "simulated": 2.599206149143116
+        },
+        "BM": {
+          "cache": 2.6112291495737217,
+          "simulated": 2.6112291495737217
+        },
+        "BN": {
+          "cache": 2.5,
+          "simulated": 2.5
+        },
+        "BO": {
+          "cache": 0.9075194468452895,
+          "simulated": 0.9075194468452895
+        },
+        "BP": {
+          "cache": 2.38075689273177,
+          "simulated": 2.38075689273177
+        },
+        "BQ": {
+          "cache": 2.5606172771793028,
+          "simulated": 2.5606172771793028
+        },
+        "BR": {
+          "cache": 1.092,
+          "simulated": 1.092
+        },
+        "BS": {
+          "cache": 2.796194066679799,
+          "simulated": 2.796194066679799
+        },
+        "BT": {
+          "cache": 0.06104194264881993,
+          "simulated": 0.06104194264881993
+        },
+        "BU": {
+          "cache": 1.038569782585325,
+          "simulated": 1.038569782585325
+        },
+        "BV": {
+          "cache": 0.050717053684296645,
+          "simulated": 0.050717053684296645
+        },
+        "BW": {
+          "cache": 0.9492829463157033,
+          "simulated": 0.9492829463157033
+        },
+        "BX": {
+          "cache": 1.0534266984160376,
+          "simulated": 1.0534266984160376
+        },
+        "BY": {
+          "cache": 0.9075194468452895,
+          "simulated": 0.9075194468452895
+        },
+        "BZ": {
+          "cache": 0.0417634994704138,
+          "simulated": 0.0417634994704138
+        },
+        "CA": {
+          "cache": 0.0157327525578026,
+          "simulated": 0.0157327525578026
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.8200000000000001,
+          "simulated": 0.8200000000000001
+        },
+        "CD": {
+          "cache": 0.7938975561300963,
+          "simulated": 0.7938975561300963
+        },
+        "CE": {
+          "cache": 56.15015601034173,
+          "simulated": 56.15015601034173
+        },
+        "CF": {
+          "cache": "MEDIU",
+          "simulated": "MEDIU"
+        },
+        "CG": {
+          "cache": "ANALIZĂ NECONCLUDENTĂ",
+          "simulated": "ANALIZĂ NECONCLUDENTĂ"
+        },
+        "CH": {
+          "cache": "P(O0,5)=94.9%; λ ajustat=2.80; Confidence=56/100; Edge=4.2%; risc=MEDIU. Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea.",
+          "simulated": "P(O0,5)=94.9%; λ ajustat=2.80; Confidence=56/100; Edge=4.2%; risc=MEDIU. Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea."
+        },
+        "CI": {
+          "cache": "https://www.transfermarkt.com/ ; https://www.sofascore.com/",
+          "simulated": "https://www.transfermarkt.com/ ; https://www.sofascore.com/"
+        },
+        "DW": {
+          "cache": 0.995240404040404,
+          "simulated": 0.995240404040404
+        },
+        "DX": {
+          "cache": 1.25,
+          "simulated": 1.25
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.0696065307877074,
+          "simulated": 0.0696065307877074
+        },
+        "EA": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "EB": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "EC": {
+          "cache": 0.9075194468452895,
+          "simulated": 0.9075194468452895
+        },
+        "ED": {
+          "cache": 0.012480553154710528,
+          "simulated": 0.012480553154710528
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 32.070156010341734,
+          "simulated": 32.070156010341734
+        },
+        "EG": {
+          "cache": 0.0804,
+          "simulated": 0.0804
+        },
+        "EH": {
+          "cache": "92% – early/regim",
+          "simulated": "92% – early/regim"
+        },
+        "EI": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "EM": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=92.0% ±8.0%; P0 ZIP=7.0%; Confidence=32/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+          "simulated": "P v2=92.0% ±8.0%; P0 ZIP=7.0%; Confidence=32/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P"
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 1.05,
+          "simulated": 1.05
+        },
+        "FD": {
+          "cache": 0.9411764705882354,
+          "simulated": 0.9411764705882354
+        },
+        "FE": {
+          "cache": 1.1832159566199232,
+          "simulated": 1.1832159566199232
+        },
+        "FF": {
+          "cache": 0.5,
+          "simulated": 0.5
+        },
+        "FG": {
+          "cache": 0.004411764705882337,
+          "simulated": 0.004411764705882337
+        },
+        "FH": {
+          "cache": 1.0178571428571428,
+          "simulated": 1.0178571428571428
+        },
+        "FI": {
+          "cache": 0.9094185684985818,
+          "simulated": 0.9094185684985818
+        },
+        "FJ": {
+          "cache": 0.06330147158710933,
+          "simulated": 0.06330147158710933
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "FR": {
+          "cache": 0.012480553154710528,
+          "simulated": 0.012480553154710528
+        },
+        "FS": {
+          "cache": -0.015599999999999947,
+          "simulated": -0.015599999999999947
+        },
+        "FT": {
+          "cache": 32.070156010341734,
+          "simulated": 32.070156010341734
+        },
+        "FU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "FW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FX": {
+          "cache": "P v3=92.0%; P0 v3=6.3%; factor zero=0.91x (SCĂZUT); cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v3=92.0%; P0 v3=6.3%; factor zero=0.91x (SCĂZUT); cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GC": {
+          "cache": 1.0256410256410258,
+          "simulated": 1.0256410256410258
+        },
+        "GD": {
+          "cache": 0.888888888888889,
+          "simulated": 0.888888888888889
+        },
+        "GE": {
+          "cache": 1.425,
+          "simulated": 1.425
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.06330147158710933,
+          "simulated": 0.06330147158710933
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "GR": {
+          "cache": 0.012480553154710528,
+          "simulated": 0.012480553154710528
+        },
+        "GS": {
+          "cache": -0.015599999999999947,
+          "simulated": -0.015599999999999947
+        },
+        "GT": {
+          "cache": 32.070156010341734,
+          "simulated": 32.070156010341734
+        },
+        "GU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "GW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GX": {
+          "cache": "P v5=92.0%; P0 v5=6.3%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v5=92.0%; P0 v5=6.3%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 19.999999999999996,
+          "simulated": 19.999999999999996
+        },
+        "HA": {
+          "cache": 18.755125705715507,
+          "simulated": 18.755125705715507
+        },
+        "HB": {
+          "cache": 43.40000000000002,
+          "simulated": 43.40000000000002
+        },
+        "HC": {
+          "cache": 15.352913280735248,
+          "simulated": 15.352913280735248
+        },
+        "HD": {
+          "cache": 50,
+          "simulated": 50.0
+        },
+        "HE": {
+          "cache": 24.908034164456684,
+          "simulated": 24.908034164456684
+        },
+        "HF": {
+          "cache": 2,
+          "simulated": 2.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 2,
+          "simulated": 2.0
+        },
+        "HI": {
+          "cache": "PRUDENT",
+          "simulated": "PRUDENT"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=20.0; ZM=18.8; Context=43.4; Uncertainty=15.4; Compound=50.0; Risk Score=24.9; Base=2; G0=PASS; Final=2. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=20.0; ZM=18.8; Context=43.4; Uncertainty=15.4; Compound=50.0; Risk Score=24.9; Base=2; G0=PASS; Final=2. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "PRUDENT",
+          "simulated": "PRUDENT"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-EURO-TUR-003",
+      "excel_row": 6,
+      "inputs": {
+        "A": "DEMO-EURO-TUR-003",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-03 00:00:00",
+        "D": "Competiție UEFA demonstrativă",
+        "E": "Europa - tur",
+        "F": "Play-off, tur",
+        "G": "Club Euro A",
+        "H": "Club Euro B",
+        "I": 10,
+        "J": 1.5,
+        "K": 0.8,
+        "L": 1.6,
+        "M": 0.9,
+        "N": 0.9,
+        "O": 0.1,
+        "P": 10,
+        "Q": 1.3,
+        "R": 1.3,
+        "S": 1.35,
+        "T": 1.25,
+        "U": 0.9,
+        "V": 0.1,
+        "W": 5,
+        "X": 1.4,
+        "Y": 0.8,
+        "Z": 1.5,
+        "AA": 0.85,
+        "AB": 5,
+        "AC": 1.2,
+        "AD": 1.4,
+        "AE": 1.3,
+        "AF": 1.35,
+        "AG": 0,
+        "AH": 0,
+        "AI": 0,
+        "AJ": 1.45,
+        "AK": 1.15,
+        "AL": 2.6,
+        "AM": 0.08,
+        "AN": 150,
+        "AO": 1.95,
+        "AP": 3.4,
+        "AQ": 3.85,
+        "AR": 1.11,
+        "AS": 7.8,
+        "AT": 5,
+        "AU": 1,
+        "AV": 1,
+        "AW": 0,
+        "AX": 1,
+        "AY": 0,
+        "AZ": 0,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": -1,
+        "BF": 0,
+        "BG": 0,
+        "BH": "Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol.",
+        "BI": "https://www.uefa.com/ ; https://theanalyst.com/",
+        "CJ": 1,
+        "CK": 0,
+        "CL": 0,
+        "CM": 4.8,
+        "CN": 4.5,
+        "CO": 1.7,
+        "CP": 1.6,
+        "CQ": 0.11,
+        "CR": 0.11,
+        "CS": 24,
+        "CT": 23,
+        "CU": 0.22,
+        "CV": 0.21,
+        "CW": 0,
+        "CX": 0,
+        "CY": 1,
+        "CZ": 1,
+        "DA": 1,
+        "DB": 1,
+        "DC": 1.12,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 1,
+        "DS": 0.1,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.08,
+        "EW": 0.08,
+        "EX": 0.4,
+        "EY": 0.35,
+        "EZ": 0.3,
+        "FA": 0.32,
+        "FB": null,
+        "FY": 0.2,
+        "FZ": 0.2,
+        "GA": 1,
+        "GB": 1
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.5067326663693565,
+          "simulated": 2.5067326663693565
+        },
+        "BK": {
+          "cache": 2.5620300895932235,
+          "simulated": 2.5620300895932235
+        },
+        "BL": {
+          "cache": 2.4956439237389603,
+          "simulated": 2.4956439237389603
+        },
+        "BM": {
+          "cache": 2.5441428889413125,
+          "simulated": 2.5441428889413125
+        },
+        "BN": {
+          "cache": 2.6,
+          "simulated": 2.6
+        },
+        "BO": {
+          "cache": 0.8754208754208754,
+          "simulated": 0.8754208754208754
+        },
+        "BP": {
+          "cache": 2.0828142261584754,
+          "simulated": 2.0828142261584754
+        },
+        "BQ": {
+          "cache": 2.4147157964471364,
+          "simulated": 2.4147157964471364
+        },
+        "BR": {
+          "cache": 1.0055,
+          "simulated": 1.0055
+        },
+        "BS": {
+          "cache": 2.427996733327596,
+          "simulated": 2.427996733327596
+        },
+        "BT": {
+          "cache": 0.08821337060235639,
+          "simulated": 0.08821337060235639
+        },
+        "BU": {
+          "cache": 1.0385495214000677,
+          "simulated": 1.0385495214000677
+        },
+        "BV": {
+          "cache": 0.09371046536512302,
+          "simulated": 0.09371046536512302
+        },
+        "BW": {
+          "cache": 0.9062895346348769,
+          "simulated": 0.9062895346348769
+        },
+        "BX": {
+          "cache": 1.1034001406657277,
+          "simulated": 1.1034001406657277
+        },
+        "BY": {
+          "cache": 0.8754208754208754,
+          "simulated": 0.8754208754208754
+        },
+        "BZ": {
+          "cache": 0.030868659214001504,
+          "simulated": 0.030868659214001504
+        },
+        "CA": {
+          "cache": 0.0059813834447135505,
+          "simulated": 0.0059813834447135505
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.9,
+          "simulated": 0.9
+        },
+        "CD": {
+          "cache": 0.6503461201979913,
+          "simulated": 0.6503461201979913
+        },
+        "CE": {
+          "cache": 83.72636861164305,
+          "simulated": 83.72636861164305
+        },
+        "CF": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "CG": {
+          "cache": "RECOMANDAT CU PRUDENȚĂ",
+          "simulated": "RECOMANDAT CU PRUDENȚĂ"
+        },
+        "CH": {
+          "cache": "P(O0,5)=90.6%; λ ajustat=2.43; Confidence=84/100; Edge=3.1%; risc=SCĂZUT. Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol.",
+          "simulated": "P(O0,5)=90.6%; λ ajustat=2.43; Confidence=84/100; Edge=3.1%; risc=SCĂZUT. Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol."
+        },
+        "CI": {
+          "cache": "https://www.uefa.com/ ; https://theanalyst.com/",
+          "simulated": "https://www.uefa.com/ ; https://theanalyst.com/"
+        },
+        "DW": {
+          "cache": 1.0137939393939392,
+          "simulated": 1.0137939393939392
+        },
+        "DX": {
+          "cache": 1.25,
+          "simulated": 1.25
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.10827153348679072,
+          "simulated": 0.10827153348679072
+        },
+        "EA": {
+          "cache": 0.8917284665132093,
+          "simulated": 0.8917284665132093
+        },
+        "EB": {
+          "cache": 1.121417603623386,
+          "simulated": 1.121417603623386
+        },
+        "EC": {
+          "cache": 0.8754208754208754,
+          "simulated": 0.8754208754208754
+        },
+        "ED": {
+          "cache": 0.016307591092333817,
+          "simulated": 0.016307591092333817
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 71.32636861164305,
+          "simulated": 71.32636861164305
+        },
+        "EG": {
+          "cache": 0.092,
+          "simulated": 0.092
+        },
+        "EH": {
+          "cache": "92% – early/regim",
+          "simulated": "92% – early/regim"
+        },
+        "EI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH – APROAPE DE PRAG",
+          "simulated": "WATCH – APROAPE DE PRAG"
+        },
+        "EM": {
+          "cache": "Confidence sub 75.",
+          "simulated": "Confidence sub 75."
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=89.2% ±9.2%; P0 ZIP=10.8%; Confidence=71/100; piață reală=DA; EV=n/a; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence sub 75.",
+          "simulated": "P v2=89.2% ±9.2%; P0 ZIP=10.8%; Confidence=71/100; piață reală=DA; EV=n/a; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence sub 75."
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 0.9375,
+          "simulated": 0.9375
+        },
+        "FD": {
+          "cache": 0.9629629629629629,
+          "simulated": 0.9629629629629629
+        },
+        "FE": {
+          "cache": 0.7999999999999999,
+          "simulated": 0.7999999999999999
+        },
+        "FF": {
+          "cache": 0.7741657386773941,
+          "simulated": 0.7741657386773941
+        },
+        "FG": {
+          "cache": 0.0497685185185186,
+          "simulated": 0.0497685185185186
+        },
+        "FH": {
+          "cache": 0.6642857142857143,
+          "simulated": 0.6642857142857143
+        },
+        "FI": {
+          "cache": 0.8150605681640648,
+          "simulated": 0.8150605681640648
+        },
+        "FJ": {
+          "cache": 0.08824785759973822,
+          "simulated": 0.08824785759973822
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "FP": {
+          "cache": 0.9117521424002618,
+          "simulated": 0.9117521424002618
+        },
+        "FQ": {
+          "cache": 1.0967893065405019,
+          "simulated": 1.0967893065405019
+        },
+        "FR": {
+          "cache": 0.03633126697938638,
+          "simulated": 0.03633126697938638
+        },
+        "FS": {
+          "cache": 0.012044878064290776,
+          "simulated": 0.012044878064290776
+        },
+        "FT": {
+          "cache": 71.32636861164305,
+          "simulated": 71.32636861164305
+        },
+        "FU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FV": {
+          "cache": "WATCH – APROAPE DE PRAG",
+          "simulated": "WATCH – APROAPE DE PRAG"
+        },
+        "FW": {
+          "cache": "Confidence v3 sub 75.",
+          "simulated": "Confidence v3 sub 75."
+        },
+        "FX": {
+          "cache": "P v3=91.2%; P0 v3=8.8%; factor zero=0.82x (SCĂZUT); cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v3 sub 75.",
+          "simulated": "P v3=91.2%; P0 v3=8.8%; factor zero=0.82x (SCĂZUT); cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v3 sub 75."
+        },
+        "GC": {
+          "cache": 0.9333333333333332,
+          "simulated": 0.9333333333333332
+        },
+        "GD": {
+          "cache": 0.923076923076923,
+          "simulated": 0.923076923076923
+        },
+        "GE": {
+          "cache": 1.4,
+          "simulated": 1.4
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.08824785759973822,
+          "simulated": 0.08824785759973822
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "GP": {
+          "cache": 0.9117521424002618,
+          "simulated": 0.9117521424002618
+        },
+        "GQ": {
+          "cache": 1.0967893065405019,
+          "simulated": 1.0967893065405019
+        },
+        "GR": {
+          "cache": 0.03633126697938638,
+          "simulated": 0.03633126697938638
+        },
+        "GS": {
+          "cache": 0.012044878064290776,
+          "simulated": 0.012044878064290776
+        },
+        "GT": {
+          "cache": 71.32636861164305,
+          "simulated": 71.32636861164305
+        },
+        "GU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GV": {
+          "cache": "WATCH – APROAPE DE PRAG",
+          "simulated": "WATCH – APROAPE DE PRAG"
+        },
+        "GW": {
+          "cache": "Confidence v5 sub 75.",
+          "simulated": "Confidence v5 sub 75."
+        },
+        "GX": {
+          "cache": "P v5=91.2%; P0 v5=8.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v5 sub 75.",
+          "simulated": "P v5=91.2%; P0 v5=8.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v5 sub 75."
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HA": {
+          "cache": 7.654184489889976,
+          "simulated": 7.654184489889976
+        },
+        "HB": {
+          "cache": 1.100000000000012,
+          "simulated": 1.100000000000012
+        },
+        "HC": {
+          "cache": 8.42145248025683,
+          "simulated": 8.42145248025683
+        },
+        "HD": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HE": {
+          "cache": 3.886353641167856,
+          "simulated": 3.886353641167856
+        },
+        "HF": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HI": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=0.0; ZM=7.7; Context=1.1; Uncertainty=8.4; Compound=0.0; Risk Score=3.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=0.0; ZM=7.7; Context=1.1; Uncertainty=8.4; Compound=0.0; Risk Score=3.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-EURO-RET-004",
+      "excel_row": 7,
+      "inputs": {
+        "A": "DEMO-EURO-RET-004",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-10 00:00:00",
+        "D": "Competiție UEFA demonstrativă",
+        "E": "Europa - retur",
+        "F": "Retur; gazdele trebuie să recupereze un gol",
+        "G": "Club Retur A",
+        "H": "Club Retur B",
+        "I": 10,
+        "J": 1.7,
+        "K": 1.1,
+        "L": 1.75,
+        "M": 1.1,
+        "N": 0.9,
+        "O": 0.1,
+        "P": 10,
+        "Q": 1.1,
+        "R": 1.5,
+        "S": 1.2,
+        "T": 1.45,
+        "U": 0.9,
+        "V": 0.2,
+        "W": 5,
+        "X": 1.8,
+        "Y": 1.2,
+        "Z": 1.85,
+        "AA": 1.15,
+        "AB": 5,
+        "AC": 1,
+        "AD": 1.4,
+        "AE": 1.1,
+        "AF": 1.4,
+        "AG": 1,
+        "AH": 2,
+        "AI": 1,
+        "AJ": 1.45,
+        "AK": 1.15,
+        "AL": 2.6,
+        "AM": 0.08,
+        "AN": 150,
+        "AO": 1.75,
+        "AP": 3.55,
+        "AQ": 4.5,
+        "AR": 1.1,
+        "AS": 8.2,
+        "AT": 4,
+        "AU": 1,
+        "AV": 2,
+        "AW": 2,
+        "AX": 0,
+        "AY": 1,
+        "AZ": 0,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 2,
+        "BF": 1,
+        "BG": 0,
+        "BH": "Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur.",
+        "BI": "https://www.uefa.com/ ; https://www.fotmob.com/",
+        "CJ": 2,
+        "CK": 0,
+        "CL": 0,
+        "CM": 5.4,
+        "CN": 4,
+        "CO": 2.1,
+        "CP": 1.4,
+        "CQ": 0.12,
+        "CR": 0.1,
+        "CS": 28,
+        "CT": 21,
+        "CU": 0.27,
+        "CV": 0.2,
+        "CW": 0,
+        "CX": 0,
+        "CY": 1,
+        "CZ": 1,
+        "DA": 1,
+        "DB": 1,
+        "DC": 1.12,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 2,
+        "DS": 0.2,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.06,
+        "EW": 0.07,
+        "EX": 0.35,
+        "EY": 0.3,
+        "EZ": 0.28,
+        "FA": 0.3,
+        "FB": null,
+        "FY": 0.1,
+        "FZ": 0.2,
+        "GA": 0,
+        "GB": 1
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.6545487838134596,
+          "simulated": 2.6545487838134596
+        },
+        "BK": {
+          "cache": 2.680731636599641,
+          "simulated": 2.680731636599641
+        },
+        "BL": {
+          "cache": 2.6455054949771233,
+          "simulated": 2.6455054949771233
+        },
+        "BM": {
+          "cache": 2.6706022224399826,
+          "simulated": 2.6706022224399826
+        },
+        "BN": {
+          "cache": 2.5,
+          "simulated": 2.5
+        },
+        "BO": {
+          "cache": 0.8817204301075269,
+          "simulated": 0.8817204301075269
+        },
+        "BP": {
+          "cache": 2.134704220354885,
+          "simulated": 2.134704220354885
+        },
+        "BQ": {
+          "cache": 2.487523524208675,
+          "simulated": 2.487523524208675
+        },
+        "BR": {
+          "cache": 1.2015,
+          "simulated": 1.2015
+        },
+        "BS": {
+          "cache": 2.988759514336723,
+          "simulated": 2.988759514336723
+        },
+        "BT": {
+          "cache": 0.05034985627516557,
+          "simulated": 0.05034985627516557
+        },
+        "BU": {
+          "cache": 1.0385495214000677,
+          "simulated": 1.0385495214000677
+        },
+        "BV": {
+          "cache": 0.06421811435285155,
+          "simulated": 0.06421811435285155
+        },
+        "BW": {
+          "cache": 0.9357818856471485,
+          "simulated": 0.9357818856471485
+        },
+        "BX": {
+          "cache": 1.0686250881084762,
+          "simulated": 1.0686250881084762
+        },
+        "BY": {
+          "cache": 0.8817204301075269,
+          "simulated": 0.8817204301075269
+        },
+        "BZ": {
+          "cache": 0.054061455539621606,
+          "simulated": 0.054061455539621606
+        },
+        "CA": {
+          "cache": 0.029360074211863374,
+          "simulated": 0.029360074211863374
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "CD": {
+          "cache": 0.642794637471636,
+          "simulated": 0.642794637471636
+        },
+        "CE": {
+          "cache": 79.43030347448945,
+          "simulated": 79.43030347448945
+        },
+        "CF": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "CG": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "CH": {
+          "cache": "P(O0,5)=93.6%; λ ajustat=2.99; Confidence=79/100; Edge=5.4%; risc=SCĂZUT. Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur.",
+          "simulated": "P(O0,5)=93.6%; λ ajustat=2.99; Confidence=79/100; Edge=5.4%; risc=SCĂZUT. Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur."
+        },
+        "CI": {
+          "cache": "https://www.uefa.com/ ; https://www.fotmob.com/",
+          "simulated": "https://www.uefa.com/ ; https://www.fotmob.com/"
+        },
+        "DW": {
+          "cache": 1.0250343434343436,
+          "simulated": 1.0250343434343436
+        },
+        "DX": {
+          "cache": 1.1,
+          "simulated": 1.1
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.07290198857975591,
+          "simulated": 0.07290198857975591
+        },
+        "EA": {
+          "cache": 0.9270980114202441,
+          "simulated": 0.9270980114202441
+        },
+        "EB": {
+          "cache": 1.078634607864249,
+          "simulated": 1.078634607864249
+        },
+        "EC": {
+          "cache": 0.8817204301075269,
+          "simulated": 0.8817204301075269
+        },
+        "ED": {
+          "cache": 0.045377581312717186,
+          "simulated": 0.045377581312717186
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 77.03030347448944,
+          "simulated": 77.03030347448944
+        },
+        "EG": {
+          "cache": 0.041999999999999996,
+          "simulated": 0.041999999999999996
+        },
+        "EH": {
+          "cache": "94% – confirmat",
+          "simulated": "94% – confirmat"
+        },
+        "EI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "EM": {
+          "cache": "G0/Zero-Mass + confidence trecute; EV ignorat.",
+          "simulated": "G0/Zero-Mass + confidence trecute; EV ignorat."
+        },
+        "EN": {
+          "cache": 0.01,
+          "simulated": 0.01
+        },
+        "EO": {
+          "cache": 10,
+          "simulated": 10.0
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=92.7% ±4.2%; P0 ZIP=7.3%; Confidence=77/100; piață reală=DA; EV=n/a; gate=DA; verdict=PARIU RECOMANDAT. G0/Zero-Mass + confidence trecute; EV ignorat.",
+          "simulated": "P v2=92.7% ±4.2%; P0 ZIP=7.3%; Confidence=77/100; piață reală=DA; EV=n/a; gate=DA; verdict=PARIU RECOMANDAT. G0/Zero-Mass + confidence trecute; EV ignorat."
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 0.9714285714285714,
+          "simulated": 0.9714285714285714
+        },
+        "FD": {
+          "cache": 0.9166666666666667,
+          "simulated": 0.9166666666666667
+        },
+        "FE": {
+          "cache": 0.6480740698407861,
+          "simulated": 0.6480740698407861
+        },
+        "FF": {
+          "cache": 0.8755604237266935,
+          "simulated": 0.8755604237266935
+        },
+        "FG": {
+          "cache": 0.055952380952380976,
+          "simulated": 0.055952380952380976
+        },
+        "FH": {
+          "cache": 0.6214285714285716,
+          "simulated": 0.6214285714285716
+        },
+        "FI": {
+          "cache": 0.7925665385464343,
+          "simulated": 0.7925665385464343
+        },
+        "FJ": {
+          "cache": 0.05777967674180883,
+          "simulated": 0.05777967674180883
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "FP": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "FQ": {
+          "cache": 1.0638297872340425,
+          "simulated": 1.0638297872340425
+        },
+        "FR": {
+          "cache": 0.05827956989247307,
+          "simulated": 0.05827956989247307
+        },
+        "FS": {
+          "cache": 0.03400000000000003,
+          "simulated": 0.03400000000000003
+        },
+        "FT": {
+          "cache": 77.03030347448944,
+          "simulated": 77.03030347448944
+        },
+        "FU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FV": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "FW": {
+          "cache": "P0 v3, lineup și piață confirmate.",
+          "simulated": "P0 v3, lineup și piață confirmate."
+        },
+        "FX": {
+          "cache": "P v3=94.0%; P0 v3=5.8%; factor zero=0.79x (SCĂZUT); cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. P0 v3, lineup și piață confirmate.",
+          "simulated": "P v3=94.0%; P0 v3=5.8%; factor zero=0.79x (SCĂZUT); cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. P0 v3, lineup și piață confirmate."
+        },
+        "GC": {
+          "cache": 0.9729729729729729,
+          "simulated": 0.9729729729729729
+        },
+        "GD": {
+          "cache": 0.9090909090909091,
+          "simulated": 0.9090909090909091
+        },
+        "GE": {
+          "cache": 1.475,
+          "simulated": 1.475
+        },
+        "GF": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.05777967674180883,
+          "simulated": 0.05777967674180883
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "GP": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "GQ": {
+          "cache": 1.0638297872340425,
+          "simulated": 1.0638297872340425
+        },
+        "GR": {
+          "cache": 0.05827956989247307,
+          "simulated": 0.05827956989247307
+        },
+        "GS": {
+          "cache": 0.03400000000000003,
+          "simulated": 0.03400000000000003
+        },
+        "GT": {
+          "cache": 77.03030347448944,
+          "simulated": 77.03030347448944
+        },
+        "GU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GV": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "GW": {
+          "cache": "Toate porțile v5 sunt trecute.",
+          "simulated": "Toate porțile v5 sunt trecute."
+        },
+        "GX": {
+          "cache": "P v5=94.0%; P0 v5=5.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. Toate porțile v5 sunt trecute.",
+          "simulated": "P v5=94.0%; P0 v5=5.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. Toate porțile v5 sunt trecute."
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 9.999999999999998,
+          "simulated": 9.999999999999998
+        },
+        "HA": {
+          "cache": 5.007828064286391,
+          "simulated": 5.007828064286391
+        },
+        "HB": {
+          "cache": 40.300000000000004,
+          "simulated": 40.300000000000004
+        },
+        "HC": {
+          "cache": 9.726000008057555,
+          "simulated": 9.726000008057555
+        },
+        "HD": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HE": {
+          "cache": 12.964645200107853,
+          "simulated": 12.964645200107853
+        },
+        "HF": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HI": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=5.0; Context=40.3; Uncertainty=9.7; Compound=0.0; Risk Score=13.0; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=5.0; Context=40.3; Uncertainty=9.7; Compound=0.0; Risk Score=13.0; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-AMICAL-005",
+      "excel_row": 8,
+      "inputs": {
+        "A": "DEMO-AMICAL-005",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-05 00:00:00",
+        "D": "Amical demonstrativ",
+        "E": "Amical",
+        "F": "Pregătire",
+        "G": "Selecționată Demo A",
+        "H": "Selecționată Demo B",
+        "I": 4,
+        "J": 1,
+        "K": 1.2,
+        "L": 1.1,
+        "M": 1.15,
+        "N": 0.75,
+        "O": 0.25,
+        "P": 4,
+        "Q": 0.8,
+        "R": 1,
+        "S": 0.9,
+        "T": 1.05,
+        "U": 0.75,
+        "V": 0.25,
+        "W": 3,
+        "X": 0.7,
+        "Y": 1,
+        "Z": 0.8,
+        "AA": 1,
+        "AB": 3,
+        "AC": 0.8,
+        "AD": 0.9,
+        "AE": 0.85,
+        "AF": 0.95,
+        "AG": 1,
+        "AH": 1,
+        "AI": 1,
+        "AJ": 1.25,
+        "AK": 1.05,
+        "AL": 2.3,
+        "AM": 0.12,
+        "AN": 30,
+        "AO": 2.2,
+        "AP": 3.1,
+        "AQ": 3.1,
+        "AR": 1.2,
+        "AS": 5.2,
+        "AT": 2,
+        "AU": 0,
+        "AV": 0,
+        "AW": 1,
+        "AX": -1,
+        "AY": 0,
+        "AZ": -1,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 0,
+        "BF": 0,
+        "BG": 2,
+        "BH": "Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția.",
+        "BI": "https://www.livescore.com/en/ ; https://www.goal.com/",
+        "CJ": 1,
+        "CK": 0,
+        "CL": 0,
+        "CM": 3.1,
+        "CN": 2.9,
+        "CO": 0.8,
+        "CP": 0.7,
+        "CQ": 0.08,
+        "CR": 0.08,
+        "CS": 15,
+        "CT": 14,
+        "CU": 0.16,
+        "CV": 0.15,
+        "CW": 1,
+        "CX": 1,
+        "CY": null,
+        "CZ": null,
+        "DA": null,
+        "DB": null,
+        "DC": 1.22,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 6,
+        "DS": 0.45,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.18,
+        "EW": 0.2,
+        "EX": 0.2,
+        "EY": 0.25,
+        "EZ": 0.55,
+        "FA": 0.6,
+        "FB": null,
+        "FY": 0.4,
+        "FZ": 0.4,
+        "GA": 2,
+        "GB": 2
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.197847219883868,
+          "simulated": 2.197847219883868
+        },
+        "BK": {
+          "cache": 2.232470528514365,
+          "simulated": 2.232470528514365
+        },
+        "BL": {
+          "cache": 2.073643691627419,
+          "simulated": 2.073643691627419
+        },
+        "BM": {
+          "cache": 2.1117509176137617,
+          "simulated": 2.1117509176137617
+        },
+        "BN": {
+          "cache": 2.0833333333333335,
+          "simulated": 2.0833333333333335
+        },
+        "BO": {
+          "cache": 0.8125000000000001,
+          "simulated": 0.8125000000000001
+        },
+        "BP": {
+          "cache": 1.673976433571672,
+          "simulated": 1.673976433571672
+        },
+        "BQ": {
+          "cache": 1.9762050956498416,
+          "simulated": 1.9762050956498416
+        },
+        "BR": {
+          "cache": 0.9875,
+          "simulated": 0.9875
+        },
+        "BS": {
+          "cache": 1.9515025319542187,
+          "simulated": 1.9515025319542187
+        },
+        "BT": {
+          "cache": 0.14206046076642687,
+          "simulated": 0.14206046076642687
+        },
+        "BU": {
+          "cache": 1.029535284186665,
+          "simulated": 1.029535284186665
+        },
+        "BV": {
+          "cache": 0.15663063116216666,
+          "simulated": 0.15663063116216666
+        },
+        "BW": {
+          "cache": 0.8433693688378333,
+          "simulated": 0.8433693688378333
+        },
+        "BX": {
+          "cache": 1.185720085350034,
+          "simulated": 1.185720085350034
+        },
+        "BY": {
+          "cache": 0.8125000000000001,
+          "simulated": 0.8125000000000001
+        },
+        "BZ": {
+          "cache": 0.0308693688378332,
+          "simulated": 0.0308693688378332
+        },
+        "CA": {
+          "cache": 0.012043242605400017,
+          "simulated": 0.012043242605400017
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.43000000000000005,
+          "simulated": 0.43000000000000005
+        },
+        "CD": {
+          "cache": 0.5486194970630452,
+          "simulated": 0.5486194970630452
+        },
+        "CE": {
+          "cache": 22.90067295888263,
+          "simulated": 22.90067295888263
+        },
+        "CF": {
+          "cache": "RIDICAT",
+          "simulated": "RIDICAT"
+        },
+        "CG": {
+          "cache": "PARIU EVITAT",
+          "simulated": "PARIU EVITAT"
+        },
+        "CH": {
+          "cache": "P(O0,5)=84.3%; λ ajustat=1.95; Confidence=23/100; Edge=3.1%; risc=RIDICAT. Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția.",
+          "simulated": "P(O0,5)=84.3%; λ ajustat=1.95; Confidence=23/100; Edge=3.1%; risc=RIDICAT. Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția."
+        },
+        "CI": {
+          "cache": "https://www.livescore.com/en/ ; https://www.goal.com/",
+          "simulated": "https://www.livescore.com/en/ ; https://www.goal.com/"
+        },
+        "DW": {
+          "cache": 0.8624969696969697,
+          "simulated": 0.8624969696969697
+        },
+        "DX": {
+          "cache": 1.25,
+          "simulated": 1.25
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.21867199988744385,
+          "simulated": 0.21867199988744385
+        },
+        "EA": {
+          "cache": 0.7813280001125562,
+          "simulated": 0.7813280001125562
+        },
+        "EB": {
+          "cache": 1.2798722173734238,
+          "simulated": 1.2798722173734238
+        },
+        "EC": {
+          "cache": 0.8125000000000001,
+          "simulated": 0.8125000000000001
+        },
+        "ED": {
+          "cache": -0.031171999887443902,
+          "simulated": -0.031171999887443902
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EG": {
+          "cache": 0.1164,
+          "simulated": 0.1164
+        },
+        "EH": {
+          "cache": "92% – early/regim",
+          "simulated": "92% – early/regim"
+        },
+        "EI": {
+          "cache": "NU – PORTOFOLIU",
+          "simulated": "NU – PORTOFOLIU"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "EM": {
+          "cache": "NU – PORTOFOLIU",
+          "simulated": "NU – PORTOFOLIU"
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "NU – 1–5 selecții",
+          "simulated": "NU – 1–5 selecții"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=78.1% ±11.6%; P0 ZIP=21.9%; Confidence=0/100; piață reală=DA; EV=n/a; gate=NU – PORTOFOLIU; verdict=WATCH / NO BET. NU – PORTOFOLIU",
+          "simulated": "P v2=78.1% ±11.6%; P0 ZIP=21.9%; Confidence=0/100; piață reală=DA; EV=n/a; gate=NU – PORTOFOLIU; verdict=WATCH / NO BET. NU – PORTOFOLIU"
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 0.9090909090909091,
+          "simulated": 0.9090909090909091
+        },
+        "FD": {
+          "cache": 0.888888888888889,
+          "simulated": 0.888888888888889
+        },
+        "FE": {
+          "cache": 1.8973665961010273,
+          "simulated": 1.8973665961010273
+        },
+        "FF": {
+          "cache": 0.9472135954999579,
+          "simulated": 0.9472135954999579
+        },
+        "FG": {
+          "cache": 0.101010101010101,
+          "simulated": 0.101010101010101
+        },
+        "FH": {
+          "cache": 1.2321428571428572,
+          "simulated": 1.2321428571428572
+        },
+        "FI": {
+          "cache": 1.3200046491108872,
+          "simulated": 1.3200046491108872
+        },
+        "FJ": {
+          "cache": 0.2886480564818013,
+          "simulated": 0.2886480564818013
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "RIDICAT",
+          "simulated": "RIDICAT"
+        },
+        "FM": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FN": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FO": {
+          "cache": 0.9,
+          "simulated": 0.9
+        },
+        "FP": {
+          "cache": 0.7113519435181987,
+          "simulated": 0.7113519435181987
+        },
+        "FQ": {
+          "cache": 1.4057739057465817,
+          "simulated": 1.4057739057465817
+        },
+        "FR": {
+          "cache": -0.10114805648180136,
+          "simulated": -0.10114805648180136
+        },
+        "FS": {
+          "cache": -0.14637766777816152,
+          "simulated": -0.14637766777816152
+        },
+        "FT": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "FU": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "FV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "FW": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "FX": {
+          "cache": "P v3=71.1%; P0 v3=28.9%; factor zero=1.32x (RIDICAT); cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+          "simulated": "P v3=71.1%; P0 v3=28.9%; factor zero=1.32x (RIDICAT); cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT"
+        },
+        "GC": {
+          "cache": 0.8749999999999999,
+          "simulated": 0.8749999999999999
+        },
+        "GD": {
+          "cache": 0.9411764705882354,
+          "simulated": 0.9411764705882354
+        },
+        "GE": {
+          "cache": 0.825,
+          "simulated": 0.825
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.2886480564818013,
+          "simulated": 0.2886480564818013
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "RIDICAT",
+          "simulated": "RIDICAT"
+        },
+        "GO": {
+          "cache": 0.9,
+          "simulated": 0.9
+        },
+        "GP": {
+          "cache": 0.7113519435181987,
+          "simulated": 0.7113519435181987
+        },
+        "GQ": {
+          "cache": 1.4057739057465817,
+          "simulated": 1.4057739057465817
+        },
+        "GR": {
+          "cache": -0.10114805648180136,
+          "simulated": -0.10114805648180136
+        },
+        "GS": {
+          "cache": -0.14637766777816152,
+          "simulated": -0.14637766777816152
+        },
+        "GT": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GU": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "GV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "GW": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "GX": {
+          "cache": "P v5=71.1%; P0 v5=28.9%; low-conv=0%; mult.P0=1.00; clasă=RIDICAT; cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+          "simulated": "P v5=71.1%; P0 v5=28.9%; low-conv=0%; mult.P0=1.00; clasă=RIDICAT; cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT"
+        },
+        "GY": {
+          "cache": "SMALL SAMPLE + PRIOR / SHRINKAGE",
+          "simulated": "SMALL SAMPLE + PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 30.000000000000004,
+          "simulated": 30.000000000000004
+        },
+        "HA": {
+          "cache": 67.05937048363378,
+          "simulated": 67.05937048363378
+        },
+        "HB": {
+          "cache": 52.49999999999999,
+          "simulated": 52.49999999999999
+        },
+        "HC": {
+          "cache": 34.685397334897935,
+          "simulated": 34.685397334897935
+        },
+        "HD": {
+          "cache": 100,
+          "simulated": 100.0
+        },
+        "HE": {
+          "cache": 51.7192363277411,
+          "simulated": 51.7192363277411
+        },
+        "HF": {
+          "cache": 3,
+          "simulated": 3.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 3,
+          "simulated": 3.0
+        },
+        "HI": {
+          "cache": "MODERAT",
+          "simulated": "MODERAT"
+        },
+        "HJ": {
+          "cache": "Data=SMALL SAMPLE + PRIOR / SHRINKAGE; DQ=30.0; ZM=67.1; Context=52.5; Uncertainty=34.7; Compound=100.0; Risk Score=51.7; Base=3; G0=PASS; Final=3. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=SMALL SAMPLE + PRIOR / SHRINKAGE; DQ=30.0; ZM=67.1; Context=52.5; Uncertainty=34.7; Compound=100.0; Risk Score=51.7; Base=3; G0=PASS; Final=3. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "MODERAT",
+          "simulated": "MODERAT"
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "missing_EV",
+      "overrides": {
+        "EV": null
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "NU",
+        "GL": "",
+        "GO": 0.9,
+        "GP": "",
+        "GT": 47.194772288905426,
+        "HE": "",
+        "HG": "FAIL – DATE CRITICE ZERO-MASS INCOMPLETE",
+        "HH": 5.0,
+        "HK": "WATCH / NO BET"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "missing_xG_L",
+      "overrides": {
+        "L": null
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "NU",
+        "GL": "",
+        "GO": 0.9,
+        "GP": "",
+        "GT": 47.035105276103494,
+        "HE": "",
+        "HG": "FAIL – DATE CRITICE ZERO-MASS INCOMPLETE",
+        "HH": 5.0,
+        "HK": "WATCH / NO BET"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "missing_recent_blank_FY",
+      "overrides": {
+        "FY": null
+      },
+      "simulated": {
+        "GJ": "",
+        "GM": "NU",
+        "GL": 0.05643773654116299,
+        "GO": 0.9,
+        "GP": 0.9,
+        "GT": 47.194772288905426,
+        "HE": "",
+        "HG": "FAIL – DATE CRITICE ZERO-MASS INCOMPLETE",
+        "HH": 5.0,
+        "HK": "WATCH / NO BET"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "small_sample",
+      "overrides": {
+        "I": 4,
+        "P": 4,
+        "W": 3,
+        "AB": 3
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.054190597177293194,
+        "GO": 0.92,
+        "GP": 0.92,
+        "GT": 45.30108740350205,
+        "HE": 10.187180523477762,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "no_odds",
+      "overrides": {
+        "AR": null,
+        "AS": null
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.053927654040911946,
+        "GO": 0.92,
+        "GP": 0.92,
+        "GT": 61.1227694360319,
+        "HE": 7.870120560697213,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "confirmed_lineup",
+      "overrides": {
+        "AU": 1
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.05643773654116299,
+        "GO": 0.94,
+        "GP": 0.94,
+        "GT": 84.19477228890543,
+        "HE": 7.870120560697213,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "striker_absent",
+      "overrides": {
+        "CY": 0
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.060952755464456033,
+        "GO": 0.92,
+        "GP": 0.92,
+        "GT": 59.194772288905426,
+        "HE": 7.870120560697213,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "unused_FB",
+      "overrides": {
+        "FB": 2
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.05643773654116299,
+        "GO": 0.92,
+        "GP": 0.92,
+        "GT": 59.194772288905426,
+        "HE": 7.870120560697213,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "odds_changed",
+      "overrides": {
+        "AR": 1.5,
+        "AS": 2.5
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.06136589031182642,
+        "GO": 0.92,
+        "GP": 0.92,
+        "GT": 48.480000000000004,
+        "HE": 7.870120560697213,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "missing_O05",
+      "overrides": {
+        "N": null,
+        "U": null
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.0512727784146835,
+        "GO": 0.92,
+        "GP": 0.92,
+        "GT": 59.194772288905426,
+        "HE": 7.870120560697213,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "low_conversion",
+      "overrides": {
+        "J": 1,
+        "K": 1,
+        "L": 1,
+        "M": 1,
+        "Q": 1,
+        "R": 1,
+        "S": 1,
+        "T": 1,
+        "X": 0.8,
+        "Y": 1,
+        "Z": 1,
+        "AA": 1,
+        "AC": 0.8,
+        "AD": 1,
+        "AE": 1,
+        "AF": 1,
+        "AJ": 1,
+        "AK": 1,
+        "AL": 2,
+        "AH": 2,
+        "AV": 0,
+        "AW": 0,
+        "AY": 0,
+        "BF": 0
+      },
+      "simulated": {
+        "GJ": 1.0,
+        "GM": "DA",
+        "GL": 0.1056096823840552,
+        "GO": 0.92,
+        "GP": 0.8943903176159448,
+        "GT": 58.66584065930054,
+        "HE": 17.304014964934687,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "context_text",
+      "overrides": {
+        "AV": "NOT CHECKED"
+      },
+      "simulated": {
+        "GJ": "ERROR:XLException",
+        "GM": "DA",
+        "GL": "ERROR:XLException",
+        "GO": "ERROR:XLException",
+        "GP": "ERROR:XLException",
+        "GT": "ERROR:XLException",
+        "HE": "ERROR:XLException",
+        "HG": "PASS",
+        "HH": "ERROR:XLException",
+        "HK": "ERROR:XLException"
+      },
+      "native_excel_verified": false
+    },
+    {
+      "name": "context_blank",
+      "overrides": {
+        "AV": null
+      },
+      "simulated": {
+        "GJ": 0.0,
+        "GM": "DA",
+        "GL": 0.05715520659615344,
+        "GO": 0.92,
+        "GP": 0.92,
+        "GT": 59.194772288905426,
+        "HE": 7.517179384226624,
+        "HG": "PASS",
+        "HH": 1.0,
+        "HK": "DEFENSIV"
+      },
+      "native_excel_verified": false
+    }
+  ]
+}

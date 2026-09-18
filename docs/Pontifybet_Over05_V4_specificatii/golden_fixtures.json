@@ -1,0 +1,2761 @@
+{
+  "workbook_sha256": "8068c1f95c8dfa28def846b51b9f152a9e52fd085d8085344a5321b97338c42a",
+  "provenance": "Saved workbook cache; not freshly recalculated in Microsoft Excel",
+  "fixtures": [
+    {
+      "match_id": "DEMO-LIGA-001",
+      "excel_row": 4,
+      "inputs": {
+        "A": "DEMO-LIGA-001",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-01 00:00:00",
+        "D": "Liga demonstrativă",
+        "E": "Campionat intern",
+        "F": "Etapa 7",
+        "G": "Gazde Demo A",
+        "H": "Oaspeți Demo B",
+        "I": 10,
+        "J": 1.8,
+        "K": 1,
+        "L": 1.7,
+        "M": 1.05,
+        "N": 0.9,
+        "O": 0.1,
+        "P": 10,
+        "Q": 1.2,
+        "R": 1.6,
+        "S": 1.25,
+        "T": 1.55,
+        "U": 0.9,
+        "V": 0.2,
+        "W": 5,
+        "X": 1.6,
+        "Y": 1,
+        "Z": 1.55,
+        "AA": 1.1,
+        "AB": 5,
+        "AC": 1.2,
+        "AD": 1.6,
+        "AE": 1.3,
+        "AF": 1.45,
+        "AG": 4,
+        "AH": 2.25,
+        "AI": 1,
+        "AJ": 1.45,
+        "AK": 1.15,
+        "AL": 2.6,
+        "AM": 0.08,
+        "AN": 120,
+        "AO": 1.72,
+        "AP": 3.85,
+        "AQ": 4.8,
+        "AR": 1.12,
+        "AS": 7.2,
+        "AT": 4,
+        "AU": 0,
+        "AV": 1,
+        "AW": 1,
+        "AX": 0,
+        "AY": 1,
+        "AZ": 0,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 0,
+        "BF": 1,
+        "BG": 0,
+        "BH": "Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+        "BI": "https://footystats.org/ ; https://understat.com/",
+        "CJ": 7,
+        "CK": 0,
+        "CL": 0,
+        "CM": 5.2,
+        "CN": 4.4,
+        "CO": 2,
+        "CP": 1.6,
+        "CQ": 0.12,
+        "CR": 0.11,
+        "CS": 27,
+        "CT": 23,
+        "CU": 0.28,
+        "CV": 0.22,
+        "CW": 0,
+        "CX": 0,
+        "CY": 1,
+        "CZ": 1,
+        "DA": 1,
+        "DB": 1,
+        "DC": 1.13,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 1,
+        "DS": 0,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.05,
+        "EW": 0.08,
+        "EX": 0.35,
+        "EY": 0.25,
+        "EZ": 0.3,
+        "FA": 0.35,
+        "FB": null,
+        "FY": 0.2,
+        "FZ": 0.2,
+        "GA": 1,
+        "GB": 1
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.7087635820327414,
+          "simulated": 2.7087635820327414
+        },
+        "BK": {
+          "cache": 2.695318373689451,
+          "simulated": 2.695318373689451
+        },
+        "BL": {
+          "cache": 2.6489578808281795,
+          "simulated": 2.6489578808281795
+        },
+        "BM": {
+          "cache": 2.6487763675966214,
+          "simulated": 2.6487763675966214
+        },
+        "BN": {
+          "cache": 2.4444444444444446,
+          "simulated": 2.4444444444444446
+        },
+        "BO": {
+          "cache": 0.8653846153846154,
+          "simulated": 0.8653846153846154
+        },
+        "BP": {
+          "cache": 2.0053335695261145,
+          "simulated": 2.0053335695261145
+        },
+        "BQ": {
+          "cache": 2.568702883845408,
+          "simulated": 2.568702883845408
+        },
+        "BR": {
+          "cache": 1.07,
+          "simulated": 1.07
+        },
+        "BS": {
+          "cache": 2.748512085714587,
+          "simulated": 2.748512085714587
+        },
+        "BT": {
+          "cache": 0.06402305118433504,
+          "simulated": 0.06402305118433504
+        },
+        "BU": {
+          "cache": 1.0385495214000677,
+          "simulated": 1.0385495214000677
+        },
+        "BV": {
+          "cache": 0.07486833187454739,
+          "simulated": 0.07486833187454739
+        },
+        "BW": {
+          "cache": 0.9251316681254527,
+          "simulated": 0.9251316681254527
+        },
+        "BX": {
+          "cache": 1.0809272176643236,
+          "simulated": 1.0809272176643236
+        },
+        "BY": {
+          "cache": 0.8653846153846154,
+          "simulated": 0.8653846153846154
+        },
+        "BZ": {
+          "cache": 0.05974705274083725,
+          "simulated": 0.05974705274083725
+        },
+        "CA": {
+          "cache": 0.03614746830050719,
+          "simulated": 0.03614746830050719
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.9800000000000001,
+          "simulated": 0.9800000000000001
+        },
+        "CD": {
+          "cache": 0.5357386144452715,
+          "simulated": 0.5357386144452715
+        },
+        "CE": {
+          "cache": 72.31477228890543,
+          "simulated": 72.31477228890543
+        },
+        "CF": {
+          "cache": "MEDIU",
+          "simulated": "MEDIU"
+        },
+        "CG": {
+          "cache": "RECOMANDAT CU PRUDENȚĂ",
+          "simulated": "RECOMANDAT CU PRUDENȚĂ"
+        },
+        "CH": {
+          "cache": "P(O0,5)=92.5%; λ ajustat=2.75; Confidence=72/100; Edge=6.0%; risc=MEDIU. Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+          "simulated": "P(O0,5)=92.5%; λ ajustat=2.75; Confidence=72/100; Edge=6.0%; risc=MEDIU. Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare."
+        },
+        "CI": {
+          "cache": "https://footystats.org/ ; https://understat.com/",
+          "simulated": "https://footystats.org/ ; https://understat.com/"
+        },
+        "DW": {
+          "cache": 1.0357878787878787,
+          "simulated": 1.0357878787878787
+        },
+        "DX": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.0721123897129207,
+          "simulated": 0.0721123897129207
+        },
+        "EA": {
+          "cache": 0.9278876102870793,
+          "simulated": 0.9278876102870793
+        },
+        "EB": {
+          "cache": 1.0777167287432685,
+          "simulated": 1.0777167287432685
+        },
+        "EC": {
+          "cache": 0.8653846153846154,
+          "simulated": 0.8653846153846154
+        },
+        "ED": {
+          "cache": 0.06250299490246392,
+          "simulated": 0.06250299490246392
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 59.194772288905426,
+          "simulated": 59.194772288905426
+        },
+        "EG": {
+          "cache": 0.0456,
+          "simulated": 0.0456
+        },
+        "EH": {
+          "cache": "93% – standard",
+          "simulated": "93% – standard"
+        },
+        "EI": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "EM": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=92.8% ±4.6%; P0 ZIP=7.2%; Confidence=59/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+          "simulated": "P v2=92.8% ±4.6%; P0 ZIP=7.2%; Confidence=59/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P"
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 1.0588235294117647,
+          "simulated": 1.0588235294117647
+        },
+        "FD": {
+          "cache": 0.96,
+          "simulated": 0.96
+        },
+        "FE": {
+          "cache": 0.6324555320336758,
+          "simulated": 0.6324555320336758
+        },
+        "FF": {
+          "cache": 0.845378028229756,
+          "simulated": 0.845378028229756
+        },
+        "FG": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "FH": {
+          "cache": 0.6964285714285714,
+          "simulated": 0.6964285714285714
+        },
+        "FI": {
+          "cache": 0.7826357823647438,
+          "simulated": 0.7826357823647438
+        },
+        "FJ": {
+          "cache": 0.05643773654116299,
+          "simulated": 0.05643773654116299
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "FR": {
+          "cache": 0.05461538461538462,
+          "simulated": 0.05461538461538462
+        },
+        "FS": {
+          "cache": 0.030400000000000205,
+          "simulated": 0.030400000000000205
+        },
+        "FT": {
+          "cache": 59.194772288905426,
+          "simulated": 59.194772288905426
+        },
+        "FU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "FW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FX": {
+          "cache": "P v3=92.0%; P0 v3=5.6%; factor zero=0.78x (SCĂZUT); cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v3=92.0%; P0 v3=5.6%; factor zero=0.78x (SCĂZUT); cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GC": {
+          "cache": 1.032258064516129,
+          "simulated": 1.032258064516129
+        },
+        "GD": {
+          "cache": 0.923076923076923,
+          "simulated": 0.923076923076923
+        },
+        "GE": {
+          "cache": 1.425,
+          "simulated": 1.425
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.05643773654116299,
+          "simulated": 0.05643773654116299
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "GR": {
+          "cache": 0.05461538461538462,
+          "simulated": 0.05461538461538462
+        },
+        "GS": {
+          "cache": 0.030400000000000205,
+          "simulated": 0.030400000000000205
+        },
+        "GT": {
+          "cache": 59.194772288905426,
+          "simulated": 59.194772288905426
+        },
+        "GU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "GW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GX": {
+          "cache": "P v5=92.0%; P0 v5=5.6%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v5=92.0%; P0 v5=5.6%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 9.999999999999998,
+          "simulated": 9.999999999999998
+        },
+        "HA": {
+          "cache": 3.839503807616923,
+          "simulated": 3.839503807616923
+        },
+        "HB": {
+          "cache": 14.000000000000012,
+          "simulated": 14.000000000000012
+        },
+        "HC": {
+          "cache": 9.377513343075528,
+          "simulated": 9.377513343075528
+        },
+        "HD": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HE": {
+          "cache": 7.870120560697213,
+          "simulated": 7.870120560697213
+        },
+        "HF": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HI": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=3.8; Context=14.0; Uncertainty=9.4; Compound=0.0; Risk Score=7.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=3.8; Context=14.0; Uncertainty=9.4; Compound=0.0; Risk Score=7.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-CUPA-002",
+      "excel_row": 5,
+      "inputs": {
+        "A": "DEMO-CUPA-002",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-02 00:00:00",
+        "D": "Cupă demonstrativă",
+        "E": "Cupa interna",
+        "F": "Tur eliminatoriu",
+        "G": "Favorită Demo",
+        "H": "Outsider Demo",
+        "I": 8,
+        "J": 2.1,
+        "K": 0.9,
+        "L": 2,
+        "M": 0.95,
+        "N": 1,
+        "O": 0,
+        "P": 8,
+        "Q": 0.8,
+        "R": 2,
+        "S": 0.85,
+        "T": 1.9,
+        "U": 0.88,
+        "V": 0.25,
+        "W": 5,
+        "X": 2,
+        "Y": 0.8,
+        "Z": 1.95,
+        "AA": 0.9,
+        "AB": 5,
+        "AC": 0.8,
+        "AD": 1.8,
+        "AE": 0.9,
+        "AF": 1.7,
+        "AG": 2,
+        "AH": 2.5,
+        "AI": 1,
+        "AJ": 1.4,
+        "AK": 1.1,
+        "AL": 2.5,
+        "AM": 0.09,
+        "AN": 80,
+        "AO": 1.3,
+        "AP": 5.3,
+        "AQ": 10,
+        "AR": 1.07,
+        "AS": 10.5,
+        "AT": 3,
+        "AU": 0,
+        "AV": 2,
+        "AW": 1,
+        "AX": 0,
+        "AY": 1,
+        "AZ": -1,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 0,
+        "BF": 2,
+        "BG": 1,
+        "BH": "Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea.",
+        "BI": "https://www.transfermarkt.com/ ; https://www.sofascore.com/",
+        "CJ": 1,
+        "CK": 0,
+        "CL": 0,
+        "CM": 5.6,
+        "CN": 3.2,
+        "CO": 2.4,
+        "CP": 0.9,
+        "CQ": 0.13,
+        "CR": 0.08,
+        "CS": 30,
+        "CT": 16,
+        "CU": 0.31,
+        "CV": 0.18,
+        "CW": 0,
+        "CX": 1,
+        "CY": null,
+        "CZ": null,
+        "DA": null,
+        "DB": null,
+        "DC": 1.09,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 1,
+        "DS": 0.15,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.1,
+        "EW": 0.14,
+        "EX": 0.25,
+        "EY": 0.35,
+        "EZ": 0.45,
+        "FA": 0.5,
+        "FB": null,
+        "FY": 0.2,
+        "FZ": 0.4,
+        "GA": 1,
+        "GB": 2
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.6994982655469304,
+          "simulated": 2.6994982655469304
+        },
+        "BK": {
+          "cache": 2.6745008736010325,
+          "simulated": 2.6745008736010325
+        },
+        "BL": {
+          "cache": 2.599206149143116,
+          "simulated": 2.599206149143116
+        },
+        "BM": {
+          "cache": 2.6112291495737217,
+          "simulated": 2.6112291495737217
+        },
+        "BN": {
+          "cache": 2.5,
+          "simulated": 2.5
+        },
+        "BO": {
+          "cache": 0.9075194468452895,
+          "simulated": 0.9075194468452895
+        },
+        "BP": {
+          "cache": 2.38075689273177,
+          "simulated": 2.38075689273177
+        },
+        "BQ": {
+          "cache": 2.5606172771793028,
+          "simulated": 2.5606172771793028
+        },
+        "BR": {
+          "cache": 1.092,
+          "simulated": 1.092
+        },
+        "BS": {
+          "cache": 2.796194066679799,
+          "simulated": 2.796194066679799
+        },
+        "BT": {
+          "cache": 0.06104194264881993,
+          "simulated": 0.06104194264881993
+        },
+        "BU": {
+          "cache": 1.038569782585325,
+          "simulated": 1.038569782585325
+        },
+        "BV": {
+          "cache": 0.050717053684296645,
+          "simulated": 0.050717053684296645
+        },
+        "BW": {
+          "cache": 0.9492829463157033,
+          "simulated": 0.9492829463157033
+        },
+        "BX": {
+          "cache": 1.0534266984160376,
+          "simulated": 1.0534266984160376
+        },
+        "BY": {
+          "cache": 0.9075194468452895,
+          "simulated": 0.9075194468452895
+        },
+        "BZ": {
+          "cache": 0.0417634994704138,
+          "simulated": 0.0417634994704138
+        },
+        "CA": {
+          "cache": 0.0157327525578026,
+          "simulated": 0.0157327525578026
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.8200000000000001,
+          "simulated": 0.8200000000000001
+        },
+        "CD": {
+          "cache": 0.7938975561300963,
+          "simulated": 0.7938975561300963
+        },
+        "CE": {
+          "cache": 56.15015601034173,
+          "simulated": 56.15015601034173
+        },
+        "CF": {
+          "cache": "MEDIU",
+          "simulated": "MEDIU"
+        },
+        "CG": {
+          "cache": "ANALIZĂ NECONCLUDENTĂ",
+          "simulated": "ANALIZĂ NECONCLUDENTĂ"
+        },
+        "CH": {
+          "cache": "P(O0,5)=94.9%; λ ajustat=2.80; Confidence=56/100; Edge=4.2%; risc=MEDIU. Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea.",
+          "simulated": "P(O0,5)=94.9%; λ ajustat=2.80; Confidence=56/100; Edge=4.2%; risc=MEDIU. Diferență de valoare mare, dar rotația și lipsa informațiilor despre primul 11 reduc încrederea."
+        },
+        "CI": {
+          "cache": "https://www.transfermarkt.com/ ; https://www.sofascore.com/",
+          "simulated": "https://www.transfermarkt.com/ ; https://www.sofascore.com/"
+        },
+        "DW": {
+          "cache": 0.995240404040404,
+          "simulated": 0.995240404040404
+        },
+        "DX": {
+          "cache": 1.25,
+          "simulated": 1.25
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.0696065307877074,
+          "simulated": 0.0696065307877074
+        },
+        "EA": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "EB": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "EC": {
+          "cache": 0.9075194468452895,
+          "simulated": 0.9075194468452895
+        },
+        "ED": {
+          "cache": 0.012480553154710528,
+          "simulated": 0.012480553154710528
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 32.070156010341734,
+          "simulated": 32.070156010341734
+        },
+        "EG": {
+          "cache": 0.0804,
+          "simulated": 0.0804
+        },
+        "EH": {
+          "cache": "92% – early/regim",
+          "simulated": "92% – early/regim"
+        },
+        "EI": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "EM": {
+          "cache": "WAIT XI – HIGH P",
+          "simulated": "WAIT XI – HIGH P"
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=92.0% ±8.0%; P0 ZIP=7.0%; Confidence=32/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+          "simulated": "P v2=92.0% ±8.0%; P0 ZIP=7.0%; Confidence=32/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P"
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 1.05,
+          "simulated": 1.05
+        },
+        "FD": {
+          "cache": 0.9411764705882354,
+          "simulated": 0.9411764705882354
+        },
+        "FE": {
+          "cache": 1.1832159566199232,
+          "simulated": 1.1832159566199232
+        },
+        "FF": {
+          "cache": 0.5,
+          "simulated": 0.5
+        },
+        "FG": {
+          "cache": 0.004411764705882337,
+          "simulated": 0.004411764705882337
+        },
+        "FH": {
+          "cache": 1.0178571428571428,
+          "simulated": 1.0178571428571428
+        },
+        "FI": {
+          "cache": 0.9094185684985818,
+          "simulated": 0.9094185684985818
+        },
+        "FJ": {
+          "cache": 0.06330147158710933,
+          "simulated": 0.06330147158710933
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "FQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "FR": {
+          "cache": 0.012480553154710528,
+          "simulated": 0.012480553154710528
+        },
+        "FS": {
+          "cache": -0.015599999999999947,
+          "simulated": -0.015599999999999947
+        },
+        "FT": {
+          "cache": 32.070156010341734,
+          "simulated": 32.070156010341734
+        },
+        "FU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "FW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "FX": {
+          "cache": "P v3=92.0%; P0 v3=6.3%; factor zero=0.91x (SCĂZUT); cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v3=92.0%; P0 v3=6.3%; factor zero=0.91x (SCĂZUT); cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GC": {
+          "cache": 1.0256410256410258,
+          "simulated": 1.0256410256410258
+        },
+        "GD": {
+          "cache": 0.888888888888889,
+          "simulated": 0.888888888888889
+        },
+        "GE": {
+          "cache": 1.425,
+          "simulated": 1.425
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.06330147158710933,
+          "simulated": 0.06330147158710933
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GP": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "GQ": {
+          "cache": 1.0869565217391304,
+          "simulated": 1.0869565217391304
+        },
+        "GR": {
+          "cache": 0.012480553154710528,
+          "simulated": 0.012480553154710528
+        },
+        "GS": {
+          "cache": -0.015599999999999947,
+          "simulated": -0.015599999999999947
+        },
+        "GT": {
+          "cache": 32.070156010341734,
+          "simulated": 32.070156010341734
+        },
+        "GU": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "GW": {
+          "cache": "NU – LINEUP NECONFIRMAT",
+          "simulated": "NU – LINEUP NECONFIRMAT"
+        },
+        "GX": {
+          "cache": "P v5=92.0%; P0 v5=6.3%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+          "simulated": "P v5=92.0%; P0 v5=6.3%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=32/100; lineup=NU; piață=DA; EV=-1.6%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT"
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 19.999999999999996,
+          "simulated": 19.999999999999996
+        },
+        "HA": {
+          "cache": 18.755125705715507,
+          "simulated": 18.755125705715507
+        },
+        "HB": {
+          "cache": 43.40000000000002,
+          "simulated": 43.40000000000002
+        },
+        "HC": {
+          "cache": 15.352913280735248,
+          "simulated": 15.352913280735248
+        },
+        "HD": {
+          "cache": 50,
+          "simulated": 50.0
+        },
+        "HE": {
+          "cache": 24.908034164456684,
+          "simulated": 24.908034164456684
+        },
+        "HF": {
+          "cache": 2,
+          "simulated": 2.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 2,
+          "simulated": 2.0
+        },
+        "HI": {
+          "cache": "PRUDENT",
+          "simulated": "PRUDENT"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=20.0; ZM=18.8; Context=43.4; Uncertainty=15.4; Compound=50.0; Risk Score=24.9; Base=2; G0=PASS; Final=2. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=20.0; ZM=18.8; Context=43.4; Uncertainty=15.4; Compound=50.0; Risk Score=24.9; Base=2; G0=PASS; Final=2. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "PRUDENT",
+          "simulated": "PRUDENT"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-EURO-TUR-003",
+      "excel_row": 6,
+      "inputs": {
+        "A": "DEMO-EURO-TUR-003",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-03 00:00:00",
+        "D": "Competiție UEFA demonstrativă",
+        "E": "Europa - tur",
+        "F": "Play-off, tur",
+        "G": "Club Euro A",
+        "H": "Club Euro B",
+        "I": 10,
+        "J": 1.5,
+        "K": 0.8,
+        "L": 1.6,
+        "M": 0.9,
+        "N": 0.9,
+        "O": 0.1,
+        "P": 10,
+        "Q": 1.3,
+        "R": 1.3,
+        "S": 1.35,
+        "T": 1.25,
+        "U": 0.9,
+        "V": 0.1,
+        "W": 5,
+        "X": 1.4,
+        "Y": 0.8,
+        "Z": 1.5,
+        "AA": 0.85,
+        "AB": 5,
+        "AC": 1.2,
+        "AD": 1.4,
+        "AE": 1.3,
+        "AF": 1.35,
+        "AG": 0,
+        "AH": 0,
+        "AI": 0,
+        "AJ": 1.45,
+        "AK": 1.15,
+        "AL": 2.6,
+        "AM": 0.08,
+        "AN": 150,
+        "AO": 1.95,
+        "AP": 3.4,
+        "AQ": 3.85,
+        "AR": 1.11,
+        "AS": 7.8,
+        "AT": 5,
+        "AU": 1,
+        "AV": 1,
+        "AW": 0,
+        "AX": 1,
+        "AY": 0,
+        "AZ": 0,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": -1,
+        "BF": 0,
+        "BG": 0,
+        "BH": "Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol.",
+        "BI": "https://www.uefa.com/ ; https://theanalyst.com/",
+        "CJ": 1,
+        "CK": 0,
+        "CL": 0,
+        "CM": 4.8,
+        "CN": 4.5,
+        "CO": 1.7,
+        "CP": 1.6,
+        "CQ": 0.11,
+        "CR": 0.11,
+        "CS": 24,
+        "CT": 23,
+        "CU": 0.22,
+        "CV": 0.21,
+        "CW": 0,
+        "CX": 0,
+        "CY": 1,
+        "CZ": 1,
+        "DA": 1,
+        "DB": 1,
+        "DC": 1.12,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 1,
+        "DS": 0.1,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.08,
+        "EW": 0.08,
+        "EX": 0.4,
+        "EY": 0.35,
+        "EZ": 0.3,
+        "FA": 0.32,
+        "FB": null,
+        "FY": 0.2,
+        "FZ": 0.2,
+        "GA": 1,
+        "GB": 1
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.5067326663693565,
+          "simulated": 2.5067326663693565
+        },
+        "BK": {
+          "cache": 2.5620300895932235,
+          "simulated": 2.5620300895932235
+        },
+        "BL": {
+          "cache": 2.4956439237389603,
+          "simulated": 2.4956439237389603
+        },
+        "BM": {
+          "cache": 2.5441428889413125,
+          "simulated": 2.5441428889413125
+        },
+        "BN": {
+          "cache": 2.6,
+          "simulated": 2.6
+        },
+        "BO": {
+          "cache": 0.8754208754208754,
+          "simulated": 0.8754208754208754
+        },
+        "BP": {
+          "cache": 2.0828142261584754,
+          "simulated": 2.0828142261584754
+        },
+        "BQ": {
+          "cache": 2.4147157964471364,
+          "simulated": 2.4147157964471364
+        },
+        "BR": {
+          "cache": 1.0055,
+          "simulated": 1.0055
+        },
+        "BS": {
+          "cache": 2.427996733327596,
+          "simulated": 2.427996733327596
+        },
+        "BT": {
+          "cache": 0.08821337060235639,
+          "simulated": 0.08821337060235639
+        },
+        "BU": {
+          "cache": 1.0385495214000677,
+          "simulated": 1.0385495214000677
+        },
+        "BV": {
+          "cache": 0.09371046536512302,
+          "simulated": 0.09371046536512302
+        },
+        "BW": {
+          "cache": 0.9062895346348769,
+          "simulated": 0.9062895346348769
+        },
+        "BX": {
+          "cache": 1.1034001406657277,
+          "simulated": 1.1034001406657277
+        },
+        "BY": {
+          "cache": 0.8754208754208754,
+          "simulated": 0.8754208754208754
+        },
+        "BZ": {
+          "cache": 0.030868659214001504,
+          "simulated": 0.030868659214001504
+        },
+        "CA": {
+          "cache": 0.0059813834447135505,
+          "simulated": 0.0059813834447135505
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.9,
+          "simulated": 0.9
+        },
+        "CD": {
+          "cache": 0.6503461201979913,
+          "simulated": 0.6503461201979913
+        },
+        "CE": {
+          "cache": 83.72636861164305,
+          "simulated": 83.72636861164305
+        },
+        "CF": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "CG": {
+          "cache": "RECOMANDAT CU PRUDENȚĂ",
+          "simulated": "RECOMANDAT CU PRUDENȚĂ"
+        },
+        "CH": {
+          "cache": "P(O0,5)=90.6%; λ ajustat=2.43; Confidence=84/100; Edge=3.1%; risc=SCĂZUT. Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol.",
+          "simulated": "P(O0,5)=90.6%; λ ajustat=2.43; Confidence=84/100; Edge=3.1%; risc=SCĂZUT. Tur european echilibrat; contextul poate fi prudent, dar xG și piața susțin existența unui gol."
+        },
+        "CI": {
+          "cache": "https://www.uefa.com/ ; https://theanalyst.com/",
+          "simulated": "https://www.uefa.com/ ; https://theanalyst.com/"
+        },
+        "DW": {
+          "cache": 1.0137939393939392,
+          "simulated": 1.0137939393939392
+        },
+        "DX": {
+          "cache": 1.25,
+          "simulated": 1.25
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.10827153348679072,
+          "simulated": 0.10827153348679072
+        },
+        "EA": {
+          "cache": 0.8917284665132093,
+          "simulated": 0.8917284665132093
+        },
+        "EB": {
+          "cache": 1.121417603623386,
+          "simulated": 1.121417603623386
+        },
+        "EC": {
+          "cache": 0.8754208754208754,
+          "simulated": 0.8754208754208754
+        },
+        "ED": {
+          "cache": 0.016307591092333817,
+          "simulated": 0.016307591092333817
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 71.32636861164305,
+          "simulated": 71.32636861164305
+        },
+        "EG": {
+          "cache": 0.092,
+          "simulated": 0.092
+        },
+        "EH": {
+          "cache": "92% – early/regim",
+          "simulated": "92% – early/regim"
+        },
+        "EI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH – APROAPE DE PRAG",
+          "simulated": "WATCH – APROAPE DE PRAG"
+        },
+        "EM": {
+          "cache": "Confidence sub 75.",
+          "simulated": "Confidence sub 75."
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=89.2% ±9.2%; P0 ZIP=10.8%; Confidence=71/100; piață reală=DA; EV=n/a; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence sub 75.",
+          "simulated": "P v2=89.2% ±9.2%; P0 ZIP=10.8%; Confidence=71/100; piață reală=DA; EV=n/a; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence sub 75."
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 0.9375,
+          "simulated": 0.9375
+        },
+        "FD": {
+          "cache": 0.9629629629629629,
+          "simulated": 0.9629629629629629
+        },
+        "FE": {
+          "cache": 0.7999999999999999,
+          "simulated": 0.7999999999999999
+        },
+        "FF": {
+          "cache": 0.7741657386773941,
+          "simulated": 0.7741657386773941
+        },
+        "FG": {
+          "cache": 0.0497685185185186,
+          "simulated": 0.0497685185185186
+        },
+        "FH": {
+          "cache": 0.6642857142857143,
+          "simulated": 0.6642857142857143
+        },
+        "FI": {
+          "cache": 0.8150605681640648,
+          "simulated": 0.8150605681640648
+        },
+        "FJ": {
+          "cache": 0.08824785759973822,
+          "simulated": 0.08824785759973822
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "FP": {
+          "cache": 0.9117521424002618,
+          "simulated": 0.9117521424002618
+        },
+        "FQ": {
+          "cache": 1.0967893065405019,
+          "simulated": 1.0967893065405019
+        },
+        "FR": {
+          "cache": 0.03633126697938638,
+          "simulated": 0.03633126697938638
+        },
+        "FS": {
+          "cache": 0.012044878064290776,
+          "simulated": 0.012044878064290776
+        },
+        "FT": {
+          "cache": 71.32636861164305,
+          "simulated": 71.32636861164305
+        },
+        "FU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FV": {
+          "cache": "WATCH – APROAPE DE PRAG",
+          "simulated": "WATCH – APROAPE DE PRAG"
+        },
+        "FW": {
+          "cache": "Confidence v3 sub 75.",
+          "simulated": "Confidence v3 sub 75."
+        },
+        "FX": {
+          "cache": "P v3=91.2%; P0 v3=8.8%; factor zero=0.82x (SCĂZUT); cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v3 sub 75.",
+          "simulated": "P v3=91.2%; P0 v3=8.8%; factor zero=0.82x (SCĂZUT); cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v3 sub 75."
+        },
+        "GC": {
+          "cache": 0.9333333333333332,
+          "simulated": 0.9333333333333332
+        },
+        "GD": {
+          "cache": 0.923076923076923,
+          "simulated": 0.923076923076923
+        },
+        "GE": {
+          "cache": 1.4,
+          "simulated": 1.4
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.08824785759973822,
+          "simulated": 0.08824785759973822
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "GP": {
+          "cache": 0.9117521424002618,
+          "simulated": 0.9117521424002618
+        },
+        "GQ": {
+          "cache": 1.0967893065405019,
+          "simulated": 1.0967893065405019
+        },
+        "GR": {
+          "cache": 0.03633126697938638,
+          "simulated": 0.03633126697938638
+        },
+        "GS": {
+          "cache": 0.012044878064290776,
+          "simulated": 0.012044878064290776
+        },
+        "GT": {
+          "cache": 71.32636861164305,
+          "simulated": 71.32636861164305
+        },
+        "GU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GV": {
+          "cache": "WATCH – APROAPE DE PRAG",
+          "simulated": "WATCH – APROAPE DE PRAG"
+        },
+        "GW": {
+          "cache": "Confidence v5 sub 75.",
+          "simulated": "Confidence v5 sub 75."
+        },
+        "GX": {
+          "cache": "P v5=91.2%; P0 v5=8.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v5 sub 75.",
+          "simulated": "P v5=91.2%; P0 v5=8.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=71/100; lineup=DA; piață=DA; EV=1.2%; gate=DA; verdict=WATCH – APROAPE DE PRAG. Confidence v5 sub 75."
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HA": {
+          "cache": 7.654184489889976,
+          "simulated": 7.654184489889976
+        },
+        "HB": {
+          "cache": 1.100000000000012,
+          "simulated": 1.100000000000012
+        },
+        "HC": {
+          "cache": 8.42145248025683,
+          "simulated": 8.42145248025683
+        },
+        "HD": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HE": {
+          "cache": 3.886353641167856,
+          "simulated": 3.886353641167856
+        },
+        "HF": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HI": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=0.0; ZM=7.7; Context=1.1; Uncertainty=8.4; Compound=0.0; Risk Score=3.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=0.0; ZM=7.7; Context=1.1; Uncertainty=8.4; Compound=0.0; Risk Score=3.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-EURO-RET-004",
+      "excel_row": 7,
+      "inputs": {
+        "A": "DEMO-EURO-RET-004",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-10 00:00:00",
+        "D": "Competiție UEFA demonstrativă",
+        "E": "Europa - retur",
+        "F": "Retur; gazdele trebuie să recupereze un gol",
+        "G": "Club Retur A",
+        "H": "Club Retur B",
+        "I": 10,
+        "J": 1.7,
+        "K": 1.1,
+        "L": 1.75,
+        "M": 1.1,
+        "N": 0.9,
+        "O": 0.1,
+        "P": 10,
+        "Q": 1.1,
+        "R": 1.5,
+        "S": 1.2,
+        "T": 1.45,
+        "U": 0.9,
+        "V": 0.2,
+        "W": 5,
+        "X": 1.8,
+        "Y": 1.2,
+        "Z": 1.85,
+        "AA": 1.15,
+        "AB": 5,
+        "AC": 1,
+        "AD": 1.4,
+        "AE": 1.1,
+        "AF": 1.4,
+        "AG": 1,
+        "AH": 2,
+        "AI": 1,
+        "AJ": 1.45,
+        "AK": 1.15,
+        "AL": 2.6,
+        "AM": 0.08,
+        "AN": 150,
+        "AO": 1.75,
+        "AP": 3.55,
+        "AQ": 4.5,
+        "AR": 1.1,
+        "AS": 8.2,
+        "AT": 4,
+        "AU": 1,
+        "AV": 2,
+        "AW": 2,
+        "AX": 0,
+        "AY": 1,
+        "AZ": 0,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 2,
+        "BF": 1,
+        "BG": 0,
+        "BH": "Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur.",
+        "BI": "https://www.uefa.com/ ; https://www.fotmob.com/",
+        "CJ": 2,
+        "CK": 0,
+        "CL": 0,
+        "CM": 5.4,
+        "CN": 4,
+        "CO": 2.1,
+        "CP": 1.4,
+        "CQ": 0.12,
+        "CR": 0.1,
+        "CS": 28,
+        "CT": 21,
+        "CU": 0.27,
+        "CV": 0.2,
+        "CW": 0,
+        "CX": 0,
+        "CY": 1,
+        "CZ": 1,
+        "DA": 1,
+        "DB": 1,
+        "DC": 1.12,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 2,
+        "DS": 0.2,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.06,
+        "EW": 0.07,
+        "EX": 0.35,
+        "EY": 0.3,
+        "EZ": 0.28,
+        "FA": 0.3,
+        "FB": null,
+        "FY": 0.1,
+        "FZ": 0.2,
+        "GA": 0,
+        "GB": 1
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.6545487838134596,
+          "simulated": 2.6545487838134596
+        },
+        "BK": {
+          "cache": 2.680731636599641,
+          "simulated": 2.680731636599641
+        },
+        "BL": {
+          "cache": 2.6455054949771233,
+          "simulated": 2.6455054949771233
+        },
+        "BM": {
+          "cache": 2.6706022224399826,
+          "simulated": 2.6706022224399826
+        },
+        "BN": {
+          "cache": 2.5,
+          "simulated": 2.5
+        },
+        "BO": {
+          "cache": 0.8817204301075269,
+          "simulated": 0.8817204301075269
+        },
+        "BP": {
+          "cache": 2.134704220354885,
+          "simulated": 2.134704220354885
+        },
+        "BQ": {
+          "cache": 2.487523524208675,
+          "simulated": 2.487523524208675
+        },
+        "BR": {
+          "cache": 1.2015,
+          "simulated": 1.2015
+        },
+        "BS": {
+          "cache": 2.988759514336723,
+          "simulated": 2.988759514336723
+        },
+        "BT": {
+          "cache": 0.05034985627516557,
+          "simulated": 0.05034985627516557
+        },
+        "BU": {
+          "cache": 1.0385495214000677,
+          "simulated": 1.0385495214000677
+        },
+        "BV": {
+          "cache": 0.06421811435285155,
+          "simulated": 0.06421811435285155
+        },
+        "BW": {
+          "cache": 0.9357818856471485,
+          "simulated": 0.9357818856471485
+        },
+        "BX": {
+          "cache": 1.0686250881084762,
+          "simulated": 1.0686250881084762
+        },
+        "BY": {
+          "cache": 0.8817204301075269,
+          "simulated": 0.8817204301075269
+        },
+        "BZ": {
+          "cache": 0.054061455539621606,
+          "simulated": 0.054061455539621606
+        },
+        "CA": {
+          "cache": 0.029360074211863374,
+          "simulated": 0.029360074211863374
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.92,
+          "simulated": 0.92
+        },
+        "CD": {
+          "cache": 0.642794637471636,
+          "simulated": 0.642794637471636
+        },
+        "CE": {
+          "cache": 79.43030347448945,
+          "simulated": 79.43030347448945
+        },
+        "CF": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "CG": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "CH": {
+          "cache": "P(O0,5)=93.6%; λ ajustat=2.99; Confidence=79/100; Edge=5.4%; risc=SCĂZUT. Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur.",
+          "simulated": "P(O0,5)=93.6%; λ ajustat=2.99; Confidence=79/100; Edge=5.4%; risc=SCĂZUT. Scorul agregat obligă gazdele să atace; ponderea contextului este mai mare la retur."
+        },
+        "CI": {
+          "cache": "https://www.uefa.com/ ; https://www.fotmob.com/",
+          "simulated": "https://www.uefa.com/ ; https://www.fotmob.com/"
+        },
+        "DW": {
+          "cache": 1.0250343434343436,
+          "simulated": 1.0250343434343436
+        },
+        "DX": {
+          "cache": 1.1,
+          "simulated": 1.1
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.07290198857975591,
+          "simulated": 0.07290198857975591
+        },
+        "EA": {
+          "cache": 0.9270980114202441,
+          "simulated": 0.9270980114202441
+        },
+        "EB": {
+          "cache": 1.078634607864249,
+          "simulated": 1.078634607864249
+        },
+        "EC": {
+          "cache": 0.8817204301075269,
+          "simulated": 0.8817204301075269
+        },
+        "ED": {
+          "cache": 0.045377581312717186,
+          "simulated": 0.045377581312717186
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 77.03030347448944,
+          "simulated": 77.03030347448944
+        },
+        "EG": {
+          "cache": 0.041999999999999996,
+          "simulated": 0.041999999999999996
+        },
+        "EH": {
+          "cache": "94% – confirmat",
+          "simulated": "94% – confirmat"
+        },
+        "EI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "EM": {
+          "cache": "G0/Zero-Mass + confidence trecute; EV ignorat.",
+          "simulated": "G0/Zero-Mass + confidence trecute; EV ignorat."
+        },
+        "EN": {
+          "cache": 0.01,
+          "simulated": 0.01
+        },
+        "EO": {
+          "cache": 10,
+          "simulated": 10.0
+        },
+        "EP": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=92.7% ±4.2%; P0 ZIP=7.3%; Confidence=77/100; piață reală=DA; EV=n/a; gate=DA; verdict=PARIU RECOMANDAT. G0/Zero-Mass + confidence trecute; EV ignorat.",
+          "simulated": "P v2=92.7% ±4.2%; P0 ZIP=7.3%; Confidence=77/100; piață reală=DA; EV=n/a; gate=DA; verdict=PARIU RECOMANDAT. G0/Zero-Mass + confidence trecute; EV ignorat."
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 0.9714285714285714,
+          "simulated": 0.9714285714285714
+        },
+        "FD": {
+          "cache": 0.9166666666666667,
+          "simulated": 0.9166666666666667
+        },
+        "FE": {
+          "cache": 0.6480740698407861,
+          "simulated": 0.6480740698407861
+        },
+        "FF": {
+          "cache": 0.8755604237266935,
+          "simulated": 0.8755604237266935
+        },
+        "FG": {
+          "cache": 0.055952380952380976,
+          "simulated": 0.055952380952380976
+        },
+        "FH": {
+          "cache": 0.6214285714285716,
+          "simulated": 0.6214285714285716
+        },
+        "FI": {
+          "cache": 0.7925665385464343,
+          "simulated": 0.7925665385464343
+        },
+        "FJ": {
+          "cache": 0.05777967674180883,
+          "simulated": 0.05777967674180883
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "FM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FN": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "FP": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "FQ": {
+          "cache": 1.0638297872340425,
+          "simulated": 1.0638297872340425
+        },
+        "FR": {
+          "cache": 0.05827956989247307,
+          "simulated": 0.05827956989247307
+        },
+        "FS": {
+          "cache": 0.03400000000000003,
+          "simulated": 0.03400000000000003
+        },
+        "FT": {
+          "cache": 77.03030347448944,
+          "simulated": 77.03030347448944
+        },
+        "FU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FV": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "FW": {
+          "cache": "P0 v3, lineup și piață confirmate.",
+          "simulated": "P0 v3, lineup și piață confirmate."
+        },
+        "FX": {
+          "cache": "P v3=94.0%; P0 v3=5.8%; factor zero=0.79x (SCĂZUT); cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. P0 v3, lineup și piață confirmate.",
+          "simulated": "P v3=94.0%; P0 v3=5.8%; factor zero=0.79x (SCĂZUT); cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. P0 v3, lineup și piață confirmate."
+        },
+        "GC": {
+          "cache": 0.9729729729729729,
+          "simulated": 0.9729729729729729
+        },
+        "GD": {
+          "cache": 0.9090909090909091,
+          "simulated": 0.9090909090909091
+        },
+        "GE": {
+          "cache": 1.475,
+          "simulated": 1.475
+        },
+        "GF": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GG": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.05777967674180883,
+          "simulated": 0.05777967674180883
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "SCĂZUT",
+          "simulated": "SCĂZUT"
+        },
+        "GO": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "GP": {
+          "cache": 0.94,
+          "simulated": 0.94
+        },
+        "GQ": {
+          "cache": 1.0638297872340425,
+          "simulated": 1.0638297872340425
+        },
+        "GR": {
+          "cache": 0.05827956989247307,
+          "simulated": 0.05827956989247307
+        },
+        "GS": {
+          "cache": 0.03400000000000003,
+          "simulated": 0.03400000000000003
+        },
+        "GT": {
+          "cache": 77.03030347448944,
+          "simulated": 77.03030347448944
+        },
+        "GU": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GV": {
+          "cache": "PARIU RECOMANDAT",
+          "simulated": "PARIU RECOMANDAT"
+        },
+        "GW": {
+          "cache": "Toate porțile v5 sunt trecute.",
+          "simulated": "Toate porțile v5 sunt trecute."
+        },
+        "GX": {
+          "cache": "P v5=94.0%; P0 v5=5.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. Toate porțile v5 sunt trecute.",
+          "simulated": "P v5=94.0%; P0 v5=5.8%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=94.0%; Confidence=77/100; lineup=DA; piață=DA; EV=3.4%; gate=DA; verdict=PARIU RECOMANDAT. Toate porțile v5 sunt trecute."
+        },
+        "GY": {
+          "cache": "VERIFIED / PRIOR / SHRINKAGE",
+          "simulated": "VERIFIED / PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 9.999999999999998,
+          "simulated": 9.999999999999998
+        },
+        "HA": {
+          "cache": 5.007828064286391,
+          "simulated": 5.007828064286391
+        },
+        "HB": {
+          "cache": 40.300000000000004,
+          "simulated": 40.300000000000004
+        },
+        "HC": {
+          "cache": 9.726000008057555,
+          "simulated": 9.726000008057555
+        },
+        "HD": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "HE": {
+          "cache": 12.964645200107853,
+          "simulated": 12.964645200107853
+        },
+        "HF": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "HI": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        },
+        "HJ": {
+          "cache": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=5.0; Context=40.3; Uncertainty=9.7; Compound=0.0; Risk Score=13.0; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=5.0; Context=40.3; Uncertainty=9.7; Compound=0.0; Risk Score=13.0; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "DEFENSIV",
+          "simulated": "DEFENSIV"
+        }
+      }
+    },
+    {
+      "match_id": "DEMO-AMICAL-005",
+      "excel_row": 8,
+      "inputs": {
+        "A": "DEMO-AMICAL-005",
+        "B": "DEMO – înlocuiește",
+        "C": "2026-09-05 00:00:00",
+        "D": "Amical demonstrativ",
+        "E": "Amical",
+        "F": "Pregătire",
+        "G": "Selecționată Demo A",
+        "H": "Selecționată Demo B",
+        "I": 4,
+        "J": 1,
+        "K": 1.2,
+        "L": 1.1,
+        "M": 1.15,
+        "N": 0.75,
+        "O": 0.25,
+        "P": 4,
+        "Q": 0.8,
+        "R": 1,
+        "S": 0.9,
+        "T": 1.05,
+        "U": 0.75,
+        "V": 0.25,
+        "W": 3,
+        "X": 0.7,
+        "Y": 1,
+        "Z": 0.8,
+        "AA": 1,
+        "AB": 3,
+        "AC": 0.8,
+        "AD": 0.9,
+        "AE": 0.85,
+        "AF": 0.95,
+        "AG": 1,
+        "AH": 1,
+        "AI": 1,
+        "AJ": 1.25,
+        "AK": 1.05,
+        "AL": 2.3,
+        "AM": 0.12,
+        "AN": 30,
+        "AO": 2.2,
+        "AP": 3.1,
+        "AQ": 3.1,
+        "AR": 1.2,
+        "AS": 5.2,
+        "AT": 2,
+        "AU": 0,
+        "AV": 0,
+        "AW": 1,
+        "AX": -1,
+        "AY": 0,
+        "AZ": -1,
+        "BA": 0,
+        "BB": 0,
+        "BC": 0,
+        "BD": 0,
+        "BE": 0,
+        "BF": 0,
+        "BG": 2,
+        "BH": "Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția.",
+        "BI": "https://www.livescore.com/en/ ; https://www.goal.com/",
+        "CJ": 1,
+        "CK": 0,
+        "CL": 0,
+        "CM": 3.1,
+        "CN": 2.9,
+        "CO": 0.8,
+        "CP": 0.7,
+        "CQ": 0.08,
+        "CR": 0.08,
+        "CS": 15,
+        "CT": 14,
+        "CU": 0.16,
+        "CV": 0.15,
+        "CW": 1,
+        "CX": 1,
+        "CY": null,
+        "CZ": null,
+        "DA": null,
+        "DB": null,
+        "DC": 1.22,
+        "DD": null,
+        "DE": "Pre-match",
+        "DF": null,
+        "DG": null,
+        "DH": null,
+        "DI": null,
+        "DJ": null,
+        "DK": null,
+        "DL": null,
+        "DM": null,
+        "DN": null,
+        "DO": 0,
+        "DP": 0,
+        "DQ": null,
+        "DR": 6,
+        "DS": 0.45,
+        "DT": 1000,
+        "DU": 0.02,
+        "DV": 0.25,
+        "EV": 0.18,
+        "EW": 0.2,
+        "EX": 0.2,
+        "EY": 0.25,
+        "EZ": 0.55,
+        "FA": 0.6,
+        "FB": null,
+        "FY": 0.4,
+        "FZ": 0.4,
+        "GA": 2,
+        "GB": 2
+      },
+      "outputs": {
+        "BJ": {
+          "cache": 2.197847219883868,
+          "simulated": 2.197847219883868
+        },
+        "BK": {
+          "cache": 2.232470528514365,
+          "simulated": 2.232470528514365
+        },
+        "BL": {
+          "cache": 2.073643691627419,
+          "simulated": 2.073643691627419
+        },
+        "BM": {
+          "cache": 2.1117509176137617,
+          "simulated": 2.1117509176137617
+        },
+        "BN": {
+          "cache": 2.0833333333333335,
+          "simulated": 2.0833333333333335
+        },
+        "BO": {
+          "cache": 0.8125000000000001,
+          "simulated": 0.8125000000000001
+        },
+        "BP": {
+          "cache": 1.673976433571672,
+          "simulated": 1.673976433571672
+        },
+        "BQ": {
+          "cache": 1.9762050956498416,
+          "simulated": 1.9762050956498416
+        },
+        "BR": {
+          "cache": 0.9875,
+          "simulated": 0.9875
+        },
+        "BS": {
+          "cache": 1.9515025319542187,
+          "simulated": 1.9515025319542187
+        },
+        "BT": {
+          "cache": 0.14206046076642687,
+          "simulated": 0.14206046076642687
+        },
+        "BU": {
+          "cache": 1.029535284186665,
+          "simulated": 1.029535284186665
+        },
+        "BV": {
+          "cache": 0.15663063116216666,
+          "simulated": 0.15663063116216666
+        },
+        "BW": {
+          "cache": 0.8433693688378333,
+          "simulated": 0.8433693688378333
+        },
+        "BX": {
+          "cache": 1.185720085350034,
+          "simulated": 1.185720085350034
+        },
+        "BY": {
+          "cache": 0.8125000000000001,
+          "simulated": 0.8125000000000001
+        },
+        "BZ": {
+          "cache": 0.0308693688378332,
+          "simulated": 0.0308693688378332
+        },
+        "CA": {
+          "cache": 0.012043242605400017,
+          "simulated": 0.012043242605400017
+        },
+        "CB": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "CC": {
+          "cache": 0.43000000000000005,
+          "simulated": 0.43000000000000005
+        },
+        "CD": {
+          "cache": 0.5486194970630452,
+          "simulated": 0.5486194970630452
+        },
+        "CE": {
+          "cache": 22.90067295888263,
+          "simulated": 22.90067295888263
+        },
+        "CF": {
+          "cache": "RIDICAT",
+          "simulated": "RIDICAT"
+        },
+        "CG": {
+          "cache": "PARIU EVITAT",
+          "simulated": "PARIU EVITAT"
+        },
+        "CH": {
+          "cache": "P(O0,5)=84.3%; λ ajustat=1.95; Confidence=23/100; Edge=3.1%; risc=RIDICAT. Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția.",
+          "simulated": "P(O0,5)=84.3%; λ ajustat=1.95; Confidence=23/100; Edge=3.1%; risc=RIDICAT. Amical cu eșantion mic și rotație probabilă; modelul trebuie să poată evita selecția."
+        },
+        "CI": {
+          "cache": "https://www.livescore.com/en/ ; https://www.goal.com/",
+          "simulated": "https://www.livescore.com/en/ ; https://www.goal.com/"
+        },
+        "DW": {
+          "cache": 0.8624969696969697,
+          "simulated": 0.8624969696969697
+        },
+        "DX": {
+          "cache": 1.25,
+          "simulated": 1.25
+        },
+        "DY": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "DZ": {
+          "cache": 0.21867199988744385,
+          "simulated": 0.21867199988744385
+        },
+        "EA": {
+          "cache": 0.7813280001125562,
+          "simulated": 0.7813280001125562
+        },
+        "EB": {
+          "cache": 1.2798722173734238,
+          "simulated": 1.2798722173734238
+        },
+        "EC": {
+          "cache": 0.8125000000000001,
+          "simulated": 0.8125000000000001
+        },
+        "ED": {
+          "cache": -0.031171999887443902,
+          "simulated": -0.031171999887443902
+        },
+        "EE": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EF": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EG": {
+          "cache": 0.1164,
+          "simulated": 0.1164
+        },
+        "EH": {
+          "cache": "92% – early/regim",
+          "simulated": "92% – early/regim"
+        },
+        "EI": {
+          "cache": "NU – PORTOFOLIU",
+          "simulated": "NU – PORTOFOLIU"
+        },
+        "EJ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EK": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EL": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "EM": {
+          "cache": "NU – PORTOFOLIU",
+          "simulated": "NU – PORTOFOLIU"
+        },
+        "EN": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "EO": {
+          "cache": null,
+          "simulated": ""
+        },
+        "EP": {
+          "cache": "NU – 1–5 selecții",
+          "simulated": "NU – 1–5 selecții"
+        },
+        "EQ": {
+          "cache": null,
+          "simulated": ""
+        },
+        "ER": {
+          "cache": "P v2=78.1% ±11.6%; P0 ZIP=21.9%; Confidence=0/100; piață reală=DA; EV=n/a; gate=NU – PORTOFOLIU; verdict=WATCH / NO BET. NU – PORTOFOLIU",
+          "simulated": "P v2=78.1% ±11.6%; P0 ZIP=21.9%; Confidence=0/100; piață reală=DA; EV=n/a; gate=NU – PORTOFOLIU; verdict=WATCH / NO BET. NU – PORTOFOLIU"
+        },
+        "ES": {
+          "cache": 20,
+          "simulated": 20
+        },
+        "ET": {
+          "cache": 1.5,
+          "simulated": 1.5
+        },
+        "EU": {
+          "cache": null,
+          "simulated": ""
+        },
+        "FC": {
+          "cache": 0.9090909090909091,
+          "simulated": 0.9090909090909091
+        },
+        "FD": {
+          "cache": 0.888888888888889,
+          "simulated": 0.888888888888889
+        },
+        "FE": {
+          "cache": 1.8973665961010273,
+          "simulated": 1.8973665961010273
+        },
+        "FF": {
+          "cache": 0.9472135954999579,
+          "simulated": 0.9472135954999579
+        },
+        "FG": {
+          "cache": 0.101010101010101,
+          "simulated": 0.101010101010101
+        },
+        "FH": {
+          "cache": 1.2321428571428572,
+          "simulated": 1.2321428571428572
+        },
+        "FI": {
+          "cache": 1.3200046491108872,
+          "simulated": 1.3200046491108872
+        },
+        "FJ": {
+          "cache": 0.2886480564818013,
+          "simulated": 0.2886480564818013
+        },
+        "FK": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "FL": {
+          "cache": "RIDICAT",
+          "simulated": "RIDICAT"
+        },
+        "FM": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FN": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "FO": {
+          "cache": 0.9,
+          "simulated": 0.9
+        },
+        "FP": {
+          "cache": 0.7113519435181987,
+          "simulated": 0.7113519435181987
+        },
+        "FQ": {
+          "cache": 1.4057739057465817,
+          "simulated": 1.4057739057465817
+        },
+        "FR": {
+          "cache": -0.10114805648180136,
+          "simulated": -0.10114805648180136
+        },
+        "FS": {
+          "cache": -0.14637766777816152,
+          "simulated": -0.14637766777816152
+        },
+        "FT": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "FU": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "FV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "FW": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "FX": {
+          "cache": "P v3=71.1%; P0 v3=28.9%; factor zero=1.32x (RIDICAT); cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+          "simulated": "P v3=71.1%; P0 v3=28.9%; factor zero=1.32x (RIDICAT); cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT"
+        },
+        "GC": {
+          "cache": 0.8749999999999999,
+          "simulated": 0.8749999999999999
+        },
+        "GD": {
+          "cache": 0.9411764705882354,
+          "simulated": 0.9411764705882354
+        },
+        "GE": {
+          "cache": 0.825,
+          "simulated": 0.825
+        },
+        "GF": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GG": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GH": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GI": {
+          "cache": "NU",
+          "simulated": "NU"
+        },
+        "GJ": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GK": {
+          "cache": 1,
+          "simulated": 1.0
+        },
+        "GL": {
+          "cache": 0.2886480564818013,
+          "simulated": 0.2886480564818013
+        },
+        "GM": {
+          "cache": "DA",
+          "simulated": "DA"
+        },
+        "GN": {
+          "cache": "RIDICAT",
+          "simulated": "RIDICAT"
+        },
+        "GO": {
+          "cache": 0.9,
+          "simulated": 0.9
+        },
+        "GP": {
+          "cache": 0.7113519435181987,
+          "simulated": 0.7113519435181987
+        },
+        "GQ": {
+          "cache": 1.4057739057465817,
+          "simulated": 1.4057739057465817
+        },
+        "GR": {
+          "cache": -0.10114805648180136,
+          "simulated": -0.10114805648180136
+        },
+        "GS": {
+          "cache": -0.14637766777816152,
+          "simulated": -0.14637766777816152
+        },
+        "GT": {
+          "cache": 0,
+          "simulated": 0.0
+        },
+        "GU": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "GV": {
+          "cache": "WATCH / NO BET",
+          "simulated": "WATCH / NO BET"
+        },
+        "GW": {
+          "cache": "NU – RISC 0-0 RIDICAT",
+          "simulated": "NU – RISC 0-0 RIDICAT"
+        },
+        "GX": {
+          "cache": "P v5=71.1%; P0 v5=28.9%; low-conv=0%; mult.P0=1.00; clasă=RIDICAT; cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT",
+          "simulated": "P v5=71.1%; P0 v5=28.9%; low-conv=0%; mult.P0=1.00; clasă=RIDICAT; cap=90.0%; Confidence=0/100; lineup=NU; piață=NU; EV=-14.6%; gate=NU – RISC 0-0 RIDICAT; verdict=WATCH / NO BET. NU – RISC 0-0 RIDICAT"
+        },
+        "GY": {
+          "cache": "SMALL SAMPLE + PRIOR / SHRINKAGE",
+          "simulated": "SMALL SAMPLE + PRIOR / SHRINKAGE"
+        },
+        "GZ": {
+          "cache": 30.000000000000004,
+          "simulated": 30.000000000000004
+        },
+        "HA": {
+          "cache": 67.05937048363378,
+          "simulated": 67.05937048363378
+        },
+        "HB": {
+          "cache": 52.49999999999999,
+          "simulated": 52.49999999999999
+        },
+        "HC": {
+          "cache": 34.685397334897935,
+          "simulated": 34.685397334897935
+        },
+        "HD": {
+          "cache": 100,
+          "simulated": 100.0
+        },
+        "HE": {
+          "cache": 51.7192363277411,
+          "simulated": 51.7192363277411
+        },
+        "HF": {
+          "cache": 3,
+          "simulated": 3.0
+        },
+        "HG": {
+          "cache": "PASS",
+          "simulated": "PASS"
+        },
+        "HH": {
+          "cache": 3,
+          "simulated": 3.0
+        },
+        "HI": {
+          "cache": "MODERAT",
+          "simulated": "MODERAT"
+        },
+        "HJ": {
+          "cache": "Data=SMALL SAMPLE + PRIOR / SHRINKAGE; DQ=30.0; ZM=67.1; Context=52.5; Uncertainty=34.7; Compound=100.0; Risk Score=51.7; Base=3; G0=PASS; Final=3. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+          "simulated": "Data=SMALL SAMPLE + PRIOR / SHRINKAGE; DQ=30.0; ZM=67.1; Context=52.5; Uncertainty=34.7; Compound=100.0; Risk Score=51.7; Base=3; G0=PASS; Final=3. Cota, EV si lineup sunt informative si nu intra in recomandare."
+        },
+        "HK": {
+          "cache": "MODERAT",
+          "simulated": "MODERAT"
+        }
+      }
+    }
+  ]
+}

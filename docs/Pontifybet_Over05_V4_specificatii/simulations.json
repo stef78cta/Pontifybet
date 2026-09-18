@@ -1,0 +1,278 @@
+[
+  {
+    "name": "missing_EV",
+    "overrides": {
+      "EV": null
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "NU",
+      "GL": "",
+      "GO": 0.9,
+      "GP": "",
+      "GT": 47.194772288905426,
+      "HE": "",
+      "HG": "FAIL – DATE CRITICE ZERO-MASS INCOMPLETE",
+      "HH": 5.0,
+      "HK": "WATCH / NO BET"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "missing_xG_L",
+    "overrides": {
+      "L": null
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "NU",
+      "GL": "",
+      "GO": 0.9,
+      "GP": "",
+      "GT": 47.035105276103494,
+      "HE": "",
+      "HG": "FAIL – DATE CRITICE ZERO-MASS INCOMPLETE",
+      "HH": 5.0,
+      "HK": "WATCH / NO BET"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "missing_recent_blank_FY",
+    "overrides": {
+      "FY": null
+    },
+    "simulated": {
+      "GJ": "",
+      "GM": "NU",
+      "GL": 0.05643773654116299,
+      "GO": 0.9,
+      "GP": 0.9,
+      "GT": 47.194772288905426,
+      "HE": "",
+      "HG": "FAIL – DATE CRITICE ZERO-MASS INCOMPLETE",
+      "HH": 5.0,
+      "HK": "WATCH / NO BET"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "small_sample",
+    "overrides": {
+      "I": 4,
+      "P": 4,
+      "W": 3,
+      "AB": 3
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.054190597177293194,
+      "GO": 0.92,
+      "GP": 0.92,
+      "GT": 45.30108740350205,
+      "HE": 10.187180523477762,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "no_odds",
+    "overrides": {
+      "AR": null,
+      "AS": null
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.053927654040911946,
+      "GO": 0.92,
+      "GP": 0.92,
+      "GT": 61.1227694360319,
+      "HE": 7.870120560697213,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "confirmed_lineup",
+    "overrides": {
+      "AU": 1
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.05643773654116299,
+      "GO": 0.94,
+      "GP": 0.94,
+      "GT": 84.19477228890543,
+      "HE": 7.870120560697213,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "striker_absent",
+    "overrides": {
+      "CY": 0
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.060952755464456033,
+      "GO": 0.92,
+      "GP": 0.92,
+      "GT": 59.194772288905426,
+      "HE": 7.870120560697213,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "unused_FB",
+    "overrides": {
+      "FB": 2
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.05643773654116299,
+      "GO": 0.92,
+      "GP": 0.92,
+      "GT": 59.194772288905426,
+      "HE": 7.870120560697213,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "odds_changed",
+    "overrides": {
+      "AR": 1.5,
+      "AS": 2.5
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.06136589031182642,
+      "GO": 0.92,
+      "GP": 0.92,
+      "GT": 48.480000000000004,
+      "HE": 7.870120560697213,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "missing_O05",
+    "overrides": {
+      "N": null,
+      "U": null
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.0512727784146835,
+      "GO": 0.92,
+      "GP": 0.92,
+      "GT": 59.194772288905426,
+      "HE": 7.870120560697213,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "low_conversion",
+    "overrides": {
+      "J": 1,
+      "K": 1,
+      "L": 1,
+      "M": 1,
+      "Q": 1,
+      "R": 1,
+      "S": 1,
+      "T": 1,
+      "X": 0.8,
+      "Y": 1,
+      "Z": 1,
+      "AA": 1,
+      "AC": 0.8,
+      "AD": 1,
+      "AE": 1,
+      "AF": 1,
+      "AJ": 1,
+      "AK": 1,
+      "AL": 2,
+      "AH": 2,
+      "AV": 0,
+      "AW": 0,
+      "AY": 0,
+      "BF": 0
+    },
+    "simulated": {
+      "GJ": 1.0,
+      "GM": "DA",
+      "GL": 0.1056096823840552,
+      "GO": 0.92,
+      "GP": 0.8943903176159448,
+      "GT": 58.66584065930054,
+      "HE": 17.304014964934687,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "context_text",
+    "overrides": {
+      "AV": "NOT CHECKED"
+    },
+    "simulated": {
+      "GJ": "ERROR:XLException",
+      "GM": "DA",
+      "GL": "ERROR:XLException",
+      "GO": "ERROR:XLException",
+      "GP": "ERROR:XLException",
+      "GT": "ERROR:XLException",
+      "HE": "ERROR:XLException",
+      "HG": "PASS",
+      "HH": "ERROR:XLException",
+      "HK": "ERROR:XLException"
+    },
+    "native_excel_verified": false
+  },
+  {
+    "name": "context_blank",
+    "overrides": {
+      "AV": null
+    },
+    "simulated": {
+      "GJ": 0.0,
+      "GM": "DA",
+      "GL": 0.05715520659615344,
+      "GO": 0.92,
+      "GP": 0.92,
+      "GT": 59.194772288905426,
+      "HE": 7.517179384226624,
+      "HG": "PASS",
+      "HH": 1.0,
+      "HK": "DEFENSIV"
+    },
+    "native_excel_verified": false
+  }
+]

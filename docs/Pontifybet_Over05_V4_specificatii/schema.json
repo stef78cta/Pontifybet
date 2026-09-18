@@ -1,0 +1,4812 @@
+{
+  "Analize meciuri": [
+    {
+      "column": "A",
+      "header": "Match ID",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "DEMO-LIGA-001",
+      "references": []
+    },
+    {
+      "column": "B",
+      "header": "Tip înregistrare",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "DEMO – înlocuiește",
+      "references": []
+    },
+    {
+      "column": "C",
+      "header": "Data",
+      "type": "Dată",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "2026-09-01 00:00:00",
+      "references": []
+    },
+    {
+      "column": "D",
+      "header": "Competiție",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "Liga demonstrativă",
+      "references": []
+    },
+    {
+      "column": "E",
+      "header": "Tip competiție",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "Campionat intern",
+      "references": []
+    },
+    {
+      "column": "F",
+      "header": "Etapă/context",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "Etapa 7",
+      "references": []
+    },
+    {
+      "column": "G",
+      "header": "Gazde",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "Gazde Demo A",
+      "references": []
+    },
+    {
+      "column": "H",
+      "header": "Oaspeți",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "Oaspeți Demo B",
+      "references": []
+    },
+    {
+      "column": "I",
+      "header": "N gazde acasă",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 10,
+      "references": []
+    },
+    {
+      "column": "J",
+      "header": "GF gazde acasă",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.8,
+      "references": []
+    },
+    {
+      "column": "K",
+      "header": "GA gazde acasă",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "L",
+      "header": "xGF gazde acasă",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.7,
+      "references": []
+    },
+    {
+      "column": "M",
+      "header": "xGA gazde acasă",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.05,
+      "references": []
+    },
+    {
+      "column": "N",
+      "header": "O0.5 gazde acasă",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.9,
+      "references": []
+    },
+    {
+      "column": "O",
+      "header": "FTS gazde acasă",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.1,
+      "references": []
+    },
+    {
+      "column": "P",
+      "header": "N oaspeți deplasare",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 10,
+      "references": []
+    },
+    {
+      "column": "Q",
+      "header": "GF oaspeți deplasare",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.2,
+      "references": []
+    },
+    {
+      "column": "R",
+      "header": "GA oaspeți deplasare",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.6,
+      "references": []
+    },
+    {
+      "column": "S",
+      "header": "xGF oaspeți deplasare",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.25,
+      "references": []
+    },
+    {
+      "column": "T",
+      "header": "xGA oaspeți deplasare",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.55,
+      "references": []
+    },
+    {
+      "column": "U",
+      "header": "O0.5 oaspeți deplasare",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.9,
+      "references": []
+    },
+    {
+      "column": "V",
+      "header": "FTS oaspeți deplasare",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.2,
+      "references": []
+    },
+    {
+      "column": "W",
+      "header": "N recent gazde",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 5,
+      "references": []
+    },
+    {
+      "column": "X",
+      "header": "GF recent gazde",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.6,
+      "references": []
+    },
+    {
+      "column": "Y",
+      "header": "GA recent gazde",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "Z",
+      "header": "xGF recent gazde",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.55,
+      "references": []
+    },
+    {
+      "column": "AA",
+      "header": "xGA recent gazde",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.1,
+      "references": []
+    },
+    {
+      "column": "AB",
+      "header": "N recent oaspeți",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 5,
+      "references": []
+    },
+    {
+      "column": "AC",
+      "header": "GF recent oaspeți",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.2,
+      "references": []
+    },
+    {
+      "column": "AD",
+      "header": "GA recent oaspeți",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.6,
+      "references": []
+    },
+    {
+      "column": "AE",
+      "header": "xGF recent oaspeți",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.3,
+      "references": []
+    },
+    {
+      "column": "AF",
+      "header": "xGA recent oaspeți",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.45,
+      "references": []
+    },
+    {
+      "column": "AG",
+      "header": "N H2H",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 4,
+      "references": []
+    },
+    {
+      "column": "AH",
+      "header": "Goluri medii H2H",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 2.25,
+      "references": []
+    },
+    {
+      "column": "AI",
+      "header": "O0.5 H2H",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "AJ",
+      "header": "Medie goluri gazde comp.",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.45,
+      "references": []
+    },
+    {
+      "column": "AK",
+      "header": "Medie goluri oaspeți comp.",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.15,
+      "references": []
+    },
+    {
+      "column": "AL",
+      "header": "Medie total goluri comp.",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 2.6,
+      "references": []
+    },
+    {
+      "column": "AM",
+      "header": "Rată 0-0 competiție",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.08,
+      "references": []
+    },
+    {
+      "column": "AN",
+      "header": "N meciuri competiție",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 120,
+      "references": []
+    },
+    {
+      "column": "AO",
+      "header": "Cotă 1",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.72,
+      "references": []
+    },
+    {
+      "column": "AP",
+      "header": "Cotă X",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 3.85,
+      "references": []
+    },
+    {
+      "column": "AQ",
+      "header": "Cotă 2",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 4.8,
+      "references": []
+    },
+    {
+      "column": "AR",
+      "header": "Cotă Over 0.5",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.12,
+      "references": []
+    },
+    {
+      "column": "AS",
+      "header": "Cotă Under 0.5",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 7.2,
+      "references": []
+    },
+    {
+      "column": "AT",
+      "header": "Calitate surse (1-5)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 4,
+      "references": []
+    },
+    {
+      "column": "AU",
+      "header": "Echipe start confirmate (0/1)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "AV",
+      "header": "Motivație (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "AW",
+      "header": "Deschidere tactică (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "AX",
+      "header": "Atac/absențe (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "AY",
+      "header": "Apărare/absențe (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "AZ",
+      "header": "Rotație (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "BA",
+      "header": "Oboseală (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "BB",
+      "header": "Meteo (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "BC",
+      "header": "Teren (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "BD",
+      "header": "Arbitru/penalty (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "BE",
+      "header": "Context tur/retur (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "BF",
+      "header": "Dezechilibru valoric (-2..2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "BG",
+      "header": "Contradicții date (0-2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "BH",
+      "header": "Raționament analist",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+      "references": []
+    },
+    {
+      "column": "BI",
+      "header": "Surse meci (URL-uri)",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "https://footystats.org/ ; https://understat.com/",
+      "references": []
+    },
+    {
+      "column": "BJ",
+      "header": "λ sezon goluri",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BJ4",
+      "example_row4": 2.7087635820327414,
+      "references": [
+        "$A4",
+        "$I4",
+        "$J4",
+        "$AJ4",
+        "$J4",
+        "'Setari model'!$B$30",
+        "$AJ4",
+        "$I4",
+        "'Setari model'!$B$30",
+        "$P4",
+        "$R4",
+        "$AJ4",
+        "$R4",
+        "'Setari model'!$B$30",
+        "$AJ4",
+        "$P4",
+        "'Setari model'!$B$30",
+        "$P4",
+        "$Q4",
+        "$AK4",
+        "$Q4",
+        "'Setari model'!$B$30",
+        "$AK4",
+        "$P4",
+        "'Setari model'!$B$30",
+        "$I4",
+        "$K4",
+        "$AK4",
+        "$K4",
+        "'Setari model'!$B$30",
+        "$AK4",
+        "$I4",
+        "'Setari model'!$B$30"
+      ]
+    },
+    {
+      "column": "BK",
+      "header": "λ sezon xG",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BK4",
+      "example_row4": 2.695318373689451,
+      "references": [
+        "$A4",
+        "$I4",
+        "$L4",
+        "$J4",
+        "$AJ4",
+        "$J4",
+        "$L4",
+        "'Setari model'!$B$30",
+        "$AJ4",
+        "$I4",
+        "'Setari model'!$B$30",
+        "$P4",
+        "$T4",
+        "$R4",
+        "$AJ4",
+        "$R4",
+        "$T4",
+        "'Setari model'!$B$30",
+        "$AJ4",
+        "$P4",
+        "'Setari model'!$B$30",
+        "$P4",
+        "$S4",
+        "$Q4",
+        "$AK4",
+        "$Q4",
+        "$S4",
+        "'Setari model'!$B$30",
+        "$AK4",
+        "$P4",
+        "'Setari model'!$B$30",
+        "$I4",
+        "$M4",
+        "$K4",
+        "$AK4",
+        "$K4",
+        "$M4",
+        "'Setari model'!$B$30",
+        "$AK4",
+        "$I4",
+        "'Setari model'!$B$30"
+      ]
+    },
+    {
+      "column": "BL",
+      "header": "λ recent goluri",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BL4",
+      "example_row4": 2.6489578808281795,
+      "references": [
+        "$A4",
+        "$W4",
+        "$X4",
+        "$AL4",
+        "$X4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$W4",
+        "'Setari model'!$B$31",
+        "$AB4",
+        "$AD4",
+        "$AL4",
+        "$AD4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$AB4",
+        "'Setari model'!$B$31",
+        "$AB4",
+        "$AC4",
+        "$AL4",
+        "$AC4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$AB4",
+        "'Setari model'!$B$31",
+        "$W4",
+        "$Y4",
+        "$AL4",
+        "$Y4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$W4",
+        "'Setari model'!$B$31"
+      ]
+    },
+    {
+      "column": "BM",
+      "header": "λ recent xG",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BM4",
+      "example_row4": 2.6487763675966214,
+      "references": [
+        "$A4",
+        "$W4",
+        "$Z4",
+        "$X4",
+        "$AL4",
+        "$X4",
+        "$Z4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$W4",
+        "'Setari model'!$B$31",
+        "$AB4",
+        "$AF4",
+        "$AD4",
+        "$AL4",
+        "$AD4",
+        "$AF4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$AB4",
+        "'Setari model'!$B$31",
+        "$AB4",
+        "$AE4",
+        "$AC4",
+        "$AL4",
+        "$AC4",
+        "$AE4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$AB4",
+        "'Setari model'!$B$31",
+        "$W4",
+        "$AA4",
+        "$Y4",
+        "$AL4",
+        "$Y4",
+        "$AA4",
+        "'Setari model'!$B$31",
+        "$AL4",
+        "$W4",
+        "'Setari model'!$B$31"
+      ]
+    },
+    {
+      "column": "BN",
+      "header": "λ H2H",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BN4",
+      "example_row4": 2.4444444444444446,
+      "references": [
+        "$A4",
+        "$AG4",
+        "$AG4",
+        "$AH4",
+        "$AL4",
+        "$AH4",
+        "$AL4",
+        "$AG4",
+        "$AL4"
+      ]
+    },
+    {
+      "column": "BO",
+      "header": "Prob. piață O0.5",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BO4",
+      "example_row4": 0.8653846153846154,
+      "references": [
+        "$A4",
+        "$AR4",
+        "$AS4",
+        "$AR4",
+        "$AR4",
+        "$AS4",
+        "$AR4",
+        "'Setari model'!$B$32",
+        "$AL4"
+      ]
+    },
+    {
+      "column": "BP",
+      "header": "λ piață",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BP4",
+      "example_row4": 2.0053335695261145,
+      "references": [
+        "$A4",
+        "$BO4"
+      ]
+    },
+    {
+      "column": "BQ",
+      "header": "λ bază",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BQ4",
+      "example_row4": 2.568702883845408,
+      "references": [
+        "$A4",
+        "$BJ4",
+        "'Setari model'!$B$5:$B$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BK4",
+        "'Setari model'!$C$5:$C$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BL4",
+        "'Setari model'!$D$5:$D$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BM4",
+        "'Setari model'!$E$5:$E$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BN4",
+        "'Setari model'!$F$5:$F$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BP4",
+        "'Setari model'!$G$5:$G$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11"
+      ]
+    },
+    {
+      "column": "BR",
+      "header": "Multiplicator context",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BR4",
+      "example_row4": 1.07,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$53",
+        "'Setari model'!$B$54",
+        "$AV4",
+        "'Setari model'!$B$15",
+        "$AW4",
+        "'Setari model'!$B$16",
+        "$AX4",
+        "'Setari model'!$B$17",
+        "$AY4",
+        "'Setari model'!$B$18",
+        "$AZ4",
+        "'Setari model'!$B$19",
+        "$BA4",
+        "'Setari model'!$B$20",
+        "$BB4",
+        "'Setari model'!$B$21",
+        "$BC4",
+        "'Setari model'!$B$22",
+        "$BD4",
+        "'Setari model'!$B$23",
+        "$BE4",
+        "'Setari model'!$B$24",
+        "$BF4",
+        "'Setari model'!$B$25",
+        "'Setari model'!$H$5:$H$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11"
+      ]
+    },
+    {
+      "column": "BS",
+      "header": "λ ajustat",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BS4",
+      "example_row4": 2.748512085714587,
+      "references": [
+        "$A4",
+        "$BQ4",
+        "$BR4"
+      ]
+    },
+    {
+      "column": "BT",
+      "header": "P(0-0) Poisson",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BT4",
+      "example_row4": 0.06402305118433504,
+      "references": [
+        "$A4",
+        "$BS4"
+      ]
+    },
+    {
+      "column": "BU",
+      "header": "Factor zero ligă",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BU4",
+      "example_row4": 1.0385495214000677,
+      "references": [
+        "$A4",
+        "$AM4",
+        "$AN4",
+        "'Setari model'!$B$33",
+        "$AN4",
+        "'Setari model'!$B$33",
+        "$AM4",
+        "$AL4"
+      ]
+    },
+    {
+      "column": "BV",
+      "header": "P0 calibrat",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BV4",
+      "example_row4": 0.07486833187454739,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$34",
+        "$I4",
+        "$P4",
+        "$BT4",
+        "$BU4",
+        "'Setari model'!$B$34",
+        "$I4",
+        "$P4",
+        "$N4",
+        "$U4",
+        "$N4",
+        "$U4",
+        "$AM4",
+        "$AL4",
+        "$AM4"
+      ]
+    },
+    {
+      "column": "BW",
+      "header": "P Over 0.5",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BW4",
+      "example_row4": 0.9251316681254527,
+      "references": [
+        "$A4",
+        "$BV4"
+      ]
+    },
+    {
+      "column": "BX",
+      "header": "Cotă fair",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BX4",
+      "example_row4": 1.0809272176643236,
+      "references": [
+        "$A4",
+        "$BW4"
+      ]
+    },
+    {
+      "column": "BY",
+      "header": "Prob. piață",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BY4",
+      "example_row4": 0.8653846153846154,
+      "references": [
+        "$A4",
+        "$BO4"
+      ]
+    },
+    {
+      "column": "BZ",
+      "header": "Edge",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "BZ4",
+      "example_row4": 0.05974705274083725,
+      "references": [
+        "$A4",
+        "$BW4",
+        "$BY4"
+      ]
+    },
+    {
+      "column": "CA",
+      "header": "EV",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "CA4",
+      "example_row4": 0.03614746830050719,
+      "references": [
+        "$A4",
+        "$AR4",
+        "$BW4",
+        "$AR4"
+      ]
+    },
+    {
+      "column": "CB",
+      "header": "Completitudine",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "CB4",
+      "example_row4": 1,
+      "references": [
+        "$A4",
+        "$I4:$AN4",
+        "$AR4:$BG4",
+        "'Setari model'!$B$46"
+      ]
+    },
+    {
+      "column": "CC",
+      "header": "Scor eșantion",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "CC4",
+      "example_row4": 0.9800000000000001,
+      "references": [
+        "$A4",
+        "$I4",
+        "$P4",
+        "$W4",
+        "$AB4",
+        "$AG4",
+        "$AN4"
+      ]
+    },
+    {
+      "column": "CD",
+      "header": "Acord componente",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "CD4",
+      "example_row4": 0.5357386144452715,
+      "references": [
+        "$A4",
+        "$BJ4:$BN4",
+        "$BP4",
+        "$BJ4:$BN4",
+        "$BP4",
+        "$BJ4:$BN4",
+        "$BP4",
+        "'Setari model'!$B$45"
+      ]
+    },
+    {
+      "column": "CE",
+      "header": "Confidence Score",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "CE4",
+      "example_row4": 72.31477228890543,
+      "references": [
+        "$A4",
+        "'Setari model'!$I$5:$I$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$B$47",
+        "$CB4",
+        "'Setari model'!$B$48",
+        "$CC4",
+        "'Setari model'!$B$49",
+        "$CD4",
+        "'Setari model'!$B$50",
+        "$AT4",
+        "'Setari model'!$B$51",
+        "$AU4",
+        "'Setari model'!$B$52",
+        "$BG4"
+      ]
+    },
+    {
+      "column": "CF",
+      "header": "Steag risc",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "CF4",
+      "example_row4": "MEDIU",
+      "references": [
+        "$A4",
+        "$AT4",
+        "$BG4",
+        "$CB4",
+        "$CC4",
+        "$AU4",
+        "$CD4",
+        "$BR4"
+      ]
+    },
+    {
+      "column": "CG",
+      "header": "Verdict",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "CG4",
+      "example_row4": "RECOMANDAT CU PRUDENȚĂ",
+      "references": [
+        "$A4",
+        "$AR4",
+        "$BW4",
+        "'Setari model'!$B$35",
+        "$CE4",
+        "'Setari model'!$B$36",
+        "$BZ4",
+        "'Setari model'!$B$37",
+        "$CA4",
+        "'Setari model'!$B$38",
+        "$CF4",
+        "$BW4",
+        "'Setari model'!$B$39",
+        "$CE4",
+        "'Setari model'!$B$40",
+        "$BZ4",
+        "'Setari model'!$B$41",
+        "$CA4",
+        "$CF4",
+        "$BW4",
+        "'Setari model'!$B$42",
+        "$CE4",
+        "'Setari model'!$B$43",
+        "$BW4",
+        "'Setari model'!$B$35",
+        "$CE4",
+        "'Setari model'!$B$36",
+        "$CF4",
+        "$BW4",
+        "'Setari model'!$B$42",
+        "$CE4",
+        "'Setari model'!$B$43"
+      ]
+    },
+    {
+      "column": "CH",
+      "header": "Raționament automat",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "CH4",
+      "example_row4": "P(O0,5)=92.5%; λ ajustat=2.75; Confidence=72/100; Edge=6.0%; risc=MEDIU. Exemplu pentru campionat; confirmați loturile și cotele înainte de utilizare.",
+      "references": [
+        "$A4",
+        "$BW4",
+        "$BS4",
+        "$CE4",
+        "$BZ4",
+        "$CF4",
+        "$BH4"
+      ]
+    },
+    {
+      "column": "CI",
+      "header": "Surse consolidate",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "CI4",
+      "example_row4": "https://footystats.org/ ; https://understat.com/",
+      "references": [
+        "$A4",
+        "$BI4"
+      ]
+    },
+    {
+      "column": "CJ",
+      "header": "Etapa numerică",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 7,
+      "references": []
+    },
+    {
+      "column": "CK",
+      "header": "Gazde promovate (0/1)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "CL",
+      "header": "Oaspeți promovate (0/1)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "CM",
+      "header": "SOT gazde/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 5.2,
+      "references": []
+    },
+    {
+      "column": "CN",
+      "header": "SOT oaspeți/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 4.4,
+      "references": []
+    },
+    {
+      "column": "CO",
+      "header": "Big chances gazde/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 2,
+      "references": []
+    },
+    {
+      "column": "CP",
+      "header": "Big chances oaspeți/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.6,
+      "references": []
+    },
+    {
+      "column": "CQ",
+      "header": "xG/șut gazde",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.12,
+      "references": []
+    },
+    {
+      "column": "CR",
+      "header": "xG/șut oaspeți",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.11,
+      "references": []
+    },
+    {
+      "column": "CS",
+      "header": "Touches box gazde/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 27,
+      "references": []
+    },
+    {
+      "column": "CT",
+      "header": "Touches box oaspeți/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 23,
+      "references": []
+    },
+    {
+      "column": "CU",
+      "header": "Set-piece xG gazde/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.28,
+      "references": []
+    },
+    {
+      "column": "CV",
+      "header": "Set-piece xG oaspeți/meci",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.22,
+      "references": []
+    },
+    {
+      "column": "CW",
+      "header": "Cross-heavy gazde (0-2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "CX",
+      "header": "Cross-heavy oaspeți (0-2)",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "CY",
+      "header": "Atacant-cheie gazde disponibil",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "CZ",
+      "header": "Atacant-cheie oaspeți disponibil",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "DA",
+      "header": "Portar-cheie gazde disponibil",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "DB",
+      "header": "Portar-cheie oaspeți disponibil",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "DC",
+      "header": "Cotă O0.5 opening",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1.13,
+      "references": []
+    },
+    {
+      "column": "DD",
+      "header": "Cotă O0.5 closing",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DE",
+      "header": "Mod analiză",
+      "type": "Text",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": "Pre-match",
+      "references": []
+    },
+    {
+      "column": "DF",
+      "header": "Minut live",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DG",
+      "header": "Scor gazde live",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DH",
+      "header": "Scor oaspeți live",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DI",
+      "header": "xG gazde live",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DJ",
+      "header": "xG oaspeți live",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DK",
+      "header": "SOT gazde live",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DL",
+      "header": "SOT oaspeți live",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DM",
+      "header": "Big chances gazde live",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DN",
+      "header": "Big chances oaspeți live",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DO",
+      "header": "Roșu gazde",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "DP",
+      "header": "Roșu oaspeți",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "DQ",
+      "header": "Cotă O0.5 live",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "DR",
+      "header": "Nr. selecții bilet",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "DS",
+      "header": "Corelație portofoliu",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0,
+      "references": []
+    },
+    {
+      "column": "DT",
+      "header": "Bankroll",
+      "type": "Float",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1000,
+      "references": []
+    },
+    {
+      "column": "DU",
+      "header": "Limită miză zilnică",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.02,
+      "references": []
+    },
+    {
+      "column": "DV",
+      "header": "Fracție Kelly",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.25,
+      "references": []
+    },
+    {
+      "column": "DW",
+      "header": "Factor calitate ofensivă",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "DW4",
+      "example_row4": 1.0357878787878787,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$71",
+        "'Setari model'!$B$72",
+        "$CM4:$CN4",
+        "'Setari model'!$B$66",
+        "$CO4:$CP4",
+        "'Setari model'!$B$67",
+        "$CQ4:$CR4",
+        "'Setari model'!$B$68",
+        "$CS4:$CT4",
+        "'Setari model'!$B$69",
+        "$CU4:$CV4",
+        "'Setari model'!$B$70",
+        "'Setari model'!$B$73",
+        "$CW4:$CX4"
+      ]
+    },
+    {
+      "column": "DX",
+      "header": "Factor regim",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "DX4",
+      "example_row4": 1,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$62",
+        "$CK4",
+        "$CL4",
+        "$CJ4",
+        "$CJ4",
+        "'Setari model'!$B$63",
+        "$CJ4",
+        "$CJ4"
+      ]
+    },
+    {
+      "column": "DY",
+      "header": "Factor lineup P0",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "DY4",
+      "example_row4": 1,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$74",
+        "$CY4",
+        "$CY4",
+        "$CZ4",
+        "$CZ4",
+        "'Setari model'!$B$75",
+        "$DA4",
+        "$DA4",
+        "$DB4",
+        "$DB4"
+      ]
+    },
+    {
+      "column": "DZ",
+      "header": "P0 ZIP/regim v2",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "DZ4",
+      "example_row4": 0.0721123897129207,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$34",
+        "$I4",
+        "$P4",
+        "$BT4",
+        "'Setari model'!$B$34",
+        "$I4",
+        "$P4",
+        "$N4",
+        "$U4",
+        "$N4",
+        "$U4",
+        "$BT4",
+        "'Setari model'!$B$65",
+        "$AN4",
+        "$AN4",
+        "'Setari model'!$B$64",
+        "'Setari model'!$B$65",
+        "$AN4",
+        "$AN4",
+        "'Setari model'!$B$64",
+        "$AM4",
+        "$BT4",
+        "$AM4",
+        "$DX4",
+        "$DY4",
+        "$DW4"
+      ]
+    },
+    {
+      "column": "EA",
+      "header": "P Over0.5 v2",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EA4",
+      "example_row4": 0.9278876102870793,
+      "references": [
+        "$A4",
+        "$DZ4",
+        "$I4",
+        "$P4",
+        "'Setari model'!$B$58",
+        "$CK4",
+        "$CL4",
+        "$CJ4",
+        "$CJ4",
+        "'Setari model'!$B$59",
+        "$AU4",
+        "$AR4",
+        "$CY4:$DB4",
+        "'Setari model'!$B$61",
+        "'Setari model'!$B$60"
+      ]
+    },
+    {
+      "column": "EB",
+      "header": "Cotă fair v2",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EB4",
+      "example_row4": 1.0777167287432685,
+      "references": [
+        "$A4",
+        "$EA4"
+      ]
+    },
+    {
+      "column": "EC",
+      "header": "Prob. piață reală v2",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EC4",
+      "example_row4": 0.8653846153846154,
+      "references": [
+        "$A4",
+        "$AR4",
+        "$AS4",
+        "$AR4",
+        "$AR4",
+        "$AS4",
+        "$AR4"
+      ]
+    },
+    {
+      "column": "ED",
+      "header": "Edge v2",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "ED4",
+      "example_row4": 0.06250299490246392,
+      "references": [
+        "$A4",
+        "$EC4",
+        "$EA4",
+        "$EC4"
+      ]
+    },
+    {
+      "column": "EE",
+      "header": "EV – IGNORAT v6",
+      "type": "Text gol",
+      "source": "FORMULA",
+      "formula_cell": "EE4",
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "EF",
+      "header": "Confidence v2",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EF4",
+      "example_row4": 59.194772288905426,
+      "references": [
+        "$A4",
+        "$CE4",
+        "$EG4",
+        "'Setari model'!$B$77",
+        "$AU4",
+        "$CY4:$DB4"
+      ]
+    },
+    {
+      "column": "EG",
+      "header": "Incertitudine ±",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EG4",
+      "example_row4": 0.0456,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$77",
+        "$I4",
+        "$P4",
+        "'Setari model'!$B$58",
+        "$CK4",
+        "$CL4",
+        "$CJ4",
+        "$CJ4",
+        "$AG4",
+        "$CM4:$CV4",
+        "$AN4",
+        "$AN4",
+        "'Setari model'!$B$64",
+        "$AR4"
+      ]
+    },
+    {
+      "column": "EH",
+      "header": "Cap probabilitate",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "EH4",
+      "example_row4": "93% – standard",
+      "references": [
+        "$A4",
+        "$I4",
+        "$P4",
+        "'Setari model'!$B$58",
+        "$CK4",
+        "$CL4",
+        "$CJ4",
+        "$CJ4",
+        "$AU4",
+        "$AR4",
+        "$CY4:$DB4"
+      ]
+    },
+    {
+      "column": "EI",
+      "header": "Gate selecție tehnic v6",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "EI4",
+      "example_row4": "WAIT XI – HIGH P",
+      "references": [
+        "$A4",
+        "$EA4",
+        "$AU4",
+        "$EA4",
+        "$CY4:$DB4",
+        "$EP4"
+      ]
+    },
+    {
+      "column": "EJ",
+      "header": "P Over0.5 live",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EJ4",
+      "example_row4": null,
+      "references": [
+        "$A4",
+        "$DE4",
+        "$DG4:$DH4",
+        "$EU4",
+        "$EU4",
+        "$DX4",
+        "$DY4",
+        "$DW4"
+      ]
+    },
+    {
+      "column": "EK",
+      "header": "EV live – IGNORAT v6",
+      "type": "Text gol",
+      "source": "FORMULA",
+      "formula_cell": "EK4",
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "EL",
+      "header": "Verdict tehnic v6",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "EL4",
+      "example_row4": "WATCH / NO BET",
+      "references": [
+        "$A4",
+        "$DE4",
+        "$DG4:$DH4",
+        "$DF4",
+        "$DI4:$DN4",
+        "$EJ4",
+        "$EI4",
+        "$EA4",
+        "'Setari model'!$B$35:$B$40",
+        "$EF4",
+        "'Setari model'!$B$76",
+        "$EA4",
+        "'Setari model'!$B$35:$B$40",
+        "$EF4",
+        "'Setari model'!$B$40"
+      ]
+    },
+    {
+      "column": "EM",
+      "header": "Motiv verdict v6",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "EM4",
+      "example_row4": "WAIT XI – HIGH P",
+      "references": [
+        "$A4",
+        "$DE4",
+        "$DG4:$DH4",
+        "$DF4",
+        "$DI4:$DN4",
+        "$EJ4",
+        "$EI4",
+        "$EI4",
+        "$EF4",
+        "$EA4"
+      ]
+    },
+    {
+      "column": "EN",
+      "header": "Miză recomandată % bankroll",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EN4",
+      "example_row4": 0,
+      "references": [
+        "$A4",
+        "$EL4",
+        "$EL4",
+        "$DU4",
+        "$DU4",
+        "'Setari model'!$B$81",
+        "$DR4",
+        "$DV4",
+        "$DV4",
+        "'Setari model'!$B$80",
+        "$DE4",
+        "$EJ4",
+        "$EA4",
+        "$DE4",
+        "$DQ4",
+        "$AR4",
+        "$DE4",
+        "$DQ4",
+        "$AR4"
+      ]
+    },
+    {
+      "column": "EO",
+      "header": "Miză recomandată lei",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EO4",
+      "example_row4": null,
+      "references": [
+        "$A4",
+        "$EN4",
+        "$DT4",
+        "$EN4",
+        "$DT4"
+      ]
+    },
+    {
+      "column": "EP",
+      "header": "Control portofoliu",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "EP4",
+      "example_row4": "DA",
+      "references": [
+        "$A4",
+        "$DR4",
+        "$DR4",
+        "'Setari model'!$B$78",
+        "$DS4",
+        "'Setari model'!$B$79"
+      ]
+    },
+    {
+      "column": "EQ",
+      "header": "CLV",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EQ4",
+      "example_row4": null,
+      "references": [
+        "$A4",
+        "$DC4",
+        "$DD4",
+        "$DC4",
+        "$DD4"
+      ]
+    },
+    {
+      "column": "ER",
+      "header": "Raționament v2",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "ER4",
+      "example_row4": "P v2=92.8% ±4.6%; P0 ZIP=7.2%; Confidence=59/100; piață reală=DA; EV=n/a; gate=WAIT XI – HIGH P; verdict=WATCH / NO BET. WAIT XI – HIGH P",
+      "references": [
+        "$A4",
+        "$EA4",
+        "$EG4",
+        "$DZ4",
+        "$EF4",
+        "$EC4",
+        "$EE4",
+        "$EE4",
+        "$EI4",
+        "$EL4",
+        "$EM4"
+      ]
+    },
+    {
+      "column": "ES",
+      "header": "Minut minim live activ",
+      "type": "Număr întreg sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "ES4",
+      "example_row4": 20,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$82"
+      ]
+    },
+    {
+      "column": "ET",
+      "header": "Cap intensitate live activ",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "ET4",
+      "example_row4": 1.5,
+      "references": [
+        "$A4",
+        "'Setari model'!$B$83"
+      ]
+    },
+    {
+      "column": "EU",
+      "header": "λ rezidual live v2",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "EU4",
+      "example_row4": null,
+      "references": [
+        "$A4",
+        "$DE4",
+        "$DF4",
+        "$DF4",
+        "$ES4",
+        "$DF4",
+        "$BS4",
+        "$ET4",
+        "$BS4",
+        "$DF4",
+        "$DI4",
+        "$DJ4",
+        "$DK4",
+        "$DL4",
+        "$DM4",
+        "$DN4",
+        "$DO4",
+        "$DP4",
+        "$DO4",
+        "$DP4"
+      ]
+    },
+    {
+      "column": "EV",
+      "header": "Rată 0-0 gazde acasă",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.05,
+      "references": []
+    },
+    {
+      "column": "EW",
+      "header": "Rată 0-0 oaspeți deplasare",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.08,
+      "references": []
+    },
+    {
+      "column": "EX",
+      "header": "Clean sheet gazde acasă",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.35,
+      "references": []
+    },
+    {
+      "column": "EY",
+      "header": "Clean sheet oaspeți deplasare",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.25,
+      "references": []
+    },
+    {
+      "column": "EZ",
+      "header": "Rată 0-0 HT gazde acasă",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.3,
+      "references": []
+    },
+    {
+      "column": "FA",
+      "header": "Rată 0-0 HT oaspeți deplasare",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.35,
+      "references": []
+    },
+    {
+      "column": "FB",
+      "header": "Neutilizat",
+      "type": "Neutilizat; blank",
+      "source": "RETIRED",
+      "formula_cell": null,
+      "example_row4": null,
+      "references": []
+    },
+    {
+      "column": "FC",
+      "header": "Finishing vs xG gazde",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FC4",
+      "example_row4": 1.0588235294117647,
+      "references": [
+        "$A4",
+        "$J4",
+        "$L4",
+        "$L4",
+        "$J4",
+        "$L4"
+      ]
+    },
+    {
+      "column": "FD",
+      "header": "Finishing vs xG oaspeți",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FD4",
+      "example_row4": 0.96,
+      "references": [
+        "$A4",
+        "$Q4",
+        "$S4",
+        "$S4",
+        "$Q4",
+        "$S4"
+      ]
+    },
+    {
+      "column": "FE",
+      "header": "Risc 0-0 team-specific",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FE4",
+      "example_row4": 0.6324555320336758,
+      "references": [
+        "$A4",
+        "$EV4:$EW4",
+        "$EV4",
+        "$EW4",
+        "'Setari model'!$B$87"
+      ]
+    },
+    {
+      "column": "FF",
+      "header": "Risc blank×clean-sheet reciproc",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FF4",
+      "example_row4": 0.845378028229756,
+      "references": [
+        "$A4",
+        "$O4",
+        "$V4",
+        "$EX4",
+        "$EY4",
+        "$O4",
+        "$EY4",
+        "$V4",
+        "$EX4",
+        "'Setari model'!$B$88"
+      ]
+    },
+    {
+      "column": "FG",
+      "header": "Risc finishing",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FG4",
+      "example_row4": 0,
+      "references": [
+        "$A4",
+        "$FC4:$FD4",
+        "$FC4:$FD4"
+      ]
+    },
+    {
+      "column": "FH",
+      "header": "Risc statistic 0–0 HT",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FH4",
+      "example_row4": 0.6964285714285714,
+      "references": [
+        "$A4",
+        "$EZ4:$FA4",
+        "'Setari model'!$B$94",
+        "$EZ4:$FA4",
+        "'Setari model'!$B$89"
+      ]
+    },
+    {
+      "column": "FI",
+      "header": "Factor zero-mass v3",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FI4",
+      "example_row4": 0.7826357823647438,
+      "references": [
+        "$A4",
+        "$FE4:$FH4",
+        "'Setari model'!$B$97",
+        "'Setari model'!$B$98",
+        "'Setari model'!$B$90",
+        "$FE4",
+        "'Setari model'!$B$91",
+        "$FF4",
+        "'Setari model'!$B$92",
+        "$FG4",
+        "'Setari model'!$B$93",
+        "$FH4"
+      ]
+    },
+    {
+      "column": "FJ",
+      "header": "P0 recalibrat v3",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FJ4",
+      "example_row4": 0.05643773654116299,
+      "references": [
+        "$A4",
+        "$FI4",
+        "'Setari model'!$B$101",
+        "$DZ4",
+        "$FI4"
+      ]
+    },
+    {
+      "column": "FK",
+      "header": "Zero-risk complet",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FK4",
+      "example_row4": "DA",
+      "references": [
+        "$A4",
+        "$EV4:$FA4",
+        "$O4",
+        "$V4",
+        "$FC4",
+        "$FD4"
+      ]
+    },
+    {
+      "column": "FL",
+      "header": "Clasă zero-risk",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FL4",
+      "example_row4": "SCĂZUT",
+      "references": [
+        "$A4",
+        "$FK4",
+        "$FI4",
+        "'Setari model'!$B$99",
+        "$FI4",
+        "'Setari model'!$B$100"
+      ]
+    },
+    {
+      "column": "FM",
+      "header": "Piață confirmă zero-risk (doar P_cap)",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FM4",
+      "example_row4": "DA",
+      "references": [
+        "$A4",
+        "$AR4",
+        "$EC4",
+        "'Setari model'!$B$106"
+      ]
+    },
+    {
+      "column": "FN",
+      "header": "Lineup confirmă zero-risk (doar P_cap)",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FN4",
+      "example_row4": "NU",
+      "references": [
+        "$A4",
+        "$AU4",
+        "$CY4:$DB4"
+      ]
+    },
+    {
+      "column": "FO",
+      "header": "Cap probabilitate v3",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FO4",
+      "example_row4": 0.92,
+      "references": [
+        "$A4",
+        "$FK4",
+        "$FL4",
+        "'Setari model'!$B$102",
+        "$FL4",
+        "'Setari model'!$B$103",
+        "$FM4",
+        "$FN4",
+        "'Setari model'!$B$105",
+        "'Setari model'!$B$104"
+      ]
+    },
+    {
+      "column": "FP",
+      "header": "P Over0.5 v3",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FP4",
+      "example_row4": 0.92,
+      "references": [
+        "$A4",
+        "$FJ4",
+        "$FJ4",
+        "$FO4"
+      ]
+    },
+    {
+      "column": "FQ",
+      "header": "Cotă fair v3",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FQ4",
+      "example_row4": 1.0869565217391304,
+      "references": [
+        "$A4",
+        "$FP4",
+        "$FP4",
+        "$FP4"
+      ]
+    },
+    {
+      "column": "FR",
+      "header": "Edge v3",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FR4",
+      "example_row4": 0.05461538461538462,
+      "references": [
+        "$A4",
+        "$EC4",
+        "$FP4",
+        "$EC4"
+      ]
+    },
+    {
+      "column": "FS",
+      "header": "EV v3",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FS4",
+      "example_row4": 0.030400000000000205,
+      "references": [
+        "$A4",
+        "$AR4",
+        "$FP4",
+        "$AR4"
+      ]
+    },
+    {
+      "column": "FT",
+      "header": "Confidence v3",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "FT4",
+      "example_row4": 59.194772288905426,
+      "references": [
+        "$A4",
+        "$EF4",
+        "$FK4",
+        "'Setari model'!$B$107",
+        "$FL4",
+        "'Setari model'!$B$108",
+        "$FL4",
+        "'Setari model'!$B$109"
+      ]
+    },
+    {
+      "column": "FU",
+      "header": "Gate selecție v3",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FU4",
+      "example_row4": "NU – LINEUP NECONFIRMAT",
+      "references": [
+        "$A4",
+        "$AR4",
+        "$FK4",
+        "$FL4",
+        "$FL4",
+        "$FN4",
+        "$FM4",
+        "$EP4"
+      ]
+    },
+    {
+      "column": "FV",
+      "header": "Verdict v3",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FV4",
+      "example_row4": "WATCH / NO BET",
+      "references": [
+        "$A4",
+        "$FU4",
+        "$FP4",
+        "'Setari model'!$B$35",
+        "$FT4",
+        "'Setari model'!$B$76",
+        "$FS4",
+        "$FP4",
+        "'Setari model'!$B$39",
+        "$FT4",
+        "'Setari model'!$B$40",
+        "$FS4"
+      ]
+    },
+    {
+      "column": "FW",
+      "header": "Motiv verdict v3",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FW4",
+      "example_row4": "NU – LINEUP NECONFIRMAT",
+      "references": [
+        "$A4",
+        "$FU4",
+        "$FU4",
+        "$FT4",
+        "$FP4",
+        "$FS4"
+      ]
+    },
+    {
+      "column": "FX",
+      "header": "Raționament v3",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "FX4",
+      "example_row4": "P v3=92.0%; P0 v3=5.6%; factor zero=0.78x (SCĂZUT); cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "references": [
+        "$A4",
+        "$FP4",
+        "$FJ4",
+        "$FI4",
+        "$FI4",
+        "$FL4",
+        "$FO4",
+        "$FT4",
+        "$FN4",
+        "$FM4",
+        "$FS4",
+        "$FS4",
+        "$FU4",
+        "$FV4",
+        "$FW4"
+      ]
+    },
+    {
+      "column": "FY",
+      "header": "Blank recent gazde",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.2,
+      "references": []
+    },
+    {
+      "column": "FZ",
+      "header": "Blank recent oaspeți",
+      "type": "Procentaj [fracție]",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 0.2,
+      "references": []
+    },
+    {
+      "column": "GA",
+      "header": "Nr. 0-0 recente gazde",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "GB",
+      "header": "Nr. 0-0 recente oaspeți",
+      "type": "Număr întreg",
+      "source": "INPUT",
+      "formula_cell": null,
+      "example_row4": 1,
+      "references": []
+    },
+    {
+      "column": "GC",
+      "header": "Finishing recent gazde",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GC4",
+      "example_row4": 1.032258064516129,
+      "references": [
+        "$A4",
+        "$X4",
+        "$Z4",
+        "$Z4",
+        "$X4",
+        "$Z4"
+      ]
+    },
+    {
+      "column": "GD",
+      "header": "Finishing recent oaspeți",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GD4",
+      "example_row4": 0.923076923076923,
+      "references": [
+        "$A4",
+        "$AC4",
+        "$AE4",
+        "$AE4",
+        "$AC4",
+        "$AE4"
+      ]
+    },
+    {
+      "column": "GE",
+      "header": "Indice chance creation recent",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GE4",
+      "example_row4": 1.425,
+      "references": [
+        "$A4",
+        "$Z4",
+        "$AE4",
+        "$Z4",
+        "$AE4"
+      ]
+    },
+    {
+      "column": "GF",
+      "header": "Ambele echipe blank recent",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GF4",
+      "example_row4": "DA",
+      "references": [
+        "$A4",
+        "$FY4:$FZ4",
+        "$FY4",
+        "'Setari model'!$B$113",
+        "$FZ4",
+        "'Setari model'!$B$113"
+      ]
+    },
+    {
+      "column": "GG",
+      "header": "Clean-sheet advers relevant",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GG4",
+      "example_row4": "DA",
+      "references": [
+        "$A4",
+        "$FY4:$FZ4",
+        "$EX4:$EY4",
+        "$FY4",
+        "'Setari model'!$B$113",
+        "$EY4",
+        "'Setari model'!$B$114",
+        "$FZ4",
+        "'Setari model'!$B$113",
+        "$EX4",
+        "'Setari model'!$B$114"
+      ]
+    },
+    {
+      "column": "GH",
+      "header": "λ moderat + finishing slab",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GH4",
+      "example_row4": "NU",
+      "references": [
+        "$A4",
+        "$BJ4:$BN4",
+        "$GC4:$GE4",
+        "$BJ4",
+        "'Setari model'!$B$5:$B$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BK4",
+        "'Setari model'!$C$5:$C$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BL4",
+        "'Setari model'!$D$5:$D$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BM4",
+        "'Setari model'!$E$5:$E$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BN4",
+        "'Setari model'!$F$5:$F$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$B$5:$B$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$C$5:$C$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$D$5:$D$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$E$5:$E$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$F$5:$F$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BR4",
+        "'Setari model'!$B$115",
+        "$BJ4",
+        "'Setari model'!$B$5:$B$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BK4",
+        "'Setari model'!$C$5:$C$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BL4",
+        "'Setari model'!$D$5:$D$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BM4",
+        "'Setari model'!$E$5:$E$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BN4",
+        "'Setari model'!$F$5:$F$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$B$5:$B$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$C$5:$C$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$D$5:$D$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$E$5:$E$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "'Setari model'!$F$5:$F$11",
+        "$E4",
+        "'Setari model'!$A$5:$A$11",
+        "$BR4",
+        "'Setari model'!$B$116",
+        "$GC4:$GD4",
+        "'Setari model'!$B$117",
+        "$GE4",
+        "'Setari model'!$B$118"
+      ]
+    },
+    {
+      "column": "GI",
+      "header": "Acumulare 0-0 recentă",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GI4",
+      "example_row4": "DA",
+      "references": [
+        "$A4",
+        "$W4",
+        "$AB4",
+        "$GA4:$GB4",
+        "$W4",
+        "'Setari model'!$B$120",
+        "$AB4",
+        "'Setari model'!$B$120",
+        "$GA4",
+        "$W4",
+        "'Setari model'!$B$119",
+        "$GB4",
+        "$AB4",
+        "'Setari model'!$B$119"
+      ]
+    },
+    {
+      "column": "GJ",
+      "header": "Scor low-conversion v5",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GJ4",
+      "example_row4": 0,
+      "references": [
+        "$A4",
+        "$FY4:$GB4",
+        "$GH4",
+        "'Setari model'!$B$121",
+        "$GF4",
+        "'Setari model'!$B$122",
+        "$GG4",
+        "'Setari model'!$B$123",
+        "'Setari model'!$B$124",
+        "$GI4"
+      ]
+    },
+    {
+      "column": "GK",
+      "header": "Multiplicator P0 low-conversion",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GK4",
+      "example_row4": 1,
+      "references": [
+        "$A4",
+        "$GJ4",
+        "'Setari model'!$B$125",
+        "$GJ4"
+      ]
+    },
+    {
+      "column": "GL",
+      "header": "P0 recalibrat v5",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GL4",
+      "example_row4": 0.05643773654116299,
+      "references": [
+        "$A4",
+        "$GM4",
+        "$FJ4",
+        "'Setari model'!$B$101",
+        "$FJ4",
+        "$GK4"
+      ]
+    },
+    {
+      "column": "GM",
+      "header": "Date critice zero-mass complete",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GM4",
+      "example_row4": "DA",
+      "references": [
+        "$A4",
+        "$FK4",
+        "$FY4:$GB4",
+        "$I4",
+        "$P4",
+        "$W4",
+        "$AB4",
+        "$Z4",
+        "$AE4",
+        "$EX4",
+        "$EY4",
+        "$GC4",
+        "$GD4",
+        "$BJ4:$BN4"
+      ]
+    },
+    {
+      "column": "GN",
+      "header": "Clasă zero-mass",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GN4",
+      "example_row4": "SCĂZUT",
+      "references": [
+        "$A4",
+        "$GM4",
+        "$FI4",
+        "$GK4",
+        "'Setari model'!$B$99",
+        "$FI4",
+        "$GK4",
+        "'Setari model'!$B$100"
+      ]
+    },
+    {
+      "column": "GO",
+      "header": "Plafon probabilitate raportată",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GO4",
+      "example_row4": 0.92,
+      "references": [
+        "$A4",
+        "$GM4",
+        "$GN4",
+        "'Setari model'!$B$102",
+        "$GN4",
+        "'Setari model'!$B$103",
+        "$FM4",
+        "$FN4",
+        "'Setari model'!$B$105",
+        "'Setari model'!$B$104"
+      ]
+    },
+    {
+      "column": "GP",
+      "header": "P Over0.5 v5",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GP4",
+      "example_row4": 0.92,
+      "references": [
+        "$A4",
+        "$GL4",
+        "$GL4",
+        "$GO4"
+      ]
+    },
+    {
+      "column": "GQ",
+      "header": "Cotă fair v5",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GQ4",
+      "example_row4": 1.0869565217391304,
+      "references": [
+        "$A4",
+        "$GP4",
+        "$GP4",
+        "$GP4"
+      ]
+    },
+    {
+      "column": "GR",
+      "header": "Edge v5",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GR4",
+      "example_row4": 0.05461538461538462,
+      "references": [
+        "$A4",
+        "$EC4",
+        "$GP4",
+        "$EC4"
+      ]
+    },
+    {
+      "column": "GS",
+      "header": "EV v5",
+      "type": "Procentaj [fracție] sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GS4",
+      "example_row4": 0.030400000000000205,
+      "references": [
+        "$A4",
+        "$AR4",
+        "$GP4",
+        "$AR4"
+      ]
+    },
+    {
+      "column": "GT",
+      "header": "Confidence v5",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GT4",
+      "example_row4": 59.194772288905426,
+      "references": [
+        "$A4",
+        "$FT4",
+        "$GM4",
+        "$FK4",
+        "'Setari model'!$B$107",
+        "'Setari model'!$B$126",
+        "$GJ4",
+        "$GJ4"
+      ]
+    },
+    {
+      "column": "GU",
+      "header": "Gate selecție v5 (istoric)",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GU4",
+      "example_row4": "NU – LINEUP NECONFIRMAT",
+      "references": [
+        "$A4",
+        "$AR4",
+        "$GM4",
+        "$GN4",
+        "$GN4",
+        "$FN4",
+        "$FM4",
+        "$EP4"
+      ]
+    },
+    {
+      "column": "GV",
+      "header": "Verdict v5 (istoric)",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GV4",
+      "example_row4": "WATCH / NO BET",
+      "references": [
+        "$A4",
+        "$GU4",
+        "$GP4",
+        "'Setari model'!$B$35",
+        "$GT4",
+        "'Setari model'!$B$76",
+        "$GS4",
+        "$GP4",
+        "'Setari model'!$B$39",
+        "$GT4",
+        "'Setari model'!$B$40",
+        "$GS4"
+      ]
+    },
+    {
+      "column": "GW",
+      "header": "Motiv verdict v5",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GW4",
+      "example_row4": "NU – LINEUP NECONFIRMAT",
+      "references": [
+        "$A4",
+        "$GU4",
+        "$GU4",
+        "$GT4",
+        "$GP4",
+        "$GS4",
+        "$GJ4"
+      ]
+    },
+    {
+      "column": "GX",
+      "header": "Raționament v5",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GX4",
+      "example_row4": "P v5=92.0%; P0 v5=5.6%; low-conv=0%; mult.P0=1.00; clasă=SCĂZUT; cap=92.0%; Confidence=59/100; lineup=NU; piață=DA; EV=3.0%; gate=NU – LINEUP NECONFIRMAT; verdict=WATCH / NO BET. NU – LINEUP NECONFIRMAT",
+      "references": [
+        "$A4",
+        "$GP4",
+        "$GL4",
+        "$GJ4",
+        "$GJ4",
+        "$GK4",
+        "$GK4",
+        "$GN4",
+        "$GO4",
+        "$GT4",
+        "$FN4",
+        "$FM4",
+        "$GS4",
+        "$GS4",
+        "$GU4",
+        "$GV4",
+        "$GW4"
+      ]
+    },
+    {
+      "column": "GY",
+      "header": "Data Status",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "GY4",
+      "example_row4": "VERIFIED / PRIOR / SHRINKAGE",
+      "references": [
+        "$A4",
+        "$GM4",
+        "$I4",
+        "$P4",
+        "$W4",
+        "$AB4",
+        "'Setari model'!$B$58"
+      ]
+    },
+    {
+      "column": "GZ",
+      "header": "Data Quality Risk",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "GZ4",
+      "example_row4": 9.999999999999998,
+      "references": [
+        "$A4",
+        "$GM4",
+        "$AT4"
+      ]
+    },
+    {
+      "column": "HA",
+      "header": "Zero-Mass Risk",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "HA4",
+      "example_row4": 3.839503807616923,
+      "references": [
+        "$A4",
+        "$GM4",
+        "$FI4",
+        "$GK4",
+        "'Setari model'!$B$97",
+        "'Setari model'!$B$98",
+        "'Setari model'!$B$97"
+      ]
+    },
+    {
+      "column": "HB",
+      "header": "Context Risk",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "HB4",
+      "example_row4": 14.000000000000012,
+      "references": [
+        "$A4",
+        "$BR4",
+        "'Setari model'!$B$53",
+        "'Setari model'!$B$54",
+        "$BG4"
+      ]
+    },
+    {
+      "column": "HC",
+      "header": "Model Uncertainty",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "HC4",
+      "example_row4": 9.377513343075528,
+      "references": [
+        "$A4",
+        "$CC4",
+        "$BJ4:$BN4",
+        "$BJ4:$BN4",
+        "$BJ4:$BN4",
+        "'Setari model'!$B$45"
+      ]
+    },
+    {
+      "column": "HD",
+      "header": "Compound Risk",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "HD4",
+      "example_row4": 0,
+      "references": [
+        "$A4",
+        "$GJ4",
+        "$GJ4",
+        "$BG4"
+      ]
+    },
+    {
+      "column": "HE",
+      "header": "Risk Score",
+      "type": "Float sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "HE4",
+      "example_row4": 7.870120560697213,
+      "references": [
+        "$A4",
+        "$GZ4:$HD4",
+        "$GZ4",
+        "Risk_Classification!$E$28",
+        "$HA4",
+        "Risk_Classification!$E$29",
+        "$HB4",
+        "Risk_Classification!$E$30",
+        "$HC4",
+        "Risk_Classification!$E$31",
+        "$HD4",
+        "Risk_Classification!$E$32"
+      ]
+    },
+    {
+      "column": "HF",
+      "header": "Risk Level Base",
+      "type": "Număr întreg sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "HF4",
+      "example_row4": 1,
+      "references": [
+        "$A4",
+        "$HE4",
+        "$HE4",
+        "$HE4",
+        "$HE4",
+        "$HE4"
+      ]
+    },
+    {
+      "column": "HG",
+      "header": "G0 / Hard Gate – date critice",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "HG4",
+      "example_row4": "PASS",
+      "references": [
+        "$A4",
+        "$GM4"
+      ]
+    },
+    {
+      "column": "HH",
+      "header": "Final Risk Level",
+      "type": "Număr întreg sau gol/eroare",
+      "source": "FORMULA",
+      "formula_cell": "HH4",
+      "example_row4": 1,
+      "references": [
+        "$A4",
+        "$HG4",
+        "$HF4"
+      ]
+    },
+    {
+      "column": "HI",
+      "header": "Risk Class",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "HI4",
+      "example_row4": "DEFENSIV",
+      "references": [
+        "$A4",
+        "$HH4",
+        "$HH4",
+        "$HH4",
+        "$HH4",
+        "$HH4"
+      ]
+    },
+    {
+      "column": "HJ",
+      "header": "Risk Trace",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "HJ4",
+      "example_row4": "Data=VERIFIED / PRIOR / SHRINKAGE; DQ=10.0; ZM=3.8; Context=14.0; Uncertainty=9.4; Compound=0.0; Risk Score=7.9; Base=1; G0=PASS; Final=1. Cota, EV si lineup sunt informative si nu intra in recomandare.",
+      "references": [
+        "$A4",
+        "$GY4",
+        "$GZ4",
+        "$HA4",
+        "$HA4",
+        "$HB4",
+        "$HC4",
+        "$HD4",
+        "$HE4",
+        "$HE4",
+        "$HF4",
+        "$HF4",
+        "$HG4",
+        "$HH4"
+      ]
+    },
+    {
+      "column": "HK",
+      "header": "Recomandare finală tehnică",
+      "type": "Text sau gol",
+      "source": "FORMULA",
+      "formula_cell": "HK4",
+      "example_row4": "DEFENSIV",
+      "references": [
+        "$A4",
+        "$HI4"
+      ]
+    }
+  ],
+  "Surse cercetare": [
+    {
+      "column": "A",
+      "header": "Nr.",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "Website / instituție",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "C",
+      "header": "Categorie",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "D",
+      "header": "URL",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "E",
+      "header": "Utilizare în model",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "F",
+      "header": "Observație extrasă",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "G",
+      "header": "Nivel evidență",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "H",
+      "header": "Data consultării",
+      "type": "Dată",
+      "origin": "Valoare fixă / input manual"
+    }
+  ],
+  "Backtest": [
+    {
+      "column": "A",
+      "header": "Match ID",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "Data",
+      "type": "Dată sau gol",
+      "origin": "Formulă B4"
+    },
+    {
+      "column": "C",
+      "header": "Gazde",
+      "type": "Text sau gol",
+      "origin": "Formulă C4"
+    },
+    {
+      "column": "D",
+      "header": "Oaspeți",
+      "type": "Text sau gol",
+      "origin": "Formulă D4"
+    },
+    {
+      "column": "E",
+      "header": "P model v5 O0.5",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă E4"
+    },
+    {
+      "column": "F",
+      "header": "Confidence v5",
+      "type": "Float 0–100 sau gol",
+      "origin": "Formulă F4"
+    },
+    {
+      "column": "G",
+      "header": "Cotă plasată",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "H",
+      "header": "Cotă închidere",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "I",
+      "header": "Rezultat O0.5 (1/0)",
+      "type": "Număr întreg 0/1",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "J",
+      "header": "Profit 1u",
+      "type": "Float sau gol",
+      "origin": "Formulă J4"
+    },
+    {
+      "column": "K",
+      "header": "Brier Score",
+      "type": "Float sau gol",
+      "origin": "Formulă K4"
+    },
+    {
+      "column": "L",
+      "header": "Log-loss",
+      "type": "Float sau gol",
+      "origin": "Formulă L4"
+    },
+    {
+      "column": "M",
+      "header": "CLV",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă M4"
+    },
+    {
+      "column": "N",
+      "header": "Verdict v5",
+      "type": "Text sau gol",
+      "origin": "Formulă N4"
+    },
+    {
+      "column": "O",
+      "header": "Clasă zero-risk v5",
+      "type": "Text sau gol",
+      "origin": "Formulă O4"
+    },
+    {
+      "column": "P",
+      "header": "Indicator",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "Q",
+      "header": "Valoare",
+      "type": "Mixt după rând",
+      "origin": "Formulă Q4; alte rânduri au etichete/valori fixe"
+    },
+    {
+      "column": "U",
+      "header": "Clasă zero-risk",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "V",
+      "header": "Nr.",
+      "type": "Număr întreg",
+      "origin": "Formulă V4"
+    },
+    {
+      "column": "W",
+      "header": "Brier mediu",
+      "type": "Float sau gol",
+      "origin": "Formulă W4"
+    },
+    {
+      "column": "X",
+      "header": "Log-loss mediu",
+      "type": "Float sau gol",
+      "origin": "Formulă X4"
+    },
+    {
+      "column": "Y",
+      "header": "P medie",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă Y4"
+    },
+    {
+      "column": "Z",
+      "header": "Rată reală",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă Z4"
+    }
+  ],
+  "Frozen_Predictions": [
+    {
+      "column": "A",
+      "header": "Snapshot_ID",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "Snapshot_TS",
+      "type": "Dată/timestamp",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "C",
+      "header": "Match_Date",
+      "type": "Dată/timestamp",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "D",
+      "header": "Country",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "E",
+      "header": "League",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "F",
+      "header": "Home",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "G",
+      "header": "Away",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "H",
+      "header": "Market",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "I",
+      "header": "Line",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "J",
+      "header": "Model_Version",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "K",
+      "header": "P_Model",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "L",
+      "header": "P_Final",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "M",
+      "header": "Verdict",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "N",
+      "header": "Risk_Level",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "O",
+      "header": "Hard_Gates",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "P",
+      "header": "Data_Grade",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "Q",
+      "header": "PreMatch_Frozen",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "R",
+      "header": "P0_model",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "S",
+      "header": "P0_empirical_HA",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "T",
+      "header": "P0_league",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "U",
+      "header": "P0_calibrated",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "V",
+      "header": "BlankRate_H",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "W",
+      "header": "BlankRate_A",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "X",
+      "header": "Opponent_CS_HA",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "Y",
+      "header": "ZeroMassConfirmationCount",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "Z",
+      "header": "Lineup_Status",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AA",
+      "header": "P_Cap",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AB",
+      "header": "ZeroMass_Status",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AC",
+      "header": "Candidate_Threshold_ID",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AD",
+      "header": "Notes",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AE",
+      "header": "BlankRecent_H",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AF",
+      "header": "BlankRecent_A",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AG",
+      "header": "Recent00_Count_H",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AH",
+      "header": "Recent00_Count_A",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AI",
+      "header": "RecentFinishing_H",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AJ",
+      "header": "RecentFinishing_A",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AK",
+      "header": "ChanceCreation_Index",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AL",
+      "header": "BothBlank_Flag",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AM",
+      "header": "OpponentCS_Flag",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AN",
+      "header": "ModerateLambdaWeakFinishing_Flag",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AO",
+      "header": "Recent00_Accumulation_Flag",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AP",
+      "header": "LowConversion_Score",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AQ",
+      "header": "LowConversion_P0_Multiplier",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AR",
+      "header": "P0_v5",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AS",
+      "header": "ZeroRisk_v5",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AT",
+      "header": "P_Cap_v5",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "AU",
+      "header": "P_Final_v5",
+      "type": "Float procentaj",
+      "origin": "Valoare fixă / input manual"
+    }
+  ],
+  "Settlement": [
+    {
+      "column": "A",
+      "header": "Snapshot_ID",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "Match_Date",
+      "type": "Dată/timestamp",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "C",
+      "header": "League",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "D",
+      "header": "Home",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "E",
+      "header": "Away",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "F",
+      "header": "Market",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "G",
+      "header": "Line",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "H",
+      "header": "Model_Version",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "I",
+      "header": "P_Final_Frozen",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "J",
+      "header": "Outcome_1_0",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "K",
+      "header": "Profit_1u",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "L",
+      "header": "Score_H",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "M",
+      "header": "Score_A",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "N",
+      "header": "Total",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "O",
+      "header": "Fail_Mode",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "P",
+      "header": "Settlement_Source",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "Q",
+      "header": "Settled_TS",
+      "type": "Dată/timestamp",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "R",
+      "header": "Brier",
+      "type": "Float",
+      "origin": "Formulă R4"
+    },
+    {
+      "column": "S",
+      "header": "LogLoss",
+      "type": "Float",
+      "origin": "Formulă S4"
+    },
+    {
+      "column": "T",
+      "header": "Risk_Level",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "U",
+      "header": "Hard_Gates_Frozen",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "V",
+      "header": "Verdict_Frozen",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "W",
+      "header": "Notes",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    }
+  ],
+  "Risk_Level_Summary": [
+    {
+      "column": "A",
+      "header": "Risk Level",
+      "type": "Număr întreg",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "N",
+      "type": "Număr întreg",
+      "origin": "Formulă B4"
+    },
+    {
+      "column": "C",
+      "header": "Wins",
+      "type": "Număr întreg",
+      "origin": "Formulă C4"
+    },
+    {
+      "column": "D",
+      "header": "Hit Rate",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă D4"
+    },
+    {
+      "column": "E",
+      "header": "Brier",
+      "type": "Float sau gol",
+      "origin": "Formulă E4"
+    },
+    {
+      "column": "F",
+      "header": "Fail Rate",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă F4"
+    }
+  ],
+  "Calibration": [
+    {
+      "column": "A",
+      "header": "P low",
+      "type": "Procentaj [fracție]",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "P high",
+      "type": "Procentaj [fracție]",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "C",
+      "header": "N",
+      "type": "Număr întreg",
+      "origin": "Formulă C4"
+    },
+    {
+      "column": "D",
+      "header": "Mean P",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă D4"
+    },
+    {
+      "column": "E",
+      "header": "Observed Rate",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă E4"
+    },
+    {
+      "column": "F",
+      "header": "Calibration Gap",
+      "type": "Float diferență fracții",
+      "origin": "Formulă F4"
+    },
+    {
+      "column": "G",
+      "header": "Status",
+      "type": "Text",
+      "origin": "Formulă G4"
+    }
+  ],
+  "Fail_Distribution": [
+    {
+      "column": "A",
+      "header": "Fail Mode",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "Fails",
+      "type": "Număr întreg",
+      "origin": "Formulă B4"
+    },
+    {
+      "column": "C",
+      "header": "Share of Fails",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă C4"
+    },
+    {
+      "column": "D",
+      "header": "Model relevance",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "E",
+      "header": "Notes",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    }
+  ],
+  "League_Summary": [
+    {
+      "column": "A",
+      "header": "League",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "N",
+      "type": "Număr întreg sau gol",
+      "origin": "Formulă B4"
+    },
+    {
+      "column": "C",
+      "header": "Wins",
+      "type": "Număr întreg sau gol",
+      "origin": "Formulă C4"
+    },
+    {
+      "column": "D",
+      "header": "Hit Rate",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă D4"
+    },
+    {
+      "column": "E",
+      "header": "Mean P",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă E4"
+    },
+    {
+      "column": "F",
+      "header": "Calibration Gap",
+      "type": "Float diferență fracții",
+      "origin": "Formulă F4"
+    },
+    {
+      "column": "G",
+      "header": "Brier",
+      "type": "Float sau gol",
+      "origin": "Formulă G4"
+    },
+    {
+      "column": "H",
+      "header": "Stability",
+      "type": "Text",
+      "origin": "Formulă H4"
+    }
+  ],
+  "Monthly_Summary": [
+    {
+      "column": "A",
+      "header": "Month Start",
+      "type": "Dată (serial Excel)",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "N",
+      "type": "Număr întreg sau gol",
+      "origin": "Formulă B4"
+    },
+    {
+      "column": "C",
+      "header": "Wins",
+      "type": "Număr întreg sau gol",
+      "origin": "Formulă C4"
+    },
+    {
+      "column": "D",
+      "header": "Hit Rate",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă D4"
+    },
+    {
+      "column": "E",
+      "header": "Mean P",
+      "type": "Procentaj [fracție] sau gol",
+      "origin": "Formulă E4"
+    },
+    {
+      "column": "F",
+      "header": "Calibration Gap",
+      "type": "Float diferență fracții",
+      "origin": "Formulă F4"
+    },
+    {
+      "column": "G",
+      "header": "Brier",
+      "type": "Float sau gol",
+      "origin": "Formulă G4"
+    }
+  ],
+  "Builder_Marginal_Fails": [
+    {
+      "column": "A",
+      "header": "Builder_ID",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "Builder_Type",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "C",
+      "header": "Match",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "D",
+      "header": "Failed_Leg",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "E",
+      "header": "Source_Model",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "F",
+      "header": "Leg_P",
+      "type": "Procentaj [fracție]",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "G",
+      "header": "Leg_Risk",
+      "type": "Float/nivel; convenție nefixată",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "H",
+      "header": "Source_Gates",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "I",
+      "header": "Correlation",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "J",
+      "header": "Uncertainty",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "K",
+      "header": "Marginal_Fail_Contribution",
+      "type": "Float",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "L",
+      "header": "Notes",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    }
+  ],
+  "Backtest_Summary": [
+    {
+      "column": "A",
+      "header": "Metric",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "B",
+      "header": "Walk-forward value",
+      "type": "Număr întreg/Float după rând",
+      "origin": "Formulă B4; alte rânduri au etichete/valori fixe"
+    },
+    {
+      "column": "C",
+      "header": "Meaning",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "D",
+      "header": "Threshold-change role",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "E",
+      "header": "Reference evidence",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "F",
+      "header": "Reference N / value",
+      "type": "Mixt numeric/text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "G",
+      "header": "Reference Wilson / metric",
+      "type": "Mixt numeric/text",
+      "origin": "Valoare fixă / input manual"
+    },
+    {
+      "column": "H",
+      "header": "Status",
+      "type": "Text",
+      "origin": "Valoare fixă / input manual"
+    }
+  ],
+  "Dashboard": [
+    [
+      "B4",
+      "Match ID selectat",
+      "Text",
+      "Input manual"
+    ],
+    [
+      "B7,D7,F7,H7,B8,D8,F8,H8",
+      "Identitate, context și surse",
+      "Text/Dată/Număr",
+      "INDEX/MATCH după B4"
+    ],
+    [
+      "K4:K9",
+      "Componente lambda BJ:BN și BP",
+      "Float",
+      "INDEX/MATCH"
+    ],
+    [
+      "A12,C12,E12,G12",
+      "GL, GP, GQ, GT",
+      "Float/procentaj",
+      "INDEX/MATCH"
+    ],
+    [
+      "A16,C16,E16,G16",
+      "AR, EC, GR, GS",
+      "Float/procentaj",
+      "INDEX/MATCH"
+    ],
+    [
+      "A21,C21",
+      "Scor și recomandare HK",
+      "Text",
+      "TEXT/INDEX/MATCH"
+    ],
+    [
+      "E26:E33,G26:G33",
+      "Control tehnic și stări",
+      "Mixt",
+      "Formule; antete A25/E25/G25"
+    ],
+    [
+      "A36,A39",
+      "HJ și CI",
+      "Text",
+      "INDEX/MATCH"
+    ],
+    [
+      "K31",
+      "Număr website-uri",
+      "Întreg",
+      "COUNTA(Surse cercetare!A4:A100)"
+    ],
+    [
+      "K32:K34",
+      "Versiune, dată, metodologie",
+      "Text/Dată",
+      "Constante documentare"
+    ]
+  ],
+  "Risk_Classification": [
+    [
+      "A3:E9",
+      "Componentă; Pondere activă; Scor 0–100; Definiție operațională; Sursă în Analize meciuri",
+      "Text, Float, Float, Text, Text",
+      "A/D/E texte; B4:B9 formule; C4:C8 nepopulate"
+    ],
+    [
+      "A12:D17",
+      "Risk Score; Nivel; Interpretare; Acțiune",
+      "Text, Întreg, Text, Text",
+      "Constante documentare"
+    ],
+    [
+      "A19:D25",
+      "Regulă comună; Valoare; Rol; Observație",
+      "Text/Număr",
+      "Constante"
+    ],
+    [
+      "A28:E32",
+      "Componente ale meciului și ponderi",
+      "Text/Float",
+      "B28:B32 INDEX/MATCH; E28:E32 formule B4:B8"
+    ],
+    [
+      "B35:B39",
+      "Risk Score; Risk Level Base; G0; Final Risk Level; Risk Class",
+      "Float/Întreg/Text",
+      "Formule"
+    ],
+    [
+      "A41:E47",
+      "Definiții finale",
+      "Text",
+      "Documentație"
+    ]
+  ],
+  "ZeroMass_Gate_v4": [
+    [
+      "A3:F10",
+      "Componentă; Valoare / Status; Prag / sens; Sursa 1; Sursa 2; Rol",
+      "Text/Mixt/Text/Text/Text/Text",
+      "B4:B10 inputuri manuale; D/E surse text"
+    ],
+    [
+      "A12:D18",
+      "Calcul / Gate; Valoare; Regulă; Rezultat",
+      "Text/Mixt/Text/Text",
+      "B13:B16 input; B17:B18 și D17:D18 formule"
+    ]
+  ],
+  "ZeroMass_WF_v4": [
+    [
+      "A3:F15",
+      "Field; Value; Role; Rule; OOS status; Builder",
+      "Text/Mixt/Text/Text/Text/Text",
+      "B4:B13 input manual; B14/B15 formule"
+    ]
+  ],
+  "ZeroMass_Gate_v5": [
+    [
+      "B2",
+      "Match ID",
+      "Text",
+      "Dashboard!B4"
+    ],
+    [
+      "A4:F23",
+      "Indicator; Valoare; Prag / referință; Status; Rol; Interpretare",
+      "Text/Mixt/Mixt/Text/Text/Text",
+      "A/E/F texte; B și D formule; C mixt; detalii în manifest"
+    ]
+  ],
+  "Setari model": {
+    "competition_table": "A4:J11",
+    "parameters": [
+      [
+        "B15",
+        "Motivație",
+        0.01,
+        "+ dacă obiectivul impune marcarea; - dacă remiza/gestionarea este suficientă"
+      ],
+      [
+        "B16",
+        "Deschidere tactică",
+        0.025,
+        "+ joc vertical/presing; - bloc jos și ritm lent"
+      ],
+      [
+        "B17",
+        "Atac / absențe",
+        0.02,
+        "+ titulari ofensivi disponibili; - absențe la finalizare/creație"
+      ],
+      [
+        "B18",
+        "Apărare / absențe",
+        0.02,
+        "+ apărări slăbite; - defensive complete și stabile"
+      ],
+      [
+        "B19",
+        "Rotație",
+        0.015,
+        "Efect net estimat; poate crește erorile sau reduce calitatea atacului"
+      ],
+      [
+        "B20",
+        "Oboseală",
+        0.01,
+        "Efect net, ținând cont de zile de odihnă, minute și deplasări"
+      ],
+      [
+        "B21",
+        "Meteo",
+        0.015,
+        "- pentru vânt/ploaie/căldură severă; 0 pentru condiții normale"
+      ],
+      [
+        "B22",
+        "Teren",
+        0.015,
+        "- pentru suprafață slabă; + pentru suprafață rapidă și bună"
+      ],
+      [
+        "B23",
+        "Arbitru / penalty",
+        0.01,
+        "Pondere mică: rata brută este puternic influențată de echipele arbitrate"
+      ],
+      [
+        "B24",
+        "Context tur/retur",
+        0.025,
+        "+ când scorul agregat obligă atacul; - când ambele pot temporiza"
+      ],
+      [
+        "B25",
+        "Dezechilibru valoric",
+        0.015,
+        "+ când favorita poate produce singură golul; - dacă favorita rotește masiv"
+      ],
+      [
+        "B30",
+        "k shrinkage sezon",
+        8,
+        "Eșantioanele mici sunt trase spre media competiției"
+      ],
+      [
+        "B31",
+        "k shrinkage recent",
+        5,
+        "Reduce supra-reacția la ultimele rezultate"
+      ],
+      [
+        "B32",
+        "Marjă implicită când lipsește Under 0,5",
+        0.04,
+        "Corecție aproximativă; preferă ambele cote când sunt disponibile"
+      ],
+      [
+        "B33",
+        "Pondere max. calibrare 0-0 ligă",
+        0.5,
+        "Corectează abaterea Poisson folosind rata reală de 0-0"
+      ],
+      [
+        "B34",
+        "Pondere max. zero empiric echipe",
+        0.25,
+        "Integrează frecvențele O0,5 home/away"
+      ],
+      [
+        "B35",
+        "Prag P recomandat",
+        0.92,
+        "Probabilitate minimă pentru recomandare fermă"
+      ],
+      [
+        "B36",
+        "Prag Confidence recomandat",
+        0.75,
+        "Încredere minimă"
+      ],
+      [
+        "B37",
+        "Prag Edge recomandat",
+        0.025,
+        "Avantaj minim față de piață"
+      ],
+      [
+        "B38",
+        "Prag EV recomandat",
+        0.015,
+        "Randament așteptat minim pe unitate"
+      ],
+      [
+        "B39",
+        "Prag P cu prudență",
+        0.88,
+        "Probabilitate minimă pentru recomandare prudentă"
+      ],
+      [
+        "B40",
+        "Prag Confidence cu prudență",
+        0.65,
+        "Încredere minimă pentru zona prudentă"
+      ],
+      [
+        "B41",
+        "Prag Edge cu prudență",
+        0.01,
+        "Avantaj minim pentru zona prudentă"
+      ],
+      [
+        "B42",
+        "Prag P neconcludent",
+        0.82,
+        "Sub acest nivel pariul este evitat"
+      ],
+      [
+        "B43",
+        "Prag Confidence neconcludent",
+        0.5,
+        "Sub acest nivel pariul este evitat"
+      ],
+      [
+        "B44",
+        "Țintă eșantion",
+        40,
+        "Folosită la scorul de robustețe"
+      ],
+      [
+        "B45",
+        "Toleranță dispersie componente",
+        0.6,
+        "Penalizează componentele contradictorii"
+      ],
+      [
+        "B46",
+        "Țintă completitudine numerică",
+        35,
+        "Număr orientativ de intrări utile"
+      ],
+      [
+        "B47",
+        "Pondere completitudine",
+        0.3,
+        "Confidence Score"
+      ],
+      [
+        "B48",
+        "Pondere eșantion",
+        0.2,
+        "Confidence Score"
+      ],
+      [
+        "B49",
+        "Pondere acord componente",
+        0.2,
+        "Confidence Score"
+      ],
+      [
+        "B50",
+        "Pondere calitate surse",
+        0.15,
+        "Confidence Score"
+      ],
+      [
+        "B51",
+        "Pondere echipe start",
+        0.15,
+        "Confidence Score"
+      ],
+      [
+        "B52",
+        "Penalizare contradicție / nivel",
+        0.08,
+        "Scădere din Confidence Score"
+      ],
+      [
+        "B53",
+        "Multiplicator context minim",
+        0.75,
+        "Limită de robustețe"
+      ],
+      [
+        "B54",
+        "Multiplicator context maxim",
+        1.25,
+        "Limită de robustețe"
+      ],
+      [
+        "B58",
+        "Eșantion minim early season",
+        5,
+        "Sub acest număr real home/away se aplică plafonul early."
+      ],
+      [
+        "B59",
+        "Cap probabilitate early/regim",
+        0.92,
+        "Plafon pentru eșantion <5, promovate sau etapa 1."
+      ],
+      [
+        "B60",
+        "Cap probabilitate standard",
+        0.93,
+        "Plafon fără confirmarea completă a pieței și loturilor."
+      ],
+      [
+        "B61",
+        "Cap probabilitate confirmat",
+        0.94,
+        "Permis doar cu loturi, disponibilități-cheie și cotă reală."
+      ],
+      [
+        "B62",
+        "Majorare P0 regim major",
+        0.25,
+        "+25% P0 pentru promovate/etapa 1."
+      ],
+      [
+        "B63",
+        "Majorare P0 etapele 2-3",
+        0.1,
+        "+10% P0 în tranziția de început de sezon."
+      ],
+      [
+        "B64",
+        "N minim calibrare ligă",
+        250,
+        "Factorul zero al ligii ajunge la greutate maximă la 250 meciuri."
+      ],
+      [
+        "B65",
+        "Pondere max. zero real ligă v2",
+        0.5,
+        "Greutatea maximă a masei empirice 0-0 în ZIP."
+      ],
+      [
+        "B66",
+        "SOT bază / echipă",
+        4.5,
+        "Reper pentru calitatea ofensivă."
+      ],
+      [
+        "B67",
+        "Big chances bază / echipă",
+        1.5,
+        "Reper pentru ocazii mari."
+      ],
+      [
+        "B68",
+        "xG/șut bază",
+        0.1,
+        "Reper pentru calitatea medie a șuturilor."
+      ],
+      [
+        "B69",
+        "Touches box bază / echipă",
+        22,
+        "Reper pentru prezența în careu."
+      ],
+      [
+        "B70",
+        "Set-piece xG bază / echipă",
+        0.25,
+        "Reper pentru faze fixe."
+      ],
+      [
+        "B71",
+        "Factor calitate minim",
+        0.85,
+        "Limită inferioară pentru ajustarea calității ofensive."
+      ],
+      [
+        "B72",
+        "Factor calitate maxim",
+        1.15,
+        "Limită superioară pentru ajustarea calității ofensive."
+      ],
+      [
+        "B73",
+        "Penalizare cross-heavy / nivel",
+        0.03,
+        "Reduce factorul de calitate pentru volum steril de centrări."
+      ],
+      [
+        "B74",
+        "Majorare P0 atacant-cheie absent",
+        0.08,
+        "+8% P0 pentru fiecare atacant-cheie absent."
+      ],
+      [
+        "B75",
+        "Ajustare P0 portar-cheie absent",
+        -0.06,
+        "-6% P0 pentru fiecare portar-cheie absent."
+      ],
+      [
+        "B76",
+        "Confidence minim selecție finală",
+        0.75,
+        "Prag separat de probabilitatea statistică."
+      ],
+      [
+        "B77",
+        "Interval de incertitudine bază",
+        0.03,
+        "Semilățime orientativă; crește când informația lipsește."
+      ],
+      [
+        "B78",
+        "Nr. maxim selecții portofoliu",
+        5,
+        "Control: 1–5 selecții independente."
+      ],
+      [
+        "B79",
+        "Corelație maximă portofoliu",
+        0.3,
+        "Peste prag, combinația este blocată."
+      ],
+      [
+        "B80",
+        "Fracție Kelly implicită",
+        0.25,
+        "Kelly fracționat, folosit dacă rândul nu are altă valoare."
+      ],
+      [
+        "B81",
+        "Limită miză zilnică implicită",
+        0.02,
+        "Maximum 2% din bankroll/zi dacă nu se completează altă limită."
+      ],
+      [
+        "B82",
+        "Minut minim modul live",
+        20,
+        "Nu se emite selecție live înainte de minutul 20."
+      ],
+      [
+        "B83",
+        "Cap factor intensitate live",
+        1.5,
+        "Protejează contra extrapolării excesive a ritmului live."
+      ],
+      [
+        "B87",
+        "Rată 0-0 echipă de referință",
+        0.1,
+        "Etalon pentru riscul 0-0 combinat home/away."
+      ],
+      [
+        "B88",
+        "Risc blank×CS de referință",
+        0.25,
+        "Etalon pentru FTS al unei echipe × clean sheet-ul advers."
+      ],
+      [
+        "B89",
+        "Rată 0-0 HT de referință",
+        0.35,
+        "Etalon pentru ritmul fără gol în prima repriză."
+      ],
+      [
+        "B90",
+        "Pondere risc 0-0 team-specific",
+        0.3,
+        "Pondere în factorul zero-mass v3."
+      ],
+      [
+        "B91",
+        "Pondere blank×clean-sheet reciproc",
+        0.3,
+        "Ponderea interacțiunii atac fără gol × apărare fără gol primit."
+      ],
+      [
+        "B92",
+        "Pondere finishing vs xG",
+        0.2,
+        "Penalizează subperformanța comună la finalizare."
+      ],
+      [
+        "B93",
+        "Pondere bloc statistic 0–0 HT",
+        0.2,
+        "Coeficientul exterior 20% rămâne neschimbat. Componenta manuală a fost eliminată."
+      ],
+      [
+        "B94",
+        "Coeficient statistic 0–0 HT",
+        0.75,
+        "75% păstrat din formula anterioară; ponderea manuală eliminată nu se redistribuie."
+      ],
+      [
+        "B95",
+        "Parametru retras – FB eliminat",
+        null,
+        "Neutilizat în formule. Nu se completează."
+      ],
+      [
+        "B96",
+        "Parametru retras – FB eliminat",
+        null,
+        "Neutilizat în formule. Nu se completează."
+      ],
+      [
+        "B97",
+        "Factor zero-mass minim",
+        0.75,
+        "Limită inferioară pentru ajustarea ZIP/DC."
+      ],
+      [
+        "B98",
+        "Factor zero-mass maxim",
+        1.6,
+        "Limită superioară anti-extrapolare."
+      ],
+      [
+        "B99",
+        "Prag clasă zero-mass SCĂZUT",
+        0.95,
+        "Factor ≤ prag: masă la zero controlată."
+      ],
+      [
+        "B100",
+        "Prag clasă zero-mass RIDICAT",
+        1.15,
+        "Factor > prag: risc 0-0 ridicat."
+      ],
+      [
+        "B101",
+        "P0 maxim recalibrat v3",
+        0.65,
+        "Plafon tehnic al probabilității 0-0."
+      ],
+      [
+        "B102",
+        "Cap probabilitate risc ridicat / date incomplete",
+        0.9,
+        "Peste 90% nu este permis cu date zero-risk incomplete sau risc ridicat."
+      ],
+      [
+        "B103",
+        "Cap probabilitate risc mediu",
+        0.91,
+        "Plafon pentru clasa MEDIU."
+      ],
+      [
+        "B104",
+        "Cap probabilitate risc scăzut fără confirmări complete",
+        0.92,
+        "Plafon de raportare; nu influențează recomandarea finală."
+      ],
+      [
+        "B105",
+        "Cap probabilitate risc scăzut cu confirmări complete",
+        0.94,
+        "Permis numai cu confirmări complete; nu influențează recomandarea finală."
+      ],
+      [
+        "B106",
+        "Prag confirmare piață zero-risk",
+        0.85,
+        "Probabilitatea implicită reală minimă a pieței."
+      ],
+      [
+        "B107",
+        "Penalizare confidence zero-risk incomplet",
+        12,
+        "Puncte scăzute când setul P0 v3 nu este complet."
+      ],
+      [
+        "B108",
+        "Penalizare confidence risc mediu",
+        6,
+        "Puncte scăzute pentru clasa MEDIU."
+      ],
+      [
+        "B109",
+        "Penalizare confidence risc ridicat",
+        12,
+        "Puncte scăzute pentru clasa RIDICAT."
+      ],
+      [
+        "B113",
+        "Prag blank recent / echipă",
+        0.2,
+        "Semnal activ când fiecare echipă are blank rate recent ≥20%."
+      ],
+      [
+        "B114",
+        "Prag clean-sheet advers relevant",
+        0.3,
+        "Semnal activ când blank-ul unei echipe întâlnește CS advers ≥30%."
+      ],
+      [
+        "B115",
+        "λ moderat minim",
+        1.6,
+        "Limita inferioară a ferestrei λ moderate."
+      ],
+      [
+        "B116",
+        "λ moderat maxim",
+        2.6,
+        "Limita superioară a ferestrei λ moderate."
+      ],
+      [
+        "B117",
+        "Prag finishing recent slab",
+        0.9,
+        "Media GF/xGF recent ≤0,90 indică conversie slabă."
+      ],
+      [
+        "B118",
+        "xGF recent minim – chance creation",
+        0.8,
+        "Necesită ocazii create; evită confundarea atacului inert cu subfinalizarea."
+      ],
+      [
+        "B119",
+        "Prag rată 0-0 recent acumulată",
+        0.2,
+        "Semnal când cel puțin o echipă are ≥20% rezultate 0-0 în fereastra recentă."
+      ],
+      [
+        "B120",
+        "N minim recent pentru 0-0",
+        5,
+        "Eșantion minim pentru semnalul de acumulare 0-0."
+      ],
+      [
+        "B121",
+        "Pondere blank bilateral",
+        0.2,
+        "Pondere în scorul low-conversion."
+      ],
+      [
+        "B122",
+        "Pondere clean-sheet advers",
+        0.2,
+        "Pondere în scorul low-conversion."
+      ],
+      [
+        "B123",
+        "Pondere nucleu low-conversion",
+        0.45,
+        "Cea mai mare pondere: λ moderat + finishing slab + xGF relevant."
+      ],
+      [
+        "B124",
+        "Pondere acumulare 0-0 recentă",
+        0.15,
+        "Pondere în scorul low-conversion."
+      ],
+      [
+        "B125",
+        "Majorare P0 maximă low-conversion",
+        0.2,
+        "Majorare incrementală maximă a P0; nu modifică plafoanele 90/91/92/94%."
+      ],
+      [
+        "B126",
+        "Penalizare Confidence maximă",
+        8,
+        "Penalizare maximă, proporțională cu scorul low-conversion."
+      ]
+    ]
+  }
+}

@@ -2,6 +2,7 @@
 
 from pathlib import Path
 
+import pytest
 from openpyxl import load_workbook
 
 from src.adapters.corners import CornersAdapter
@@ -28,9 +29,15 @@ def test_over05_preserves_formulas(tmp_path: Path):
     ws = wb["Analize meciuri"]
     assert ws["A4"].value == ok[0].match_id
     assert ws["G4"].value == ok[0].home.name
-    # formule pe BJ rămân formule
+    assert ws["N4"].value == pytest.approx(0.93)
+    assert ws["J4"].value == pytest.approx(32 / 14)
+    assert ws["EV4"].value == pytest.approx(0.07)
+    assert ws["FB4"].value is None
     if ws["BJ4"].value:
         assert str(ws["BJ4"].value).startswith("=")
+    assert ws["HK4"].value is None or str(ws["HK4"].value).startswith("=")
+    assert ws["HR4"].value
+    assert ws["HR3"].value == "Recomandare finala (HK)"
     wb.close()
 
 

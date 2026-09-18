@@ -49,6 +49,84 @@ def _unavailable(value: Any) -> bool:
     return value in (None, "", -1, -2, "-1", "-2")
 
 
+def _as_number(raw: Any) -> float | None:
+    """Extrage un număr din payload FootyStats.
+
+    LIVE: seasonGoals_home/away sunt liste de minute ('25', '90+1'), nu totaluri.
+    Totalul numeric e seasonScoredNum_* sau lungimea listei. Mock păstrează int.
+    """
+    if _unavailable(raw):
+        return None
+    if isinstance(raw, bool):
+        return None
+    if isinstance(raw, (int, float)):
+        return float(raw)
+    if isinstance(raw, str):
+        try:
+            return float(raw.replace(",", "."))
+        except ValueError:
+            return None
+    if isinstance(raw, list):
+        return float(len(raw))
+    return None
+
+
+def _first_number(*values: Any) -> float | None:
+    """Prima valoare numerică din candidați API, fără a inventa."""
+    for value in values:
+        number = _as_number(value)
+        if number is not None:
+            return number
+    return None
+
+
+def _under05_count(stats: dict[str, Any], n_int: int | None) -> Any:
+    """Număr 0-0 = Under 0.5; fallback identitar played − Over 0.5."""
+    raw = stats.get("seasonUnder05Num_overall")
+    if not _unavailable(raw):
+        return raw
+    over_n = stats.get("seasonOver05Num_overall")
+    if n_int is not None and not _unavailable(over_n):
+        over_count = _as_number(over_n)
+        if over_count is None:
+            return None
+        return max(0.0, float(n_int) - over_count)
+    return None
+
+
+def league_goal_averages(teams: list[dict[str, Any]]) -> tuple[float | None, float | None, float | None]:
+    """Medii AJ/AK/AL din league-teams: goluri pe meci gazde, oaspeți și total.
+
+    Agregare din payload-ul oficial, nu valori inventate. AL = AJ + AK când ambele există.
+    """
+    home_rates: list[float] = []
+    away_rates: list[float] = []
+    for team in teams:
+        stats = team.get("stats") if isinstance(team, dict) else None
+        if not isinstance(stats, dict):
+            continue
+        home_avg = _first_number(stats.get("seasonScoredAVG_home"))
+        if home_avg is None:
+            goals_home = _first_number(stats.get("seasonScoredNum_home"), stats.get("seasonGoals_home"))
+            matches_home = _as_number(stats.get("seasonMatchesPlayed_home"))
+            if goals_home is not None and matches_home is not None and matches_home > 0:
+                home_avg = goals_home / matches_home
+        away_avg = _first_number(stats.get("seasonScoredAVG_away"))
+        if away_avg is None:
+            goals_away = _first_number(stats.get("seasonScoredNum_away"), stats.get("seasonGoals_away"))
+            matches_away = _as_number(stats.get("seasonMatchesPlayed_away"))
+            if goals_away is not None and matches_away is not None and matches_away > 0:
+                away_avg = goals_away / matches_away
+        if home_avg is not None:
+            home_rates.append(home_avg)
+        if away_avg is not None:
+            away_rates.append(away_avg)
+    avg_home = sum(home_rates) / len(home_rates) if home_rates else None
+    avg_away = sum(away_rates) / len(away_rates) if away_rates else None
+    avg_total = (avg_home + avg_away) if avg_home is not None and avg_away is not None else None
+    return avg_home, avg_away, avg_total
+
+
 def _user_message_for_failure(payload: dict[str, Any], status_code: int, endpoint: str) -> str:
     raw = str(payload.get("message") or payload.get("error") or "").lower()
     if status_code in {401, 403} or "invalid" in raw and "key" in raw:
@@ -123,7 +201,7 @@ class FootyStatsClient:
         """GET JSON envelope {success, pager, data}. Nu loghează cheia."""
         if not self.api_key:
             raise FootyStatsError(
-                "Cheia API lipsește. Folosește modul MOCK sau setează FOOTYSTATS_API_KEY.",
+                "Cheia API lipsește. Setează FOOTYSTATS_API_KEY în .env sau secrets.toml.",
                 "empty api key",
             )
         query = dict(params or {})
@@ -304,6 +382,7 @@ class FootyStatsClient:
 
         home: dict[str, Any] = {}
         away: dict[str, Any] = {}
+        teams: dict[int, dict[str, Any]] = {}
         if season_int is not None:
             teams = {int(t["id"]): t for t in self.league_teams(season_int) if not _unavailable(t.get("id"))}
             if not _unavailable(home_id):
@@ -320,7 +399,20 @@ class FootyStatsClient:
         a5 = self.last_x(int(away_id), 5) if not _unavailable(away_id) else {}
         h10 = self.last_x(int(home_id), 10) if not _unavailable(home_id) else {}
         a10 = self.last_x(int(away_id), 10) if not _unavailable(away_id) else {}
-        md = self.build_match_data(match, home, away, h5, a5, tz_name=tz_name, home_last10=h10, away_last10=a10)
+        avg_home, avg_away, avg_total = league_goal_averages(list(teams.values()))
+        md = self.build_match_data(
+            match,
+            home,
+            away,
+            h5,
+            a5,
+            tz_name=tz_name,
+            home_last10=h10,
+            away_last10=a10,
+            league_avg_gf_home=avg_home,
+            league_avg_gf_away=avg_away,
+            league_avg_gf_total=avg_total,
+        )
         md.source_mode = "live"
         return md
 
@@ -334,6 +426,9 @@ class FootyStatsClient:
         tz_name: str = "Europe/Bucharest",
         home_last10: dict[str, Any] | None = None,
         away_last10: dict[str, Any] | None = None,
+        league_avg_gf_home: Any = None,
+        league_avg_gf_away: Any = None,
+        league_avg_gf_total: Any = None,
     ) -> MatchData:
         """Construiește MatchData din payload-uri FootyStats."""
         now = datetime.now(timezone.utc)
@@ -362,10 +457,20 @@ class FootyStatsClient:
             n_int = int(n_val) if isinstance(n_val, (int, float)) and n_val not in (-1, -2) else None
             return {
                 f"{prefix}_n": ind(n_val, "count", n_int),
-                f"{prefix}_gf": ind(stats.get("seasonGoals_overall") or stats.get("goals_for") or stats.get("gf"), "goals", n_int),
-                f"{prefix}_ga": ind(stats.get("seasonConceded_overall") or stats.get("goals_against") or stats.get("ga"), "goals", n_int),
+                f"{prefix}_gf": ind(
+                    _first_number(stats.get("seasonScoredNum_overall"), stats.get("seasonGoals_overall"), stats.get("goals_for"), stats.get("gf")),
+                    "goals",
+                    n_int,
+                ),
+                f"{prefix}_ga": ind(
+                    _first_number(stats.get("seasonConcededNum_overall"), stats.get("seasonConceded_overall"), stats.get("goals_against"), stats.get("ga")),
+                    "goals",
+                    n_int,
+                ),
                 f"{prefix}_xgf": ind(stats.get("xg_for_avg") or stats.get("xg_for_avg_overall") or stats.get("xgf"), "xg", n_int),
                 f"{prefix}_xga": ind(stats.get("xg_against_avg") or stats.get("xg_against_avg_overall") or stats.get("xga"), "xg", n_int),
+                f"{prefix}_fts": ind(stats.get("seasonFTSPercentage_overall"), "percent", n_int),
+                f"{prefix}_under05_n": ind(_under05_count(stats, n_int), "count", n_int),
                 f"{prefix}_corners_for": ind(stats.get("cornersAVG_overall") or stats.get("corners_for"), "corners", n_int),
                 f"{prefix}_corners_against": ind(stats.get("cornersAgainstAVG_overall") or stats.get("corners_against"), "corners", n_int),
             }
@@ -378,19 +483,23 @@ class FootyStatsClient:
         home = TeamSideStats(
             team_id=int(home_id) if not _unavailable(home_id) else None,
             name=str(home_name),
-            matches_played_overall=ind(h_stats.get("seasonMatchesPlayed_overall"), "count"),
-            matches_played_home=ind(h_stats.get("seasonMatchesPlayed_home"), "count"),
-            matches_played_away=ind(h_stats.get("seasonMatchesPlayed_away"), "count"),
-            goals_for_home=ind(h_stats.get("seasonGoals_home"), "goals"),
-            goals_against_home=ind(h_stats.get("seasonConceded_home"), "goals"),
-            goals_for_away=ind(h_stats.get("seasonGoals_away"), "goals"),
-            goals_against_away=ind(h_stats.get("seasonConceded_away"), "goals"),
+            matches_played_overall=ind(_first_number(h_stats.get("seasonMatchesPlayed_overall")), "count"),
+            matches_played_home=ind(_first_number(h_stats.get("seasonMatchesPlayed_home")), "count"),
+            matches_played_away=ind(_first_number(h_stats.get("seasonMatchesPlayed_away")), "count"),
+            goals_for_home=ind(_first_number(h_stats.get("seasonScoredNum_home"), h_stats.get("seasonGoals_home")), "goals"),
+            goals_against_home=ind(_first_number(h_stats.get("seasonConcededNum_home"), h_stats.get("seasonConceded_home")), "goals"),
+            goals_for_away=ind(_first_number(h_stats.get("seasonScoredNum_away"), h_stats.get("seasonGoals_away")), "goals"),
+            goals_against_away=ind(_first_number(h_stats.get("seasonConcededNum_away"), h_stats.get("seasonConceded_away")), "goals"),
             xg_for_home=ind(h_stats.get("xg_for_home") or h_stats.get("xg_for_avg_home"), "xg"),
             xg_against_home=ind(h_stats.get("xg_against_home") or h_stats.get("xg_against_avg_home"), "xg"),
             xg_for_away=ind(h_stats.get("xg_for_away") or h_stats.get("xg_for_avg_away"), "xg"),
             xg_against_away=ind(h_stats.get("xg_against_away") or h_stats.get("xg_against_avg_away"), "xg"),
             over05_pct_home=ind(h_stats.get("seasonOver05Percentage_home"), "percent"),
             over05_pct_away=ind(h_stats.get("seasonOver05Percentage_away"), "percent"),
+            under05_pct_home=ind(h_stats.get("seasonUnder05Percentage_home"), "percent"),
+            under05_pct_away=ind(h_stats.get("seasonUnder05Percentage_away"), "percent"),
+            over05_ht_pct_home=ind(h_stats.get("seasonOver05PercentageHT_home"), "percent"),
+            over05_ht_pct_away=ind(h_stats.get("seasonOver05PercentageHT_away"), "percent"),
             fts_pct_home=ind(h_stats.get("seasonFTSPercentage_home"), "percent"),
             fts_pct_away=ind(h_stats.get("seasonFTSPercentage_away"), "percent"),
             fts_pct_overall=ind(h_stats.get("seasonFTSPercentage_overall"), "percent"),
@@ -407,6 +516,8 @@ class FootyStatsClient:
             last5_ga=h5["last5_ga"],
             last5_xgf=h5["last5_xgf"],
             last5_xga=h5["last5_xga"],
+            last5_fts=h5["last5_fts"],
+            last5_under05_n=h5["last5_under05_n"],
             last5_corners_for=h5["last5_corners_for"],
             last5_corners_against=h5["last5_corners_against"],
             last10_n=h10["last10_n"],
@@ -416,19 +527,23 @@ class FootyStatsClient:
         away = TeamSideStats(
             team_id=int(away_id) if not _unavailable(away_id) else None,
             name=str(away_name),
-            matches_played_overall=ind(a_stats.get("seasonMatchesPlayed_overall"), "count"),
-            matches_played_home=ind(a_stats.get("seasonMatchesPlayed_home"), "count"),
-            matches_played_away=ind(a_stats.get("seasonMatchesPlayed_away"), "count"),
-            goals_for_home=ind(a_stats.get("seasonGoals_home"), "goals"),
-            goals_against_home=ind(a_stats.get("seasonConceded_home"), "goals"),
-            goals_for_away=ind(a_stats.get("seasonGoals_away"), "goals"),
-            goals_against_away=ind(a_stats.get("seasonConceded_away"), "goals"),
+            matches_played_overall=ind(_first_number(a_stats.get("seasonMatchesPlayed_overall")), "count"),
+            matches_played_home=ind(_first_number(a_stats.get("seasonMatchesPlayed_home")), "count"),
+            matches_played_away=ind(_first_number(a_stats.get("seasonMatchesPlayed_away")), "count"),
+            goals_for_home=ind(_first_number(a_stats.get("seasonScoredNum_home"), a_stats.get("seasonGoals_home")), "goals"),
+            goals_against_home=ind(_first_number(a_stats.get("seasonConcededNum_home"), a_stats.get("seasonConceded_home")), "goals"),
+            goals_for_away=ind(_first_number(a_stats.get("seasonScoredNum_away"), a_stats.get("seasonGoals_away")), "goals"),
+            goals_against_away=ind(_first_number(a_stats.get("seasonConcededNum_away"), a_stats.get("seasonConceded_away")), "goals"),
             xg_for_home=ind(a_stats.get("xg_for_home") or a_stats.get("xg_for_avg_home"), "xg"),
             xg_against_home=ind(a_stats.get("xg_against_home") or a_stats.get("xg_against_avg_home"), "xg"),
             xg_for_away=ind(a_stats.get("xg_for_away") or a_stats.get("xg_for_avg_away"), "xg"),
             xg_against_away=ind(a_stats.get("xg_against_away") or a_stats.get("xg_against_avg_away"), "xg"),
             over05_pct_home=ind(a_stats.get("seasonOver05Percentage_home"), "percent"),
             over05_pct_away=ind(a_stats.get("seasonOver05Percentage_away"), "percent"),
+            under05_pct_home=ind(a_stats.get("seasonUnder05Percentage_home"), "percent"),
+            under05_pct_away=ind(a_stats.get("seasonUnder05Percentage_away"), "percent"),
+            over05_ht_pct_home=ind(a_stats.get("seasonOver05PercentageHT_home"), "percent"),
+            over05_ht_pct_away=ind(a_stats.get("seasonOver05PercentageHT_away"), "percent"),
             fts_pct_home=ind(a_stats.get("seasonFTSPercentage_home"), "percent"),
             fts_pct_away=ind(a_stats.get("seasonFTSPercentage_away"), "percent"),
             fts_pct_overall=ind(a_stats.get("seasonFTSPercentage_overall"), "percent"),
@@ -445,6 +560,8 @@ class FootyStatsClient:
             last5_ga=a5["last5_ga"],
             last5_xgf=a5["last5_xgf"],
             last5_xga=a5["last5_xga"],
+            last5_fts=a5["last5_fts"],
+            last5_under05_n=a5["last5_under05_n"],
             last5_corners_for=a5["last5_corners_for"],
             last5_corners_against=a5["last5_corners_against"],
             last10_n=a10["last10_n"],
@@ -467,6 +584,15 @@ class FootyStatsClient:
             odds_ft_2=indicator_from_raw(match.get("odds_ft_2"), unit="decimal_odds", endpoint="todays-matches", extracted_at=now),
             odds_ft_over05=indicator_from_raw(match.get("odds_ft_over05"), unit="decimal_odds", endpoint="todays-matches", extracted_at=now),
             odds_ft_under05=indicator_from_raw(match.get("odds_ft_under05"), unit="decimal_odds", endpoint="todays-matches", extracted_at=now),
+            league_avg_gf_home=indicator_from_raw(
+                league_avg_gf_home, unit="goals", endpoint="league-teams", method="derived", extracted_at=now
+            ),
+            league_avg_gf_away=indicator_from_raw(
+                league_avg_gf_away, unit="goals", endpoint="league-teams", method="derived", extracted_at=now
+            ),
+            league_avg_gf_total=indicator_from_raw(
+                league_avg_gf_total, unit="goals", endpoint="league-teams", method="derived", extracted_at=now
+            ),
             round=str(match.get("round") or match.get("game_week") or "") or None,
             source_mode="live",
             extracted_at=now,

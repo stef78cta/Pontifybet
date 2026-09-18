@@ -6,10 +6,12 @@ from src.pipeline import run_analysis
 
 
 def test_pipeline_mock_zip(tmp_path: Path, monkeypatch):
-    # redirect outputs
     import config.settings as settings
+    from src.api.mock import MockFootyStatsClient
+    import src.pipeline as pipeline
 
     monkeypatch.setattr(settings, "OUTPUTS_DIR", tmp_path)
+    monkeypatch.setattr(pipeline, "get_client", lambda: MockFootyStatsClient())
     result = run_analysis(
         date_iso="2026-03-15",
         league_ids=[2012, 2013],
@@ -26,3 +28,8 @@ def test_pipeline_mock_zip(tmp_path: Path, monkeypatch):
     assert blocked_corners
     assert blocked_corners[0]["g0"] == "FAIL"
     assert any("over05" in p for p in result["generated"])
+    over05_rows = [r for r in result["rows"] if r["model_id"] == "over05"]
+    assert over05_rows
+    assert all(r.get("recommendation") for r in over05_rows)
+    assert all(r.get("model_g0") for r in over05_rows)
+    assert all("ZERO-MASS INCOMPLETE" not in str(r.get("model_g0")) for r in over05_rows)

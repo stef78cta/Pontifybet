@@ -22,7 +22,6 @@ FOOTYSTATS_TIMEOUT = float(os.getenv("FOOTYSTATS_TIMEOUT", "20"))
 FOOTYSTATS_RETRIES = int(os.getenv("FOOTYSTATS_RETRIES", "2"))
 
 APP_PASSWORD = os.getenv("APP_PASSWORD", "").strip()
-FORCE_MOCK = os.getenv("FORCE_MOCK", "false").strip().lower() in {"1", "true", "yes"}
 
 DEFAULT_TIMEZONE = "Europe/Bucharest"
 
@@ -48,13 +47,6 @@ def get_footystats_api_key() -> str:
 
 # Compatibilitate: citire la import (fără secrets Streamlit încărcate).
 FOOTYSTATS_API_KEY = get_footystats_api_key()
-
-
-def is_mock_mode() -> bool:
-    """MOCK dacă lipsește cheia API sau FORCE_MOCK=true."""
-    if FORCE_MOCK:
-        return True
-    return not bool(get_footystats_api_key())
 
 
 def ensure_runtime_dirs() -> None:

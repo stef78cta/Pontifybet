@@ -11,8 +11,11 @@ from src.adapters.corners import CornersAdapter
 from src.adapters.double_chance import DoubleChanceAdapter
 from src.adapters.over05 import Over05Adapter
 from src.api.client import current_season_id
-from src.api.mock import MockFootyStatsClient, get_client
+from src.api.factory import get_client
+from src.api.mock import MockFootyStatsClient
+from src.engines.over05 import compute_over05, match_to_over05_inputs
 from src.excel.generator import cleanup_run_dir, make_run_dir, write_validation_report, zip_outputs
+from src.excel import generator as excel_generator
 from src.excel.integrity import IntegrityError
 from src.models.match_data import MatchData
 from src.validation.validator import ValidationReport, merge_reports, validate_match_for_model
@@ -211,19 +214,41 @@ def run_analysis(
                 reason = blocking[0].reason if blocking else ""
                 g0 = "FAIL" if blocked else "OK"
                 status = "blocat" if blocked else ("pending" if any(not i.blocking for i in report.issues) else "valid")
-                rows.append(
-                    {
-                        "liga": md.competition_name,
-                        "ora_bucuresti": md.kickoff_bucharest.strftime("%H:%M") if md.kickoff_bucharest else "",
-                        "echipe": f"{md.home.name} vs {md.away.name}",
-                        "model": MODEL_LABELS.get(model_id, model_id),
-                        "model_id": model_id,
-                        "match_id": md.match_id,
-                        "data_status": status,
-                        "g0": g0,
-                        "motiv": reason,
-                    }
-                )
+                row = {
+                    "liga": md.competition_name,
+                    "ora_bucuresti": md.kickoff_bucharest.strftime("%H:%M") if md.kickoff_bucharest else "",
+                    "echipe": f"{md.home.name} vs {md.away.name}",
+                    "model": MODEL_LABELS.get(model_id, model_id),
+                    "model_id": model_id,
+                    "match_id": md.match_id,
+                    "data_status": status,
+                    "g0": g0,
+                    "motiv": reason,
+                    "p0_recalibrated": None,
+                    "p_over": None,
+                    "confidence": None,
+                    "risk_score": None,
+                    "model_g0": None,
+                    "risk_level": None,
+                    "recommendation": None,
+                }
+                if model_id == "over05":
+                    try:
+                        official = compute_over05(match_to_over05_inputs(md))
+                        row["p0_recalibrated"] = official.p0_recalibrated
+                        row["p_over"] = official.p_over_reported
+                        row["confidence"] = official.confidence
+                        row["risk_score"] = official.risk_score
+                        row["model_g0"] = official.g0 or official.cells.get("HG")
+                        row["risk_level"] = official.risk_level
+                        row["recommendation"] = official.recommendation or official.cells.get("HK")
+                    except Exception as exc:
+                        row["recommendation"] = "EROARE MOTOR"
+                        row["model_g0"] = "FAIL"
+                        row["motiv"] = row["motiv"] or f"Motor Over 0.5: {exc}"
+                    if not row["recommendation"]:
+                        row["recommendation"] = "WATCH / NO BET"
+                rows.append(row)
                 if not blocked:
                     allowed_by_model[model_id].append(md)
 
@@ -255,6 +280,8 @@ def run_analysis(
 
         merged = merge_reports(reports)
         write_validation_report(run_dir, merged.to_dict())
+        if hasattr(excel_generator, "write_over05_results_csv"):
+            excel_generator.write_over05_results_csv(run_dir, rows)
         prog("Creez arhiva ZIP…", 0.9)
         zip_path = zip_outputs(run_dir)
         prog("Gata.", 1.0)

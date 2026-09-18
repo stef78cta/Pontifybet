@@ -73,19 +73,14 @@ Copiază exemplul:
 copy .env.example .env
 ```
 
-Editează `.env` și setează cel puțin:
+Editează `.env` și setează:
 
 ```
 APP_PASSWORD=parola-ta-privata
-```
-
-Pentru dezvoltare locală rapidă există deja un `.env` de exemplu cu `APP_PASSWORD=pontifybet-local` și `FORCE_MOCK=true` (fișierul nu se comite pe Git).
-
-Pentru modul **LIVE** (date reale FootyStats), adaugă și:
-
-```
 FOOTYSTATS_API_KEY=cheia-ta-din-footystats
 ```
+
+Cheia API este **obligatorie**. Fără ea, aplicația nu poate lista ligi sau meciuri.
 
 **Alternativă Streamlit (local):** creează fișierul `.streamlit\secrets.toml`:
 
@@ -94,13 +89,11 @@ APP_PASSWORD = "parola-ta-privata"
 FOOTYSTATS_API_KEY = "cheia-ta"
 ```
 
-Dacă **nu** pui cheia API, aplicația rulează automat în **mod MOCK** (date de test locale).
-
 ### 5b. Test conexiune LIVE (date reale)
 
 1. Ia cheia de la https://footystats.org/api/u/api-settings  
 2. Alege ligile pe care le vrei (fără ligi alese, `todays-matches` e gol)  
-3. În `.env`: `FOOTYSTATS_API_KEY=...` și `FORCE_MOCK=false`  
+3. În `.env`: `FOOTYSTATS_API_KEY=...`  
 4. Rulează:
 
 ```powershell
@@ -124,11 +117,11 @@ Introdu parola din `APP_PASSWORD`.
 pytest -q
 ```
 
-Toate testele trebuie să treacă (PASS) fără cheie API.
+Toate testele trebuie să treacă (PASS) fără cheie API. Fixture-urile din `mocks/` sunt folosite doar de pytest.
 
-## Folosire rapidă (MOCK)
+## Folosire rapidă
 
-1. În sidebar: alege data — în MOCK meciurile de demo sunt pe **2026-03-15**  
+1. În sidebar: alege data meciurilor  
 2. Selectează ligile și cele 3 modele  
 3. Apasă **Listează meciurile**, bifează meciurile dorite  
 4. Apasă **Generează analiza**  
@@ -140,7 +133,7 @@ Toate testele trebuie să treacă (PASS) fără cheie API.
 
 ```powershell
 docker build -t pontifybet .
-docker run --rm -p 8501:8501 -e APP_PASSWORD=parola-ta -e FORCE_MOCK=true pontifybet
+docker run --rm -p 8501:8501 -e APP_PASSWORD=parola-ta -e FOOTYSTATS_API_KEY=cheia-ta pontifybet
 ```
 
 Deschide http://localhost:8501

@@ -94,6 +94,27 @@ def write_validation_report(run_dir: Path, report: dict[str, Any]) -> Path:
     return path
 
 
+def write_over05_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -> Path | None:
+    """Scrie verdicturile Over 0.5 calculate în Python, vizibile în ZIP."""
+    official = [r for r in rows if r.get("model_id") == "over05"]
+    if not official:
+        return None
+    path = run_dir / "over05_rezultate.csv"
+    lines = [
+        "match_id,echipe,recomandare_HK,nivel_HH,g0_HG,p_over_GP,p0_GL,confidence_GT,risk_score_HE"
+    ]
+    for row in official:
+        rec = str(row.get("recommendation") or "").replace('"', "'")
+        lines.append(
+            f"{row.get('match_id')},\"{row.get('echipe','')}\",\"{rec}\","
+            f"{row.get('risk_level') or ''},{row.get('model_g0') or ''},"
+            f"{row.get('p_over') or ''},{row.get('p0_recalibrated') or ''},"
+            f"{row.get('confidence') or ''},{row.get('risk_score') or ''}"
+        )
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
 def zip_outputs(run_dir: Path, zip_name: str = "pontifybet_export.zip") -> Path:
     zip_path = run_dir / zip_name
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:

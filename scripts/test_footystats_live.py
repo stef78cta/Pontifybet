@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from config.settings import DEFAULT_TIMEZONE, FORCE_MOCK, get_footystats_api_key, is_mock_mode
+from config.settings import DEFAULT_TIMEZONE, get_footystats_api_key
 from src.api.cache import ResponseCache
 from src.api.client import FootyStatsClient, FootyStatsError, current_season_id
 
@@ -42,20 +42,13 @@ def main() -> int:
     print("Pontifybet - test conexiune FootyStats")
     print(f"UTC: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')} | TZ local: {DEFAULT_TIMEZONE}")
 
-    if FORCE_MOCK:
-        return _fail("FORCE_MOCK=true in .env. Seteaza FORCE_MOCK=false pentru date reale.")
-
     if not get_footystats_api_key():
         print("FAIL  Lipseste FOOTYSTATS_API_KEY.")
         print("      1. Deschide https://footystats.org/api/u/api-settings")
         print("      2. Copiaza API Key in .env: FOOTYSTATS_API_KEY=...")
         print("      3. Alege ligile din acelasi ecran (chosen leagues).")
-        print("      4. Seteaza FORCE_MOCK=false")
-        print("      5. Re-ruleaza: python scripts/test_footystats_live.py")
+        print("      4. Re-ruleaza: python scripts/test_footystats_live.py")
         return 2
-
-    if is_mock_mode():
-        return _fail("Aplicatia e inca in mod MOCK. Verifica FORCE_MOCK si cheia API.")
 
     cache = ResponseCache(use_disk=True)
     today = datetime.now(ZoneInfo(DEFAULT_TIMEZONE)).date().isoformat()

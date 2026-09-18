@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import httpx
+import pytest
 
 from src.api.cache import ResponseCache
 from src.api.client import FootyStatsClient, FootyStatsError, current_season_id
+from src.api.factory import get_client
 
 
 def _client(handler) -> FootyStatsClient:
@@ -146,3 +148,43 @@ def test_cache_does_not_include_api_key():
     key = cache_key("league-list", {"chosen_leagues_only": "true", "key": "super-secret"})
     assert "super-secret" not in key
     assert len(key) == 64
+
+
+def test_factory_get_client_does_not_import_from_client_module():
+    client = get_client()
+    try:
+        assert isinstance(client, FootyStatsClient)
+    finally:
+        client.close()
+
+
+def test_as_number_counts_goal_minute_lists():
+    from src.api.client import _as_number, _first_number, league_goal_averages
+
+    assert _as_number(["25", "72", "90+1"]) == 3
+    assert _as_number(32) == 32
+    assert _first_number(10, ["25", "72"]) == 10
+    aj, ak, al = league_goal_averages(
+        [
+            {
+                "stats": {
+                    "seasonScoredAVG_home": 2.5,
+                    "seasonScoredAVG_away": 1.5,
+                    "seasonGoals_home": ["25", "72"],
+                    "seasonMatchesPlayed_home": 4,
+                    "seasonMatchesPlayed_away": 4,
+                }
+            },
+            {
+                "stats": {
+                    "seasonScoredNum_home": 8,
+                    "seasonMatchesPlayed_home": 4,
+                    "seasonGoals_away": ["10", "20"],
+                    "seasonMatchesPlayed_away": 2,
+                }
+            },
+        ]
+    )
+    assert aj == pytest.approx((2.5 + 2.0) / 2)
+    assert ak == pytest.approx((1.5 + 1.0) / 2)
+    assert al == pytest.approx(aj + ak)

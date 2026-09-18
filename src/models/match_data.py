@@ -127,6 +127,10 @@ class TeamSideStats(BaseModel):
     xg_against_away: Indicator = Field(default_factory=Indicator)
     over05_pct_home: Indicator = Field(default_factory=Indicator)
     over05_pct_away: Indicator = Field(default_factory=Indicator)
+    under05_pct_home: Indicator = Field(default_factory=Indicator)
+    under05_pct_away: Indicator = Field(default_factory=Indicator)
+    over05_ht_pct_home: Indicator = Field(default_factory=Indicator)
+    over05_ht_pct_away: Indicator = Field(default_factory=Indicator)
     fts_pct_home: Indicator = Field(default_factory=Indicator)
     fts_pct_away: Indicator = Field(default_factory=Indicator)
     fts_pct_overall: Indicator = Field(default_factory=Indicator)
@@ -143,6 +147,8 @@ class TeamSideStats(BaseModel):
     last5_ga: Indicator = Field(default_factory=Indicator)
     last5_xgf: Indicator = Field(default_factory=Indicator)
     last5_xga: Indicator = Field(default_factory=Indicator)
+    last5_fts: Indicator = Field(default_factory=Indicator)
+    last5_under05_n: Indicator = Field(default_factory=Indicator)
     last5_corners_for: Indicator = Field(default_factory=Indicator)
     last5_corners_against: Indicator = Field(default_factory=Indicator)
     last10_n: Indicator = Field(default_factory=Indicator)
@@ -168,7 +174,10 @@ class MatchData(BaseModel):
     odds_ft_over05: Indicator = Field(default_factory=Indicator)
     odds_ft_under05: Indicator = Field(default_factory=Indicator)
     h2h_n: Indicator = Field(default_factory=Indicator)
+    league_avg_gf_home: Indicator = Field(default_factory=Indicator)
+    league_avg_gf_away: Indicator = Field(default_factory=Indicator)
+    league_avg_gf_total: Indicator = Field(default_factory=Indicator)
     round: str | None = None
     native_match_history: list[dict[str, Any]] = Field(default_factory=list)
-    source_mode: str = "mock"
+    source_mode: str = "live"
     extracted_at: datetime = Field(default_factory=datetime.utcnow)

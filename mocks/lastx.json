@@ -7,7 +7,11 @@
       "xg_for_avg": 1.5,
       "xg_against_avg": 1.0,
       "cornersAVG_overall": 5.2,
-      "cornersAgainstAVG_overall": 4.4
+      "cornersAgainstAVG_overall": 4.4,
+      "seasonFTSPercentage_overall": 20,
+      "seasonUnder05Num_overall": 0,
+      "seasonOver05Num_overall": 5,
+      "seasonOver05Percentage_overall": 100
     }
   },
   "101_5": {
@@ -18,7 +22,11 @@
       "xg_for_avg": 1.8,
       "xg_against_avg": 0.9,
       "cornersAVG_overall": 6.0,
-      "cornersAgainstAVG_overall": 3.8
+      "cornersAgainstAVG_overall": 3.8,
+      "seasonFTSPercentage_overall": 20,
+      "seasonUnder05Num_overall": 0,
+      "seasonOver05Num_overall": 5,
+      "seasonOver05Percentage_overall": 100
     }
   },
   "102_5": {
@@ -29,7 +37,11 @@
       "xg_for_avg": 1.4,
       "xg_against_avg": 1.2,
       "cornersAVG_overall": 5.4,
-      "cornersAgainstAVG_overall": 4.6
+      "cornersAgainstAVG_overall": 4.6,
+      "seasonFTSPercentage_overall": 20,
+      "seasonUnder05Num_overall": 0,
+      "seasonOver05Num_overall": 5,
+      "seasonOver05Percentage_overall": 100
     }
   },
   "103_5": {
@@ -40,7 +52,11 @@
       "xg_for_avg": 2.0,
       "xg_against_avg": 1.0,
       "cornersAVG_overall": 6.2,
-      "cornersAgainstAVG_overall": 3.9
+      "cornersAgainstAVG_overall": 3.9,
+      "seasonFTSPercentage_overall": 20,
+      "seasonUnder05Num_overall": 0,
+      "seasonOver05Num_overall": 5,
+      "seasonOver05Percentage_overall": 100
     }
   },
   "104_5": {
@@ -51,7 +67,11 @@
       "xg_for_avg": 0.9,
       "xg_against_avg": 1.5,
       "cornersAVG_overall": 4.1,
-      "cornersAgainstAVG_overall": 5.3
+      "cornersAgainstAVG_overall": 5.3,
+      "seasonFTSPercentage_overall": 40,
+      "seasonUnder05Num_overall": 1,
+      "seasonOver05Num_overall": 4,
+      "seasonOver05Percentage_overall": 80
     }
   },
   "201_5": {
@@ -62,7 +82,11 @@
       "xg_for_avg": 2.2,
       "xg_against_avg": 0.7,
       "cornersAVG_overall": 6.5,
-      "cornersAgainstAVG_overall": 3.5
+      "cornersAgainstAVG_overall": 3.5,
+      "seasonFTSPercentage_overall": 0,
+      "seasonUnder05Num_overall": 0,
+      "seasonOver05Num_overall": 5,
+      "seasonOver05Percentage_overall": 100
     }
   },
   "202_5": {
@@ -73,7 +97,11 @@
       "xg_for_avg": 0.8,
       "xg_against_avg": 1.6,
       "cornersAVG_overall": -1,
-      "cornersAgainstAVG_overall": -1
+      "cornersAgainstAVG_overall": -1,
+      "seasonFTSPercentage_overall": 40,
+      "seasonUnder05Num_overall": 1,
+      "seasonOver05Num_overall": 4,
+      "seasonOver05Percentage_overall": 80
     }
   }
 }

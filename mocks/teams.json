@@ -27,7 +27,11 @@
       "cornersAVG_home": 6.2,
       "cornersAgainstAVG_home": 3.8,
       "cornersAVG_away": 5.4,
-      "cornersAgainstAVG_away": 4.4
+      "cornersAgainstAVG_away": 4.4,
+      "seasonUnder05Percentage_home": 7,
+      "seasonUnder05Percentage_away": 14,
+      "seasonOver05PercentageHT_home": 70,
+      "seasonOver05PercentageHT_away": 62
     }
   },
   {
@@ -58,7 +62,11 @@
       "cornersAVG_home": 5.9,
       "cornersAgainstAVG_home": 4.2,
       "cornersAVG_away": 5.1,
-      "cornersAgainstAVG_away": 5.0
+      "cornersAgainstAVG_away": 5.0,
+      "seasonUnder05Percentage_home": 10,
+      "seasonUnder05Percentage_away": 12,
+      "seasonOver05PercentageHT_home": 68,
+      "seasonOver05PercentageHT_away": 65
     }
   },
   {
@@ -89,7 +97,11 @@
       "cornersAVG_home": 6.5,
       "cornersAgainstAVG_home": 3.5,
       "cornersAVG_away": 5.7,
-      "cornersAgainstAVG_away": 4.3
+      "cornersAgainstAVG_away": 4.3,
+      "seasonUnder05Percentage_home": 4,
+      "seasonUnder05Percentage_away": 11,
+      "seasonOver05PercentageHT_home": 75,
+      "seasonOver05PercentageHT_away": 64
     }
   },
   {
@@ -120,7 +132,11 @@
       "cornersAVG_home": 4.8,
       "cornersAgainstAVG_home": 4.9,
       "cornersAVG_away": 4.0,
-      "cornersAgainstAVG_away": 5.5
+      "cornersAgainstAVG_away": 5.5,
+      "seasonUnder05Percentage_home": 18,
+      "seasonUnder05Percentage_away": 15,
+      "seasonOver05PercentageHT_home": 55,
+      "seasonOver05PercentageHT_away": 58
     }
   },
   {
@@ -151,7 +167,11 @@
       "cornersAVG_home": 6.8,
       "cornersAgainstAVG_home": 3.2,
       "cornersAVG_away": 6.0,
-      "cornersAgainstAVG_away": 4.0
+      "cornersAgainstAVG_away": 4.0,
+      "seasonUnder05Percentage_home": 3,
+      "seasonUnder05Percentage_away": 8,
+      "seasonOver05PercentageHT_home": 78,
+      "seasonOver05PercentageHT_away": 70
     }
   },
   {
@@ -182,7 +202,11 @@
       "cornersAVG_home": -1,
       "cornersAgainstAVG_home": -1,
       "cornersAVG_away": -1,
-      "cornersAgainstAVG_away": -1
+      "cornersAgainstAVG_away": -1,
+      "seasonUnder05Percentage_home": 20,
+      "seasonUnder05Percentage_away": 16,
+      "seasonOver05PercentageHT_home": 52,
+      "seasonOver05PercentageHT_away": 56
     }
   }
 ]

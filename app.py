@@ -11,18 +11,21 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+# Streamlit poate păstra un src.api.client incomplet după un ImportError anterior.
+_client_mod = sys.modules.get("src.api.client")
+if _client_mod is not None and not hasattr(_client_mod, "FootyStatsClient"):
+    sys.modules.pop("src.api.client", None)
+
 import streamlit as st
 
-from config.settings import DEFAULT_TIMEZONE, ensure_runtime_dirs, is_mock_mode
+from config.settings import DEFAULT_TIMEZONE, ensure_runtime_dirs
 from src.api.client import FootyStatsError, current_season_id
-from src.api.mock import get_client
-from src.pipeline import (
-    MODEL_LABELS,
-    cleanup_after_download,
-    list_matches_for_filters,
-    run_analysis,
-    sort_listed_matches,
-)
+from src.api.factory import get_client
+import importlib
+
+import src.pipeline as pipeline
+
+from src.pipeline import MODEL_LABELS, cleanup_after_download, list_matches_for_filters, sort_listed_matches
 from src.security.auth import verify_password
 
 st.set_page_config(page_title="Pontifybet", page_icon="P", layout="wide")
@@ -30,6 +33,48 @@ ensure_runtime_dirs()
 
 SORT_LABELS = {"ora": "Oră de începere", "liga": "Ligă"}
 SORT_BY_LABEL = {v: k for k, v in SORT_LABELS.items()}
+
+
+def _fmt_prob(value: Any) -> str:
+    if value is None or value == "":
+        return ""
+    try:
+        return f"{float(value) * 100:.2f}%"
+    except (TypeError, ValueError):
+        return str(value)
+
+
+def _fmt_score(value: Any) -> str:
+    if value is None or value == "":
+        return ""
+    try:
+        return f"{float(value):.2f}"
+    except (TypeError, ValueError):
+        return str(value)
+
+
+def _reload_analysis_modules() -> None:
+    """Reîncarcă MatchData + client înainte de generate, ca Streamlit să nu țină clase vechi."""
+    import src.api.client as fs_client
+    import src.api.factory as fs_factory
+    import src.adapters.over05 as over05_adapter
+    import src.engines.over05 as over05_pkg
+    import src.engines.over05.engine as over05_engine
+    import src.engines.over05.evaluator as over05_eval
+    import src.engines.over05.inputs as over05_inputs
+    import src.excel.generator as excel_generator
+    import src.models.match_data as match_data
+
+    importlib.reload(match_data)
+    importlib.reload(fs_client)
+    importlib.reload(fs_factory)
+    importlib.reload(excel_generator)
+    importlib.reload(over05_eval)
+    importlib.reload(over05_inputs)
+    importlib.reload(over05_engine)
+    importlib.reload(over05_pkg)
+    importlib.reload(over05_adapter)
+    importlib.reload(pipeline)
 
 
 def _editor_key() -> str:
@@ -118,7 +163,6 @@ if "match_sort_label" not in st.session_state:
     st.session_state.match_sort_label = SORT_LABELS["ora"]
 
 # --- UI principal ---
-mode_label = "MOCK (fără cheie API)" if is_mock_mode() else "LIVE (FootyStats)"
 st.title("Pontifybet")
 st.write(
     "Selectează data, ligile și modelele, apasă **Listează meciurile**, "
@@ -126,10 +170,11 @@ st.write(
     "Aplicația completează copii ale șabloanelor Excel — fără a modifica originalele."
 )
 st.info(
-    "Microsoft Excel va recalcula formulele la prima deschidere. "
-    "Valorile din fișier nu sunt rezultate proaspăt recalculate."
+    "Over 0.5 este calculat în Python (V4 / selector v9): P0, Over 0.5, "
+    "Confidence, Risk Score, G0 model, nivel și recomandare. "
+    "Șansă Dublă și Cornere rămân calculate în Microsoft Excel, la deschiderea fișierului."
 )
-st.caption(f"Mod date: **{mode_label}**")
+st.caption("Mod date: **LIVE (FootyStats)**")
 
 with st.sidebar:
     st.header("Filtre")
@@ -151,7 +196,7 @@ with st.sidebar:
             label = lg.get("name") or lg.get("league_name") or str(sid)
             if sid is not None:
                 league_options[label] = int(sid)
-        if not league_options and not is_mock_mode():
+        if not league_options:
             st.warning(
                 "Nu am găsit ligi alese pe cheia ta. Selectează ligile în "
                 "[API Settings](https://footystats.org/api/u/api-settings)."
@@ -231,7 +276,8 @@ if generate:
             progress_bar.progress(min(max(pct, 0.0), 1.0), text=msg)
             status.write(msg)
 
-        result = run_analysis(
+        _reload_analysis_modules()
+        result = pipeline.run_analysis(
             date_iso=date_iso,
             league_ids=league_ids,
             match_ids=match_ids,
@@ -310,20 +356,53 @@ if "last_result" in st.session_state:
             return "pending (galben)"
         return "blocat (roșu)"
 
+    over05_rows = [r for r in result["rows"] if r.get("model_id") == "over05"]
+    if over05_rows and not any(r.get("recommendation") for r in over05_rows):
+        st.warning(
+            "Recomandarea Over 0.5 lipsește din acest rezumat. "
+            "Apasă din nou **Generează analiza** ca motorul să recaluzeze meciurile."
+        )
+    if over05_rows:
+        st.subheader("Recomandare finală Over 0.5")
+        st.dataframe(
+            [
+                {
+                    "Echipe": r["echipe"],
+                    "Recomandare": r.get("recommendation") or "—",
+                    "Nivel": r.get("risk_level") if r.get("risk_level") is not None else "—",
+                    "G0 model": r.get("model_g0") or "—",
+                    "Over 0.5": _fmt_prob(r.get("p_over")) or "—",
+                    "P0": _fmt_prob(r.get("p0_recalibrated")) or "—",
+                    "Confidence": _fmt_score(r.get("confidence")) or "—",
+                    "Risk Score": _fmt_score(r.get("risk_score")) or "—",
+                }
+                for r in over05_rows
+            ],
+            use_container_width=True,
+            hide_index=True,
+        )
+
     validation_rows = []
     for r in result["rows"]:
         validation_rows.append(
             {
-                "Ligă": r["liga"],
-                "Oră București": r["ora_bucuresti"],
                 "Echipe": r["echipe"],
                 "Model": r["model"],
+                "Recomandare (HK)": r.get("recommendation") or "",
+                "Nivel (HH)": r.get("risk_level") if r.get("risk_level") is not None else "",
+                "G0 model (HG)": r.get("model_g0") or "",
+                "Over 0.5 (GP)": _fmt_prob(r.get("p_over")),
+                "P0 (GL)": _fmt_prob(r.get("p0_recalibrated")),
+                "Confidence (GT)": _fmt_score(r.get("confidence")),
+                "Risk Score (HE)": _fmt_score(r.get("risk_score")),
+                "Ligă": r["liga"],
+                "Oră București": r["ora_bucuresti"],
                 "Data Status": color_status(r["data_status"]),
-                "G0": r["g0"],
+                "G0 validare": r["g0"],
                 "Motiv blocare": r["motiv"],
             }
         )
-    st.dataframe(validation_rows, use_container_width=True)
+    st.dataframe(validation_rows, use_container_width=True, hide_index=True)
 
     if result.get("errors"):
         for err in result["errors"]:

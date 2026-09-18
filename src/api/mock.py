@@ -97,21 +97,27 @@ class MockFootyStatsClient(FootyStatsClient):
 
     def enrich_match(self, match: dict[str, Any], tz_name: str = "Europe/Bucharest") -> MatchData:
         """Încarcă stats + last5 și construiește MatchData."""
+        from src.api.client import _unavailable, league_goal_averages
+
         home_id = match.get("homeID")
         away_id = match.get("awayID")
         home = self.team(int(home_id)) if home_id else {}
         away = self.team(int(away_id)) if away_id else {}
         h5 = self.last_x(int(home_id), 5) if home_id else {}
         a5 = self.last_x(int(away_id), 5) if away_id else {}
-        md = self.build_match_data(match, home, away, h5, a5, tz_name=tz_name)
+        season_id = match.get("competition_id") or match.get("season_id")
+        teams = self.league_teams(int(season_id)) if not _unavailable(season_id) else []
+        avg_home, avg_away, avg_total = league_goal_averages(teams)
+        md = self.build_match_data(
+            match,
+            home,
+            away,
+            h5,
+            a5,
+            tz_name=tz_name,
+            league_avg_gf_home=avg_home,
+            league_avg_gf_away=avg_away,
+            league_avg_gf_total=avg_total,
+        )
         md.source_mode = "mock"
         return md
-
-
-def get_client() -> FootyStatsClient | MockFootyStatsClient:
-    """Returnează MOCK sau client real în funcție de setări."""
-    from config.settings import is_mock_mode
-
-    if is_mock_mode():
-        return MockFootyStatsClient()
-    return FootyStatsClient()

@@ -8,8 +8,7 @@ Aceste instrucțiuni sunt pentru **după** ce MVP-ul rulează local. Nu publica 
 2. Asigură-te că `Dockerfile` din rădăcină funcționează local.  
 3. Pregătește variabilele de mediu:
    - `APP_PASSWORD`
-   - `FOOTYSTATS_API_KEY` (doar dacă vrei mod LIVE)
-   - opțional `FORCE_MOCK=true` pentru o demonstrație fără API
+   - `FOOTYSTATS_API_KEY` (obligatorie — aplicația folosește doar date din API)
 
 ## Render
 

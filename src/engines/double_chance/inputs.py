@@ -563,7 +563,11 @@ def _put_source(
         values[f"Surse_Date!K{row}"] = treatment
 
 
-def match_to_double_chance_inputs(match: MatchData) -> dict[str, Any]:
+def match_to_double_chance_inputs(
+    match: MatchData,
+    *,
+    _upstream_trace: Upstream1X2Trace | None = None,
+) -> dict[str, Any]:
     """Mapează FootyStats și, dacă se poate, 1X2 DERIVED din goluri/xG.
 
     Nu copiază piața în B6:D7. Fără rate de goluri, C6/C7 rămân PENDING
@@ -602,7 +606,10 @@ def match_to_double_chance_inputs(match: MatchData) -> dict[str, Any]:
     apply_shrinkage = needs_early_season_prior(sample_home, sample_away) and league_prior_is_valid(
         match
     )
-    scoreline, strength = derived_1x2_distributions(match, apply_shrinkage=apply_shrinkage)
+    if _upstream_trace is not None:
+        scoreline, strength = _upstream_trace.scoreline, _upstream_trace.strength
+    else:
+        scoreline, strength = derived_1x2_distributions(match, apply_shrinkage=apply_shrinkage)
 
     values: dict[str, Any] = {
         "Input_Meci!B4": home.name or None,

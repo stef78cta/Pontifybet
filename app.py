@@ -11,21 +11,46 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-# Streamlit poate păstra un src.api.client incomplet după un ImportError anterior.
+# Streamlit poate păstra module incomplete după reload parțial.
 _client_mod = sys.modules.get("src.api.client")
 if _client_mod is not None and not hasattr(_client_mod, "FootyStatsClient"):
     sys.modules.pop("src.api.client", None)
 
+_settings_mod = sys.modules.get("config.settings")
+if _settings_mod is not None and not hasattr(_settings_mod, "DEV_MODULE_RELOAD"):
+    sys.modules.pop("config.settings", None)
+
+_pipeline_mod = sys.modules.get("src.pipeline")
+if _pipeline_mod is not None and not hasattr(_pipeline_mod, "run_export"):
+    sys.modules.pop("src.pipeline", None)
+
 import streamlit as st
 
-from config.settings import DEFAULT_TIMEZONE, ensure_runtime_dirs
+import config.settings as settings
+
+DEFAULT_TIMEZONE = settings.DEFAULT_TIMEZONE
+DEV_MODULE_RELOAD = getattr(settings, "DEV_MODULE_RELOAD", False)
+ensure_runtime_dirs = settings.ensure_runtime_dirs
 from src.api.client import FootyStatsError, current_season_id
 from src.api.factory import get_client
 import importlib
 
 import src.pipeline as pipeline
 
-from src.pipeline import MODEL_LABELS, cleanup_after_download, list_matches_for_filters, sort_listed_matches
+if not hasattr(pipeline, "run_export"):
+    pipeline = importlib.reload(pipeline)
+
+MODEL_LABELS = pipeline.MODEL_LABELS
+cleanup_after_download = pipeline.cleanup_after_download
+list_matches_for_filters = pipeline.list_matches_for_filters
+sort_listed_matches = pipeline.sort_listed_matches
+run_export = getattr(pipeline, "run_export", None)
+
+_orch_mod = sys.modules.get("src.orchestration.snapshot")
+if _orch_mod is not None and not hasattr(_orch_mod, "analysis_fingerprint"):
+    sys.modules.pop("src.orchestration.snapshot", None)
+
+from src.orchestration.snapshot import analysis_fingerprint
 from src.security.auth import verify_password
 
 st.set_page_config(page_title="Pontifybet", page_icon="P", layout="wide")
@@ -171,6 +196,12 @@ if "match_editor_rev" not in st.session_state:
     st.session_state.match_editor_rev = 0
 if "match_sort_label" not in st.session_state:
     st.session_state.match_sort_label = SORT_LABELS["ora"]
+if "analysis_snapshot" not in st.session_state:
+    st.session_state.analysis_snapshot = None
+if "export_result" not in st.session_state:
+    st.session_state.export_result = None
+if "analysis_fingerprint" not in st.session_state:
+    st.session_state.analysis_fingerprint = None
 
 # --- UI principal ---
 st.title("Pontifybet")
@@ -238,6 +269,11 @@ if (
 ):
     st.session_state.listed_matches = []
     st.session_state.listed_fingerprint = None
+    st.session_state.analysis_snapshot = None
+    st.session_state.export_result = None
+    st.session_state.analysis_fingerprint = None
+    if "last_result" in st.session_state:
+        del st.session_state["last_result"]
     _bump_match_editor()
 
 btn_list, btn_gen, _ = st.columns([2.6, 2.6, 1.8])
@@ -287,7 +323,8 @@ if generate:
             progress_bar.progress(min(max(pct, 0.0), 1.0), text=msg)
             status.write(msg)
 
-        _reload_analysis_modules()
+        if DEV_MODULE_RELOAD:
+            _reload_analysis_modules()
         result = pipeline.run_analysis(
             date_iso=date_iso,
             league_ids=league_ids,
@@ -297,6 +334,9 @@ if generate:
             progress=on_progress,
         )
         st.session_state["last_result"] = result
+        st.session_state.analysis_snapshot = result["snapshot"]
+        st.session_state.analysis_fingerprint = result["analysis_fingerprint"]
+        st.session_state.export_result = None
 
 if listed_ok and not st.session_state.listed_matches:
     st.info("Nu am găsit meciuri pentru data și ligile selectate.")
@@ -433,17 +473,67 @@ if "last_result" in st.session_state:
         for err in result["errors"]:
             st.error(err)
 
-    zip_path = Path(result["zip_path"])
-    if zip_path.exists():
-        data = zip_path.read_bytes()
-        clicked = st.download_button(
-            label="Descarcă fișierele Excel",
-            data=data,
-            file_name=zip_path.name,
-            mime="application/zip",
+    current_analysis_fp = analysis_fingerprint(
+        date_iso=date_iso,
+        timezone_name=timezone_name,
+        league_ids=league_ids,
+        match_ids=[
+            str(r["match_id"])
+            for r in st.session_state.listed_matches
+            if r.get("selected")
+        ],
+        model_ids=selected_models,
+    )
+    snapshot = st.session_state.get("analysis_snapshot")
+    export_stale = (
+        snapshot is None
+        or st.session_state.get("analysis_fingerprint") != current_analysis_fp
+    )
+    if export_stale and snapshot is not None:
+        st.warning(
+            "Parametrii s-au schimbat față de ultima analiză. "
+            "Apasă din nou **Generează analiza** înainte de export."
         )
-        st.caption(
-            f"Fișiere generate: {len(result.get('generated', []))} | Raport inclus în ZIP."
-        )
-        if clicked:
-            cleanup_after_download(result["run_dir"])
+
+    export_clicked = st.button(
+        "Pregătește fișierele Excel",
+        type="secondary",
+        disabled=export_stale or snapshot is None,
+    )
+    if export_clicked and snapshot is not None and not export_stale:
+        export_progress = st.progress(0.0, text="Pornesc export…")
+        export_status = st.empty()
+
+        def on_export_progress(msg: str, pct: float) -> None:
+            export_progress.progress(min(max(pct, 0.0), 1.0), text=msg)
+            export_status.write(msg)
+
+        if run_export is None:
+            st.error(
+                "Export indisponibil — repornește aplicația Streamlit "
+                "(modul pipeline vechi în memorie)."
+            )
+        else:
+            st.session_state.export_result = run_export(
+                snapshot,
+                progress=on_export_progress,
+            )
+
+    export_result = st.session_state.get("export_result")
+    if export_result:
+        zip_path = Path(export_result["zip_path"])
+        if zip_path.exists():
+            data = zip_path.read_bytes()
+            clicked = st.download_button(
+                label="Descarcă fișierele Excel",
+                data=data,
+                file_name=zip_path.name,
+                mime="application/zip",
+            )
+            st.caption(
+                f"Fișiere generate: {len(export_result.get('generated', []))} | "
+                "Raport inclus în ZIP."
+            )
+            if clicked:
+                cleanup_after_download(export_result["run_dir"])
+                st.session_state.export_result = None

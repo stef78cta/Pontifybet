@@ -67,6 +67,7 @@ class MockFootyStatsClient(FootyStatsClient):
 
     def league_teams(self, season_id: int) -> list[dict[str, Any]]:
         self._count("league_teams")
+        self._count(f"league_teams_{season_id}")
         teams = self._load("teams.json")
         return [t for t in teams if t.get("competition_id") == season_id] or teams
 
@@ -82,6 +83,10 @@ class MockFootyStatsClient(FootyStatsClient):
 
     def last_x(self, team_id: int, num: int = 5) -> dict[str, Any]:
         self._count("last_x")
+        if num == 5:
+            self._count("last_x_5")
+        elif num == 10:
+            self._count("last_x_10")
         data = self._load("lastx.json")
         key = f"{team_id}_{num}"
         return data.get(key) or data.get(str(team_id)) or data.get("default") or {}

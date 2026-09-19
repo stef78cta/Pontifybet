@@ -14,9 +14,11 @@ from openpyxl import load_workbook
 from config.settings import OUTPUTS_DIR, TEMPLATES_DIR, ensure_runtime_dirs
 from src.excel.integrity import (
     IntegrityError,
+    WorkbookFingerprint,
     assert_whitelist_write,
     compare_fingerprints,
     fingerprint_workbook,
+    get_template_baseline,
 )
 
 
@@ -42,10 +44,16 @@ def unix_to_excel_serial(ts: int | float) -> float:
 class SafeWorkbookWriter:
     """Scrie doar pe whitelist; verifică că nu atinge formule."""
 
-    def __init__(self, path: Path, whitelist: set[str]) -> None:
+    def __init__(
+        self,
+        path: Path,
+        whitelist: set[str],
+        *,
+        template_baseline: WorkbookFingerprint | None = None,
+    ) -> None:
         self.path = path
         self.whitelist = whitelist
-        self.before = fingerprint_workbook(path)
+        self.before = template_baseline or fingerprint_workbook(path)
         self.wb = load_workbook(path)
         self._writes: list[str] = []
 

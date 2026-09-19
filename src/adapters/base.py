@@ -10,6 +10,7 @@ import yaml
 
 from config.settings import REGISTRY_PATH, TEMPLATES_DIR
 from src.excel.generator import SafeWorkbookWriter, copy_template
+from src.excel.integrity import WorkbookFingerprint, get_template_baseline
 from src.models.match_data import MatchData
 
 
@@ -64,4 +65,5 @@ class BaseAdapter(ABC):
         return copy_template(self.template_name, dest)
 
     def open_writer(self, dest: Path) -> SafeWorkbookWriter:
-        return SafeWorkbookWriter(dest, self.build_whitelist())
+        baseline = get_template_baseline(self.template_path())
+        return SafeWorkbookWriter(dest, self.build_whitelist(), template_baseline=baseline)

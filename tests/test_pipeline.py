@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from src.pipeline import run_analysis
+from src.pipeline import run_analysis, run_export
 
 
 def test_run_analysis_fills_liga_when_todays_matches_omit_league_name(
@@ -45,28 +45,28 @@ def test_pipeline_mock_zip(tmp_path: Path, monkeypatch):
 
     monkeypatch.setattr(settings, "OUTPUTS_DIR", tmp_path)
     monkeypatch.setattr(pipeline, "get_client", lambda: MockFootyStatsClient())
-    result = run_analysis(
+    analysis = run_analysis(
         date_iso="2026-03-15",
         league_ids=[2012, 2013],
         match_ids=["90001", "90002", "90003"],
         model_ids=["over05", "double_chance", "corners"],
         timezone_name="Europe/Bucharest",
     )
+    result = run_export(analysis["snapshot"])
     assert Path(result["zip_path"]).exists()
-    assert result["mode"] == "mock"
-    # Madrid corners should be blocked
+    assert analysis["mode"] == "mock"
     blocked_corners = [
-        r for r in result["rows"] if r["match_id"] == "90003" and r["model_id"] == "corners"
+        r for r in analysis["rows"] if r["match_id"] == "90003" and r["model_id"] == "corners"
     ]
     assert blocked_corners
     assert blocked_corners[0]["g0"] == "FAIL"
     assert any("over05" in p for p in result["generated"])
-    over05_rows = [r for r in result["rows"] if r["model_id"] == "over05"]
+    over05_rows = [r for r in analysis["rows"] if r["model_id"] == "over05"]
     assert over05_rows
     assert all(r.get("recommendation") for r in over05_rows)
     assert all(r.get("model_g0") for r in over05_rows)
     assert all("ZERO-MASS INCOMPLETE" not in str(r.get("model_g0")) for r in over05_rows)
-    dc_rows = [r for r in result["rows"] if r["model_id"] == "double_chance"]
+    dc_rows = [r for r in analysis["rows"] if r["model_id"] == "double_chance"]
     assert dc_rows
     assert all(r.get("dc_selections") for r in dc_rows)
     assert all(r.get("recommendation") for r in dc_rows)

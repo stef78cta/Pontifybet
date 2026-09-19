@@ -1,0 +1,61 @@
+{
+  "matches": 3,
+  "models": [
+    "over05",
+    "double_chance",
+    "corners"
+  ],
+  "analysis_profiler": {
+    "phases_sec": {
+      "fetch_matches": 0.000984799989964813,
+      "league_context": 0.0013637000229209661,
+      "lastx": 0.006031500000972301,
+      "build_match_data": 0.012949500000104308,
+      "validation_and_engines": 1.6761335000046529
+    },
+    "counters": {
+      "league_teams": 2,
+      "lastx_5": 6,
+      "lastx_10": 0,
+      "team": 0,
+      "derived_1x2_trace": 3,
+      "compute_over05": 3,
+      "compute_double_chance": 3
+    },
+    "time_to_table_sec": 1.6974630000186153,
+    "time_to_export_sec": null,
+    "total_sec": 1.6974630000186153
+  },
+  "export_profiler": {
+    "phases_sec": {
+      "export_over05": 5.566578100027982,
+      "export_corners": 8.783480699989013,
+      "export_double_chance": 11.111575299990363,
+      "fingerprint_and_reports": 0.0043382999720051885,
+      "zip": 0.12495369999669492
+    },
+    "counters": {
+      "league_teams": 0,
+      "lastx_5": 0,
+      "lastx_10": 0,
+      "team": 0,
+      "derived_1x2_trace": 0,
+      "compute_over05": 0,
+      "compute_double_chance": 0
+    },
+    "time_to_table_sec": null,
+    "time_to_export_sec": 25.59092609997606,
+    "total_sec": 25.59092609997606
+  },
+  "counters_after_analysis": {
+    "matches_by_date": 1,
+    "list_leagues": 1,
+    "league_teams": 2,
+    "league_teams_2012": 1,
+    "league_teams_2013": 1,
+    "last_x": 6,
+    "last_x_5": 6
+  },
+  "time_to_table_sec": 1.6974630000186153,
+  "time_to_export_sec": 25.59092609997606
+}

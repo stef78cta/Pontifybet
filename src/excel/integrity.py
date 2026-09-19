@@ -9,6 +9,8 @@ from typing import Any
 from openpyxl import load_workbook
 from openpyxl.workbook.workbook import Workbook
 
+_template_baseline_cache: dict[str, tuple[float, int, WorkbookFingerprint]] = {}
+
 
 @dataclass
 class WorkbookFingerprint:
@@ -34,6 +36,19 @@ class IntegrityError(Exception):
 
 def _cell_key(sheet: str, coord: str) -> str:
     return f"{sheet}!{coord}"
+
+
+def get_template_baseline(template_path: Path, max_rows: int = 200, max_cols: int = 120) -> WorkbookFingerprint:
+    """Amprentă baseline a șablonului — cache pe path + mtime + size."""
+    resolved = template_path.resolve()
+    stat = resolved.stat()
+    key = str(resolved)
+    cached = _template_baseline_cache.get(key)
+    if cached and cached[0] == stat.st_mtime and cached[1] == stat.st_size:
+        return cached[2]
+    fp = fingerprint_workbook(resolved, max_rows=max_rows, max_cols=max_cols)
+    _template_baseline_cache[key] = (stat.st_mtime, stat.st_size, fp)
+    return fp
 
 
 def fingerprint_workbook(path: Path | Workbook, max_rows: int = 200, max_cols: int = 120) -> WorkbookFingerprint:

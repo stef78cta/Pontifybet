@@ -1,4 +1,4 @@
-"""Orchestrează: fetch → validare → Excel → ZIP."""
+"""Orchestrează: fetch → validare → motoare (ANALYSIS) → Excel/ZIP (EXPORT)."""
 
 from __future__ import annotations
 
@@ -13,12 +13,20 @@ from src.adapters.over05 import Over05Adapter
 from src.api.client import current_season_id
 from src.api.factory import get_client
 from src.api.mock import MockFootyStatsClient
-from src.engines.double_chance import compute_double_chance, match_to_double_chance_inputs
 from src.engines.over05 import compute_over05, match_to_over05_inputs
 from src.excel.generator import cleanup_run_dir, make_run_dir, write_validation_report, zip_outputs
 from src.excel import generator as excel_generator
 from src.excel.integrity import IntegrityError
 from src.models.match_data import MatchData
+from src.orchestration.double_chance_bundle import build_double_chance_artifacts
+from src.orchestration.match_fetcher import enrich_matches_batch
+from src.orchestration.profiler import RunProfiler
+from src.orchestration.snapshot import (
+    AnalysisSnapshot,
+    DoubleChanceMatchArtifacts,
+    Over05MatchArtifacts,
+    analysis_fingerprint,
+)
 from src.validation.validator import ValidationReport, merge_reports, validate_match_for_model
 
 ProgressCb = Callable[[str, float], None]
@@ -48,37 +56,6 @@ def _unix_to_local_hhmm(date_unix: Any, timezone_name: str) -> tuple[str, int | 
         return "", None
     local = datetime.fromtimestamp(ts, tz=timezone.utc).astimezone(ZoneInfo(timezone_name))
     return local.strftime("%H:%M"), ts
-
-
-def _double_chance_prior_weights(
-    match: MatchData, mapping: dict[str, Any]
-) -> dict[str, Any]:
-    """Ponderile efective current/prior din shrinkage, pentru coloanele de audit.
-
-    Reutilizează exact decizia și urma din motor; nu recalculează blending-ul.
-    """
-    from src.engines.double_chance.inputs import (
-        derived_1x2_trace,
-        league_prior_is_valid,
-        needs_early_season_prior,
-    )
-
-    applied = needs_early_season_prior(
-        mapping.get("Input_Meci!B36"), mapping.get("Input_Meci!C36")
-    ) and league_prior_is_valid(match)
-    trace = derived_1x2_trace(match, apply_shrinkage=applied)
-    rate = trace.rate("scoreline.home_attack")
-    return {
-        "dc_shrinkage_applied": "DA" if applied else "NU",
-        "dc_weight_current": rate.weight_current if rate else None,
-        "dc_weight_prior": rate.weight_prior if rate else None,
-        "dc_rate_before_shrinkage": rate.observed if rate else None,
-        "dc_rate_after_shrinkage": rate.shrunk if rate else None,
-        "dc_lambda_home_before": trace.lambda_scoreline_raw[0],
-        "dc_lambda_home_after": trace.lambda_scoreline[0],
-        "dc_lambda_away_before": trace.lambda_scoreline_raw[1],
-        "dc_lambda_away_after": trace.lambda_scoreline[1],
-    }
 
 
 def _direct_league_name(match: dict[str, Any]) -> str:
@@ -125,10 +102,7 @@ def attach_league_names(
     matches: list[dict[str, Any]],
     names_by_season: dict[int, str] | None,
 ) -> list[dict[str, Any]]:
-    """Completează league_name din league-list când todays-matches nu îl trimite.
-
-    Nu mută originalul: copiază rândul doar dacă trebuie umplut numele.
-    """
+    """Completează league_name din league-list când todays-matches nu îl trimite."""
     names = names_by_season or {}
     out: list[dict[str, Any]] = []
     for match in matches:
@@ -167,10 +141,7 @@ def list_matches_for_filters(
     timezone_name: str,
     client: Any | None = None,
 ) -> list[dict[str, Any]]:
-    """Încarcă programul zilei filtrat pe ligi, fără stats sau Excel.
-
-    Separat de run_analysis ca listarea să nu consume cota API pe team/lastx.
-    """
+    """Încarcă programul zilei filtrat pe ligi, fără stats sau Excel."""
     if not league_ids:
         return []
 
@@ -226,6 +197,96 @@ def sort_listed_matches(rows: list[dict[str, Any]], by: str) -> list[dict[str, A
     return sorted(rows, key=key)
 
 
+def _build_rows_and_snapshot(
+    match_data_list: list[MatchData],
+    *,
+    model_ids: list[str],
+    profiler: RunProfiler,
+) -> tuple[list[dict[str, Any]], dict[str, list[MatchData]], list[ValidationReport], dict[str, Over05MatchArtifacts], dict[str, DoubleChanceMatchArtifacts]]:
+    reports: list[ValidationReport] = []
+    rows: list[dict[str, Any]] = []
+    allowed_by_model: dict[str, list[MatchData]] = {m: [] for m in model_ids}
+    over05_art: dict[str, Over05MatchArtifacts] = {}
+    dc_art: dict[str, DoubleChanceMatchArtifacts] = {}
+
+    profiler.start("validation_and_engines")
+    for md in match_data_list:
+        for model_id in model_ids:
+            report = validate_match_for_model(md, model_id)
+            reports.append(report)
+            blocked = report.is_blocked(md.match_id, model_id)
+            blocking = report.blocking_for(md.match_id, model_id)
+            reason = blocking[0].reason if blocking else ""
+            g0 = "FAIL" if blocked else "OK"
+            status = "blocat" if blocked else ("pending" if any(not i.blocking for i in report.issues) else "valid")
+            row = {
+                "liga": md.competition_name,
+                "ora_bucuresti": md.kickoff_bucharest.strftime("%H:%M") if md.kickoff_bucharest else "",
+                "echipe": f"{md.home.name} vs {md.away.name}",
+                "model": MODEL_LABELS.get(model_id, model_id),
+                "model_id": model_id,
+                "match_id": md.match_id,
+                "data_status": status,
+                "g0": g0,
+                "motiv": reason,
+                "p0_recalibrated": None,
+                "p_over": None,
+                "confidence": None,
+                "risk_score": None,
+                "model_g0": None,
+                "risk_level": None,
+                "recommendation": None,
+            }
+            if model_id == "over05":
+                try:
+                    mapping = match_to_over05_inputs(md)
+                    profiler.counters.compute_over05 += 1
+                    official = compute_over05(mapping)
+                    over05_art[md.match_id] = Over05MatchArtifacts(mapping=mapping, official=official)
+                    row["p0_recalibrated"] = official.p0_recalibrated
+                    row["p_over"] = official.p_over_reported
+                    row["confidence"] = official.confidence
+                    row["risk_score"] = official.risk_score
+                    row["model_g0"] = official.g0 or official.cells.get("HG")
+                    row["risk_level"] = official.risk_level
+                    row["recommendation"] = official.recommendation or official.cells.get("HK")
+                except Exception as exc:
+                    row["recommendation"] = "EROARE MOTOR"
+                    row["model_g0"] = "FAIL"
+                    row["motiv"] = row["motiv"] or f"Motor Over 0.5: {exc}"
+                if not row["recommendation"]:
+                    row["recommendation"] = "WATCH / NO BET"
+            if model_id == "double_chance":
+                try:
+                    bundle = build_double_chance_artifacts(md, profiler.counters)
+                    dc_art[md.match_id] = bundle
+                    mapping = bundle.mapping
+                    official = bundle.official
+                    row["dc_selections"] = official.payload()
+                    row["recommendation"] = official.summary_recommendation()
+                    row["model_g0"] = official.by_code("1X").release
+                    row["risk_level"] = official.by_code("1X").level
+                    row["dc_sample_status"] = mapping.get("Surse_Date!C9")
+                    row["dc_prior_status"] = mapping.get("Surse_Date!C10")
+                    row["dc_prior_method"] = mapping.get("Surse_Date!I10")
+                    row["dc_prior_source"] = mapping.get("Surse_Date!D10")
+                    row["dc_prior_cutoff"] = mapping.get("Surse_Date!F10")
+                    row["dc_prior_n_home"] = mapping.get("Surse_Date!G10")
+                    row["dc_prior_n_away"] = mapping.get("Surse_Date!H10")
+                    row["dc_sample_n_home"] = mapping.get("Input_Meci!B36")
+                    row["dc_sample_n_away"] = mapping.get("Input_Meci!C36")
+                    row.update(bundle.prior_weights)
+                except Exception as exc:
+                    row["recommendation"] = "EROARE MOTOR"
+                    row["model_g0"] = "FAIL"
+                    row["motiv"] = row["motiv"] or f"Motor Șansă Dublă: {exc}"
+            rows.append(row)
+            if not blocked:
+                allowed_by_model[model_id].append(md)
+    profiler.stop("validation_and_engines")
+    return rows, allowed_by_model, reports, over05_art, dc_art
+
+
 def run_analysis(
     *,
     date_iso: str,
@@ -235,21 +296,25 @@ def run_analysis(
     timezone_name: str = "Europe/Bucharest",
     progress: ProgressCb | None = None,
 ) -> dict[str, Any]:
-    """Rulează fluxul complet și returnează rezumat + cale ZIP."""
+    """Faza ANALYSIS: fetch → MatchData → validare → motoare → tabel UI (fără Excel/ZIP)."""
 
     def prog(msg: str, pct: float) -> None:
         if progress:
             progress(msg, pct)
 
+    profiler = RunProfiler()
     client = get_client()
-    run_dir = make_run_dir()
-    reports: list[ValidationReport] = []
-    generated: list[Path] = []
-    rows: list[dict[str, Any]] = []
-    errors: list[str] = []
+    fp = analysis_fingerprint(
+        date_iso=date_iso,
+        timezone_name=timezone_name,
+        league_ids=league_ids,
+        match_ids=match_ids,
+        model_ids=model_ids,
+    )
 
     try:
-        prog("Încarc meciurile…", 0.1)
+        prog("Încarc meciurile…", 0.05)
+        profiler.start("fetch_matches")
         matches_raw = client.matches_by_date(date_iso, timezone_name=timezone_name)
         selected = [m for m in matches_raw if str(m.get("id")) in {str(x) for x in match_ids}]
         if league_ids:
@@ -260,134 +325,159 @@ def run_analysis(
             ]
         names = _league_names_by_season(client)
         selected = attach_league_names(selected, names)
+        profiler.stop("fetch_matches")
 
-        match_data_list: list[MatchData] = []
-        for i, raw in enumerate(selected):
-            prog(f"Statistici meci {i + 1}/{len(selected)}…", 0.2 + 0.3 * (i / max(len(selected), 1)))
-            md = client.enrich_match(raw, tz_name=timezone_name)
-            match_data_list.append(md)
+        prog("Încarc contextul ligilor…", 0.15)
+        prog("Încarc statisticile echipelor…", 0.25)
+        match_data_list = enrich_matches_batch(
+            client,
+            selected,
+            model_ids=model_ids,
+            tz_name=timezone_name,
+            profiler=profiler,
+        )
 
-        prog("Validez datele…", 0.55)
-        allowed_by_model: dict[str, list[MatchData]] = {m: [] for m in model_ids}
-        for md in match_data_list:
-            for model_id in model_ids:
-                report = validate_match_for_model(md, model_id)
-                reports.append(report)
-                blocked = report.is_blocked(md.match_id, model_id)
-                blocking = report.blocking_for(md.match_id, model_id)
-                reason = blocking[0].reason if blocking else ""
-                g0 = "FAIL" if blocked else "OK"
-                status = "blocat" if blocked else ("pending" if any(not i.blocking for i in report.issues) else "valid")
-                row = {
-                    "liga": md.competition_name,
-                    "ora_bucuresti": md.kickoff_bucharest.strftime("%H:%M") if md.kickoff_bucharest else "",
-                    "echipe": f"{md.home.name} vs {md.away.name}",
-                    "model": MODEL_LABELS.get(model_id, model_id),
-                    "model_id": model_id,
-                    "match_id": md.match_id,
-                    "data_status": status,
-                    "g0": g0,
-                    "motiv": reason,
-                    "p0_recalibrated": None,
-                    "p_over": None,
-                    "confidence": None,
-                    "risk_score": None,
-                    "model_g0": None,
-                    "risk_level": None,
-                    "recommendation": None,
-                }
-                if model_id == "over05":
-                    try:
-                        official = compute_over05(match_to_over05_inputs(md))
-                        row["p0_recalibrated"] = official.p0_recalibrated
-                        row["p_over"] = official.p_over_reported
-                        row["confidence"] = official.confidence
-                        row["risk_score"] = official.risk_score
-                        row["model_g0"] = official.g0 or official.cells.get("HG")
-                        row["risk_level"] = official.risk_level
-                        row["recommendation"] = official.recommendation or official.cells.get("HK")
-                    except Exception as exc:
-                        row["recommendation"] = "EROARE MOTOR"
-                        row["model_g0"] = "FAIL"
-                        row["motiv"] = row["motiv"] or f"Motor Over 0.5: {exc}"
-                    if not row["recommendation"]:
-                        row["recommendation"] = "WATCH / NO BET"
-                if model_id == "double_chance":
-                    try:
-                        mapping = match_to_double_chance_inputs(md)
-                        official = compute_double_chance(mapping)
-                        row["dc_selections"] = official.payload()
-                        row["recommendation"] = official.summary_recommendation()
-                        row["model_g0"] = official.by_code("1X").release
-                        row["risk_level"] = official.by_code("1X").level
-                        row["dc_sample_status"] = mapping.get("Surse_Date!C9")
-                        row["dc_prior_status"] = mapping.get("Surse_Date!C10")
-                        row["dc_prior_method"] = mapping.get("Surse_Date!I10")
-                        row["dc_prior_source"] = mapping.get("Surse_Date!D10")
-                        row["dc_prior_cutoff"] = mapping.get("Surse_Date!F10")
-                        row["dc_prior_n_home"] = mapping.get("Surse_Date!G10")
-                        row["dc_prior_n_away"] = mapping.get("Surse_Date!H10")
-                        row["dc_sample_n_home"] = mapping.get("Input_Meci!B36")
-                        row["dc_sample_n_away"] = mapping.get("Input_Meci!C36")
-                        row.update(_double_chance_prior_weights(md, mapping))
-                    except Exception as exc:
-                        row["recommendation"] = "EROARE MOTOR"
-                        row["model_g0"] = "FAIL"
-                        row["motiv"] = row["motiv"] or f"Motor Șansă Dublă: {exc}"
-                rows.append(row)
-                if not blocked:
-                    allowed_by_model[model_id].append(md)
+        prog("Validez…", 0.55)
+        rows, allowed_by_model, reports, over05_art, dc_art = _build_rows_and_snapshot(
+            match_data_list,
+            model_ids=model_ids,
+            profiler=profiler,
+        )
 
-        prog("Generez fișierele Excel…", 0.7)
-        if "over05" in model_ids and allowed_by_model["over05"]:
-            path = run_dir / f"over05_{date_iso}.xlsx"
-            try:
-                Over05Adapter().write_matches(allowed_by_model["over05"], path)
-                generated.append(path)
-            except IntegrityError as exc:
-                errors.append(exc.message)
+        prog("Calculez modelele…", 0.85)
+        snapshot = AnalysisSnapshot(
+            fingerprint=fp,
+            date_iso=date_iso,
+            timezone_name=timezone_name,
+            league_ids=list(league_ids),
+            match_ids=list(match_ids),
+            model_ids=list(model_ids),
+            match_data=match_data_list,
+            allowed_by_model=allowed_by_model,
+            reports=reports,
+            rows=rows,
+            over05=over05_art,
+            double_chance=dc_art,
+            mode="mock" if isinstance(client, MockFootyStatsClient) else "live",
+        )
 
-        if "corners" in model_ids and allowed_by_model["corners"]:
-            path = run_dir / f"corners_{date_iso}.xlsx"
-            try:
-                CornersAdapter().write_matches(allowed_by_model["corners"], path)
-                generated.append(path)
-            except IntegrityError as exc:
-                errors.append(exc.message)
-
-        if "double_chance" in model_ids:
-            for md in allowed_by_model["double_chance"]:
-                path = run_dir / f"double_chance_{md.match_id}.xlsx"
-                try:
-                    DoubleChanceAdapter().write_matches([md], path)
-                    generated.append(path)
-                except IntegrityError as exc:
-                    errors.append(exc.message)
+        profiler.mark_time_to_table()
+        profiler.finalize_total()
+        prog("Analiza este gata.", 1.0)
 
         merged = merge_reports(reports)
-        write_validation_report(run_dir, merged.to_dict())
-        if hasattr(excel_generator, "write_over05_results_csv"):
-            excel_generator.write_over05_results_csv(run_dir, rows)
-        if hasattr(excel_generator, "write_double_chance_results_csv"):
-            excel_generator.write_double_chance_results_csv(run_dir, rows)
-        prog("Creez arhiva ZIP…", 0.9)
-        zip_path = zip_outputs(run_dir)
-        prog("Gata.", 1.0)
-
         return {
-            "run_dir": str(run_dir),
-            "zip_path": str(zip_path),
+            "phase": "analysis",
+            "snapshot": snapshot,
             "rows": rows,
             "report": merged.to_dict(),
-            "generated": [str(p) for p in generated],
-            "errors": errors,
-            "mode": "mock" if isinstance(client, MockFootyStatsClient) else "live",
+            "errors": [],
+            "mode": snapshot.mode,
+            "profiler": profiler.to_dict(),
+            "analysis_fingerprint": fp,
+            "export_ready": True,
         }
     finally:
         try:
             client.close()
         except Exception:
             pass
+
+
+def run_export(
+    snapshot: AnalysisSnapshot,
+    *,
+    progress: ProgressCb | None = None,
+) -> dict[str, Any]:
+    """Faza EXPORT: materializează Excel/ZIP din snapshot, fără refetch sau recalcul motor."""
+
+    def prog(msg: str, pct: float) -> None:
+        if progress:
+            progress(msg, pct)
+
+    profiler = RunProfiler()
+    run_dir = make_run_dir()
+    generated: list[Path] = []
+    errors: list[str] = []
+    date_iso = snapshot.date_iso
+    model_ids = snapshot.model_ids
+    rows = snapshot.rows
+
+    over05_artifacts = {
+        mid: (art.mapping, art.official) for mid, art in snapshot.over05.items()
+    }
+
+    try:
+        prog("Pregătesc fișierele Excel…", 0.1)
+        profiler.start("export_over05")
+        if "over05" in model_ids and snapshot.allowed_by_model.get("over05"):
+            path = run_dir / f"over05_{date_iso}.xlsx"
+            try:
+                Over05Adapter().write_matches(
+                    snapshot.allowed_by_model["over05"],
+                    path,
+                    artifacts=over05_artifacts,
+                )
+                generated.append(path)
+            except IntegrityError as exc:
+                errors.append(exc.message)
+        profiler.stop("export_over05")
+
+        profiler.start("export_corners")
+        if "corners" in model_ids and snapshot.allowed_by_model.get("corners"):
+            path = run_dir / f"corners_{date_iso}.xlsx"
+            try:
+                CornersAdapter().write_matches(snapshot.allowed_by_model["corners"], path)
+                generated.append(path)
+            except IntegrityError as exc:
+                errors.append(exc.message)
+        profiler.stop("export_corners")
+
+        profiler.start("export_double_chance")
+        if "double_chance" in model_ids:
+            for md in snapshot.allowed_by_model.get("double_chance", []):
+                path = run_dir / f"double_chance_{md.match_id}.xlsx"
+                try:
+                    DoubleChanceAdapter().write_matches(
+                        [md],
+                        path,
+                        artifacts=snapshot.double_chance,
+                    )
+                    generated.append(path)
+                except IntegrityError as exc:
+                    errors.append(exc.message)
+        profiler.stop("export_double_chance")
+
+        prog("Verific integritatea…", 0.75)
+        profiler.start("fingerprint_and_reports")
+        merged = merge_reports(snapshot.reports)
+        write_validation_report(run_dir, merged.to_dict())
+        if hasattr(excel_generator, "write_over05_results_csv"):
+            excel_generator.write_over05_results_csv(run_dir, rows)
+        if hasattr(excel_generator, "write_double_chance_results_csv"):
+            excel_generator.write_double_chance_results_csv(run_dir, rows)
+        profiler.stop("fingerprint_and_reports")
+
+        prog("Creez arhiva ZIP…", 0.9)
+        profiler.start("zip")
+        zip_path = zip_outputs(run_dir)
+        profiler.stop("zip")
+
+        profiler.mark_time_to_export()
+        profiler.finalize_total()
+        prog("Export gata.", 1.0)
+
+        return {
+            "phase": "export",
+            "run_dir": str(run_dir),
+            "zip_path": str(zip_path),
+            "generated": [str(p) for p in generated],
+            "errors": errors,
+            "profiler": profiler.to_dict(),
+        }
+    except Exception:
+        cleanup_run_dir(run_dir)
+        raise
 
 
 def cleanup_after_download(run_dir: str | Path) -> None:

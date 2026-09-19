@@ -20,8 +20,15 @@ REGISTRY_PATH = CONFIG_DIR / "model_registry.yaml"
 FOOTYSTATS_BASE_URL = "https://api.football-data-api.com"
 FOOTYSTATS_TIMEOUT = float(os.getenv("FOOTYSTATS_TIMEOUT", "20"))
 FOOTYSTATS_RETRIES = int(os.getenv("FOOTYSTATS_RETRIES", "2"))
+FOOTYSTATS_MAX_WORKERS = int(os.getenv("FOOTYSTATS_MAX_WORKERS", "3"))
+FOOTYSTATS_429_BACKOFF_SEC = float(os.getenv("FOOTYSTATS_429_BACKOFF_SEC", "0.6"))
 
 APP_PASSWORD = os.getenv("APP_PASSWORD", "").strip()
+DEV_MODULE_RELOAD = os.getenv("DEV_MODULE_RELOAD", "false").strip().lower() in {
+    "1",
+    "true",
+    "yes",
+}
 
 DEFAULT_TIMEZONE = "Europe/Bucharest"
 

@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 import httpx
 
 from config import settings
+from config.settings import FOOTYSTATS_429_BACKOFF_SEC
 from src.api.cache import ResponseCache, cache_key
 from src.models.match_data import (
     Indicator,
@@ -232,9 +233,28 @@ class FootyStatsClient:
         # Cache vechi (doar `data`) — îl ignorăm ca să putem pagina corect.
 
         last_error: Exception | None = None
-        for attempt in range(self.retries + 1):
+        max_attempts = self.retries + 1
+        for attempt in range(max_attempts):
             try:
                 response = self._client.get(f"/{endpoint}", params=query)
+                if response.status_code == 429:
+                    technical = f"HTTP 429 on {endpoint}"
+                    try:
+                        err_payload = response.json()
+                    except Exception:
+                        err_payload = {}
+                    if attempt < max_attempts - 1:
+                        time.sleep(FOOTYSTATS_429_BACKOFF_SEC * (attempt + 1))
+                        continue
+                    if isinstance(err_payload, dict):
+                        raise FootyStatsError(
+                            _user_message_for_failure(err_payload, response.status_code, endpoint),
+                            technical,
+                        )
+                    raise FootyStatsError(
+                        "Limita de cereri FootyStats a fost atinsă. Reîncearcă mai târziu.",
+                        technical,
+                    )
                 if response.status_code >= 400:
                     technical = f"HTTP {response.status_code} on {endpoint}"
                     try:
@@ -416,8 +436,6 @@ class FootyStatsClient:
 
         h5 = self.last_x(int(home_id), 5) if not _unavailable(home_id) else {}
         a5 = self.last_x(int(away_id), 5) if not _unavailable(away_id) else {}
-        h10 = self.last_x(int(home_id), 10) if not _unavailable(home_id) else {}
-        a10 = self.last_x(int(away_id), 10) if not _unavailable(away_id) else {}
         avg_home, avg_away, avg_total, n_home, n_away = league_goal_averages(list(teams.values()))
         md = self.build_match_data(
             match,
@@ -426,8 +444,6 @@ class FootyStatsClient:
             h5,
             a5,
             tz_name=tz_name,
-            home_last10=h10,
-            away_last10=a10,
             league_avg_gf_home=avg_home,
             league_avg_gf_away=avg_away,
             league_avg_gf_total=avg_total,

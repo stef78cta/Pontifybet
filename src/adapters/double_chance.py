@@ -3,15 +3,14 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 from src.adapters.base import BaseAdapter
-from src.engines.double_chance import (
-    compute_double_chance,
-    match_to_double_chance_inputs,
-    python_result_writes,
-)
+from src.engines.double_chance import python_result_writes
+from src.engines.double_chance.engine import DoubleChanceOfficialResult
 from src.excel.integrity import IntegrityError
 from src.models.match_data import MatchData
+from src.orchestration.snapshot import DoubleChanceMatchArtifacts
 
 _PYTHON_RESULT_COORDS = tuple(
     f"{col}{row}" for row in range(60, 64) for col in ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J")
@@ -122,7 +121,13 @@ class DoubleChanceAdapter(BaseAdapter):
             wl.add(f"Surse_Date!{cell}")
         return wl
 
-    def write_matches(self, matches: list[MatchData], dest: Path) -> Path:
+    def write_matches(
+        self,
+        matches: list[MatchData],
+        dest: Path,
+        *,
+        artifacts: dict[str, DoubleChanceMatchArtifacts] | None = None,
+    ) -> Path:
         """Pentru un singur meci — dest este calea fișierului final."""
         if len(matches) != 1:
             raise IntegrityError(
@@ -131,8 +136,15 @@ class DoubleChanceAdapter(BaseAdapter):
         match = matches[0]
         self.prepare_copy(dest)
         writer = self.open_writer(dest)
-        mapping = match_to_double_chance_inputs(match)
-        official = compute_double_chance(mapping)
+        bundle = artifacts.get(match.match_id) if artifacts else None
+        if bundle is not None:
+            mapping = dict(bundle.mapping)
+            official = bundle.official
+        else:
+            from src.engines.double_chance import compute_double_chance, match_to_double_chance_inputs
+
+            mapping = match_to_double_chance_inputs(match)
+            official = compute_double_chance(mapping)
         mapping.update(
             {f"Input_Meci!{coord}": value for coord, value in python_result_writes(official).items()}
         )

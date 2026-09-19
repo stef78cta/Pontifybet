@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+from threading import Lock
 from typing import Any
 
 from config.settings import CACHE_DIR, ensure_runtime_dirs
@@ -23,26 +24,29 @@ class ResponseCache:
     def __init__(self, use_disk: bool = True) -> None:
         self._memory: dict[str, Any] = {}
         self.use_disk = use_disk
+        self._lock = Lock()
         if use_disk:
             ensure_runtime_dirs()
 
     def get(self, key: str) -> Any | None:
-        if key in self._memory:
-            return self._memory[key]
-        if not self.use_disk:
+        with self._lock:
+            if key in self._memory:
+                return self._memory[key]
+            if not self.use_disk:
+                return None
+            path = CACHE_DIR / f"{key}.json"
+            if path.exists():
+                data = json.loads(path.read_text(encoding="utf-8"))
+                self._memory[key] = data
+                return data
             return None
-        path = CACHE_DIR / f"{key}.json"
-        if path.exists():
-            data = json.loads(path.read_text(encoding="utf-8"))
-            self._memory[key] = data
-            return data
-        return None
 
     def set(self, key: str, value: Any) -> None:
-        self._memory[key] = value
-        if self.use_disk:
-            path = CACHE_DIR / f"{key}.json"
-            path.write_text(json.dumps(value, ensure_ascii=False, default=str), encoding="utf-8")
+        with self._lock:
+            self._memory[key] = value
+            if self.use_disk:
+                path = CACHE_DIR / f"{key}.json"
+                path.write_text(json.dumps(value, ensure_ascii=False, default=str), encoding="utf-8")
 
     def clear_memory(self) -> None:
         self._memory.clear()

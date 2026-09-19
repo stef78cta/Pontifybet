@@ -51,11 +51,23 @@ class BaseAdapter(ABC):
                 whitelist.add(f"{sh}!{cell}")
             if col:
                 whitelist.add(f"{sh}!{col}")
-        # foi suplimentare cunoscute
-        for extra in ("sources_sheet", "model_sheet"):
-            if self.cfg.get(extra):
-                pass
+        # Foi de input suplimentare (ex. istoric nativ, surse, registru OOS).
+        # Declarate explicit în registry, nu deduse: o foaie de calcul nu ajunge
+        # niciodată în whitelist fără intervenție în configurație.
+        for extra_sheet, extra_cols in (self.cfg.get("extra_write_columns") or {}).items():
+            for col in extra_cols or []:
+                whitelist.add(f"{extra_sheet}!{col}")
         return whitelist
+
+    @property
+    def integrity_max_rows(self) -> int:
+        """Câte rânduri acoperă amprenta de integritate pentru acest model.
+
+        Implicit 200, ca până acum. Cornere V14 are formule până la rândul 1405
+        în `Analiza_Linii`, deci are nevoie de o valoare explicită mai mare;
+        celelalte modele rămân neatinse.
+        """
+        return int(self.cfg.get("integrity_max_rows", 200))
 
     @abstractmethod
     def write_matches(self, matches: list[MatchData], dest: Path) -> Path:
@@ -65,5 +77,12 @@ class BaseAdapter(ABC):
         return copy_template(self.template_name, dest)
 
     def open_writer(self, dest: Path) -> SafeWorkbookWriter:
-        baseline = get_template_baseline(self.template_path())
-        return SafeWorkbookWriter(dest, self.build_whitelist(), template_baseline=baseline)
+        baseline = get_template_baseline(
+            self.template_path(), max_rows=self.integrity_max_rows
+        )
+        return SafeWorkbookWriter(
+            dest,
+            self.build_whitelist(),
+            template_baseline=baseline,
+            max_rows=self.integrity_max_rows,
+        )

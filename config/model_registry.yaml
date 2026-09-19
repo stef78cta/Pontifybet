@@ -591,6 +591,26 @@ models:
     data_start_row: 6
     header_row: 5
     write_columns: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "AA", "AB", "AC", "AD", "AE", "AF", "AG"]
+    # Formulele V14 coboară până la rândul 1405 în `Analiza_Linii`; amprenta de
+    # integritate trebuie să le acopere pe toate, nu doar primele 200 de rânduri.
+    integrity_max_rows: 1405
+    # Foile de input suplimentare cerute de V14: evenimentele istorice native,
+    # metadatele surselor și registrul OOS. Nu conțin formule de model în zona de
+    # date (formulele lor sunt coloane derivate, protejate de amprentă).
+    history_sheet: "Istoric_Nativ"
+    sources_sheet: "Surse_Import"
+    oos_sheet: "OOS_Predictii"
+    extra_write_columns:
+      Istoric_Nativ: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"]
+      Surse_Import: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
+      OOS_Predictii: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"]
+    # Zona în care exportul scrie rezultatele calculate în Python. Verificată ca
+    # liberă: `MatchesTable` se termină la rândul 105, rândul 106 rămâne separator,
+    # iar nicio formulă din workbook nu referă rânduri Input_Meci peste 105.
+    result_zone:
+      sheet: "Input_Meci"
+      first_row: 107
+      columns: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q"]
     forbidden_sheets:
       - "Config_v6"
       - "Analiza_Linii"

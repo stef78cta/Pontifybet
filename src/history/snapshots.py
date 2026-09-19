@@ -1,15 +1,13 @@
 """Construirea jurnalului pre-match din rezultatul fazei ANALYSIS.
 
-De ce două regimuri diferite pentru cele trei modele:
+Toate cele trei modele au verdictul disponibil în runtime-ul Python, pentru că
+`src/engines/*` *evaluează formulele din workbook* (nu le reimplementează):
+Over 0.5 V4, Șansă Dublă V2 și Cornere Multi-Line V14. Snapshot-urile lor se nasc
+direct `FROZEN_PREMATCH`.
 
-- **Over 0.5 V4** și **Șansă Dublă V2** au verdictul disponibil în runtime-ul
-  Python, pentru că `src/engines/*` *evaluează formulele din workbook* (nu le
-  reimplementează). Snapshot-ul lor se naște direct `FROZEN_PREMATCH`.
-- **Cornere Multi-Line V14** nu are motor în Python: adaptorul scrie doar
-  inputuri în copia șablonului, iar `Analiza_Linii` este calculată de Microsoft
-  Excel la deschidere. Reproducerea acelor formule în Python ar crea un al doilea
-  motor de analiză, exact ce nu avem voie. Deci snapshot-ul se naște
-  `PENDING_EXCEL_RECALC` și se completează prin `excel_ingest.py`.
+`PENDING_EXCEL_RECALC` rămâne doar ca stare istorică: înregistrările Cornere
+salvate înainte de motorul V14 se completează în continuare prin
+`excel_ingest.py`. Analizele noi nu mai creează pending-uri.
 """
 
 from __future__ import annotations
@@ -194,13 +192,40 @@ def build_snapshots(analysis: Any) -> list[PredictionSnapshot]:
                     )
                 )
         elif model_key == "corners":
-            for market, line in corners_lines():
+            selections = row.get("corners_selections") or []
+            if not selections:
+                # Fără rezultat de motor nu inventăm verdicte: rândul rămâne în
+                # regimul vechi, completabil prin importul workbook-ului recalculat.
+                for market, line in corners_lines():
+                    out.append(
+                        PredictionSnapshot(
+                            **base,
+                            market=market,
+                            line=line,
+                            snapshot_status=SnapshotStatus.PENDING_EXCEL_RECALC.value,
+                        )
+                    )
+                continue
+            for sel in selections:
+                market = (
+                    Market.CORNERS_OVER.value
+                    if str(sel.get("market_type") or "").strip().upper() == "OVER"
+                    else Market.CORNERS_UNDER.value
+                )
                 out.append(
                     PredictionSnapshot(
                         **base,
                         market=market,
-                        line=line,
-                        snapshot_status=SnapshotStatus.PENDING_EXCEL_RECALC.value,
+                        line=_as_float(sel.get("line_value")),
+                        recommendation=_as_text(sel.get("verdict")),
+                        p_adjusted=_as_float(sel.get("p_final")),
+                        failure_mode=_as_float(sel.get("failure_model")),
+                        risk_score=_as_float(sel.get("risk_score")),
+                        risk_level=_as_float(sel.get("risk_level")),
+                        confidence=_as_float(sel.get("confidence_final")),
+                        hard_gate=_as_text(sel.get("g0")),
+                        motivation=_as_text(sel.get("reason")),
+                        snapshot_status=SnapshotStatus.FROZEN_PREMATCH.value,
                     )
                 )
     return out

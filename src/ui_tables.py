@@ -137,6 +137,109 @@ def double_chance_summary_rows(
     return out
 
 
+def is_corners_shortlist(selection: dict[str, Any]) -> bool:
+    """Selecțiile Cornere care intră în view-ul principal.
+
+    Conform Excel: `Eligible` = 1, adică verdictul este DEFENSIV / PRUDENT /
+    MODERAT / RIDICAT și linia poate primi rang. Restul rămân calculate și vizibile
+    în audit view.
+    """
+    return bool(selection.get("eligible"))
+
+
+def corners_summary_rows(
+    rows: list[dict[str, Any]],
+    *,
+    fmt_prob: Callable[[Any], str],
+    fmt_score: Callable[[Any], str],
+    show_all: bool = True,
+) -> list[dict[str, Any]]:
+    """Un rând pe fiecare dintre cele 14 linii Cornere, în ordinea din workbook.
+
+    Gate-urile (Failure, Tail, Defensive) sunt coloane distincte de `Nivel` și
+    `Verdict`: un gate WATCH nu impune verdictul. `show_all=False` păstrează doar
+    liniile eligibile, dar cele 14 rezultate rămân în snapshot.
+    """
+    out: list[dict[str, Any]] = []
+    for r in rows:
+        if r.get("model_id") != "corners":
+            continue
+        selections = r.get("corners_selections") or []
+        if not selections:
+            out.append(
+                {
+                    "Oră de începere": r.get("ora_bucuresti") or "—",
+                    "Ligă": r.get("liga") or "—",
+                    "Echipe": r["echipe"],
+                    "Linie": "—",
+                    "Verdict": r.get("recommendation") or "—",
+                    "Nivel": r.get("risk_level") if r.get("risk_level") is not None else "—",
+                    "Release": r.get("corners_release") or "—",
+                    "Motiv": r.get("motiv") or r.get("corners_reason") or "—",
+                }
+            )
+            continue
+        for sel in selections:
+            if not show_all and not is_corners_shortlist(sel):
+                continue
+            out.append(
+                {
+                    "Oră de începere": r.get("ora_bucuresti") or "—",
+                    "Ligă": r.get("liga") or "—",
+                    "Echipe": r["echipe"],
+                    "Linie": sel.get("line") or "—",
+                    "Verdict": sel.get("verdict") or "—",
+                    "Nivel": sel.get("risk_level") if sel.get("risk_level") is not None else "—",
+                    "Nivel brut": sel.get("risk_level_raw") if sel.get("risk_level_raw") is not None else "—",
+                    "P_Raw": fmt_prob(sel.get("p_raw")) or "—",
+                    "P_calibrat": fmt_prob(sel.get("p_calibrated")) or "—",
+                    "P_FINAL": fmt_prob(sel.get("p_final")) or "—",
+                    "Failure model": fmt_prob(sel.get("failure_model")) or "—",
+                    "Failure Gate": sel.get("failure_gate") or "—",
+                    "Risk Score": fmt_score(sel.get("risk_score")) or "—",
+                    "Confidence Final": fmt_score(sel.get("confidence_final")) or "—",
+                    "Confidence candidat": sel.get("candidate_confidence") or "—",
+                    "Release": sel.get("release") or "—",
+                    "G0": sel.get("g0") or "—",
+                    "Tail Gate": sel.get("tail_gate") or "—",
+                    "Defensive Gate": sel.get("defensive_gate") or "—",
+                    "Candidat DEFENSIV": sel.get("defensive_candidate") or "—",
+                    "Eligibil": "DA" if sel.get("eligible") else "NU",
+                    "Builder": sel.get("builder") or "—",
+                    "Rang în meci": sel.get("rank_in_match") if sel.get("rank_in_match") is not None else "—",
+                    "Rang LIVE": sel.get("rank_live") if sel.get("rank_live") is not None else "—",
+                    "OOS": sel.get("oos_status") or "—",
+                    "Mu": fmt_score(sel.get("mu")) or "—",
+                    "D": fmt_score(sel.get("d")) or "—",
+                    "Distribuție": r.get("corners_distribution") or "—",
+                    "Motiv": sel.get("reason") or "—",
+                }
+            )
+    return out
+
+
+def corners_top_live_rows(
+    top_live: list[dict[str, Any]],
+    *,
+    fmt_prob: Callable[[Any], str],
+    fmt_score: Callable[[Any], str],
+) -> list[dict[str, Any]]:
+    """Top LIVE Cornere: maximum o linie per meci, maximum zece rânduri."""
+    return [
+        {
+            "Rang": entry.get("rank"),
+            "Meci": entry.get("match") or "—",
+            "Linie": entry.get("line") or "—",
+            "Verdict": entry.get("verdict") or "—",
+            "Nivel": entry.get("risk_level") if entry.get("risk_level") is not None else "—",
+            "P_FINAL": fmt_prob(entry.get("p_final")) or "—",
+            "Confidence Final": fmt_score(entry.get("confidence_final")) or "—",
+            "Motiv": entry.get("reason") or "—",
+        }
+        for entry in top_live or []
+    ]
+
+
 def validation_summary_rows(
     rows: list[dict[str, Any]],
     *,

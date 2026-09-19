@@ -1,11 +1,11 @@
 """Ingestia verdictelor Cornere V14 din workbook-ul recalculat de Microsoft Excel.
 
-De ce există acest modul: verdictul Cornere nu este disponibil în Python. Pipeline-ul
-scrie doar inputuri în copia șablonului, iar `Analiza_Linii` (Verdict_FINAL,
-Risk_Level_FINAL, P_FINAL, …) se calculează abia la deschiderea fișierului în
-Microsoft Excel. Alternativa — rescrierea formulelor în Python — ar produce un al
-doilea motor de analiză și ar putea divergea silențios de modelul oficial. Așa că
-Excel rămâne source of truth, iar aici doar *citim* rezultatul lui.
+COMPATIBILITATE, nu pas obligatoriu. Analizele curente calculează Cornere V14 în
+runtime-ul Python (`src/engines/corners`), evaluând aceleași formule ale
+workbook-ului, și înghețează predicțiile direct din snapshot. Modulul rămâne pentru
+înregistrările create înainte de motor, rămase în `PENDING_EXCEL_RECALC`: ele nu pot
+fi completate retroactiv din date colectate după kickoff, deci singura sursă validă
+pentru ele este workbook-ul recalculat la momentul respectiv.
 
 `openpyxl` nu este folosit ca motor de formule: fișierul este deschis cu
 `data_only=True`, adică se citesc exclusiv valorile pe care Excel le-a salvat în
@@ -53,8 +53,17 @@ READ_CELL_WHITELIST: frozenset[str] = frozenset(
 )
 
 
+def _corners_config() -> dict[str, Any]:
+    return load_registry()["models"]["corners"]
+
+
 def _corners_template_path() -> Path:
-    return TEMPLATES_DIR / load_registry()["models"]["corners"]["template"]
+    return TEMPLATES_DIR / _corners_config()["template"]
+
+
+def _corners_max_rows() -> int:
+    """Aceeași adâncime de amprentă ca la export, ca să nu ratăm formule sub rândul 200."""
+    return int(_corners_config().get("integrity_max_rows", 200))
 
 
 def assert_matches_template(path: Path) -> None:
@@ -63,9 +72,10 @@ def assert_matches_template(path: Path) -> None:
     Reutilizează mecanismul de integritate existent (foi + formule), ca un fișier
     editat manual să nu poată injecta valori în istoric.
     """
-    baseline = get_template_baseline(_corners_template_path())
+    max_rows = _corners_max_rows()
+    baseline = get_template_baseline(_corners_template_path(), max_rows=max_rows)
     try:
-        compare_fingerprints(baseline, fingerprint_workbook(path))
+        compare_fingerprints(baseline, fingerprint_workbook(path, max_rows=max_rows))
     except IntegrityError as exc:
         raise IntegrityError(exc.message.replace("EXPORT BLOCAT", "IMPORT BLOCAT")) from exc
 

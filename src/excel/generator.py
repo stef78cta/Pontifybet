@@ -50,10 +50,15 @@ class SafeWorkbookWriter:
         whitelist: set[str],
         *,
         template_baseline: WorkbookFingerprint | None = None,
+        max_rows: int = 200,
     ) -> None:
         self.path = path
         self.whitelist = whitelist
-        self.before = template_baseline or fingerprint_workbook(path)
+        # Amprenta de „după” trebuie să acopere exact aceleași rânduri ca baseline-ul,
+        # altfel comparația ar raporta formule „eliminate” doar pentru că nu au fost
+        # scanate. Modelele cu formule sub rândul 200 transmit un `max_rows` mai mare.
+        self.max_rows = max_rows
+        self.before = template_baseline or fingerprint_workbook(path, max_rows=max_rows)
         self.wb = load_workbook(path)
         self._writes: list[str] = []
 
@@ -73,7 +78,7 @@ class SafeWorkbookWriter:
     def save(self) -> Path:
         self.wb.save(self.path)
         self.wb.close()
-        after = fingerprint_workbook(self.path)
+        after = fingerprint_workbook(self.path, max_rows=self.max_rows)
         compare_fingerprints(self.before, after)
         return self.path
 

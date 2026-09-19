@@ -82,19 +82,84 @@ def test_double_chance_small_sample_writes_real_prior_row(tmp_path: Path):
     wb.close()
 
 
-def test_corners_blocks_unavailable_not_written_as_zero(tmp_path: Path):
-    client = MockFootyStatsClient()
-    # Arsenal-Chelsea are cornere OK
-    md = client.enrich_match(client.matches_by_date("2026-03-15")[0])
+def _corners_bundle(match_ids: list[str]):
+    """Rulează ANALYSIS pe mock și întoarce bundle-ul Cornere din snapshot."""
+    import src.pipeline as pipeline
+
+    original = pipeline.get_client
+    pipeline.get_client = lambda: MockFootyStatsClient()
+    try:
+        analysis = pipeline.run_analysis(
+            date_iso="2026-03-15",
+            league_ids=[2012, 2013],
+            match_ids=match_ids,
+            model_ids=["corners"],
+            timezone_name="Europe/Bucharest",
+        )
+    finally:
+        pipeline.get_client = original
+    return analysis["snapshot"]
+
+
+def test_corners_export_writes_native_inputs_and_python_results(tmp_path: Path):
+    """Exportul completează inputurile native și copiază rezultatele deja calculate."""
+    snapshot = _corners_bundle(["90001", "90002"])
+    bundle = snapshot.corners
+    matches = snapshot.allowed_by_model["corners"]
     adapter = CornersAdapter()
-    before = fingerprint_workbook(adapter.template_path())
+    before = fingerprint_workbook(
+        adapter.template_path(), max_rows=adapter.integrity_max_rows
+    )
     dest = tmp_path / "corners.xlsx"
-    adapter.write_matches([md], dest)
-    after = fingerprint_workbook(dest)
+    adapter.write_matches(matches, dest, artifacts=bundle)
+    after = fingerprint_workbook(dest, max_rows=adapter.integrity_max_rows)
     assert after.formulas == before.formulas
+    assert len(before.formulas) == 85647
+
     wb = load_workbook(dest)
-    assert wb["Input_Meci"]["A6"].value == md.match_id
-    notes = wb["Input_Meci"]["M6"].value or ""
-    assert "corners_native" in notes
-    assert "None" not in notes.split("H_s_for=")[1][:5] or "H_s_for=5" in notes or "H_s_for=6" in notes
-    wb.close()
+    try:
+        assert wb["Input_Meci"]["A6"].value == matches[0].match_id
+        # Istoricul nativ ajunge în foaia lui, nu serializat în Notes.
+        assert wb["Istoric_Nativ"]["A6"].value
+        assert isinstance(wb["Istoric_Nativ"]["G6"].value, int)
+        assert wb["Surse_Import"]["A6"].value
+        assert wb["Surse_Import"]["D6"].value == "FootyStats"
+        # Zona de rezultate: antet la 107, apoi 14 linii per meci.
+        zone = adapter.cfg["result_zone"]
+        first = int(zone["first_row"])
+        assert wb["Input_Meci"][f"A{first}"].value == "Match_ID"
+        assert wb["Input_Meci"][f"D{first + 1}"].value == "O3,5"
+        labels = {
+            wb["Input_Meci"][f"D{first + 1 + offset}"].value for offset in range(28)
+        }
+        assert len(labels) == 14
+    finally:
+        wb.close()
+
+
+def test_corners_export_clears_demo_history(tmp_path: Path):
+    """Inputurile demonstrative din șablon nu contaminează o rulare LIVE."""
+    snapshot = _corners_bundle(["90001"])
+    adapter = CornersAdapter()
+    dest = tmp_path / "corners_clean.xlsx"
+    adapter.write_matches(
+        snapshot.allowed_by_model["corners"], dest, artifacts=snapshot.corners
+    )
+    template = load_workbook(adapter.template_path())
+    exported = load_workbook(dest)
+    try:
+        demo_ids = {
+            template["Istoric_Nativ"][f"A{row}"].value
+            for row in range(6, 60)
+            if template["Istoric_Nativ"][f"A{row}"].value
+        }
+        exported_ids = {
+            exported["Istoric_Nativ"][f"A{row}"].value
+            for row in range(6, 406)
+            if exported["Istoric_Nativ"][f"A{row}"].value
+        }
+        assert demo_ids
+        assert not (demo_ids & exported_ids)
+    finally:
+        template.close()
+        exported.close()

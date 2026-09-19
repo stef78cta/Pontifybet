@@ -12,12 +12,14 @@ class FetchCounters:
     """Contoare operaționale — fără date sensibile."""
 
     league_teams: int = 0
+    league_matches: int = 0
     lastx_5: int = 0
     lastx_10: int = 0
     team: int = 0
     derived_1x2_trace: int = 0
     compute_over05: int = 0
     compute_double_chance: int = 0
+    compute_corners: int = 0
 
 
 @dataclass
@@ -55,12 +57,14 @@ class RunProfiler:
             "phases_sec": dict(self.phases),
             "counters": {
                 "league_teams": self.counters.league_teams,
+                "league_matches": self.counters.league_matches,
                 "lastx_5": self.counters.lastx_5,
                 "lastx_10": self.counters.lastx_10,
                 "team": self.counters.team,
                 "derived_1x2_trace": self.counters.derived_1x2_trace,
                 "compute_over05": self.counters.compute_over05,
                 "compute_double_chance": self.counters.compute_double_chance,
+                "compute_corners": self.counters.compute_corners,
             },
             "time_to_table_sec": self.time_to_table,
             "time_to_export_sec": self.time_to_export,

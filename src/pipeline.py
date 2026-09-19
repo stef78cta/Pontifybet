@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable
 from zoneinfo import ZoneInfo
@@ -19,6 +20,7 @@ from src.excel import generator as excel_generator
 from src.excel.integrity import IntegrityError
 from src.history.snapshots import persist_analysis
 from src.models.match_data import MatchData
+from src.orchestration.corners_bundle import CornersBundle, build_corners_artifacts
 from src.orchestration.double_chance_bundle import build_double_chance_artifacts
 from src.orchestration.match_fetcher import enrich_matches_batch
 from src.orchestration.profiler import RunProfiler
@@ -198,17 +200,33 @@ def sort_listed_matches(rows: list[dict[str, Any]], by: str) -> list[dict[str, A
     return sorted(rows, key=key)
 
 
+@dataclass
+class _AnalysisTables:
+    """Rezultatul fazei de validare + motoare, înainte de împachetare în snapshot."""
+
+    rows: list[dict[str, Any]]
+    allowed_by_model: dict[str, list[MatchData]]
+    reports: list[ValidationReport]
+    over05: dict[str, Over05MatchArtifacts]
+    double_chance: dict[str, DoubleChanceMatchArtifacts]
+    corners: CornersBundle | None
+    errors: list[str]
+
+
 def _build_rows_and_snapshot(
     match_data_list: list[MatchData],
     *,
     model_ids: list[str],
     profiler: RunProfiler,
-) -> tuple[list[dict[str, Any]], dict[str, list[MatchData]], list[ValidationReport], dict[str, Over05MatchArtifacts], dict[str, DoubleChanceMatchArtifacts]]:
+    client: Any | None = None,
+) -> _AnalysisTables:
     reports: list[ValidationReport] = []
     rows: list[dict[str, Any]] = []
     allowed_by_model: dict[str, list[MatchData]] = {m: [] for m in model_ids}
     over05_art: dict[str, Over05MatchArtifacts] = {}
     dc_art: dict[str, DoubleChanceMatchArtifacts] = {}
+    corners_rows: list[dict[str, Any]] = []
+    engine_errors: list[str] = []
 
     profiler.start("validation_and_engines")
     for md in match_data_list:
@@ -281,11 +299,98 @@ def _build_rows_and_snapshot(
                     row["recommendation"] = "EROARE MOTOR"
                     row["model_g0"] = "FAIL"
                     row["motiv"] = row["motiv"] or f"Motor Șansă Dublă: {exc}"
+            if model_id == "corners":
+                corners_rows.append(row)
             rows.append(row)
             if not blocked:
                 allowed_by_model[model_id].append(md)
     profiler.stop("validation_and_engines")
-    return rows, allowed_by_model, reports, over05_art, dc_art
+
+    corners_bundle: CornersBundle | None = None
+    if "corners" in model_ids and allowed_by_model.get("corners"):
+        profiler.start("corners_engine")
+        try:
+            corners_client = client if client is not None else get_client()
+            corners_bundle = build_corners_artifacts(
+                corners_client,
+                allowed_by_model["corners"],
+                profiler.counters,
+                retrieved_utc=_mock_collection_moment(
+                    allowed_by_model["corners"], corners_client
+                ),
+            )
+        except Exception as exc:  # noqa: BLE001
+            engine_errors.append(f"Motor Cornere V14: {exc}")
+        finally:
+            profiler.stop("corners_engine")
+    if corners_bundle is not None:
+        engine_errors.extend(corners_bundle.errors)
+        _apply_corners_results(corners_rows, corners_bundle)
+
+    return _AnalysisTables(
+        rows=rows,
+        allowed_by_model=allowed_by_model,
+        reports=reports,
+        over05=over05_art,
+        double_chance=dc_art,
+        corners=corners_bundle,
+        errors=engine_errors,
+    )
+
+
+def _mock_collection_moment(
+    matches: list[MatchData], client: Any
+) -> datetime | None:
+    """Momentul de colectare folosit ca `Cutoff_UTC`.
+
+    În LIVE returnează `None`, adică „acum”: cutoff-ul declarat este exact momentul
+    în care sursa a fost citită, fără să pretindem o închidere mai devreme.
+
+    În MOCK, fixture-urile au date fixe în trecut, așa că un cutoff real ar invalida
+    orice meci (`cutoff < kickoff` ar fi FALSE). Pentru că întregul set de date este
+    sintetic, ancorăm momentul cu două ore înaintea primului kickoff al lotului —
+    o convenție de fixture, nu o declarație de proveniență.
+    """
+    if not isinstance(client, MockFootyStatsClient):
+        return None
+    kickoffs = [md.kickoff_utc for md in matches if md.kickoff_utc is not None]
+    if not kickoffs:
+        return None
+    earliest = min(kickoffs)
+    if earliest.tzinfo is not None:
+        earliest = earliest.astimezone(timezone.utc).replace(tzinfo=None)
+    return earliest - timedelta(hours=2)
+
+
+def _apply_corners_results(rows: list[dict[str, Any]], bundle: CornersBundle) -> None:
+    """Completează rândurile Cornere din rezultatul comun, fără recalcul pe linie."""
+    for row in rows:
+        artifacts = bundle.artifacts_for(str(row.get("match_id") or ""))
+        if artifacts is None:
+            continue
+        row["corners_provenance"] = artifacts.provenance
+        row["corners_rank_live_source"] = bundle.rank_live_source
+        if artifacts.result is None:
+            row["recommendation"] = "EROARE MOTOR"
+            row["model_g0"] = "FAIL"
+            row["motiv"] = row["motiv"] or artifacts.error
+            row["corners_selections"] = []
+            continue
+        result = artifacts.result
+        selected = result.selected_line
+        row["corners_selections"] = artifacts.payload()
+        row["corners_release"] = result.release
+        row["corners_reason"] = result.reason
+        row["corners_distribution"] = result.distribution_kind
+        row["corners_selected_line"] = selected.line.label if selected else None
+        row["recommendation"] = result.summary_recommendation()
+        row["model_g0"] = result.g0
+        row["motiv"] = row["motiv"] or (result.reason if result.reason != "READY" else "")
+        if selected is not None:
+            row["p_over"] = selected.p_final
+            row["risk_level"] = selected.risk_level
+            row["risk_score"] = selected.risk_score
+            row["confidence"] = selected.confidence_final
 
 
 def run_analysis(
@@ -344,11 +449,15 @@ def run_analysis(
         )
 
         prog("Validez…", 0.55)
-        rows, allowed_by_model, reports, over05_art, dc_art = _build_rows_and_snapshot(
+        tables = _build_rows_and_snapshot(
             match_data_list,
             model_ids=model_ids,
             profiler=profiler,
+            client=client,
         )
+        rows = tables.rows
+        allowed_by_model = tables.allowed_by_model
+        reports = tables.reports
 
         prog("Calculez modelele…", 0.85)
         snapshot = AnalysisSnapshot(
@@ -362,8 +471,9 @@ def run_analysis(
             allowed_by_model=allowed_by_model,
             reports=reports,
             rows=rows,
-            over05=over05_art,
-            double_chance=dc_art,
+            over05=tables.over05,
+            double_chance=tables.double_chance,
+            corners=tables.corners,
             mode="mock" if isinstance(client, MockFootyStatsClient) else "live",
         )
 
@@ -372,7 +482,9 @@ def run_analysis(
         prog("Analiza este gata.", 1.0)
 
         merged = merge_reports(reports)
-        errors: list[str] = []
+        errors: list[str] = list(tables.errors)
+        if tables.corners is not None:
+            errors.extend(tables.corners.notes)
         history: dict[str, Any] = {}
         if persist_history:
             try:
@@ -443,7 +555,11 @@ def run_export(
         if "corners" in model_ids and snapshot.allowed_by_model.get("corners"):
             path = run_dir / f"corners_{date_iso}.xlsx"
             try:
-                CornersAdapter().write_matches(snapshot.allowed_by_model["corners"], path)
+                CornersAdapter().write_matches(
+                    snapshot.allowed_by_model["corners"],
+                    path,
+                    artifacts=snapshot.corners,
+                )
                 generated.append(path)
             except IntegrityError as exc:
                 errors.append(exc.message)

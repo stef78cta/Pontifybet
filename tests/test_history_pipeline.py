@@ -76,13 +76,20 @@ def test_mock_analysis_persists_snapshots(analysis, isolated_history_db):
 
     corners = [r for r in rows if r["model_key"] == "corners"]
     assert corners
-    # Verdictul Cornere este calculat de Microsoft Excel, deci aici e doar rezervat.
+    # Verdictul Cornere este calculat în aplicație, deci predicția se naște înghețată.
     assert all(
-        r["snapshot_status"] == SnapshotStatus.PENDING_EXCEL_RECALC.value for r in corners
+        r["snapshot_status"] == SnapshotStatus.FROZEN_PREMATCH.value for r in corners
     )
-    assert all(r["recommendation"] is None for r in corners)
-    assert all(r["frozen_at"] is None for r in corners)
+    assert analysis["history"]["pending_excel_recalc"] == 0
+    assert all(r["recommendation"] for r in corners)
+    assert all(r["frozen_at"] for r in corners)
+    assert all(r["p_adjusted"] is not None for r in corners)
+    assert all(r["risk_level"] is not None for r in corners)
+    assert all(r["model_version"] == "V14" for r in corners)
     assert len(corners) == 14 * len({r["provider_match_id"] for r in corners})
+    assert {r["market"] for r in corners} == {"CORNERS_OVER", "CORNERS_UNDER"}
+    # Identitatea linie/market rămâne cea din șablon.
+    assert {(r["market"], r["line"]) for r in corners} == set(corners_lines())
 
     # Kickoff-ul și identitatea meciului vin din FootyStats, nu din numele echipelor.
     assert all(r["provider_match_id"].isdigit() for r in rows)
@@ -169,8 +176,49 @@ def test_workbook_off_template_is_blocked(tmp_path):
     assert "IMPORT BLOCAT" in str(exc.value)
 
 
-def test_ingestion_freezes_corners_and_is_idempotent(analysis, tmp_path, monkeypatch, isolated_history_db):
+def _legacy_pending_corners(db, provider_match_id: str = "90001") -> None:
+    """Înregistrări Cornere în starea veche `PENDING_EXCEL_RECALC`.
+
+    Reproduce jurnalul creat înainte de motorul V14 din aplicație, singurul caz în
+    care importul workbook-ului recalculat mai este relevant.
+    """
+    from src.history.models import PredictionSnapshot
+
+    with open_db(db) as conn:
+        run_id = repo.upsert_run(
+            conn,
+            analysis_date="2026-03-15",
+            timezone_name="Europe/Bucharest",
+            analysis_fingerprint="legacy-pending",
+            source_mode="mock",
+            model_ids=["corners"],
+        )
+        for market, line in corners_lines():
+            repo.save_prediction(
+                conn,
+                run_id,
+                PredictionSnapshot(
+                    provider_match_id=provider_match_id,
+                    model_key="corners",
+                    model_version=model_version("corners"),
+                    market=market,
+                    line=line,
+                    kickoff_utc="2026-03-15T15:00:00+00:00",
+                    kickoff_unix=1773586800,
+                    league="Premier League",
+                    home_team="Arsenal",
+                    away_team="Chelsea",
+                    data_status="valid",
+                    snapshot_status=SnapshotStatus.PENDING_EXCEL_RECALC.value,
+                ),
+            )
+
+
+def test_ingestion_freezes_legacy_pending_corners_and_is_idempotent(
+    tmp_path, monkeypatch, isolated_history_db
+):
     db = isolated_history_db
+    _legacy_pending_corners(db)
     # Poarta de integritate este verificată separat; aici testăm citirea și îngheţul.
     monkeypatch.setattr(excel_ingest, "assert_matches_template", lambda path: None)
 
@@ -208,7 +256,7 @@ def test_ingestion_freezes_corners_and_is_idempotent(analysis, tmp_path, monkeyp
     assert all(r["risk_level"] == 2 for r in corners_frozen)
     assert all(r["p_adjusted"] == 0.82 for r in corners_frozen)
     assert all(r["data_status"] for r in corners_frozen), "data_status din validator se păstrează"
-    assert all(r["provider_match_id"] != "90001" for r in pending)
+    assert not pending
 
     # A doua ingestie nu rescrie un forecast deja publicat.
     rows_v2 = [dict(r, AA="NO BET", Z=5) for r in rows]
@@ -239,3 +287,61 @@ def test_ingestion_ignores_lines_without_known_prediction(tmp_path, monkeypatch,
 
 def test_corners_model_version_is_used_as_identity():
     assert model_version("corners") == "V14"
+
+
+def test_new_analysis_does_not_rewrite_frozen_corners(
+    tmp_path, monkeypatch, isolated_history_db
+):
+    """O predicție Cornere deja înghețată rămâne neschimbată la o analiză nouă."""
+    import config.settings as settings
+    import src.pipeline as pipeline
+
+    monkeypatch.setattr(settings, "OUTPUTS_DIR", tmp_path / "outputs")
+    monkeypatch.setattr(pipeline, "get_client", lambda: MockFootyStatsClient())
+
+    with open_db(isolated_history_db) as conn:
+        run_id = repo.upsert_run(
+            conn,
+            analysis_date="2026-03-15",
+            timezone_name="Europe/Bucharest",
+            analysis_fingerprint="pre-existing",
+            source_mode="mock",
+            model_ids=["corners"],
+        )
+        from src.history.models import PredictionSnapshot
+
+        market, line = corners_lines()[0]
+        repo.save_prediction(
+            conn,
+            run_id,
+            PredictionSnapshot(
+                provider_match_id="90001",
+                model_key="corners",
+                model_version=model_version("corners"),
+                market=market,
+                line=line,
+                kickoff_utc="2026-03-15T15:00:00+00:00",
+                kickoff_unix=1773586800,
+                recommendation="VERDICT ORIGINAL",
+                risk_level=4,
+                snapshot_status=SnapshotStatus.FROZEN_PREMATCH.value,
+            ),
+        )
+
+    pipeline.run_analysis(
+        date_iso="2026-03-15",
+        league_ids=[2012],
+        match_ids=["90001"],
+        model_ids=["corners"],
+        timezone_name="Europe/Bucharest",
+    )
+
+    with open_db(isolated_history_db) as conn:
+        rows = [
+            r
+            for r in repo.predictions_for_match(conn, "90001")
+            if r["model_key"] == "corners" and r["market"] == market and r["line"] == line
+        ]
+    assert len(rows) == 1
+    assert rows[0]["recommendation"] == "VERDICT ORIGINAL"
+    assert rows[0]["risk_level"] == 4

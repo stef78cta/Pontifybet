@@ -55,12 +55,16 @@ def test_pipeline_mock_zip(tmp_path: Path, monkeypatch):
     result = run_export(analysis["snapshot"])
     assert Path(result["zip_path"]).exists()
     assert analysis["mode"] == "mock"
-    blocked_corners = [
+    corners_rows = [
         r for r in analysis["rows"] if r["match_id"] == "90003" and r["model_id"] == "corners"
     ]
-    assert blocked_corners
-    assert blocked_corners[0]["g0"] == "FAIL"
+    assert corners_rows
+    # Mediile agregate lipsesc pentru 90003, dar V14 le derivă din istoricul nativ:
+    # validarea nu mai blochează, iar cele 14 linii sunt calculate în ANALYSIS.
+    assert corners_rows[0]["g0"] == "OK"
+    assert len(corners_rows[0]["corners_selections"]) == 14
     assert any("over05" in p for p in result["generated"])
+    assert any("corners" in p for p in result["generated"])
     over05_rows = [r for r in analysis["rows"] if r["model_id"] == "over05"]
     assert over05_rows
     assert all(r.get("recommendation") for r in over05_rows)

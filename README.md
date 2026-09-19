@@ -127,14 +127,15 @@ Toate testele trebuie să treacă (PASS) fără cheie API. Fixture-urile din `mo
 4. Apasă **Generează analiza**  
 5. Descarcă ZIP-ul  
 
-**Important:** Microsoft Excel recalculează formulele la prima deschidere. Valorile din fișier nu sunt rezultate proaspăt recalculate de aplicație.
+**Important:** verdictele apar în aplicație imediat după pasul 4; toate cele trei modele sunt evaluate în Python din formulele originale. Exportul este opțional și nu recalculează nimic — fișierele conțin inputurile și rezultatele deja calculate.
 
 ## Istoric și rezultate (SQLite)
 
 Fiecare recomandare pre-match este memorată imuabil în `data/pontifybet.sqlite3`. Directorul `data/` este **persistent** și nu este atins de curățarea `outputs/`.
 
-- **Over 0.5 V4** și **Șansă Dublă V2** sunt înghețate (`FROZEN_PREMATCH`) direct la generarea analizei, pentru că verdictul lor este evaluat din formulele workbook-ului.
-- **Cornere Multi-Line V14** intră în starea `PENDING_EXCEL_RECALC`: verdictul este calculat de Microsoft Excel. Deschide `corners_*.xlsx` din export, salvează-l, apoi încarcă-l în secțiunea *Istoric și rezultate → Import verdicte Cornere din Excel recalculat*. Un workbook care nu corespunde șablonului sau care nu a fost recalculat este respins cu `IMPORT BLOCAT`.
+- **Over 0.5 V4**, **Șansă Dublă V2** și **Cornere Multi-Line V14** sunt înghețate (`FROZEN_PREMATCH`) direct la generarea analizei: verdictul fiecăruia este evaluat din formulele workbook-ului, în Python.
+- Cornere persistă toate cele 14 linii per meci (șase Over, opt Under), pe `market` și `line`.
+- `PENDING_EXCEL_RECALC` rămâne doar ca stare istorică, pentru înregistrările Cornere salvate înainte de motorul V14. Ele se completează în continuare din secțiunea *Istoric și rezultate → Import verdicte Cornere din Excel recalculat*; un workbook care nu corespunde șablonului este respins cu `IMPORT BLOCAT`. Atenție: recalcularea externă cere un Excel cu funcții de matrice dinamică (Microsoft 365 / Excel 2024), pentru că `Core_Nativ` folosește `FILTER`.
 
 După terminarea meciurilor, butonul **Actualizează rezultate** preia scorul și cornerele oficiale din FootyStats (`/match`), le salvează în `match_results` și calculează settlement-ul HIT / MISS. Recomandarea înghețată nu se modifică niciodată, iar datele lipsă devin `RESULT DATA UNAVAILABLE`, nu MISS.
 

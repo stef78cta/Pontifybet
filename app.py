@@ -242,10 +242,11 @@ st.write(
     "Aplicația completează copii ale șabloanelor Excel — fără a modifica originalele."
 )
 st.info(
-    "Over 0.5 și Șansă Dublă sunt calculate în Python: verdict, nivel, scor și "
-    "probabilități oficiale apar în tabelele de mai jos. "
+    "Over 0.5, Șansă Dublă și Cornere Multiline V14 sunt calculate în Python prin "
+    "formulele originale ale șabloanelor: verdict, nivel, scor și probabilități "
+    "oficiale apar în tabelele de mai jos, fără recalculare în Microsoft Excel. "
     "Șansă Dublă LIVE derivează 1X2 din goluri/xG (Poisson independent, etichetă "
-    "DERIVED), nu din Dixon–Coles/Elo Excel. Cornere rămân calculate în Microsoft Excel."
+    "DERIVED), nu din Dixon–Coles/Elo Excel."
 )
 st.caption("Mod date: **LIVE (FootyStats)**")
 
@@ -492,6 +493,51 @@ if "last_result" in st.session_state:
             column_order=list(dc_display[0].keys()) if dc_display else None,
         )
 
+    corners_rows = [r for r in result_rows if r.get("model_id") == "corners"]
+    if corners_rows:
+        st.subheader("Recomandare finală Cornere Multiline V14")
+        st.caption(
+            "Cele 14 linii (O3,5–O8,5 și U10,5–U17,5) sunt calculate în aplicație prin "
+            "formulele workbook-ului V14, pe istoric nativ FootyStats. "
+            "Failure Gate / Tail Gate / Defensive Gate și OOS sunt controale de model, "
+            "nu verdictul: verdictul final este în coloana Verdict."
+        )
+        show_all_corners = st.toggle(
+            "Afișează toate cele 14 linii (inclusiv neeligibile)",
+            value=False,
+            key="corners_show_all",
+            help=(
+                "Implicit apar doar liniile eligibile pentru clasament. "
+                "Toate cele 14 rezultate rămân calculate, salvate în istoric și exportate."
+            ),
+        )
+        corners_display = ui_tables.corners_summary_rows(
+            corners_rows,
+            fmt_prob=_fmt_prob,
+            fmt_score=_fmt_score,
+            show_all=show_all_corners,
+        )
+        st.dataframe(
+            corners_display,
+            use_container_width=True,
+            hide_index=True,
+            column_order=list(corners_display[0].keys()) if corners_display else None,
+        )
+        corners_bundle = getattr(st.session_state.get("analysis_snapshot"), "corners", None)
+        top_live = ui_tables.corners_top_live_rows(
+            getattr(corners_bundle, "top_live", []) or [],
+            fmt_prob=_fmt_prob,
+            fmt_score=_fmt_score,
+        )
+        if top_live:
+            st.markdown("**Top LIVE Cornere** (maximum o linie per meci, maximum zece rânduri)")
+            st.dataframe(top_live, use_container_width=True, hide_index=True)
+            if getattr(corners_bundle, "rank_live_source", "") == "python_cross_batch":
+                st.caption(
+                    "Clasamentul a fost recompus în Python peste loturile de evaluare, "
+                    "cu aceeași ordine ca selectorul din Dashboard."
+                )
+
     validation_rows = ui_tables.validation_summary_rows(
         result_rows,
         fmt_prob=_fmt_prob,
@@ -608,11 +654,19 @@ if history_summary:
     for err in history_summary.get("errors", []):
         st.warning(err)
 
-with st.expander("Import verdicte Cornere din Excel recalculat"):
+with st.expander("Import verdicte Cornere din Excel recalculat (compatibilitate)"):
     st.write(
-        "Cornere V14 este calculat de Microsoft Excel. Deschide fișierul "
-        "`corners_*.xlsx` din export, salvează-l, apoi încarcă-l aici ca "
-        "verdictele să fie înghețate în istoric."
+        "Analizele noi nu mai au nevoie de acest pas: Cornere V14 este calculat în "
+        "aplicație și înghețat direct în istoric. "
+        "Importul rămâne disponibil doar pentru înregistrările vechi rămase în starea "
+        "`PENDING_EXCEL_RECALC`: deschide fișierul `corners_*.xlsx` din export, "
+        "salvează-l, apoi încarcă-l aici."
+    )
+    st.caption(
+        "Recalcularea externă are nevoie de un Excel cu funcții de matrice dinamică "
+        "(Microsoft 365 sau Excel 2024): `Core_Nativ` folosește FILTER, iar un Excel "
+        "perpetual 2019/2021 returnează `#NAME?` și aduce tot modelul în G0 FAIL. "
+        "Rezultatele calculate în aplicație nu depind de acest pas."
     )
     uploaded = st.file_uploader("Workbook Cornere recalculat", type=["xlsx"])
     if uploaded is not None and st.button("Importă verdictele Cornere"):

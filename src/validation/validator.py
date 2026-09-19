@@ -134,22 +134,60 @@ def validate_match_for_model(match: MatchData, model_id: str) -> ValidationRepor
             ("away_sample", match.away.matches_played_away, "G0", True),
         ]
     elif model_id == "corners":
+        # V14 nu consumă mediile agregate ale API-ului: `Core_Nativ` derivă cele 12
+        # medii native direct din evenimentele din `Istoric_Nativ`. Mediile agregate
+        # rămân indicatori informativi (G1, non-blocking) — un meci fără ele poate
+        # avea istoric nativ complet valid. Controlul G0 real (eșantioane, duplicate,
+        # conflicte, acoperire) este evaluat de formulele modelului, care raportează
+        # NOT RELEASED sau G0 FAIL ca stări metodologice, nu ca blocaj de validare.
         checks = [
-            ("home_corners_for_season", match.home.corners_for_overall, "G0", True),
-            ("home_corners_against_season", match.home.corners_against_overall, "G0", True),
-            ("home_corners_for_home", match.home.corners_for_home, "G0", True),
-            ("home_corners_against_home", match.home.corners_against_home, "G0", True),
-            ("home_corners_for_recent", match.home.last5_corners_for, "G0", True),
-            ("home_corners_against_recent", match.home.last5_corners_against, "G0", True),
-            ("away_corners_for_season", match.away.corners_for_overall, "G0", True),
-            ("away_corners_against_season", match.away.corners_against_overall, "G0", True),
-            ("away_corners_for_away", match.away.corners_for_away, "G0", True),
-            ("away_corners_against_away", match.away.corners_against_away, "G0", True),
-            ("away_corners_for_recent", match.away.last5_corners_for, "G0", True),
-            ("away_corners_against_recent", match.away.last5_corners_against, "G0", True),
-            ("home_sample", match.home.matches_played_overall, "G0", True),
-            ("away_sample", match.away.matches_played_overall, "G0", True),
+            ("home_corners_for_season", match.home.corners_for_overall, "G1", False),
+            ("home_corners_against_season", match.home.corners_against_overall, "G1", False),
+            ("home_corners_for_home", match.home.corners_for_home, "G1", False),
+            ("home_corners_against_home", match.home.corners_against_home, "G1", False),
+            ("home_corners_for_recent", match.home.last5_corners_for, "G1", False),
+            ("home_corners_against_recent", match.home.last5_corners_against, "G1", False),
+            ("away_corners_for_season", match.away.corners_for_overall, "G1", False),
+            ("away_corners_against_season", match.away.corners_against_overall, "G1", False),
+            ("away_corners_for_away", match.away.corners_for_away, "G1", False),
+            ("away_corners_against_away", match.away.corners_against_away, "G1", False),
+            ("away_corners_for_recent", match.away.last5_corners_for, "G1", False),
+            ("away_corners_against_recent", match.away.last5_corners_against, "G1", False),
+            ("home_sample", match.home.matches_played_overall, "G1", False),
+            ("away_sample", match.away.matches_played_overall, "G1", False),
         ]
+        # Identitatea sursei istoricului nativ este singurul input G0 pe care
+        # aplicația trebuie să îl garanteze înainte de evaluare.
+        if match.season_id is None:
+            report.issues.append(
+                ValidationIssue(
+                    match_id=match.match_id,
+                    model_id=model_id,
+                    indicator="season_id",
+                    g_level="G0",
+                    status=DataStatus.NOT_AVAILABLE.value,
+                    blocking=True,
+                    reason=(
+                        "Sezonul FootyStats lipsește; istoricul nativ de cornere nu poate "
+                        "fi colectat pentru acest meci."
+                    ),
+                )
+            )
+        if not (match.home.name or "").strip() or not (match.away.name or "").strip():
+            report.issues.append(
+                ValidationIssue(
+                    match_id=match.match_id,
+                    model_id=model_id,
+                    indicator="team_names",
+                    g_level="G0",
+                    status=DataStatus.NOT_AVAILABLE.value,
+                    blocking=True,
+                    reason=(
+                        "Numele echipelor lipsește; identitatea meciului nu poate fi "
+                        "corelată cu evenimentele istorice native."
+                    ),
+                )
+            )
     else:
         report.issues.append(
             ValidationIssue(

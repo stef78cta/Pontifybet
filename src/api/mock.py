@@ -65,6 +65,25 @@ class MockFootyStatsClient(FootyStatsClient):
         self._count("test_call")
         return {"ok": True, "data": "Successful Test Call", "request_remaining": None, "request_limit": None}
 
+    def league_matches(
+        self, season_id: int, page: int = 1, *, all_pages: bool = False
+    ) -> list[dict[str, Any]]:
+        """Evenimente istorice sintetice pentru istoricul nativ Cornere.
+
+        Fixture-ul `mocks/league_matches.json` este generat de
+        `scripts/build_mock_league_matches.py` și este marcat explicit ca sintetic:
+        nu sunt răspunsuri FootyStats reale.
+        """
+        self._count("league_matches")
+        self._count(f"league_matches_{season_id}")
+        _ = page, all_pages
+        payload = self._load("league_matches.json")
+        seasons = payload.get("seasons") if isinstance(payload, dict) else None
+        if not isinstance(seasons, dict):
+            return []
+        fixtures = seasons.get(str(int(season_id))) or []
+        return [item for item in fixtures if isinstance(item, dict)]
+
     def league_teams(self, season_id: int) -> list[dict[str, Any]]:
         self._count("league_teams")
         self._count(f"league_teams_{season_id}")

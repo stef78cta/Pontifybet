@@ -8,6 +8,7 @@ from typing import Any
 from src.engines.double_chance.engine import DoubleChanceOfficialResult
 from src.engines.over05.engine import Over05OfficialResult
 from src.models.match_data import MatchData
+from src.orchestration.corners_bundle import CornersBundle, CornersMatchArtifacts
 from src.validation.validator import ValidationReport
 
 
@@ -58,7 +59,14 @@ class AnalysisSnapshot:
     rows: list[dict[str, Any]]
     over05: dict[str, Over05MatchArtifacts] = field(default_factory=dict)
     double_chance: dict[str, DoubleChanceMatchArtifacts] = field(default_factory=dict)
+    # Cornere V14 se calculează pe loturi, nu pe meci: bundle-ul păstrează atât
+    # rezultatele pe meci, cât și loturile și clasamentul Top LIVE comun.
+    corners: CornersBundle | None = None
     mode: str = "live"
+
+    @property
+    def corners_by_match(self) -> dict[str, CornersMatchArtifacts]:
+        return self.corners.by_match if self.corners is not None else {}
 
     def merged_report_dict(self) -> dict[str, Any]:
         from src.validation.validator import merge_reports

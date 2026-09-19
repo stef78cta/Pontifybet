@@ -11,18 +11,46 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-# Streamlit poate păstra module incomplete după reload parțial.
-_client_mod = sys.modules.get("src.api.client")
-if _client_mod is not None and not hasattr(_client_mod, "FootyStatsClient"):
-    sys.modules.pop("src.api.client", None)
+def _drop_stale_modules(*expectations: tuple[str, str]) -> None:
+    """Scoate din `sys.modules` modulele locale rămase la o versiune veche.
 
-_settings_mod = sys.modules.get("config.settings")
-if _settings_mod is not None and not hasattr(_settings_mod, "DEV_MODULE_RELOAD"):
-    sys.modules.pop("config.settings", None)
+    Serverul Streamlit este de lungă durată și păstrează modulele deja importate.
+    Dacă, de exemplu, `src.excel.integrity` a fost încărcat înainte de adăugarea
+    unei funcții, orice import nou al ei eșuează cu ImportError până la repornirea
+    serverului. Verificăm un simbol reprezentativ și forțăm reimportul din disc.
 
-_pipeline_mod = sys.modules.get("src.pipeline")
-if _pipeline_mod is not None and not hasattr(_pipeline_mod, "run_export"):
-    sys.modules.pop("src.pipeline", None)
+    Modulele aflate chiar în curs de import sunt sărite intenționat. Streamlit
+    rulează scriptul o dată pe sesiune, așa că două rulări pot fi simultane: un
+    modul pe jumătate executat nu are încă simbolul căutat, iar scoaterea lui
+    din `sys.modules` ar rupe importul celeilalte rulări cu
+    `KeyError: '<modul>'` din `importlib._bootstrap._load_unlocked`.
+    """
+    for name, attribute in expectations:
+        module = sys.modules.get(name)
+        if module is None or hasattr(module, attribute):
+            continue
+        spec = getattr(module, "__spec__", None)
+        if spec is not None and getattr(spec, "_initializing", False):
+            continue
+        sys.modules.pop(name, None)
+
+
+# Lista este deliberat minimală. Nu scoatem `src.excel.generator` sau adaptoarele:
+# ele ar primi o clasă `IntegrityError` nouă, în timp ce codul care le prinde ar
+# rămâne pe cea veche, iar un `except` nu s-ar mai potrivi.
+_drop_stale_modules(
+    ("src.api.client", "FootyStatsClient"),
+    ("config.settings", "DEV_MODULE_RELOAD"),
+    ("src.pipeline", "run_export"),
+    ("src.excel.integrity", "get_template_baseline"),
+    ("src.history.db", "open_db"),
+    ("src.history.repository", "save_prediction"),
+    ("src.history.snapshots", "persist_analysis"),
+    ("src.history.excel_ingest", "ingest_corners_workbook"),
+    ("src.history.results", "update_results"),
+    ("src.history.views", "history_table_rows"),
+    ("src.history.backtest", "by_corners_line"),
+)
 
 import streamlit as st
 
@@ -46,9 +74,7 @@ list_matches_for_filters = pipeline.list_matches_for_filters
 sort_listed_matches = pipeline.sort_listed_matches
 run_export = getattr(pipeline, "run_export", None)
 
-_orch_mod = sys.modules.get("src.orchestration.snapshot")
-if _orch_mod is not None and not hasattr(_orch_mod, "analysis_fingerprint"):
-    sys.modules.pop("src.orchestration.snapshot", None)
+_drop_stale_modules(("src.orchestration.snapshot", "analysis_fingerprint"))
 
 from src.orchestration.snapshot import analysis_fingerprint
 from src.security.auth import verify_password

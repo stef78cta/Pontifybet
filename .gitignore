@@ -18,6 +18,9 @@ outputs/
 .cache/
 *.log
 
+# Istoric local (SQLite) — persistent, dar date proprii, nu se publică
+data/
+
 # OS / IDE
 .DS_Store
 Thumbs.db

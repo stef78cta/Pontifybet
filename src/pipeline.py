@@ -17,6 +17,7 @@ from src.engines.over05 import compute_over05, match_to_over05_inputs
 from src.excel.generator import cleanup_run_dir, make_run_dir, write_validation_report, zip_outputs
 from src.excel import generator as excel_generator
 from src.excel.integrity import IntegrityError
+from src.history.snapshots import persist_analysis
 from src.models.match_data import MatchData
 from src.orchestration.double_chance_bundle import build_double_chance_artifacts
 from src.orchestration.match_fetcher import enrich_matches_batch
@@ -295,8 +296,13 @@ def run_analysis(
     model_ids: list[str],
     timezone_name: str = "Europe/Bucharest",
     progress: ProgressCb | None = None,
+    persist_history: bool = True,
 ) -> dict[str, Any]:
-    """Faza ANALYSIS: fetch → MatchData → validare → motoare → tabel UI (fără Excel/ZIP)."""
+    """Faza ANALYSIS: fetch → MatchData → validare → motoare → tabel UI (fără Excel/ZIP).
+
+    @param persist_history - jurnalizează predicțiile pre-match în SQLite. Excel
+        rămâne source of truth pentru verdict; SQLite doar îl memorează imuabil.
+    """
 
     def prog(msg: str, pct: float) -> None:
         if progress:
@@ -366,16 +372,26 @@ def run_analysis(
         prog("Analiza este gata.", 1.0)
 
         merged = merge_reports(reports)
+        errors: list[str] = []
+        history: dict[str, Any] = {}
+        if persist_history:
+            try:
+                history = persist_analysis(snapshot)
+            except Exception as exc:  # noqa: BLE001
+                # Istoricul este un jurnal lateral: dacă scrierea lui eșuează,
+                # analiza și exportul trebuie să rămână utilizabile.
+                errors.append(f"Istoric SQLite indisponibil: {exc}")
         return {
             "phase": "analysis",
             "snapshot": snapshot,
             "rows": rows,
             "report": merged.to_dict(),
-            "errors": [],
+            "errors": errors,
             "mode": snapshot.mode,
             "profiler": profiler.to_dict(),
             "analysis_fingerprint": fp,
             "export_ready": True,
+            "history": history,
         }
     finally:
         try:

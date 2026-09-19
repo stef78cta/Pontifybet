@@ -129,6 +129,23 @@ Toate testele trebuie să treacă (PASS) fără cheie API. Fixture-urile din `mo
 
 **Important:** Microsoft Excel recalculează formulele la prima deschidere. Valorile din fișier nu sunt rezultate proaspăt recalculate de aplicație.
 
+## Istoric și rezultate (SQLite)
+
+Fiecare recomandare pre-match este memorată imuabil în `data/pontifybet.sqlite3`. Directorul `data/` este **persistent** și nu este atins de curățarea `outputs/`.
+
+- **Over 0.5 V4** și **Șansă Dublă V2** sunt înghețate (`FROZEN_PREMATCH`) direct la generarea analizei, pentru că verdictul lor este evaluat din formulele workbook-ului.
+- **Cornere Multi-Line V14** intră în starea `PENDING_EXCEL_RECALC`: verdictul este calculat de Microsoft Excel. Deschide `corners_*.xlsx` din export, salvează-l, apoi încarcă-l în secțiunea *Istoric și rezultate → Import verdicte Cornere din Excel recalculat*. Un workbook care nu corespunde șablonului sau care nu a fost recalculat este respins cu `IMPORT BLOCAT`.
+
+După terminarea meciurilor, butonul **Actualizează rezultate** preia scorul și cornerele oficiale din FootyStats (`/match`), le salvează în `match_results` și calculează settlement-ul HIT / MISS. Recomandarea înghețată nu se modifică niciodată, iar datele lipsă devin `RESULT DATA UNAVAILABLE`, nu MISS.
+
+Inspecție rapidă a bazei:
+
+```powershell
+python scripts/show_history_schema.py
+```
+
+Baza poate fi redirecționată cu `PONTIFYBET_DB_PATH` (folosit și de teste, ca istoricul real să rămână curat).
+
 ## Docker (local)
 
 ```powershell
@@ -146,8 +163,10 @@ Deschide http://localhost:8501
 - `src/validation` — validator  
 - `src/adapters` — adaptoarele celor 3 modele  
 - `src/excel` — generator + integritate formule  
+- `src/history` — istoric SQLite, settlement, backtest  
 - `config/model_registry.yaml` — maparea celulelor  
 - `templates/` — copii ale șabloanelor (read-only la runtime)  
+- `data/` — istoric SQLite persistent (nu se comite)  
 - `mocks/` — răspunsuri de test  
 - `docs/` — inventar, metodologie, publicare  
 

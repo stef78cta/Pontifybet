@@ -52,6 +52,11 @@ if _orch_mod is not None and not hasattr(_orch_mod, "analysis_fingerprint"):
 
 from src.orchestration.snapshot import analysis_fingerprint
 from src.security.auth import verify_password
+from src.excel.integrity import IntegrityError
+import src.history.backtest as history_backtest
+import src.history.excel_ingest as history_ingest
+import src.history.results as history_results
+import src.history.views as history_views
 
 st.set_page_config(page_title="Pontifybet", page_icon="P", layout="wide")
 ensure_runtime_dirs()
@@ -537,3 +542,133 @@ if "last_result" in st.session_state:
             if clicked:
                 cleanup_after_download(export_result["run_dir"])
                 st.session_state.export_result = None
+
+# --- Istoric și rezultate ---
+st.divider()
+st.subheader("Istoric și rezultate")
+st.caption(
+    "Predicțiile pre-match sunt memorate imuabil în SQLite (`data/`), separat de "
+    "`outputs/`. Rezultatele oficiale vin din FootyStats și nu modifică niciodată "
+    "recomandarea înghețată."
+)
+
+history_summary = st.session_state.get("history_update_summary")
+col_btn, col_pending = st.columns([2.4, 4])
+with col_btn:
+    update_clicked = st.button("Actualizează rezultate")
+with col_pending:
+    try:
+        st.metric("Predicții fără settlement final", history_results.pending_count())
+    except Exception as exc:  # noqa: BLE001
+        st.warning(f"Istoricul nu poate fi citit: {exc}")
+
+if update_clicked:
+    with st.spinner("Preiau rezultatele oficiale din FootyStats…"):
+        try:
+            history_summary = history_results.update_results().to_dict()
+            st.session_state.history_update_summary = history_summary
+        except FootyStatsError as exc:
+            st.error(exc.user_message)
+        except Exception as exc:  # noqa: BLE001
+            st.error(f"Actualizarea rezultatelor a eșuat: {exc}")
+
+if history_summary:
+    m1, m2, m3, m4, m5 = st.columns(5)
+    m1.metric("Predicții procesate", history_summary["pending_predictions"])
+    m2.metric("Rezultate actualizate", history_summary["results_updated"])
+    m3.metric("HIT", history_summary["hit"])
+    m4.metric("MISS", history_summary["miss"])
+    m5.metric("Rezultat indisponibil", history_summary["result_data_unavailable"])
+    for err in history_summary.get("errors", []):
+        st.warning(err)
+
+with st.expander("Import verdicte Cornere din Excel recalculat"):
+    st.write(
+        "Cornere V14 este calculat de Microsoft Excel. Deschide fișierul "
+        "`corners_*.xlsx` din export, salvează-l, apoi încarcă-l aici ca "
+        "verdictele să fie înghețate în istoric."
+    )
+    uploaded = st.file_uploader("Workbook Cornere recalculat", type=["xlsx"])
+    if uploaded is not None and st.button("Importă verdictele Cornere"):
+        tmp_path = Path(settings.DATA_DIR) / "_import_corners.xlsx"
+        try:
+            tmp_path.write_bytes(uploaded.getbuffer())
+            report = history_ingest.ingest_corners_workbook(tmp_path)
+            st.success(
+                f"Linii citite: {report['lines_read']} | înghețate: {report['frozen']} | "
+                f"deja înghețate: {report['already_frozen']} | "
+                f"necunoscute: {report['unknown_predictions']}"
+            )
+        except IntegrityError as exc:
+            st.error(exc.message)
+        except Exception as exc:  # noqa: BLE001
+            st.error(f"Importul a eșuat: {exc}")
+        finally:
+            tmp_path.unlink(missing_ok=True)
+
+try:
+    _, history_leagues = history_views.load_history(limit=1)
+except Exception as exc:  # noqa: BLE001
+    history_leagues = []
+    st.warning(f"Istoricul nu poate fi citit: {exc}")
+
+f1, f2, f3 = st.columns(3)
+with f1:
+    filter_models = st.multiselect(
+        "Model",
+        options=list(history_views.MODEL_LABELS.keys()),
+        format_func=lambda x: history_views.MODEL_LABELS[x],
+        key="history_filter_models",
+    )
+with f2:
+    filter_leagues = st.multiselect("Ligă", options=history_leagues, key="history_filter_leagues")
+with f3:
+    filter_outcomes = st.multiselect(
+        "Outcome", options=["HIT", "MISS"], key="history_filter_outcomes"
+    )
+
+try:
+    history_rows, _ = history_views.load_history(
+        model_keys=filter_models,
+        leagues=filter_leagues,
+        outcomes=filter_outcomes,
+        timezone_name=timezone_name,
+    )
+except Exception as exc:  # noqa: BLE001
+    history_rows = []
+    st.warning(f"Istoricul nu poate fi citit: {exc}")
+
+if history_rows:
+    st.dataframe(
+        history_rows,
+        use_container_width=True,
+        hide_index=True,
+        column_order=list(history_rows[0].keys()),
+    )
+else:
+    st.info("Încă nu există predicții în istoric pentru filtrele alese.")
+
+with st.expander("Backtest (doar măsurare)"):
+    try:
+        totals = history_backtest.summary()
+        b1, b2, b3, b4 = st.columns(4)
+        b1.metric("Predicții", totals["predictions"])
+        b2.metric("Settled", totals["settled"])
+        b3.metric("HIT / MISS", f"{totals['hit']} / {totals['miss']}")
+        b4.metric(
+            "Hit-rate",
+            "—" if totals["hit_rate"] is None else f"{totals['hit_rate'] * 100:.1f}%",
+        )
+        for title, rows in (
+            ("Pe model", history_backtest.by_model()),
+            ("Pe Risk Level", history_backtest.by_risk_level()),
+            ("Pe ligă", history_backtest.by_league()),
+            ("Cornere: pe market/linie", history_backtest.by_corners_line()),
+        ):
+            st.markdown(f"**{title}**")
+            if rows:
+                st.dataframe(rows, use_container_width=True, hide_index=True)
+            else:
+                st.caption("Fără settlement-uri încă.")
+    except Exception as exc:  # noqa: BLE001
+        st.warning(f"Backtest-ul nu poate fi calculat: {exc}")

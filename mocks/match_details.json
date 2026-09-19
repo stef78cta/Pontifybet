@@ -1,12 +1,44 @@
 {
   "default": {
     "id": 0,
-    "status": "incomplete"
+    "status": "incomplete",
+    "homeGoalCount": -1,
+    "awayGoalCount": -1,
+    "team_a_corners": -1,
+    "team_b_corners": -1
   },
   "90001": {
     "id": 90001,
-    "status": "incomplete",
-    "homeGoals": -1,
-    "awayGoals": -1
+    "status": "complete",
+    "homeGoals": ["17", "43"],
+    "awayGoals": ["66"],
+    "homeGoalCount": 2,
+    "awayGoalCount": 1,
+    "totalGoalCount": 3,
+    "team_a_corners": 6,
+    "team_b_corners": 5,
+    "totalCornerCount": 11
+  },
+  "90002": {
+    "id": 90002,
+    "status": "complete",
+    "homeGoals": [],
+    "awayGoals": [],
+    "homeGoalCount": 0,
+    "awayGoalCount": 0,
+    "totalGoalCount": 0,
+    "team_a_corners": 4,
+    "team_b_corners": 3,
+    "totalCornerCount": 7
+  },
+  "90003": {
+    "id": 90003,
+    "status": "complete",
+    "homeGoalCount": 1,
+    "awayGoalCount": 1,
+    "totalGoalCount": 2,
+    "team_a_corners": -1,
+    "team_b_corners": -1,
+    "totalCornerCount": -1
   }
 }

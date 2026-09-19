@@ -17,6 +17,27 @@ MOCKS_DIR = ROOT / "mocks"
 CONFIG_DIR = ROOT / "config"
 REGISTRY_PATH = CONFIG_DIR / "model_registry.yaml"
 
+# `outputs/` este efemer (curățat după download); `data/` este persistent și
+# conține istoricul SQLite. Cele două nu trebuie confundate niciodată.
+DATA_DIR = ROOT / "data"
+
+
+def get_sqlite_path() -> Path:
+    """Calea bazei de istoric/backtest — unica sursă a acestei căi în proiect.
+
+    Citită la fiecare apel (nu la import) ca testele și scripturile să poată
+    redirecționa baza prin `PONTIFYBET_DB_PATH` sau prin monkeypatch pe modul.
+    """
+    override = os.getenv("PONTIFYBET_DB_PATH", "").strip()
+    if override:
+        return Path(override)
+    return DATA_DIR / "pontifybet.sqlite3"
+
+
+# Cât timp după kickoff considerăm că un meci „ar fi trebuit să se termine”
+# și merită o cerere de rezultat la FootyStats (90' + pauză + prelungiri/raportare).
+RESULT_SETTLE_DELAY_SEC = int(os.getenv("PONTIFYBET_RESULT_DELAY_SEC", "9000"))
+
 FOOTYSTATS_BASE_URL = "https://api.football-data-api.com"
 FOOTYSTATS_TIMEOUT = float(os.getenv("FOOTYSTATS_TIMEOUT", "20"))
 FOOTYSTATS_RETRIES = int(os.getenv("FOOTYSTATS_RETRIES", "2"))
@@ -60,3 +81,4 @@ def ensure_runtime_dirs() -> None:
     """Creează directoarele runtime necesare."""
     OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)

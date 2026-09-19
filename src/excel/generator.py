@@ -139,12 +139,43 @@ def write_double_chance_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -
         "haircut_base",
         "haircut_early",
         "haircut_total",
+        "p_scoreline",
+        "p_strength",
+        "p_market_component",
+        "contribution_scoreline",
+        "contribution_strength",
+        "contribution_market",
         "risk_failure_component",
         "risk_haircut_component",
         "prudent_gate_surcharge",
         "draw_gate_surcharge",
         "away_favorite_surcharge",
         "gate_fail_surcharge",
+        "fragility_level_surcharge",
+        "pdraw_model_raw",
+        "pdraw_model_plus_haircut",
+        "pdraw_market",
+        "pdraw_adj",
+    )
+    # Câmpuri de context, identice pentru cele trei selecții ale unui meci.
+    context_fields = (
+        "dc_sample_status",
+        "dc_prior_status",
+        "dc_prior_source",
+        "dc_prior_method",
+        "dc_shrinkage_applied",
+        "dc_sample_n_home",
+        "dc_sample_n_away",
+        "dc_prior_n_home",
+        "dc_prior_n_away",
+        "dc_weight_current",
+        "dc_weight_prior",
+        "dc_rate_before_shrinkage",
+        "dc_rate_after_shrinkage",
+        "dc_lambda_home_before",
+        "dc_lambda_home_after",
+        "dc_lambda_away_before",
+        "dc_lambda_away_after",
     )
     text_fields = (
         "market_direction",
@@ -176,12 +207,23 @@ def write_double_chance_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -
         "haircut_baza",
         "haircut_early",
         "haircut_total_E",
+        "p_scoreline",
+        "p_strength",
+        "p_market_devig",
+        "contrib_scoreline",
+        "contrib_strength",
+        "contrib_market",
         "risk_failure",
         "risk_haircut",
         "surcharge_prudent",
         "surcharge_draw",
         "surcharge_away_fav",
         "surcharge_fail",
+        "surcharge_fragility_nivel",
+        "pdraw_model_raw",
+        "pdraw_model_dupa_haircut",
+        "pdraw_market",
+        "pdraw_adjusted",
         "market_direction_O",
         "protected_strength_P",
         "ps_override_B37_B38",
@@ -193,7 +235,21 @@ def write_double_chance_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -
         "defensiv_AE",
         "esantion_C9",
         "prior_C10",
+        "prior_sursa_D10",
         "prior_metoda_I10",
+        "shrinkage_aplicat",
+        "n_current_home",
+        "n_current_away",
+        "n_prior_home",
+        "n_prior_away",
+        "weight_current",
+        "weight_prior",
+        "rata_inainte_shrinkage",
+        "rata_dupa_shrinkage",
+        "lambda_home_inainte",
+        "lambda_home_dupa",
+        "lambda_away_inainte",
+        "lambda_away_dupa",
     ]
     lines = [",".join(header)]
 
@@ -211,9 +267,10 @@ def write_double_chance_results_csv(run_dir: Path, rows: list[dict[str, Any]]) -
             quoted(row.get("echipe")),
         ]
         context = [
-            quoted(row.get("dc_sample_status")),
-            quoted(row.get("dc_prior_status")),
-            quoted(row.get("dc_prior_method")),
+            quoted(row.get(name))
+            if isinstance(row.get(name), str) or row.get(name) is None
+            else number(row.get(name))
+            for name in context_fields
         ]
         selections = row.get("dc_selections") or []
         if not selections:

@@ -50,6 +50,37 @@ def _unix_to_local_hhmm(date_unix: Any, timezone_name: str) -> tuple[str, int | 
     return local.strftime("%H:%M"), ts
 
 
+def _double_chance_prior_weights(
+    match: MatchData, mapping: dict[str, Any]
+) -> dict[str, Any]:
+    """Ponderile efective current/prior din shrinkage, pentru coloanele de audit.
+
+    Reutilizează exact decizia și urma din motor; nu recalculează blending-ul.
+    """
+    from src.engines.double_chance.inputs import (
+        derived_1x2_trace,
+        league_prior_is_valid,
+        needs_early_season_prior,
+    )
+
+    applied = needs_early_season_prior(
+        mapping.get("Input_Meci!B36"), mapping.get("Input_Meci!C36")
+    ) and league_prior_is_valid(match)
+    trace = derived_1x2_trace(match, apply_shrinkage=applied)
+    rate = trace.rate("scoreline.home_attack")
+    return {
+        "dc_shrinkage_applied": "DA" if applied else "NU",
+        "dc_weight_current": rate.weight_current if rate else None,
+        "dc_weight_prior": rate.weight_prior if rate else None,
+        "dc_rate_before_shrinkage": rate.observed if rate else None,
+        "dc_rate_after_shrinkage": rate.shrunk if rate else None,
+        "dc_lambda_home_before": trace.lambda_scoreline_raw[0],
+        "dc_lambda_home_after": trace.lambda_scoreline[0],
+        "dc_lambda_away_before": trace.lambda_scoreline_raw[1],
+        "dc_lambda_away_after": trace.lambda_scoreline[1],
+    }
+
+
 def _direct_league_name(match: dict[str, Any]) -> str:
     raw = match.get("league_name") or match.get("competition_name")
     if isinstance(raw, dict):
@@ -292,10 +323,13 @@ def run_analysis(
                         row["dc_sample_status"] = mapping.get("Surse_Date!C9")
                         row["dc_prior_status"] = mapping.get("Surse_Date!C10")
                         row["dc_prior_method"] = mapping.get("Surse_Date!I10")
+                        row["dc_prior_source"] = mapping.get("Surse_Date!D10")
+                        row["dc_prior_cutoff"] = mapping.get("Surse_Date!F10")
                         row["dc_prior_n_home"] = mapping.get("Surse_Date!G10")
                         row["dc_prior_n_away"] = mapping.get("Surse_Date!H10")
                         row["dc_sample_n_home"] = mapping.get("Input_Meci!B36")
                         row["dc_sample_n_away"] = mapping.get("Input_Meci!C36")
+                        row.update(_double_chance_prior_weights(md, mapping))
                     except Exception as exc:
                         row["recommendation"] = "EROARE MOTOR"
                         row["model_g0"] = "FAIL"

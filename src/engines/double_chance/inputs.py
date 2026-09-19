@@ -7,6 +7,7 @@ din goluri/xG). Nu sunt Dixon–Coles sau Elo din Excel.
 from __future__ import annotations
 
 import math
+from dataclasses import dataclass
 from datetime import timezone
 from typing import Any
 
@@ -207,6 +208,79 @@ def _maybe_shrink(
     return empirical_bayes_rate(observed, n_obs, prior, n_prior)
 
 
+@dataclass(frozen=True)
+class RateTrace:
+    """Un parametru de atac/apărare, înainte și după shrinkage.
+
+    Ponderile sunt derivate din aceleași mărimi pe care le folosește
+    `empirical_bayes_rate`, deci nu pot descrie altceva decât ce s-a calculat.
+    """
+
+    name: str
+    observed: float | None
+    n_current: float | None
+    prior: float | None
+    n_prior: float | None
+    applied: bool
+
+    @property
+    def prior_usable(self) -> bool:
+        return (
+            self.applied
+            and self.prior is not None
+            and self.n_prior is not None
+            and self.n_prior > 0
+            and self.prior >= 0
+        )
+
+    @property
+    def shrunk(self) -> float | None:
+        if not self.applied:
+            return self.observed
+        return empirical_bayes_rate(self.observed, self.n_current, self.prior, self.n_prior)
+
+    @property
+    def weight_current(self) -> float | None:
+        if self.observed is None and not self.prior_usable:
+            return None
+        if not self.prior_usable:
+            return 1.0
+        sample = 0.0 if self.n_current is None or self.n_current < 0 else float(self.n_current)
+        return sample / (sample + float(self.n_prior))
+
+    @property
+    def weight_prior(self) -> float | None:
+        current = self.weight_current
+        return None if current is None else 1.0 - current
+
+
+@dataclass(frozen=True)
+class Upstream1X2Trace:
+    """Lanțul complet raw → prior → shrinkage → λ → distribuție, pentru audit."""
+
+    shrinkage_applied: bool
+    prior_home: float | None
+    prior_away: float | None
+    prior_overall: float | None
+    n_prior_home: float | None
+    n_prior_away: float | None
+    n_prior_overall: float | None
+    n_current_home: float | None
+    n_current_away: float | None
+    rates: tuple[RateTrace, ...]
+    lambda_scoreline_raw: tuple[float | None, float | None]
+    lambda_scoreline: tuple[float | None, float | None]
+    lambda_strength_raw: tuple[float | None, float | None]
+    lambda_strength: tuple[float | None, float | None]
+    scoreline_raw: tuple[float, float, float] | None
+    strength_raw: tuple[float, float, float] | None
+    scoreline: tuple[float, float, float] | None
+    strength: tuple[float, float, float] | None
+
+    def rate(self, name: str) -> RateTrace | None:
+        return next((item for item in self.rates if item.name == name), None)
+
+
 def derived_1x2_distributions(
     match: MatchData,
     *,
@@ -216,6 +290,20 @@ def derived_1x2_distributions(
 
     La SMALL SAMPLE, λ este tras către priorul de ligă (AJ/AK) cu N-ul real
     din league-teams. Confidence cap rămâne haircut-ul Excel (Uncertainty_v2).
+    """
+    trace = derived_1x2_trace(match, apply_shrinkage=apply_shrinkage)
+    return trace.scoreline, trace.strength
+
+
+def derived_1x2_trace(
+    match: MatchData,
+    *,
+    apply_shrinkage: bool = False,
+) -> Upstream1X2Trace:
+    """Aceeași derivare ca `derived_1x2_distributions`, dar cu urma completă.
+
+    Funcția de producție delegă aici, deci urma descrie exact calculul efectuat;
+    nu este o reconstrucție paralelă care ar putea devia.
     """
     home = match.home
     away = match.away
@@ -237,7 +325,17 @@ def derived_1x2_distributions(
         ) / (n_prior_home + n_prior_away)
         n_prior_overall = n_prior_home + n_prior_away
 
-    home_att_ha = _maybe_shrink(
+    def traced(
+        name: str,
+        observed: float | None,
+        n_current: float | None,
+        prior: float | None,
+        n_prior: float | None,
+    ) -> RateTrace:
+        return RateTrace(name, observed, n_current, prior, n_prior, apply_shrinkage)
+
+    rate_home_att_ha = traced(
+        "scoreline.home_attack",
         _blend_rate(
             _per_match(home.goals_for_home, home.matches_played_home),
             _n(home.xg_for_home),
@@ -245,9 +343,9 @@ def derived_1x2_distributions(
         n_home,
         home_prior,
         n_prior_home,
-        apply=apply_shrinkage,
     )
-    away_def_ha = _maybe_shrink(
+    rate_away_def_ha = traced(
+        "scoreline.away_defence",
         _blend_rate(
             _per_match(away.goals_against_away, away.matches_played_away),
             _n(away.xg_against_away),
@@ -255,9 +353,9 @@ def derived_1x2_distributions(
         n_away,
         home_prior,
         n_prior_home,
-        apply=apply_shrinkage,
     )
-    away_att_ha = _maybe_shrink(
+    rate_away_att_ha = traced(
+        "scoreline.away_attack",
         _blend_rate(
             _per_match(away.goals_for_away, away.matches_played_away),
             _n(away.xg_for_away),
@@ -265,9 +363,9 @@ def derived_1x2_distributions(
         n_away,
         away_prior,
         n_prior_away,
-        apply=apply_shrinkage,
     )
-    home_def_ha = _maybe_shrink(
+    rate_home_def_ha = traced(
+        "scoreline.home_defence",
         _blend_rate(
             _per_match(home.goals_against_home, home.matches_played_home),
             _n(home.xg_against_home),
@@ -275,17 +373,31 @@ def derived_1x2_distributions(
         n_home,
         away_prior,
         n_prior_away,
-        apply=apply_shrinkage,
     )
+    home_att_ha = rate_home_att_ha.shrunk
+    away_def_ha = rate_away_def_ha.shrunk
+    away_att_ha = rate_away_att_ha.shrunk
+    home_def_ha = rate_home_def_ha.shrunk
     lambda_home_ha = _lambda_from_sides(home_att_ha, away_def_ha)
     lambda_away_ha = _lambda_from_sides(away_att_ha, home_def_ha)
+    lambda_home_ha_raw = _lambda_from_sides(
+        rate_home_att_ha.observed, rate_away_def_ha.observed
+    )
+    lambda_away_ha_raw = _lambda_from_sides(
+        rate_away_att_ha.observed, rate_home_def_ha.observed
+    )
     scoreline = (
         poisson_1x2(lambda_home_ha, lambda_away_ha)
         if lambda_home_ha is not None and lambda_away_ha is not None
         else None
     )
+    scoreline_raw = (
+        poisson_1x2(lambda_home_ha_raw, lambda_away_ha_raw)
+        if lambda_home_ha_raw is not None and lambda_away_ha_raw is not None
+        else None
+    )
 
-    home_att_ov = _maybe_shrink(
+    observed_home_att_ov = (
         _blend_rate(
             _combined_per_match(
                 home.goals_for_home,
@@ -296,13 +408,9 @@ def derived_1x2_distributions(
                 home.matches_played_overall,
             ),
             _blend_rate(_n(home.xg_for_home), _n(home.xg_for_away)),
-        ),
-        n_home_ov if n_home_ov is not None else n_home,
-        overall_prior,
-        n_prior_overall,
-        apply=apply_shrinkage,
+        )
     )
-    away_def_ov = _maybe_shrink(
+    observed_away_def_ov = (
         _blend_rate(
             _combined_per_match(
                 away.goals_against_home,
@@ -313,13 +421,9 @@ def derived_1x2_distributions(
                 away.matches_played_overall,
             ),
             _blend_rate(_n(away.xg_against_home), _n(away.xg_against_away)),
-        ),
-        n_away_ov if n_away_ov is not None else n_away,
-        overall_prior,
-        n_prior_overall,
-        apply=apply_shrinkage,
+        )
     )
-    away_att_ov = _maybe_shrink(
+    observed_away_att_ov = (
         _blend_rate(
             _combined_per_match(
                 away.goals_for_home,
@@ -330,13 +434,9 @@ def derived_1x2_distributions(
                 away.matches_played_overall,
             ),
             _blend_rate(_n(away.xg_for_home), _n(away.xg_for_away)),
-        ),
-        n_away_ov if n_away_ov is not None else n_away,
-        overall_prior,
-        n_prior_overall,
-        apply=apply_shrinkage,
+        )
     )
-    home_def_ov = _maybe_shrink(
+    observed_home_def_ov = (
         _blend_rate(
             _combined_per_match(
                 home.goals_against_home,
@@ -347,25 +447,97 @@ def derived_1x2_distributions(
                 home.matches_played_overall,
             ),
             _blend_rate(_n(home.xg_against_home), _n(home.xg_against_away)),
-        ),
-        n_home_ov if n_home_ov is not None else n_home,
+        )
+    )
+    n_home_effective = n_home_ov if n_home_ov is not None else n_home
+    n_away_effective = n_away_ov if n_away_ov is not None else n_away
+    rate_home_att_ov = traced(
+        "strength.home_attack",
+        observed_home_att_ov,
+        n_home_effective,
         overall_prior,
         n_prior_overall,
-        apply=apply_shrinkage,
     )
+    rate_away_def_ov = traced(
+        "strength.away_defence",
+        observed_away_def_ov,
+        n_away_effective,
+        overall_prior,
+        n_prior_overall,
+    )
+    rate_away_att_ov = traced(
+        "strength.away_attack",
+        observed_away_att_ov,
+        n_away_effective,
+        overall_prior,
+        n_prior_overall,
+    )
+    rate_home_def_ov = traced(
+        "strength.home_defence",
+        observed_home_def_ov,
+        n_home_effective,
+        overall_prior,
+        n_prior_overall,
+    )
+    home_att_ov = rate_home_att_ov.shrunk
+    away_def_ov = rate_away_def_ov.shrunk
+    away_att_ov = rate_away_att_ov.shrunk
+    home_def_ov = rate_home_def_ov.shrunk
     lambda_home_ov = _lambda_from_sides(home_att_ov, away_def_ov)
     lambda_away_ov = _lambda_from_sides(away_att_ov, home_def_ov)
+    lambda_home_ov_raw = _lambda_from_sides(
+        rate_home_att_ov.observed, rate_away_def_ov.observed
+    )
+    lambda_away_ov_raw = _lambda_from_sides(
+        rate_away_att_ov.observed, rate_home_def_ov.observed
+    )
     strength = (
         poisson_1x2(lambda_home_ov, lambda_away_ov)
         if lambda_home_ov is not None and lambda_away_ov is not None
         else None
     )
+    strength_raw = (
+        poisson_1x2(lambda_home_ov_raw, lambda_away_ov_raw)
+        if lambda_home_ov_raw is not None and lambda_away_ov_raw is not None
+        else None
+    )
 
+    # Fallback istoric: o distribuție lipsă o împrumută pe cealaltă, ca Excel să
+    # primească trei rânduri valide în loc de un release blocat.
     if scoreline is None:
         scoreline = strength
     if strength is None:
         strength = scoreline
-    return scoreline, strength
+
+    return Upstream1X2Trace(
+        shrinkage_applied=apply_shrinkage,
+        prior_home=home_prior,
+        prior_away=away_prior,
+        prior_overall=overall_prior,
+        n_prior_home=n_prior_home,
+        n_prior_away=n_prior_away,
+        n_prior_overall=n_prior_overall,
+        n_current_home=n_home,
+        n_current_away=n_away,
+        rates=(
+            rate_home_att_ha,
+            rate_away_def_ha,
+            rate_away_att_ha,
+            rate_home_def_ha,
+            rate_home_att_ov,
+            rate_away_def_ov,
+            rate_away_att_ov,
+            rate_home_def_ov,
+        ),
+        lambda_scoreline_raw=(lambda_home_ha_raw, lambda_away_ha_raw),
+        lambda_scoreline=(lambda_home_ha, lambda_away_ha),
+        lambda_strength_raw=(lambda_home_ov_raw, lambda_away_ov_raw),
+        lambda_strength=(lambda_home_ov, lambda_away_ov),
+        scoreline_raw=scoreline_raw,
+        strength_raw=strength_raw,
+        scoreline=scoreline,
+        strength=strength,
+    )
 
 
 def _put_source(

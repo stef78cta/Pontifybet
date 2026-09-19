@@ -3,9 +3,28 @@
 **Status: DEZACTIVAT. Nu modifică production V2.**
 
 Documentul nu este o specificație de implementare. Descrie problemele metodologice
-identificate în auditul V2 (`audit_sansa_dubla_v2_data_lineage.md`) care **nu pot fi
-reparate ca bug de paritate**, fiindcă V2 se comportă exact cum a fost proiectat.
+identificate în auditul V2 (`audit_sansa_dubla_v2_data_lineage.md`,
+`audit_prior_shrinkage.md`, `audit_scoreline_vs_strength.md`) care **nu pot fi reparate ca
+bug de paritate**, fiindcă V2 se comportă exact cum a fost proiectat.
 Fiecare propunere cere închidere metodologică și backtest înainte de orice cod.
+
+## Ierarhia cauzelor, măsurată
+
+Lot: FootyStats LIVE 2026-09-19, 157 meciuri, 429 selecții cu probabilități complete.
+Metrica este raportul de compresie față de piață: cât din semnalul de diferențiere al
+pieței păstrează fiecare etapă (1,000 = identic cu piața, 0 = uniform).
+
+| Etapă | raport vs piață | pierdere proprie |
+| --- | --- | --- |
+| Piață de-vig | 1,000 | — |
+| Scoreline brut | 0,952 | −4,8% |
+| Scoreline după shrinkage | 0,722 | **−23,0%** |
+| Strength brut | 0,749 | −20,3% |
+| Strength după shrinkage | 0,337 | **−41,2%** |
+| Blend final | 0,620 | — |
+
+Prioritatea intervențiilor rezultă direct din tabel: **§2 (priorul) înainte de orice
+altceva**, apoi §1b (agregarea overall), apoi §1a (Dixon-Coles), apoi §3–§5.
 
 ---
 
@@ -21,11 +40,26 @@ overall pentru rândul 7.
 P_blend = 0.50 · P_scoreline + 0.25 · P_strength + 0.25 · P_market
 ```
 
-**Consecința matematică.** Ponderarea presupune surse cu erori necorelate. Dacă
-`P_scoreline` și `P_strength` provin din același estimator, corelația lor este aproape 1,
-iar ponderea efectivă a informației de goluri este 0.75, nu 0.50. Varianța blend-ului este
-subestimată, deci intervalele de încredere sunt prea strânse și haircut-ul de confidence
-compensează un risc pe care nu îl măsoară corect.
+**Consecința matematică.** Ponderarea presupune surse cu erori necorelate. Corelația
+măsurată între P(1) produs de cele două componente brute este **0,774** pe 157 de meciuri,
+în timp ce corelația fiecăreia cu piața este ~0,50. Cele două „modele independente” seamănă
+între ele mai mult decât seamănă cu piața. Ponderea efectivă a informației de goluri este
+deci ~0,75, nu 0,50. Varianța blend-ului este subestimată, deci intervalele de încredere
+sunt prea strânse și haircut-ul de confidence compensează un risc pe care nu îl măsoară.
+
+**Sub-problema 1b, cu impact mai mare decât 1a.** Rândul 7 folosește statistici *overall*
+(acasă + deplasare cumulate), ceea ce șterge avantajul de teren. Măsurat, componenta
+strength păstrează doar **0,749** din semnalul pieței **chiar fără shrinkage**, față de
+0,952 pentru scoreline. Un sfert din capacitatea de diferențiere se pierde numai prin
+agregare. Aceasta este o problemă separată de lipsa unui Elo și e mai ieftin de rezolvat:
+rândul 7 ar trebui să folosească un rating care păstrează contextul H/A.
+
+**Observație care infirmă o ipoteză anterioară.** `_lambda_from_sides` folosește media
+aritmetică dintre atacul unei echipe și apărarea adversarei, în locul formei multiplicative
+standard. Analitic, media înjumătățește abaterea față de medie. Măsurat pe lotul real însă,
+scoreline-ul brut păstrează 95,2% din semnalul pieței, deci pe intervalele de valori
+întâlnite efectiv **nu aceasta este cauza principală**. Rămâne o abatere de la forma
+canonică, de rezolvat, dar cu prioritate mică.
 
 **Alternativa propusă.** Două motoare cu adevărat distincte:
 
@@ -46,9 +80,11 @@ propunerea rămâne închisă.
 
 ## 2. Puterea priorului nu are sursă metodologică
 
+**Aceasta este cauza dominantă a diferenței față de piață.**
+
 **Problema.** Shrinkage-ul folosește `n_prior` = numărul total de meciuri H/A din ligă.
-Pentru o ligă cu ~180 de meciuri jucate și o echipă cu `N_current = 5`, ponderea proprie
-este `5 / 185 ≈ 2.7%`.
+Măsurat pe cele 393 de selecții cu shrinkage activ din lotul LIVE: `N_current` mediu = 2,8,
+`N_prior` mediu = 52,3, deci **ponderea priorului este 94,7%** și a datelor proprii 5,3%.
 
 **Formula V2 (implementată azi).**
 
@@ -57,9 +93,26 @@ rate_post = (n_current · rate_current + n_prior · rate_prior) / (n_current + n
 ```
 
 **Consecința matematică.** La `N_current < 8` (`Parametri!B17`), estimarea echipei este
-practic înlocuită de media ligii. Bayern și Union primesc λ aproape identice, iar modelul
-pierde tocmai diferențierea pe care trebuie s-o măsoare. Simultan, `Small_Sample_N = 8` își
-pierde sensul: nu mai marchează „puțină informație proprie”, ci „aproape numai prior”.
+practic înlocuită de media ligii. Caz-martor măsurat, Sporting CP – FC Arouca (piață:
+78,67% pentru gazde, `N = 3`):
+
+| Parametru | înainte | după | Δ |
+| --- | --- | --- | --- |
+| Atac Sporting acasă | 2,128 | 1,411 | −0,718 |
+| Atac Arouca în deplasare | 0,522 | 1,351 | **+0,830** |
+| λ oaspeți | 0,741 | 1,363 | +84% |
+| **P(1) scoreline** | **62,68%** | **37,93%** | **−24,75 pp** |
+
+Atacul echipei mai slabe este aproape dublat de prior. Rezultatul final: `P_model(1X)` =
+70,58% față de `P_market` = 92,00%, Risk Score 62, Nivel 4, verdict RIDICAT.
+
+Contra-proba: Molde – Aalesund (VERIFIED, `N = 10/9`, pondere proprie 100%) are Δ(1X) =
+−7,05 pp. **Bias-ul pe partea de favorit este de trei ori mai mare când shrinkage-ul e
+activ.**
+
+Simultan, `Small_Sample_N = 8` își pierde sensul: nu mai marchează „puțină informație
+proprie”, ci „aproape numai prior”, iar tranziția de la N=7 la N=8 mută ponderea proprie de
+la ~12% la 100% — o treaptă, nu o tranziție.
 
 **Alternativa propusă.** Un `kappa` fix, exprimat în meciuri echivalente, independent de
 mărimea ligii:
@@ -69,12 +122,20 @@ rate_post = (n_current · rate_current + kappa · rate_prior) / (n_current + kap
 ```
 
 cu `kappa` în intervalul 5–10, ales prin validare, nu prin inspecție. La `kappa = 8` și
-`N_current = 5`, echipa păstrează 38% din propriul semnal — coerent cu pragul
-`Small_Sample_N = 8`.
+`N_current = 3`, echipa păstrează 27% din propriul semnal în loc de 5,4% — de cinci ori mai
+mult, dar tot conservator. Un `kappa` fix rezolvă și problema de scară: astăzi o ligă cu
+300 de meciuri jucate produce un prior de trei ori mai greu decât una cu 100, fără nicio
+justificare metodologică.
 
 **Impact estimat.** Probabilități mai dispersate pentru favoriții cu eșantion mic; mai multe
 selecții trec de frontiera de Nivel 1. Exact de aceea propunerea **nu** poate fi adoptată
-fără backtest: ar arăta ca o relaxare mascată.
+fără backtest: ar arăta ca o relaxare mascată. Ordinul de mărime: pe caz-martor, P(1)
+scoreline ar urca de la 37,93% spre banda 50–55%, încă sub cele 62,68% brute.
+
+**Sub-problema 2b.** Priorul este media brută a ligii, identică pentru toate echipele. Un
+promovat și un campion primesc același prior. Un prior condiționat pe forța echipei
+(clasament, rating de sezon precedent) ar fi mai corect, dar cere o sursă de date pe care
+adaptorul nu o furnizează încă.
 
 **Backtest necesar.** Grilă pe `kappa ∈ {3, 5, 8, 10, 15}`, evaluată pe Brier score și
 calibrare early-season, out-of-sample, pe sezoane anterioare — nu pe cele 33 de meciuri de

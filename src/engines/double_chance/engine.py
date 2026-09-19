@@ -16,6 +16,8 @@ from src.engines.over05.evaluator import XLException, WorkbookEngine
 
 TEMPLATE_NAME = "11_model_analiza_pariu_sansadubla_optimizat_V2.xlsx"
 SELECTIONS: tuple[tuple[str, int], ...] = (("1X", 4), ("X2", 5), ("12", 6))
+# Fiecare șansă dublă însumează două dintre rezultatele tripletului (1, X, 2).
+DC_COMPONENT_INDEX: dict[str, tuple[int, int]] = {"1X": (0, 1), "X2": (1, 2), "12": (0, 2)}
 OFFICIAL_COLUMNS: tuple[str, ...] = (
     "B",
     "D",
@@ -53,9 +55,18 @@ DIAGNOSTIC_CELLS: tuple[str, ...] = (
     "Uncertainty_v2!B8",
     "Uncertainty_v2!B9",
     "Uncertainty_v2!B10",
+    # Cele trei componente 1X2 normalizate (scoreline / strength / piață de-vig)
+    # și blend-ul lor, înainte și după normalizarea finală.
+    *[f"Model_1X2!{col}{row}" for row in (6, 7, 8, 9) for col in ("J", "K", "L")],
+    "Model_1X2!B9",
+    "Model_1X2!C9",
+    "Model_1X2!D9",
     "Model_1X2!B10",
     "Model_1X2!C10",
     "Model_1X2!D10",
+    "Parametri!B32",
+    "Parametri!B33",
+    "Parametri!B34",
     "P0_Gates_v2!I6",
     "P0_Gates_v2!J6",
     "Parametri!B35",
@@ -122,6 +133,53 @@ class RiskBreakdown:
 
 
 @dataclass
+class Blend1X2:
+    """Cele trei componente 1X2 și contribuția fiecăreia la distribuția finală.
+
+    Valorile sunt citite din `Model_1X2`, nu recalculate: rândurile 6/7/8 sunt
+    componentele normalizate, rândul 9 blend-ul brut, rândul 10 normalizarea finală.
+    """
+
+    scoreline: tuple[float | None, float | None, float | None]
+    strength: tuple[float | None, float | None, float | None]
+    market: tuple[float | None, float | None, float | None]
+    blend_raw: tuple[float | None, float | None, float | None]
+    final: tuple[float | None, float | None, float | None]
+    weight_scoreline: float | None
+    weight_strength: float | None
+    weight_market: float | None
+
+    def _contribution(
+        self, component: tuple[float | None, ...], weight: float | None
+    ) -> tuple[float | None, float | None, float | None]:
+        if weight is None:
+            return (None, None, None)
+        return tuple(None if p is None else weight * p for p in component)  # type: ignore[return-value]
+
+    @property
+    def contribution_scoreline(self):
+        return self._contribution(self.scoreline, self.weight_scoreline)
+
+    @property
+    def contribution_strength(self):
+        return self._contribution(self.strength, self.weight_strength)
+
+    @property
+    def contribution_market(self):
+        return self._contribution(self.market, self.weight_market)
+
+    @property
+    def scoreline_strength_max_gap(self) -> float | None:
+        """Cea mai mare diferență absolută între cele două modele „independente”."""
+        gaps = [
+            abs(a - b)
+            for a, b in zip(self.scoreline, self.strength)
+            if a is not None and b is not None
+        ]
+        return max(gaps) if gaps else None
+
+
+@dataclass
 class DrawDiagnostics:
     """Descompunerea Draw Gate-ului pentru 12 (P0_Gates_v2 I6/J6)."""
 
@@ -161,6 +219,7 @@ class DoubleChanceSelection:
     level: int | float | None
     verdict: str | None
     fragility_gate: str | None
+    fragility_level_surcharge: int | float | None
     ranking_eligible: str | None
     defensive_eligible: str | None
     release: str | None
@@ -181,12 +240,52 @@ class DoubleChanceOfficialResult:
                 return item
         raise KeyError(code)
 
+    @property
+    def blend(self) -> Blend1X2:
+        """Descompunerea 1X2 la nivel de meci (comună celor trei selecții)."""
+
+        def triplet(row: int) -> tuple[float | None, float | None, float | None]:
+            return tuple(  # type: ignore[return-value]
+                _as_number_or_none(self.cells.get(f"Model_1X2!{col}{row}"))
+                for col in ("J", "K", "L")
+            )
+
+        def final_triplet() -> tuple[float | None, float | None, float | None]:
+            return tuple(  # type: ignore[return-value]
+                _as_number_or_none(self.cells.get(f"Model_1X2!{col}10"))
+                for col in ("B", "C", "D")
+            )
+
+        def blend_raw() -> tuple[float | None, float | None, float | None]:
+            return tuple(  # type: ignore[return-value]
+                _as_number_or_none(self.cells.get(f"Model_1X2!{col}9"))
+                for col in ("B", "C", "D")
+            )
+
+        return Blend1X2(
+            scoreline=triplet(6),
+            strength=triplet(7),
+            market=triplet(8),
+            blend_raw=blend_raw(),
+            final=final_triplet(),
+            weight_scoreline=_as_number_or_none(self.cells.get("Parametri!B32")),
+            weight_strength=_as_number_or_none(self.cells.get("Parametri!B33")),
+            weight_market=_as_number_or_none(self.cells.get("Parametri!B34")),
+        )
+
     def summary_recommendation(self) -> str:
         return " | ".join(f"{item.code}: {item.verdict or '—'}" for item in self.selections)
 
     def payload(self) -> list[dict[str, Any]]:
         rows: list[dict[str, Any]] = []
+        blend = self.blend
         for item in self.selections:
+            pair = DC_COMPONENT_INDEX[item.code]
+
+            def component(triplet, indexes=pair):
+                left, right = triplet[indexes[0]], triplet[indexes[1]]
+                return None if left is None or right is None else left + right
+
             row: dict[str, Any] = {
                 "selection": item.code,
                 "p_model": item.p_model,
@@ -212,9 +311,16 @@ class DoubleChanceOfficialResult:
                 "level": item.level,
                 "verdict": item.verdict,
                 "fragility": item.fragility_gate,
+                "fragility_level_surcharge": item.fragility_level_surcharge,
                 "ranking_eligible": item.ranking_eligible,
                 "defensive_eligible": item.defensive_eligible,
                 "release": item.release,
+                "p_scoreline": component(blend.scoreline),
+                "p_strength": component(blend.strength),
+                "p_market_component": component(blend.market),
+                "contribution_scoreline": component(blend.contribution_scoreline),
+                "contribution_strength": component(blend.contribution_strength),
+                "contribution_market": component(blend.contribution_market),
                 **item.risk.as_dict(),
             }
             if item.draw is not None:
@@ -326,6 +432,7 @@ def compute_double_chance(
                 level=_as_int_if_whole(col("M")),
                 verdict=_as_text(col("N")),
                 fragility_gate=_as_text(col("AB")),
+                fragility_level_surcharge=_as_int_if_whole(col("AC")),
                 ranking_eligible=_as_text(col("AA")),
                 defensive_eligible=_as_text(col("AE")),
                 release=_as_text(col("AD")),

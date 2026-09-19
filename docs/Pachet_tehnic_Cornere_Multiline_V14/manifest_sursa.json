@@ -1,0 +1,174 @@
+{
+  "workbook": "6_model_analiza_cornere_multiline_optimizat_V14(2).xlsx",
+  "sha256": "c2ea1af7f97d82b189a5e45e097fe66aca8d11449d2aa62ee57896ae22fed268",
+  "git_blob_sha1": "c8188566b122d171e170223206021d5dd0784c50",
+  "repo": "stef78cta/Pontifybet",
+  "branch": "main",
+  "commit": "bda2a1c632d916f1dfaf4d94eba22d085bb6a2f4",
+  "formula_count": 85647,
+  "nonempty_cells": 102820,
+  "sheets": [
+    {
+      "name": "Dashboard",
+      "rows": 125,
+      "columns": 16,
+      "formulas": 1586
+    },
+    {
+      "name": "Config_v6",
+      "rows": 61,
+      "columns": 4,
+      "formulas": 3
+    },
+    {
+      "name": "Analiza_Linii",
+      "rows": 1405,
+      "columns": 40,
+      "formulas": 50400
+    },
+    {
+      "name": "Motor_Meciuri",
+      "rows": 105,
+      "columns": 72,
+      "formulas": 7200
+    },
+    {
+      "name": "Core_Nativ",
+      "rows": 1205,
+      "columns": 21,
+      "formulas": 19200
+    },
+    {
+      "name": "Distributie",
+      "rows": 105,
+      "columns": 42,
+      "formulas": 4200
+    },
+    {
+      "name": "Input_Meci",
+      "rows": 105,
+      "columns": 33,
+      "formulas": 0
+    },
+    {
+      "name": "Istoric_Nativ",
+      "rows": 405,
+      "columns": 19,
+      "formulas": 2400
+    },
+    {
+      "name": "Surse_Import",
+      "rows": 13,
+      "columns": 13,
+      "formulas": 8
+    },
+    {
+      "name": "Calibrare_Linii",
+      "rows": 19,
+      "columns": 22,
+      "formulas": 140
+    },
+    {
+      "name": "OOS_Predictii",
+      "rows": 255,
+      "columns": 21,
+      "formulas": 500
+    },
+    {
+      "name": "Verificari",
+      "rows": 15,
+      "columns": 4,
+      "formulas": 10
+    },
+    {
+      "name": "Documentatie",
+      "rows": 32,
+      "columns": 2,
+      "formulas": 0
+    }
+  ],
+  "functions": {
+    "COUNTA": 1,
+    "COUNTIFS": 23970,
+    "COUNTIF": 2956,
+    "IF": 181743,
+    "IFERROR": 2360,
+    "MATCH": 2280,
+    "INDEX": 10870,
+    "AND": 34535,
+    "SUM": 3603,
+    "COUNT": 201,
+    "MIN": 14302,
+    "ABS": 402,
+    "TEXT": 2880,
+    "NOT": 11600,
+    "MAX": 12514,
+    "OR": 19528,
+    "SUMPRODUCT": 4900,
+    "INT": 6500,
+    "ISNUMBER": 16776,
+    "AVERAGE": 600,
+    "ROUND": 100,
+    "LARGE": 1600,
+    "_xlfn._xlws.FILTER": 1600,
+    "SUMIFS": 9628,
+    "EXP": 100,
+    "MOD": 1050,
+    "SQRT": 14,
+    "LEFT": 250,
+    "ROWS": 2
+  },
+  "sheet_dependencies": {
+    "Dashboard": [
+      "Analiza_Linii",
+      "Input_Meci",
+      "Motor_Meciuri"
+    ],
+    "Analiza_Linii": [
+      "Calibrare_Linii",
+      "Config_v6",
+      "Dashboard",
+      "Distributie",
+      "Input_Meci",
+      "Istoric_Nativ",
+      "Motor_Meciuri"
+    ],
+    "Motor_Meciuri": [
+      "Config_v6",
+      "Core_Nativ",
+      "Input_Meci",
+      "Istoric_Nativ"
+    ],
+    "Core_Nativ": [
+      "Config_v6",
+      "Input_Meci",
+      "Istoric_Nativ",
+      "Surse_Import"
+    ],
+    "Distributie": [
+      "Config_v6",
+      "Motor_Meciuri"
+    ],
+    "Istoric_Nativ": [
+      "Istoric_Nativ",
+      "Surse_Import"
+    ],
+    "Calibrare_Linii": [
+      "Config_v6",
+      "OOS_Predictii"
+    ],
+    "OOS_Predictii": [
+      "Calibrare_Linii",
+      "Config_v6",
+      "OOS_Predictii"
+    ],
+    "Verificari": [
+      "Analiza_Linii",
+      "Config_v6",
+      "Input_Meci",
+      "Istoric_Nativ",
+      "OOS_Predictii"
+    ]
+  },
+  "source_original_unchanged": true
+}

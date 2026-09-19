@@ -1,0 +1,45 @@
+{
+  "Dashboard": [],
+  "Config_v6": [],
+  "Analiza_Linii": [],
+  "Motor_Meciuri": [],
+  "Core_Nativ": [],
+  "Distributie": [],
+  "Input_Meci": [
+    {
+      "range": "H6:H105",
+      "type": "list",
+      "formula1": "\"LIVE,REPLAY\"",
+      "allowBlank": false,
+      "showErrorMessage": false
+    },
+    {
+      "range": "I6:I105",
+      "type": "list",
+      "formula1": "\"AUTO,ACCESS BLOCKED,NOT AVAILABLE,SOURCE CONFLICT\"",
+      "allowBlank": false,
+      "showErrorMessage": false
+    },
+    {
+      "range": "L6:L105",
+      "type": "list",
+      "formula1": "\"YES,NO\"",
+      "allowBlank": false,
+      "showErrorMessage": false
+    }
+  ],
+  "Istoric_Nativ": [],
+  "Surse_Import": [],
+  "Calibrare_Linii": [
+    {
+      "range": "G6:G19",
+      "type": "list",
+      "formula1": "\"PENDING,PILOT,APPROVED\"",
+      "allowBlank": false,
+      "showErrorMessage": false
+    }
+  ],
+  "OOS_Predictii": [],
+  "Verificari": [],
+  "Documentatie": []
+}

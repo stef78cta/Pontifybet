@@ -1,0 +1,284 @@
+[
+  {
+    "cell": "B4",
+    "label": "Pondere sezon",
+    "value_or_formula": 0.3,
+    "cached_value": 0.3
+  },
+  {
+    "cell": "B5",
+    "label": "Pondere H/A",
+    "value_or_formula": 0.45,
+    "cached_value": 0.45
+  },
+  {
+    "cell": "B6",
+    "label": "Pondere recent",
+    "value_or_formula": 0.25,
+    "cached_value": 0.25
+  },
+  {
+    "cell": "B7",
+    "label": "N minim sezon",
+    "value_or_formula": 10,
+    "cached_value": 10
+  },
+  {
+    "cell": "B8",
+    "label": "N minim H/A",
+    "value_or_formula": 5,
+    "cached_value": 5
+  },
+  {
+    "cell": "B9",
+    "label": "N minim recent",
+    "value_or_formula": 3,
+    "cached_value": 3
+  },
+  {
+    "cell": "B10",
+    "label": "D prag Poisson",
+    "value_or_formula": 1.1,
+    "cached_value": 1.1
+  },
+  {
+    "cell": "B11",
+    "label": "D NB mild",
+    "value_or_formula": 1.35,
+    "cached_value": 1.35
+  },
+  {
+    "cell": "B12",
+    "label": "D NB moderat",
+    "value_or_formula": 1.7,
+    "cached_value": 1.7
+  },
+  {
+    "cell": "B13",
+    "label": "D hard fail",
+    "value_or_formula": 2.25,
+    "cached_value": 2.25
+  },
+  {
+    "cell": "B14",
+    "label": "Calibrare: reducere spre 50%",
+    "value_or_formula": 0.82,
+    "cached_value": 0.82
+  },
+  {
+    "cell": "B15",
+    "label": "N țintă dispersie",
+    "value_or_formula": 20,
+    "cached_value": 20
+  },
+  {
+    "cell": "B16",
+    "label": "P minim eligibilitate",
+    "value_or_formula": 0.72,
+    "cached_value": 0.72
+  },
+  {
+    "cell": "B17",
+    "label": "Reper P informativ",
+    "value_or_formula": 0.8,
+    "cached_value": 0.8
+  },
+  {
+    "cell": "B18",
+    "label": "Confidence minim",
+    "value_or_formula": 65,
+    "cached_value": 65
+  },
+  {
+    "cell": "B19",
+    "label": "Pondere EV",
+    "value_or_formula": 0,
+    "cached_value": 0
+  },
+  {
+    "cell": "B20",
+    "label": "Limită soft",
+    "value_or_formula": 0.08,
+    "cached_value": 0.08
+  },
+  {
+    "cell": "B21",
+    "label": "Limită context",
+    "value_or_formula": 0.12,
+    "cached_value": 0.12
+  },
+  {
+    "cell": "B26",
+    "label": "O3,5 PASS max pilot",
+    "value_or_formula": 0.05,
+    "cached_value": 0.05
+  },
+  {
+    "cell": "C26",
+    "label": "O3,5 PASS max pilot",
+    "value_or_formula": 0.08,
+    "cached_value": 0.08
+  },
+  {
+    "cell": "D26",
+    "label": "O3,5 PASS max pilot",
+    "value_or_formula": "Failure ≤5% PASS; >5%–8% PENALTY; >8% WATCH. Bandă pilot.",
+    "cached_value": "Failure ≤5% PASS; >5%–8% PENALTY; >8% WATCH. Bandă pilot."
+  },
+  {
+    "cell": "B34",
+    "label": "Confidence maxim cu prior",
+    "value_or_formula": 75,
+    "cached_value": 75
+  },
+  {
+    "cell": "B35",
+    "label": "Penalizare OOS pending",
+    "value_or_formula": 10,
+    "cached_value": 10
+  },
+  {
+    "cell": "B36",
+    "label": "Penalizare D moderat",
+    "value_or_formula": 5,
+    "cached_value": 5
+  },
+  {
+    "cell": "B37",
+    "label": "Penalizare D ridicat",
+    "value_or_formula": 10,
+    "cached_value": 10
+  },
+  {
+    "cell": "B38",
+    "label": "Penalizare maximă soft lipsă",
+    "value_or_formula": 5,
+    "cached_value": 5
+  },
+  {
+    "cell": "B39",
+    "label": null,
+    "value_or_formula": "=SUM(B4:B6)",
+    "cached_value": 1
+  },
+  {
+    "cell": "B40",
+    "label": null,
+    "value_or_formula": "=IF(AND(COUNT(B4:B18)=15,MIN(B4:B18)>=0,ABS(B39-1)<0.000001,B7>=1,B8>=1,B9>=1,B10>0,B11>=B10,B12>=B11,B13>=B12,B14>0,B14<=1,B15>=2,B16>0.5,B16<1,B18>=0,B18<=100,B19=0,B20>=0,B20<=1,B21>=0,B21<=1,B26>=0,B26<C26,C26<=1,B34>=0,B34<=75,B35>=0,B36>=0,B37>=0,B38>=0,B41=2,B42=2,MIN(B44:B47)>=0,ABS(SUM(B44:B47)-1)<0.000001,B50>=0.9,B50<1,B51>=90,B51<=100,B52>=0,B52<=20,B53>0,B53<=1.1,B54=5,B55=100,B56>=200,B57>=0.9,B57<1,B58>=0,B58<=0.05),\"VALID\",\"CONFIG INVALID\")",
+    "cached_value": "VALID"
+  },
+  {
+    "cell": "B41",
+    "label": "N minim varianță",
+    "value_or_formula": 2,
+    "cached_value": 2
+  },
+  {
+    "cell": "B42",
+    "label": "Floor fără DEFENSIV validat",
+    "value_or_formula": 2,
+    "cached_value": 2
+  },
+  {
+    "cell": "D42",
+    "label": "Floor fără DEFENSIV validat",
+    "value_or_formula": "Minimum 2, cu excepția Defensive Gate PASS.",
+    "cached_value": "Minimum 2, cu excepția Defensive Gate PASS."
+  },
+  {
+    "cell": "B44",
+    "label": "Pondere failure",
+    "value_or_formula": 0.55,
+    "cached_value": 0.55
+  },
+  {
+    "cell": "B45",
+    "label": "Pondere dispersie",
+    "value_or_formula": 0.2,
+    "cached_value": 0.2
+  },
+  {
+    "cell": "B46",
+    "label": "Pondere incertitudine",
+    "value_or_formula": 0.15,
+    "cached_value": 0.15
+  },
+  {
+    "cell": "B47",
+    "label": "Pondere context",
+    "value_or_formula": 0.1,
+    "cached_value": 0.1
+  },
+  {
+    "cell": "B50",
+    "label": "P minim DEFENSIV",
+    "value_or_formula": 0.9,
+    "cached_value": 0.9
+  },
+  {
+    "cell": "B51",
+    "label": "Confidence minim DEFENSIV",
+    "value_or_formula": 90,
+    "cached_value": 90
+  },
+  {
+    "cell": "B52",
+    "label": "Score maxim DEFENSIV",
+    "value_or_formula": 20,
+    "cached_value": 20
+  },
+  {
+    "cell": "B53",
+    "label": "D maxim DEFENSIV",
+    "value_or_formula": 1.1,
+    "cached_value": 1.1
+  },
+  {
+    "cell": "B54",
+    "label": "Număr meciuri recente",
+    "value_or_formula": 5,
+    "cached_value": 5
+  },
+  {
+    "cell": "B55",
+    "label": "Capacitate meciuri",
+    "value_or_formula": 100,
+    "cached_value": 100
+  },
+  {
+    "cell": "B56",
+    "label": "N minim OOS pentru promovare",
+    "value_or_formula": 200,
+    "cached_value": 200
+  },
+  {
+    "cell": "D56",
+    "label": "N minim OOS pentru promovare",
+    "value_or_formula": "Control conservator propus pentru promovare; nu validare statistică deja demonstrată.",
+    "cached_value": "Control conservator propus pentru promovare; nu validare statistică deja demonstrată."
+  },
+  {
+    "cell": "B57",
+    "label": "Wilson 95%: limită inferioară",
+    "value_or_formula": 0.9,
+    "cached_value": 0.9
+  },
+  {
+    "cell": "D57",
+    "label": "Wilson 95%: limită inferioară",
+    "value_or_formula": "Calcul Wilson 95% pe predicții candidate distincte, înghețate înainte de meci.",
+    "cached_value": "Calcul Wilson 95% pe predicții candidate distincte, înghețate înainte de meci."
+  },
+  {
+    "cell": "B58",
+    "label": "Supraestimare OOS maximă",
+    "value_or_formula": 0.05,
+    "cached_value": 0.05
+  },
+  {
+    "cell": "B60",
+    "label": "Semnătură parametri",
+    "value_or_formula": "=\"CORNERS_NATIVE_V14\"&\"|\"&TEXT(B4,\"0.000000\")&\"|\"&TEXT(B5,\"0.000000\")&\"|\"&TEXT(B6,\"0.000000\")&\"|\"&TEXT(B7,\"0.000000\")&\"|\"&TEXT(B8,\"0.000000\")&\"|\"&TEXT(B9,\"0.000000\")&\"|\"&TEXT(B10,\"0.000000\")&\"|\"&TEXT(B11,\"0.000000\")&\"|\"&TEXT(B12,\"0.000000\")&\"|\"&TEXT(B13,\"0.000000\")&\"|\"&TEXT(B14,\"0.000000\")&\"|\"&TEXT(B15,\"0.000000\")&\"|\"&TEXT(B16,\"0.000000\")&\"|\"&TEXT(B18,\"0.000000\")&\"|\"&TEXT(B19,\"0.000000\")&\"|\"&TEXT(B20,\"0.000000\")&\"|\"&TEXT(B21,\"0.000000\")&\"|\"&TEXT(B26,\"0.000000\")&\"|\"&TEXT(B34,\"0.000000\")&\"|\"&TEXT(B35,\"0.000000\")&\"|\"&TEXT(B36,\"0.000000\")&\"|\"&TEXT(B37,\"0.000000\")&\"|\"&TEXT(B38,\"0.000000\")&\"|\"&TEXT(B41,\"0.000000\")&\"|\"&TEXT(B42,\"0.000000\")&\"|\"&TEXT(B44,\"0.000000\")&\"|\"&TEXT(B45,\"0.000000\")&\"|\"&TEXT(B46,\"0.000000\")&\"|\"&TEXT(B47,\"0.000000\")&\"|\"&TEXT(B50,\"0.000000\")&\"|\"&TEXT(B51,\"0.000000\")&\"|\"&TEXT(B52,\"0.000000\")&\"|\"&TEXT(B53,\"0.000000\")&\"|\"&TEXT(B54,\"0.000000\")&\"|\"&TEXT(B56,\"0.000000\")&\"|\"&TEXT(B57,\"0.000000\")&\"|\"&TEXT(B58,\"0.000000\")&\"|\"&TEXT(C26,\"0.000000\")",
+    "cached_value": "CORNERS_NATIVE_V14|0.300000|0.450000|0.250000|10.000000|5.000000|3.000000|1.100000|1.350000|1.700000|2.250000|0.820000|20.000000|0.720000|65.000000|0.000000|0.080000|0.120000|0.050000|75.000000|10.000000|5.000000|10.000000|5.000000|2.000000|2.000000|0.550000|0.200000|0.150000|0.100000|0.900000|90.000000|20.000000|1.100000|5.000000|200.000000|0.900000|0.050000|0.080000"
+  }
+]

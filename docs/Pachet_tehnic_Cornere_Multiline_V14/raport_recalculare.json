@@ -1,0 +1,1221 @@
+{
+  "tested_formula_cells": 5495,
+  "mismatches": [
+    {
+      "sheet": "Core_Nativ",
+      "cell": "U14",
+      "cached": "NativeTable; E0; ; Brighton; ANY; before 2026-05-23; from 1900-01-00",
+      "libreoffice": "NativeTable; E0; ; Brighton; ANY; before 2026-05-23; from 1899-12-30",
+      "abs_difference": null,
+      "equal_with_tolerance": false
+    },
+    {
+      "sheet": "Core_Nativ",
+      "cell": "U17",
+      "cached": "NativeTable; E0; ; Man United; ANY; before 2026-05-23; from 1900-01-00",
+      "libreoffice": "NativeTable; E0; ; Man United; ANY; before 2026-05-23; from 1899-12-30",
+      "abs_difference": null,
+      "equal_with_tolerance": false
+    },
+    {
+      "sheet": "Core_Nativ",
+      "cell": "U26",
+      "cached": "NativeTable; E0; ; Burnley; ANY; before 2026-05-23; from 1900-01-00",
+      "libreoffice": "NativeTable; E0; ; Burnley; ANY; before 2026-05-23; from 1899-12-30",
+      "abs_difference": null,
+      "equal_with_tolerance": false
+    },
+    {
+      "sheet": "Core_Nativ",
+      "cell": "U29",
+      "cached": "NativeTable; E0; ; Wolves; ANY; before 2026-05-23; from 1900-01-00",
+      "libreoffice": "NativeTable; E0; ; Wolves; ANY; before 2026-05-23; from 1899-12-30",
+      "abs_difference": null,
+      "equal_with_tolerance": false
+    },
+    {
+      "sheet": "Core_Nativ",
+      "cell": "U38",
+      "cached": "NativeTable; E0; ; Crystal Palace; ANY; before 2026-05-23; from 1900-01-00",
+      "libreoffice": "NativeTable; E0; ; Crystal Palace; ANY; before 2026-05-23; from 1899-12-30",
+      "abs_difference": null,
+      "equal_with_tolerance": false
+    },
+    {
+      "sheet": "Core_Nativ",
+      "cell": "U41",
+      "cached": "NativeTable; E0; ; Arsenal; ANY; before 2026-05-23; from 1900-01-00",
+      "libreoffice": "NativeTable; E0; ; Arsenal; ANY; before 2026-05-23; from 1899-12-30",
+      "abs_difference": null,
+      "equal_with_tolerance": false
+    }
+  ],
+  "max_numeric_abs_difference": 4.973799150320701e-14,
+  "all_workbook_recalc_errors": [
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS9",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT9",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS10",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT10",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS11",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT11",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS12",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT12",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS13",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT13",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS14",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT14",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS15",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT15",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS16",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT16",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS17",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT17",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS18",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT18",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS19",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT19",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS20",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT20",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS21",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT21",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS22",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT22",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS23",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT23",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS24",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT24",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS25",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT25",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS26",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT26",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS27",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT27",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS28",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT28",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS29",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT29",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS30",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT30",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS31",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT31",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS32",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT32",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS33",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT33",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS34",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT34",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS35",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT35",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS36",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT36",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS37",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT37",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS38",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT38",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS39",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT39",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS40",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT40",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS41",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT41",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS42",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT42",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS43",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT43",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS44",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT44",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS45",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT45",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS46",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT46",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS47",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT47",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS48",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT48",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS49",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT49",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS50",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT50",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS51",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT51",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS52",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT52",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS53",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT53",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS54",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT54",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS55",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT55",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS56",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT56",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS57",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT57",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS58",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT58",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS59",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT59",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS60",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT60",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS61",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT61",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS62",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT62",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS63",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT63",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS64",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT64",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS65",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT65",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS66",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT66",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS67",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT67",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS68",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT68",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS69",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT69",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS70",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT70",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS71",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT71",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS72",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT72",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS73",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT73",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS74",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT74",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS75",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT75",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS76",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT76",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS77",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT77",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS78",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT78",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS79",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT79",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS80",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT80",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS81",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT81",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS82",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT82",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS83",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT83",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS84",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT84",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS85",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT85",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS86",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT86",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS87",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT87",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS88",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT88",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS89",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT89",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS90",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT90",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS91",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT91",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS92",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT92",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS93",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT93",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS94",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT94",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS95",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT95",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS96",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT96",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS97",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT97",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS98",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT98",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS99",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT99",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS100",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT100",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS101",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT101",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS102",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT102",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS103",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT103",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS104",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT104",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AS105",
+      "error": "#VALUE!",
+      "original_cached": null
+    },
+    {
+      "sheet": "Motor_Meciuri",
+      "cell": "AT105",
+      "error": "#VALUE!",
+      "original_cached": null
+    }
+  ],
+  "scope": "Formule pentru cele trei exemple, controale/configurare, istoric populat, OOS gol; nu echivalează cu validare Microsoft Excel."
+}

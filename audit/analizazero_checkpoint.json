@@ -1,0 +1,1307 @@
+{
+  "totals": {
+    "leagues": 50,
+    "seasons_ok": 144,
+    "complete_scanned": 41120,
+    "ht00": 12044
+  },
+  "errors": [],
+  "summary": [
+    {
+      "liga": "Argentina Primera División",
+      "tara": "Argentina",
+      "sezon": "2024",
+      "season_id": 11212,
+      "meciuri_complete": 378,
+      "ht00": 147,
+      "eroare": null
+    },
+    {
+      "liga": "Argentina Primera División",
+      "tara": "Argentina",
+      "sezon": "2025",
+      "season_id": 15746,
+      "meciuri_complete": 510,
+      "ht00": 216,
+      "eroare": null
+    },
+    {
+      "liga": "Argentina Primera División",
+      "tara": "Argentina",
+      "sezon": "2026",
+      "season_id": 16571,
+      "meciuri_complete": 392,
+      "ht00": 157,
+      "eroare": null
+    },
+    {
+      "liga": "Armenia Armenian Premier League",
+      "tara": "Armenia",
+      "sezon": "20232024",
+      "season_id": 9703,
+      "meciuri_complete": 180,
+      "ht00": 53,
+      "eroare": null
+    },
+    {
+      "liga": "Armenia Armenian Premier League",
+      "tara": "Armenia",
+      "sezon": "20242025",
+      "season_id": 12638,
+      "meciuri_complete": 165,
+      "ht00": 44,
+      "eroare": null
+    },
+    {
+      "liga": "Armenia Armenian Premier League",
+      "tara": "Armenia",
+      "sezon": "20252026",
+      "season_id": 17472,
+      "meciuri_complete": 135,
+      "ht00": 41,
+      "eroare": null
+    },
+    {
+      "liga": "Australia A-League",
+      "tara": "Australia",
+      "sezon": "20232024",
+      "season_id": 10505,
+      "meciuri_complete": 169,
+      "ht00": 49,
+      "eroare": null
+    },
+    {
+      "liga": "Australia A-League",
+      "tara": "Australia",
+      "sezon": "20242025",
+      "season_id": 13703,
+      "meciuri_complete": 176,
+      "ht00": 44,
+      "eroare": null
+    },
+    {
+      "liga": "Australia A-League",
+      "tara": "Australia",
+      "sezon": "20252026",
+      "season_id": 16036,
+      "meciuri_complete": 163,
+      "ht00": 45,
+      "eroare": null
+    },
+    {
+      "liga": "Austria 2. Liga",
+      "tara": "Austria",
+      "sezon": "20232024",
+      "season_id": 9641,
+      "meciuri_complete": 240,
+      "ht00": 62,
+      "eroare": null
+    },
+    {
+      "liga": "Austria 2. Liga",
+      "tara": "Austria",
+      "sezon": "20242025",
+      "season_id": 12478,
+      "meciuri_complete": 240,
+      "ht00": 66,
+      "eroare": null
+    },
+    {
+      "liga": "Austria 2. Liga",
+      "tara": "Austria",
+      "sezon": "20252026",
+      "season_id": 14958,
+      "meciuri_complete": 222,
+      "ht00": 64,
+      "eroare": null
+    },
+    {
+      "liga": "Austria Bundesliga",
+      "tara": "Austria",
+      "sezon": "20232024",
+      "season_id": 9954,
+      "meciuri_complete": 195,
+      "ht00": 55,
+      "eroare": null
+    },
+    {
+      "liga": "Austria Bundesliga",
+      "tara": "Austria",
+      "sezon": "20242025",
+      "season_id": 12472,
+      "meciuri_complete": 195,
+      "ht00": 58,
+      "eroare": null
+    },
+    {
+      "liga": "Austria Bundesliga",
+      "tara": "Austria",
+      "sezon": "20252026",
+      "season_id": 14923,
+      "meciuri_complete": 195,
+      "ht00": 51,
+      "eroare": null
+    },
+    {
+      "liga": "Belgium Pro League",
+      "tara": "Belgium",
+      "sezon": "20232024",
+      "season_id": 9577,
+      "meciuri_complete": 313,
+      "ht00": 84,
+      "eroare": null
+    },
+    {
+      "liga": "Belgium Pro League",
+      "tara": "Belgium",
+      "sezon": "20242025",
+      "season_id": 12137,
+      "meciuri_complete": 312,
+      "ht00": 85,
+      "eroare": null
+    },
+    {
+      "liga": "Belgium Pro League",
+      "tara": "Belgium",
+      "sezon": "20252026",
+      "season_id": 14937,
+      "meciuri_complete": 313,
+      "ht00": 92,
+      "eroare": null
+    },
+    {
+      "liga": "Bosnia and Herzegovina Premier League of Bosnia",
+      "tara": "Bosnia and Herzegovina",
+      "sezon": "20232024",
+      "season_id": 9968,
+      "meciuri_complete": 198,
+      "ht00": 63,
+      "eroare": null
+    },
+    {
+      "liga": "Bosnia and Herzegovina Premier League of Bosnia",
+      "tara": "Bosnia and Herzegovina",
+      "sezon": "20242025",
+      "season_id": 12932,
+      "meciuri_complete": 198,
+      "ht00": 63,
+      "eroare": null
+    },
+    {
+      "liga": "Bosnia and Herzegovina Premier League of Bosnia",
+      "tara": "Bosnia and Herzegovina",
+      "sezon": "20252026",
+      "season_id": 15001,
+      "meciuri_complete": 180,
+      "ht00": 74,
+      "eroare": null
+    },
+    {
+      "liga": "Brazil Serie A",
+      "tara": "Brazil",
+      "sezon": "2024",
+      "season_id": 11321,
+      "meciuri_complete": 380,
+      "ht00": 118,
+      "eroare": null
+    },
+    {
+      "liga": "Brazil Serie A",
+      "tara": "Brazil",
+      "sezon": "2025",
+      "season_id": 14231,
+      "meciuri_complete": 380,
+      "ht00": 113,
+      "eroare": null
+    },
+    {
+      "liga": "Brazil Serie A",
+      "tara": "Brazil",
+      "sezon": "2026",
+      "season_id": 16544,
+      "meciuri_complete": 267,
+      "ht00": 69,
+      "eroare": null
+    },
+    {
+      "liga": "Bulgaria First League",
+      "tara": "Bulgaria",
+      "sezon": "20232024",
+      "season_id": 9551,
+      "meciuri_complete": 283,
+      "ht00": 92,
+      "eroare": null
+    },
+    {
+      "liga": "Bulgaria First League",
+      "tara": "Bulgaria",
+      "sezon": "20242025",
+      "season_id": 13863,
+      "meciuri_complete": 292,
+      "ht00": 85,
+      "eroare": null
+    },
+    {
+      "liga": "Bulgaria First League",
+      "tara": "Bulgaria",
+      "sezon": "20252026",
+      "season_id": 15056,
+      "meciuri_complete": 293,
+      "ht00": 108,
+      "eroare": null
+    },
+    {
+      "liga": "Croatia Prva HNL",
+      "tara": "Croatia",
+      "sezon": "20232024",
+      "season_id": 9542,
+      "meciuri_complete": 180,
+      "ht00": 58,
+      "eroare": null
+    },
+    {
+      "liga": "Croatia Prva HNL",
+      "tara": "Croatia",
+      "sezon": "20242025",
+      "season_id": 12121,
+      "meciuri_complete": 180,
+      "ht00": 54,
+      "eroare": null
+    },
+    {
+      "liga": "Croatia Prva HNL",
+      "tara": "Croatia",
+      "sezon": "20252026",
+      "season_id": 15053,
+      "meciuri_complete": 180,
+      "ht00": 42,
+      "eroare": null
+    },
+    {
+      "liga": "Czech Republic First League",
+      "tara": "Czech Republic",
+      "sezon": "20232024",
+      "season_id": 9592,
+      "meciuri_complete": 277,
+      "ht00": 82,
+      "eroare": null
+    },
+    {
+      "liga": "Czech Republic First League",
+      "tara": "Czech Republic",
+      "sezon": "20242025",
+      "season_id": 12336,
+      "meciuri_complete": 276,
+      "ht00": 81,
+      "eroare": null
+    },
+    {
+      "liga": "Czech Republic First League",
+      "tara": "Czech Republic",
+      "sezon": "20252026",
+      "season_id": 14973,
+      "meciuri_complete": 276,
+      "ht00": 75,
+      "eroare": null
+    },
+    {
+      "liga": "Denmark 1st Division",
+      "tara": "Denmark",
+      "sezon": "20232024",
+      "season_id": 9567,
+      "meciuri_complete": 192,
+      "ht00": 59,
+      "eroare": null
+    },
+    {
+      "liga": "Denmark 1st Division",
+      "tara": "Denmark",
+      "sezon": "20242025",
+      "season_id": 12276,
+      "meciuri_complete": 192,
+      "ht00": 58,
+      "eroare": null
+    },
+    {
+      "liga": "Denmark 1st Division",
+      "tara": "Denmark",
+      "sezon": "20252026",
+      "season_id": 15036,
+      "meciuri_complete": 192,
+      "ht00": 48,
+      "eroare": null
+    },
+    {
+      "liga": "Denmark Superliga",
+      "tara": "Denmark",
+      "sezon": "20232024",
+      "season_id": 9545,
+      "meciuri_complete": 193,
+      "ht00": 57,
+      "eroare": null
+    },
+    {
+      "liga": "Denmark Superliga",
+      "tara": "Denmark",
+      "sezon": "20242025",
+      "season_id": 12132,
+      "meciuri_complete": 193,
+      "ht00": 44,
+      "eroare": null
+    },
+    {
+      "liga": "Denmark Superliga",
+      "tara": "Denmark",
+      "sezon": "20252026",
+      "season_id": 15055,
+      "meciuri_complete": 193,
+      "ht00": 51,
+      "eroare": null
+    },
+    {
+      "liga": "England Championship",
+      "tara": "England",
+      "sezon": "20232024",
+      "season_id": 9663,
+      "meciuri_complete": 557,
+      "ht00": 173,
+      "eroare": null
+    },
+    {
+      "liga": "England Championship",
+      "tara": "England",
+      "sezon": "20242025",
+      "season_id": 12451,
+      "meciuri_complete": 557,
+      "ht00": 183,
+      "eroare": null
+    },
+    {
+      "liga": "England Championship",
+      "tara": "England",
+      "sezon": "20252026",
+      "season_id": 14930,
+      "meciuri_complete": 557,
+      "ht00": 161,
+      "eroare": null
+    },
+    {
+      "liga": "England Premier League",
+      "tara": "England",
+      "sezon": "20232024",
+      "season_id": 9660,
+      "meciuri_complete": 380,
+      "ht00": 95,
+      "eroare": null
+    },
+    {
+      "liga": "England Premier League",
+      "tara": "England",
+      "sezon": "20242025",
+      "season_id": 12325,
+      "meciuri_complete": 380,
+      "ht00": 90,
+      "eroare": null
+    },
+    {
+      "liga": "England Premier League",
+      "tara": "England",
+      "sezon": "20252026",
+      "season_id": 15050,
+      "meciuri_complete": 380,
+      "ht00": 108,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Champions League",
+      "tara": "Europe",
+      "sezon": "20232024",
+      "season_id": 9543,
+      "meciuri_complete": 214,
+      "ht00": 58,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Champions League",
+      "tara": "Europe",
+      "sezon": "20242025",
+      "season_id": 12321,
+      "meciuri_complete": 279,
+      "ht00": 70,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Champions League",
+      "tara": "Europe",
+      "sezon": "20252026",
+      "season_id": 14924,
+      "meciuri_complete": 281,
+      "ht00": 82,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Europa Conference League",
+      "tara": "Europe",
+      "sezon": "20232024",
+      "season_id": 9600,
+      "meciuri_complete": 417,
+      "ht00": 131,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Europa Conference League",
+      "tara": "Europe",
+      "sezon": "20242025",
+      "season_id": 12278,
+      "meciuri_complete": 409,
+      "ht00": 146,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Europa Conference League",
+      "tara": "Europe",
+      "sezon": "20252026",
+      "season_id": 14904,
+      "meciuri_complete": 409,
+      "ht00": 126,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Europa League",
+      "tara": "Europe",
+      "sezon": "20232024",
+      "season_id": 10210,
+      "meciuri_complete": 175,
+      "ht00": 36,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Europa League",
+      "tara": "Europe",
+      "sezon": "20242025",
+      "season_id": 12327,
+      "meciuri_complete": 269,
+      "ht00": 79,
+      "eroare": null
+    },
+    {
+      "liga": "Europe UEFA Europa League",
+      "tara": "Europe",
+      "sezon": "20252026",
+      "season_id": 15002,
+      "meciuri_complete": 271,
+      "ht00": 78,
+      "eroare": null
+    },
+    {
+      "liga": "Finland Veikkausliiga",
+      "tara": "Finland",
+      "sezon": "2024",
+      "season_id": 11120,
+      "meciuri_complete": 167,
+      "ht00": 41,
+      "eroare": null
+    },
+    {
+      "liga": "Finland Veikkausliiga",
+      "tara": "Finland",
+      "sezon": "2025",
+      "season_id": 14089,
+      "meciuri_complete": 177,
+      "ht00": 48,
+      "eroare": null
+    },
+    {
+      "liga": "Finland Veikkausliiga",
+      "tara": "Finland",
+      "sezon": "2026",
+      "season_id": 16572,
+      "meciuri_complete": 150,
+      "ht00": 40,
+      "eroare": null
+    },
+    {
+      "liga": "France Ligue 1",
+      "tara": "France",
+      "sezon": "20232024",
+      "season_id": 9674,
+      "meciuri_complete": 306,
+      "ht00": 100,
+      "eroare": null
+    },
+    {
+      "liga": "France Ligue 1",
+      "tara": "France",
+      "sezon": "20242025",
+      "season_id": 12337,
+      "meciuri_complete": 306,
+      "ht00": 74,
+      "eroare": null
+    },
+    {
+      "liga": "France Ligue 1",
+      "tara": "France",
+      "sezon": "20252026",
+      "season_id": 14932,
+      "meciuri_complete": 305,
+      "ht00": 91,
+      "eroare": null
+    },
+    {
+      "liga": "France Ligue 2",
+      "tara": "France",
+      "sezon": "20232024",
+      "season_id": 9621,
+      "meciuri_complete": 382,
+      "ht00": 127,
+      "eroare": null
+    },
+    {
+      "liga": "France Ligue 2",
+      "tara": "France",
+      "sezon": "20242025",
+      "season_id": 12338,
+      "meciuri_complete": 308,
+      "ht00": 97,
+      "eroare": null
+    },
+    {
+      "liga": "France Ligue 2",
+      "tara": "France",
+      "sezon": "20252026",
+      "season_id": 14954,
+      "meciuri_complete": 306,
+      "ht00": 102,
+      "eroare": null
+    },
+    {
+      "liga": "France National",
+      "tara": "France",
+      "sezon": "20232024",
+      "season_id": 9810,
+      "meciuri_complete": 306,
+      "ht00": 94,
+      "eroare": null
+    },
+    {
+      "liga": "France National",
+      "tara": "France",
+      "sezon": "20242025",
+      "season_id": 12777,
+      "meciuri_complete": 272,
+      "ht00": 90,
+      "eroare": null
+    },
+    {
+      "liga": "France National",
+      "tara": "France",
+      "sezon": "20252026",
+      "season_id": 15361,
+      "meciuri_complete": 272,
+      "ht00": 85,
+      "eroare": null
+    },
+    {
+      "liga": "Germany 2. Bundesliga",
+      "tara": "Germany",
+      "sezon": "20232024",
+      "season_id": 9656,
+      "meciuri_complete": 306,
+      "ht00": 71,
+      "eroare": null
+    },
+    {
+      "liga": "Germany 2. Bundesliga",
+      "tara": "Germany",
+      "sezon": "20242025",
+      "season_id": 12528,
+      "meciuri_complete": 306,
+      "ht00": 82,
+      "eroare": null
+    },
+    {
+      "liga": "Germany 2. Bundesliga",
+      "tara": "Germany",
+      "sezon": "20252026",
+      "season_id": 14931,
+      "meciuri_complete": 306,
+      "ht00": 89,
+      "eroare": null
+    },
+    {
+      "liga": "Germany Bundesliga",
+      "tara": "Germany",
+      "sezon": "20232024",
+      "season_id": 9655,
+      "meciuri_complete": 306,
+      "ht00": 63,
+      "eroare": null
+    },
+    {
+      "liga": "Germany Bundesliga",
+      "tara": "Germany",
+      "sezon": "20242025",
+      "season_id": 12529,
+      "meciuri_complete": 306,
+      "ht00": 70,
+      "eroare": null
+    },
+    {
+      "liga": "Germany Bundesliga",
+      "tara": "Germany",
+      "sezon": "20252026",
+      "season_id": 14968,
+      "meciuri_complete": 306,
+      "ht00": 71,
+      "eroare": null
+    },
+    {
+      "liga": "Greece Super League",
+      "tara": "Greece",
+      "sezon": "20232024",
+      "season_id": 9889,
+      "meciuri_complete": 240,
+      "ht00": 58,
+      "eroare": null
+    },
+    {
+      "liga": "Greece Super League",
+      "tara": "Greece",
+      "sezon": "20242025",
+      "season_id": 12734,
+      "meciuri_complete": 236,
+      "ht00": 73,
+      "eroare": null
+    },
+    {
+      "liga": "Greece Super League",
+      "tara": "Greece",
+      "sezon": "20252026",
+      "season_id": 15163,
+      "meciuri_complete": 236,
+      "ht00": 69,
+      "eroare": null
+    },
+    {
+      "liga": "Hungary NB I",
+      "tara": "Hungary",
+      "sezon": "20232024",
+      "season_id": 10007,
+      "meciuri_complete": 198,
+      "ht00": 52,
+      "eroare": null
+    },
+    {
+      "liga": "Hungary NB I",
+      "tara": "Hungary",
+      "sezon": "20242025",
+      "season_id": 12334,
+      "meciuri_complete": 198,
+      "ht00": 60,
+      "eroare": null
+    },
+    {
+      "liga": "Hungary NB I",
+      "tara": "Hungary",
+      "sezon": "20252026",
+      "season_id": 14963,
+      "meciuri_complete": 198,
+      "ht00": 60,
+      "eroare": null
+    },
+    {
+      "liga": "Iceland Úrvalsdeild",
+      "tara": "Iceland",
+      "sezon": "2024",
+      "season_id": 10975,
+      "meciuri_complete": 152,
+      "ht00": 37,
+      "eroare": null
+    },
+    {
+      "liga": "Iceland Úrvalsdeild",
+      "tara": "Iceland",
+      "sezon": "2025",
+      "season_id": 14017,
+      "meciuri_complete": 162,
+      "ht00": 33,
+      "eroare": null
+    },
+    {
+      "liga": "Iceland Úrvalsdeild",
+      "tara": "Iceland",
+      "sezon": "2026",
+      "season_id": 16696,
+      "meciuri_complete": 139,
+      "ht00": 24,
+      "eroare": null
+    },
+    {
+      "liga": "International UEFA Euro Championship",
+      "tara": "International",
+      "sezon": "2024",
+      "season_id": 11084,
+      "meciuri_complete": 50,
+      "ht00": 18,
+      "eroare": null
+    },
+    {
+      "liga": "International UEFA Euro Qualifiers",
+      "tara": "International",
+      "sezon": "2024",
+      "season_id": 9128,
+      "meciuri_complete": 239,
+      "ht00": 60,
+      "eroare": null
+    },
+    {
+      "liga": "International UEFA Nations League",
+      "tara": "International",
+      "sezon": "20242025",
+      "season_id": 13734,
+      "meciuri_complete": 188,
+      "ht00": 63,
+      "eroare": null
+    },
+    {
+      "liga": "Israel Israeli Premier League",
+      "tara": "Israel",
+      "sezon": "20232024",
+      "season_id": 9564,
+      "meciuri_complete": 240,
+      "ht00": 75,
+      "eroare": null
+    },
+    {
+      "liga": "Israel Israeli Premier League",
+      "tara": "Israel",
+      "sezon": "20242025",
+      "season_id": 12377,
+      "meciuri_complete": 240,
+      "ht00": 69,
+      "eroare": null
+    },
+    {
+      "liga": "Israel Israeli Premier League",
+      "tara": "Israel",
+      "sezon": "20252026",
+      "season_id": 16353,
+      "meciuri_complete": 182,
+      "ht00": 106,
+      "eroare": null
+    },
+    {
+      "liga": "Israel Israeli Premier League",
+      "tara": "Israel",
+      "sezon": "20252026",
+      "season_id": 16363,
+      "meciuri_complete": 240,
+      "ht00": 80,
+      "eroare": null
+    },
+    {
+      "liga": "Italy Serie A",
+      "tara": "Italy",
+      "sezon": "20232024",
+      "season_id": 9697,
+      "meciuri_complete": 380,
+      "ht00": 115,
+      "eroare": null
+    },
+    {
+      "liga": "Italy Serie A",
+      "tara": "Italy",
+      "sezon": "20242025",
+      "season_id": 12530,
+      "meciuri_complete": 380,
+      "ht00": 121,
+      "eroare": null
+    },
+    {
+      "liga": "Italy Serie A",
+      "tara": "Italy",
+      "sezon": "20252026",
+      "season_id": 15068,
+      "meciuri_complete": 380,
+      "ht00": 131,
+      "eroare": null
+    },
+    {
+      "liga": "Italy Serie B",
+      "tara": "Italy",
+      "sezon": "20232024",
+      "season_id": 9808,
+      "meciuri_complete": 390,
+      "ht00": 128,
+      "eroare": null
+    },
+    {
+      "liga": "Italy Serie B",
+      "tara": "Italy",
+      "sezon": "20242025",
+      "season_id": 12621,
+      "meciuri_complete": 389,
+      "ht00": 119,
+      "eroare": null
+    },
+    {
+      "liga": "Italy Serie B",
+      "tara": "Italy",
+      "sezon": "20252026",
+      "season_id": 15632,
+      "meciuri_complete": 390,
+      "ht00": 118,
+      "eroare": null
+    },
+    {
+      "liga": "Japan J1 League",
+      "tara": "Japan",
+      "sezon": "2024",
+      "season_id": 10994,
+      "meciuri_complete": 380,
+      "ht00": 128,
+      "eroare": null
+    },
+    {
+      "liga": "Japan J1 League",
+      "tara": "Japan",
+      "sezon": "2025",
+      "season_id": 16242,
+      "meciuri_complete": 380,
+      "ht00": 153,
+      "eroare": null
+    },
+    {
+      "liga": "Netherlands Eerste Divisie",
+      "tara": "Netherlands",
+      "sezon": "20232024",
+      "season_id": 9654,
+      "meciuri_complete": 380,
+      "ht00": 87,
+      "eroare": null
+    },
+    {
+      "liga": "Netherlands Eerste Divisie",
+      "tara": "Netherlands",
+      "sezon": "20242025",
+      "season_id": 12317,
+      "meciuri_complete": 380,
+      "ht00": 81,
+      "eroare": null
+    },
+    {
+      "liga": "Netherlands Eerste Divisie",
+      "tara": "Netherlands",
+      "sezon": "20252026",
+      "season_id": 14987,
+      "meciuri_complete": 380,
+      "ht00": 88,
+      "eroare": null
+    },
+    {
+      "liga": "Netherlands Eredivisie",
+      "tara": "Netherlands",
+      "sezon": "20232024",
+      "season_id": 9653,
+      "meciuri_complete": 309,
+      "ht00": 80,
+      "eroare": null
+    },
+    {
+      "liga": "Netherlands Eredivisie",
+      "tara": "Netherlands",
+      "sezon": "20242025",
+      "season_id": 12322,
+      "meciuri_complete": 309,
+      "ht00": 78,
+      "eroare": null
+    },
+    {
+      "liga": "Netherlands Eredivisie",
+      "tara": "Netherlands",
+      "sezon": "20252026",
+      "season_id": 14936,
+      "meciuri_complete": 309,
+      "ht00": 61,
+      "eroare": null
+    },
+    {
+      "liga": "Norway Eliteserien",
+      "tara": "Norway",
+      "sezon": "2024",
+      "season_id": 17353,
+      "meciuri_complete": 240,
+      "ht00": 75,
+      "eroare": null
+    },
+    {
+      "liga": "Norway Eliteserien",
+      "tara": "Norway",
+      "sezon": "2025",
+      "season_id": 16260,
+      "meciuri_complete": 240,
+      "ht00": 56,
+      "eroare": null
+    },
+    {
+      "liga": "Norway Eliteserien",
+      "tara": "Norway",
+      "sezon": "2026",
+      "season_id": 16558,
+      "meciuri_complete": 162,
+      "ht00": 24,
+      "eroare": null
+    },
+    {
+      "liga": "Poland Ekstraklasa",
+      "tara": "Poland",
+      "sezon": "20232024",
+      "season_id": 9553,
+      "meciuri_complete": 306,
+      "ht00": 84,
+      "eroare": null
+    },
+    {
+      "liga": "Poland Ekstraklasa",
+      "tara": "Poland",
+      "sezon": "20242025",
+      "season_id": 12120,
+      "meciuri_complete": 306,
+      "ht00": 78,
+      "eroare": null
+    },
+    {
+      "liga": "Poland Ekstraklasa",
+      "tara": "Poland",
+      "sezon": "20252026",
+      "season_id": 15031,
+      "meciuri_complete": 306,
+      "ht00": 84,
+      "eroare": null
+    },
+    {
+      "liga": "Portugal Liga NOS",
+      "tara": "Portugal",
+      "sezon": "20232024",
+      "season_id": 9984,
+      "meciuri_complete": 306,
+      "ht00": 93,
+      "eroare": null
+    },
+    {
+      "liga": "Portugal Liga NOS",
+      "tara": "Portugal",
+      "sezon": "20242025",
+      "season_id": 12931,
+      "meciuri_complete": 306,
+      "ht00": 95,
+      "eroare": null
+    },
+    {
+      "liga": "Portugal Liga NOS",
+      "tara": "Portugal",
+      "sezon": "20252026",
+      "season_id": 15115,
+      "meciuri_complete": 306,
+      "ht00": 95,
+      "eroare": null
+    },
+    {
+      "liga": "Romania Liga I",
+      "tara": "Romania",
+      "sezon": "20232024",
+      "season_id": 9622,
+      "meciuri_complete": 317,
+      "ht00": 102,
+      "eroare": null
+    },
+    {
+      "liga": "Romania Liga I",
+      "tara": "Romania",
+      "sezon": "20242025",
+      "season_id": 12495,
+      "meciuri_complete": 315,
+      "ht00": 102,
+      "eroare": null
+    },
+    {
+      "liga": "Romania Liga I",
+      "tara": "Romania",
+      "sezon": "20252026",
+      "season_id": 15015,
+      "meciuri_complete": 317,
+      "ht00": 104,
+      "eroare": null
+    },
+    {
+      "liga": "Romania Liga II",
+      "tara": "Romania",
+      "sezon": "20232024",
+      "season_id": 9923,
+      "meciuri_complete": 262,
+      "ht00": 91,
+      "eroare": null
+    },
+    {
+      "liga": "Romania Liga II",
+      "tara": "Romania",
+      "sezon": "20242025",
+      "season_id": 12782,
+      "meciuri_complete": 286,
+      "ht00": 86,
+      "eroare": null
+    },
+    {
+      "liga": "Romania Liga II",
+      "tara": "Romania",
+      "sezon": "20252026",
+      "season_id": 15431,
+      "meciuri_complete": 319,
+      "ht00": 90,
+      "eroare": null
+    },
+    {
+      "liga": "Scotland Premiership",
+      "tara": "Scotland",
+      "sezon": "20232024",
+      "season_id": 9636,
+      "meciuri_complete": 228,
+      "ht00": 66,
+      "eroare": null
+    },
+    {
+      "liga": "Scotland Premiership",
+      "tara": "Scotland",
+      "sezon": "20242025",
+      "season_id": 12455,
+      "meciuri_complete": 228,
+      "ht00": 54,
+      "eroare": null
+    },
+    {
+      "liga": "Scotland Premiership",
+      "tara": "Scotland",
+      "sezon": "20252026",
+      "season_id": 15000,
+      "meciuri_complete": 228,
+      "ht00": 54,
+      "eroare": null
+    },
+    {
+      "liga": "Serbia SuperLiga",
+      "tara": "Serbia",
+      "sezon": "20232024",
+      "season_id": 10070,
+      "meciuri_complete": 296,
+      "ht00": 88,
+      "eroare": null
+    },
+    {
+      "liga": "Serbia SuperLiga",
+      "tara": "Serbia",
+      "sezon": "20242025",
+      "season_id": 12138,
+      "meciuri_complete": 296,
+      "ht00": 80,
+      "eroare": null
+    },
+    {
+      "liga": "Serbia SuperLiga",
+      "tara": "Serbia",
+      "sezon": "20252026",
+      "season_id": 15065,
+      "meciuri_complete": 296,
+      "ht00": 89,
+      "eroare": null
+    },
+    {
+      "liga": "Slovenia PrvaLiga",
+      "tara": "Slovenia",
+      "sezon": "20232024",
+      "season_id": 9579,
+      "meciuri_complete": 180,
+      "ht00": 47,
+      "eroare": null
+    },
+    {
+      "liga": "Slovenia PrvaLiga",
+      "tara": "Slovenia",
+      "sezon": "20242025",
+      "season_id": 12476,
+      "meciuri_complete": 180,
+      "ht00": 49,
+      "eroare": null
+    },
+    {
+      "liga": "Slovenia PrvaLiga",
+      "tara": "Slovenia",
+      "sezon": "20252026",
+      "season_id": 15063,
+      "meciuri_complete": 162,
+      "ht00": 23,
+      "eroare": null
+    },
+    {
+      "liga": "Spain La Liga",
+      "tara": "Spain",
+      "sezon": "20232024",
+      "season_id": 9665,
+      "meciuri_complete": 380,
+      "ht00": 117,
+      "eroare": null
+    },
+    {
+      "liga": "Spain La Liga",
+      "tara": "Spain",
+      "sezon": "20242025",
+      "season_id": 12316,
+      "meciuri_complete": 380,
+      "ht00": 122,
+      "eroare": null
+    },
+    {
+      "liga": "Spain La Liga",
+      "tara": "Spain",
+      "sezon": "20252026",
+      "season_id": 14956,
+      "meciuri_complete": 380,
+      "ht00": 114,
+      "eroare": null
+    },
+    {
+      "liga": "Spain Segunda División",
+      "tara": "Spain",
+      "sezon": "20232024",
+      "season_id": 9675,
+      "meciuri_complete": 468,
+      "ht00": 177,
+      "eroare": null
+    },
+    {
+      "liga": "Spain Segunda División",
+      "tara": "Spain",
+      "sezon": "20242025",
+      "season_id": 12467,
+      "meciuri_complete": 468,
+      "ht00": 161,
+      "eroare": null
+    },
+    {
+      "liga": "Spain Segunda División",
+      "tara": "Spain",
+      "sezon": "20252026",
+      "season_id": 15066,
+      "meciuri_complete": 468,
+      "ht00": 150,
+      "eroare": null
+    },
+    {
+      "liga": "Sweden Allsvenskan",
+      "tara": "Sweden",
+      "sezon": "2024",
+      "season_id": 17350,
+      "meciuri_complete": 240,
+      "ht00": 67,
+      "eroare": null
+    },
+    {
+      "liga": "Sweden Allsvenskan",
+      "tara": "Sweden",
+      "sezon": "2025",
+      "season_id": 16263,
+      "meciuri_complete": 240,
+      "ht00": 74,
+      "eroare": null
+    },
+    {
+      "liga": "Sweden Allsvenskan",
+      "tara": "Sweden",
+      "sezon": "2026",
+      "season_id": 16576,
+      "meciuri_complete": 171,
+      "ht00": 53,
+      "eroare": null
+    },
+    {
+      "liga": "Switzerland Super League",
+      "tara": "Switzerland",
+      "sezon": "20232024",
+      "season_id": 9580,
+      "meciuri_complete": 228,
+      "ht00": 61,
+      "eroare": null
+    },
+    {
+      "liga": "Switzerland Super League",
+      "tara": "Switzerland",
+      "sezon": "20242025",
+      "season_id": 12326,
+      "meciuri_complete": 228,
+      "ht00": 59,
+      "eroare": null
+    },
+    {
+      "liga": "Switzerland Super League",
+      "tara": "Switzerland",
+      "sezon": "20252026",
+      "season_id": 15047,
+      "meciuri_complete": 228,
+      "ht00": 55,
+      "eroare": null
+    },
+    {
+      "liga": "Turkey Süper Lig",
+      "tara": "Turkey",
+      "sezon": "20232024",
+      "season_id": 9913,
+      "meciuri_complete": 380,
+      "ht00": 108,
+      "eroare": null
+    },
+    {
+      "liga": "Turkey Süper Lig",
+      "tara": "Turkey",
+      "sezon": "20242025",
+      "season_id": 12641,
+      "meciuri_complete": 342,
+      "ht00": 86,
+      "eroare": null
+    },
+    {
+      "liga": "Turkey Süper Lig",
+      "tara": "Turkey",
+      "sezon": "20252026",
+      "season_id": 14972,
+      "meciuri_complete": 306,
+      "ht00": 99,
+      "eroare": null
+    },
+    {
+      "liga": "USA MLS",
+      "tara": "USA",
+      "sezon": "2024",
+      "season_id": 10977,
+      "meciuri_complete": 522,
+      "ht00": 137,
+      "eroare": null
+    },
+    {
+      "liga": "USA MLS",
+      "tara": "USA",
+      "sezon": "2025",
+      "season_id": 13973,
+      "meciuri_complete": 540,
+      "ht00": 127,
+      "eroare": null
+    },
+    {
+      "liga": "USA MLS",
+      "tara": "USA",
+      "sezon": "2026",
+      "season_id": 16504,
+      "meciuri_complete": 373,
+      "ht00": 85,
+      "eroare": null
+    }
+  ]
+}
